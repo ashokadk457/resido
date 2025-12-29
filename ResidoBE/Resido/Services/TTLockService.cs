@@ -4,8 +4,10 @@ using Resido.Model;
 using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO.RequestDTO;
 using Resido.Model.TTLockDTO.RequestDTO.EkeysRq;
+using Resido.Model.TTLockDTO.RequestDTO.PasscodeRq;
 using Resido.Model.TTLockDTO.ResponseDTO;
 using Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp;
+using Resido.Model.TTLockDTO.ResponseDTO.PasscodeRsp;
 
 namespace Resido.Services
 {
@@ -23,7 +25,30 @@ namespace Resido.Services
             _clientId = "5eb489f4b1f645d8ab7c95f7fe3e043c";
             _clientSecret = "91e0f8fbec6a8be1ba14cb6c793635a2";
         }
+        /// <summary>
+        /// Builds a query string from an object's public properties.
+        /// Null values are skipped. Values are URL-encoded.
+        /// </summary>
+        public static string BuildQueryString(object obj)
+        {
+            if (obj == null) return string.Empty;
 
+            var props = obj.GetType().GetProperties();
+            var queryParams = new List<string>();
+
+            foreach (var prop in props)
+            {
+                var value = prop.GetValue(obj, null);
+                if (value != null)
+                {
+                    var encodedName = Uri.EscapeDataString(prop.Name);
+                    var encodedValue = Uri.EscapeDataString(value.ToString()!);
+                    queryParams.Add($"{encodedName}={encodedValue}");
+                }
+            }
+
+            return string.Join("&", queryParams);
+        }
         private async Task<ResponseDTO<TResponse>?> PostToTTLockAsync<TRequest, TResponse>(
             string url,
             TRequest request)
@@ -40,6 +65,49 @@ namespace Resido.Services
             }
 
             var response = await TTLockHttpHelper.PostObjectWithResponseAsync(url, request);
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                responseDTO.Data = JsonHelper.Deserialize<TResponse>(responseBody);
+
+                if (responseDTO.Data is ITTLockErrorResponse errorResponse &&
+                    errorResponse.Errcode == (int)ResponseCode.Success)
+                {
+                    responseDTO.SetSuccess();
+                }
+                else if (responseDTO.Data is ITTLockErrorResponse errorMessageProvider)
+                {
+                    responseDTO.SetMessage(errorMessageProvider.Errmsg);
+                }
+            }
+            else
+            {
+                responseDTO.SetFailed(responseBody);
+            }
+
+            return responseDTO;
+        }
+        private async Task<ResponseDTO<TResponse>?> GetFromTTLockAsync<TRequest, TResponse>(
+            string url,
+            TRequest request)
+            where TResponse : class
+        {
+            var responseDTO = new ResponseDTO<TResponse> { StatusCode = ResponseCode.Error };
+
+            // Add timestamp if property exists
+            var timestamp = GetTimestamp();
+            var dateProp = typeof(TRequest).GetProperty("Date");
+            if (dateProp != null)
+            {
+                dateProp.SetValue(request, timestamp);
+            }
+
+            // Build query string from request object
+            var queryParams = BuildQueryString(request);
+            var fullUrl = $"{url}?{queryParams}";
+
+            var response = await TTLockHttpHelper.GetObjectWithResponseAsync(fullUrl);
             var responseBody = await response.Content.ReadAsStringAsync();
 
             if (response.IsSuccessStatusCode)
@@ -236,6 +304,93 @@ namespace Resido.Services
 
             return await PostToTTLockAsync<TTLockSendKeyRequestDTO, SendKeyResponseDTO>(
                 $"{BaseUrl}/v3/key/send", request);
+        }
+        public async Task<ResponseDTO<GetKeyboardPwdResponseDTO>?> GetKeyboardPwdAsync(string accessToken, GetKeyboardPwdRequestDTO dto)
+        {
+            var request = new TTLockGetKeyboardPwdRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                KeyboardPwdType = (int)dto.KeyboardPwdType,
+                KeyboardPwdName = dto.KeyboardPwdName,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate
+            };
+
+            return await PostToTTLockAsync<TTLockGetKeyboardPwdRequestDTO, GetKeyboardPwdResponseDTO>(
+                $"{BaseUrl}/v3/keyboardPwd/get", request);
+        }
+        public async Task<ResponseDTO<AddKeyboardPwdResponseDTO>?> AddKeyboardPwdAsync(string accessToken, AddKeyboardPwdRequestDTO dto)
+        {
+            var request = new TTLockAddKeyboardPwdRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                KeyboardPwd = dto.KeyboardPwd,
+                KeyboardPwdName = dto.KeyboardPwdName,
+                KeyboardPwdType = dto.KeyboardPwdType,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate,
+                AddType = (int)dto.AddType
+            };
+
+            return await PostToTTLockAsync<TTLockAddKeyboardPwdRequestDTO, AddKeyboardPwdResponseDTO>(
+                $"{BaseUrl}/v3/keyboardPwd/add", request);
+        }
+        public async Task<ResponseDTO<ListKeyboardPwdResponseDTO>?> ListKeyboardPwdAsync(string accessToken, ListKeyboardPwdRequestDTO dto)
+        {
+            var request = new TTLockListKeyboardPwdRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                SearchStr = dto.SearchStr,
+                PageNo = dto.PageNo,
+                PageSize = dto.PageSize,
+                OrderBy = dto.OrderBy
+            };
+
+            return await GetFromTTLockAsync<TTLockListKeyboardPwdRequestDTO, ListKeyboardPwdResponseDTO>(
+                $"{BaseUrl}/v3/lock/listKeyboardPwd", request);
+        }
+        public async Task<ResponseDTO<DeleteKeyboardPwdResponseDTO>?> DeleteKeyboardPwdAsync(string accessToken, DeleteKeyboardPwdRequestDTO dto)
+        {
+            var request = new TTLockDeleteKeyboardPwdRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                KeyboardPwdId = dto.KeyboardPwdId,
+                DeleteType = (int)dto.DeleteType
+            };
+
+            return await PostToTTLockAsync<TTLockDeleteKeyboardPwdRequestDTO, DeleteKeyboardPwdResponseDTO>(
+                $"{BaseUrl}/v3/keyboardPwd/delete", request);
+        }
+        public async Task<ResponseDTO<ChangeKeyboardPwdResponseDTO>?> ChangeKeyboardPwdAsync(string accessToken, ChangeKeyboardPwdRequestDTO dto)
+        {
+            var request = new TTLockChangeKeyboardPwdRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                KeyboardPwdId = dto.KeyboardPwdId,
+                KeyboardPwdName = dto.KeyboardPwdName,
+                NewKeyboardPwd = dto.NewKeyboardPwd,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate,
+                ChangeType = dto.ChangeType.HasValue ? (int)dto.ChangeType.Value : null
+            };
+
+            return await PostToTTLockAsync<TTLockChangeKeyboardPwdRequestDTO, ChangeKeyboardPwdResponseDTO>(
+                $"{BaseUrl}/v3/keyboardPwd/change", request);
         }
 
         private string GetTimestamp()
