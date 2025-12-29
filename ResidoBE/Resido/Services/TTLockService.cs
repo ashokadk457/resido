@@ -549,6 +549,21 @@ namespace Resido.Services
             return await PostToTTLockAsync<TTLockInitializeLockRequestDTO, InitializeLockResponseDTO>(
                 $"{BaseUrl}/v3/lock/initialize", request);
         }
+        public async Task<ResponseDTO<SetAutoLockTimeResponseDTO>?> SetAutoLockTimeAsync(string accessToken, SetAutoLockTimeRequestDTO dto)
+        {
+            var request = new TTLockSetAutoLockTimeRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                Seconds = dto.Seconds,
+                Type = (int)dto.Type
+            };
+
+            return await PostToTTLockAsync<TTLockSetAutoLockTimeRequestDTO, SetAutoLockTimeResponseDTO>(
+                $"{BaseUrl}/v3/lock/setAutoLockTime", request);
+        }
 
         private string GetTimestamp()
         {
