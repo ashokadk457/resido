@@ -193,7 +193,7 @@ namespace Resido.Controllers
                 }
                 else
                 {
-                    response.SetMessage(result?.Data?.Errmsg ?? Resource.NoRecordFound);
+                    response.SetMessage(result?.Data?.Errmsg);
                 }
             }
             catch (Exception ex)
