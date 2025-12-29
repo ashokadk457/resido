@@ -12,9 +12,11 @@ namespace Resido.Database.DBTable
         public string Email { get; set; }
         public string DialCode { get; set; }
         public string PhoneNumber { get; set; }
-
+        public UserStatus UserStatus { get; set; } = UserStatus.Active;
+        public UserType UserUserTypeStatus { get; set; } = UserType.Admin;
         public bool IsPhoneVerified { get; set; }
         public bool IsEmailVerified { get; set; }
+        public bool IsEkeysSingnUp { get; set; }
         public string? AddressLine1 { get; set; }
 
         public virtual Country? Country { get; set; }
@@ -45,6 +47,17 @@ namespace Resido.Database.DBTable
         {
             get { return $"{FirstName} {LastName}"; }
         }
+    }
+    public enum UserType
+    {
+        User,
+        Admin,
+    }
+    public enum UserStatus
+    {
+        Active,
+        DisabledByAdmin,
+        Deleted
     }
 
 }

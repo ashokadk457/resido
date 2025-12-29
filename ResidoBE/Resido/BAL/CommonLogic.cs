@@ -5,6 +5,12 @@ namespace Resido.BAL
 {
     public class CommonLogic
     {
+        public static void SetDefaultUserInfo(User user)
+        {
+            user.UserStatus = UserStatus.Active;
+            user.CreatedAt = DateTimeHelper.GetUtcTime();
+            user.UpdatedAt = DateTimeHelper.GetUtcTime();
+        }
         public static string GenerateUserName(User user)
         {
             string ttlockUsername;

@@ -6,6 +6,18 @@ namespace Resido.Helper
     public class PasswordHelper
     {
 
+        private static readonly Random _random = new Random();
+        private const string _chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        public static string GenerateRandomPassword(int length = 6)
+        {
+            char[] password = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                password[i] = _chars[_random.Next(_chars.Length)];
+            }
+            return new string(password);
+        }
         public static string ComputeSha256Ajax(string input)
         {
             using (SHA256 sha256 = SHA256.Create())

@@ -1,7 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Resido.BAL;
 using Resido.Database;
+using Resido.Database.DBTable;
+using Resido.Helper;
+using Resido.Helper.EmailHelper;
 using Resido.Helper.TokenAuthorize;
+using Resido.Model;
 using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO;
 using Resido.Model.TTLockDTO.RequestDTO;
@@ -10,6 +15,7 @@ using Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp;
 using Resido.Resources;
 using Resido.Services;
 using Resido.Services.DAL;
+using System.Globalization;
 
 namespace Resido.Controllers
 {
@@ -87,18 +93,133 @@ namespace Resido.Controllers
             try
             {
                 var token = await GetAccessTokenEntityAsync();
-              
-                var sendResponse = await _ttLockHelper.SendKeyAsync(token.AccessToken, dto);
 
-                if (sendResponse.IsSuccessCode())
+                // Normalize receiver input (email or phone) to ensure consistent lookup and validation
+                var contactOrEmail = dto.ReceiverUsername.NormalizeInput();
+
+                // Validate whether the receiver exists in the system using email/phone and dial code
+                var (userTo, _, error) = await _commonDBLogic.GetAndValidateUserAsync(contactOrEmail, dto.DialCode);
+                if (error != null)
+                    return Ok(response.SetMessage(error));
+
+                // =========================
+                // Existing User Flow
+                // =========================
+                if (userTo != null)
                 {
-                    response.Data = sendResponse.Data;
-                    response.SetSuccess();
+                    // Use system-generated TTLock username for sending eKey
+                    dto.ReceiverUsername = userTo.TTLockUsername;
+
+                    var sendResponse = await _ttLockHelper.SendKeyAsync(token.AccessToken, dto);
+
+                    if (sendResponse.IsSuccessCode())
+                    {
+                        response.Data = sendResponse.Data;
+
+                        // Send welcome email and SMS asynchronously without blocking the API response
+                        _ = Task.Run(async () =>
+                        {
+                            using var scope = _serviceScopeFactory.CreateScope();
+
+                            try
+                            {
+                                var scopedSmsService = scope.ServiceProvider.GetRequiredService<SmsDkService>();
+
+                                // Send welcome email (existing user)
+                                if (!string.IsNullOrEmpty(userTo.Email))
+                                    await SendWelcomeEmailAsync(userTo.Email, string.Empty, true);
+
+                                // Send notification SMS
+                                if (!string.IsNullOrEmpty(userTo.PhoneNumber))
+                                {
+                                    string contact = $"{userTo.DialCode}{userTo.PhoneNumber}";
+                                    string body = await SmsContentHelper.GetSmsContentForExistingUserAsync(
+                                        CultureInfo.CurrentCulture.Name, contact
+                                    );
+
+                                    await scopedSmsService.SendSmsAsync(new SmsDkService.SmsRequestDto
+                                    {
+                                        Receiver = contact,
+                                        Message = body
+                                    });
+                                }
+                            }
+                            catch
+                            {
+                                // Intentionally ignored to avoid notification failure impacting API response
+                            }
+                        });
+
+                        return Ok(response.SetSuccess());
+                    }
+
+                    return Ok(response.SetMessage(sendResponse?.Data?.Errmsg));
                 }
-                else
+
+                // =========================
+                // New User Creation Flow
+                // =========================
+
+                // Create a new internal ZAFE user using the provided email/phone
+                userTo ??= CreateNewUser(contactOrEmail, dto.DialCode, response);
+                if (userTo == null)
+                    return Ok(response); // Validation for new user failed
+
+                // Register the new user in TTLock and generate credentials
+                var (success, password, user) = await RegisterTTLockUserAsync(userTo, contactOrEmail);
+                if (!success)
+                    return Ok(response.SetMessage(Resource.ZafeAccountCreationError));
+
+                // Persist user with TTLock credentials
+                userTo.IsEkeysSingnUp = true;
+                userTo.TTLockHashPassword = user.TTLockHashPassword;
+                userTo.TTLockUsername = user.TTLockUsername;
+                await AddUserToDb(userTo);
+
+                // Use TTLock username to send eKey
+                dto.ReceiverUsername = userTo.TTLockUsername;
+
+                var retryResponse = await _ttLockHelper.SendKeyAsync(token.AccessToken, dto);
+                if (retryResponse.IsSuccessCode())
                 {
-                    response.SetMessage(sendResponse?.Data?.Errmsg);
+                    // Send welcome email and SMS (new user) asynchronously
+                    _ = Task.Run(async () =>
+                    {
+                        using var scope = _serviceScopeFactory.CreateScope();
+
+                        try
+                        {
+                            var scopedSmsService = scope.ServiceProvider.GetRequiredService<SmsDkService>();
+
+                            // Send welcome email including generated password
+                            if (!string.IsNullOrEmpty(userTo.Email))
+                                await SendWelcomeEmailAsync(userTo.Email, password, false);
+
+                            // Send SMS containing TTLock credentials
+                            if (!string.IsNullOrEmpty(userTo.PhoneNumber))
+                            {
+                                string contact = $"{userTo.DialCode}{userTo.PhoneNumber}";
+                                string body = await SmsContentHelper.GetSmsContentAsync(
+                                    CultureInfo.CurrentCulture.Name, contact, password
+                                );
+
+                                await scopedSmsService.SendSmsAsync(new SmsDkService.SmsRequestDto
+                                {
+                                    Receiver = contact,
+                                    Message = body
+                                });
+                            }
+                        }
+                        catch
+                        {
+                            // Intentionally ignored to prevent notification issues from affecting API response
+                        }
+                    });
+
+                    return Ok(response.SetSuccess());
                 }
+
+                return Ok(response.SetMessage(retryResponse.Message));
             }
             catch (Exception ex)
             {
@@ -106,6 +227,105 @@ namespace Resido.Controllers
             }
 
             return Ok(response);
+        }
+
+        private async Task<(bool success, string password, User user)> RegisterTTLockUserAsync(User user, string contactOrEmail)
+        {
+            string password = PasswordHelper.GenerateRandomPassword();
+            string ttlockPassword = PasswordHelper.GenerateMd5ForTTLock(password);
+
+            // Generate temporary username for TTLock
+            user.TTLockUsername = CommonLogic.GenerateUserName(user);
+
+            // Call TTLock API
+            var registerResponse = await _ttLockHelper.RegisterUserAsync(user.TTLockUsername, ttlockPassword);
+
+            // If registration failed
+            if (registerResponse?.Data?.Username == null)
+                return (false, password, user);
+
+            // Update user values
+            user.TTLockUsername = registerResponse.Data.Username;
+
+            // Set default fields
+            CommonLogic.SetDefaultUserInfo(user);
+
+            // Return user object
+            return (true, password, user);
+        }
+        private User? CreateNewUser(string contactOrEmail, string dialCode, ResponseDTO<SendKeyResponseDTO> response)
+        {
+            var user = new User();
+
+            if (UserInputValidator.ValidateEmail(contactOrEmail, out string emailError))
+            {
+                user.Email = contactOrEmail;
+                user.IsEmailVerified = true;
+            }
+            else
+            {
+                if (!UserInputValidator.ValidatePhoneNumber(contactOrEmail, out string phoneError))
+                {
+                    response.SetMessage(phoneError);
+                    return null;
+                }
+                if (!UserInputValidator.ValidateDialCode(dialCode, out string dialCodeError))
+                {
+                    response.SetMessage(dialCodeError);
+                    return null;
+                }
+                user.PhoneNumber = contactOrEmail;
+                user.DialCode = dialCode;
+                user.IsPhoneVerified = true;
+                user.IsEkeysSingnUp = true;
+            }
+
+            return user;
+        }
+
+        private async Task AddUserToDb(User user)
+        {
+            //user.TTLockUsername ??= CommonLogic.GenerateUserName(contactOrEmail);
+            CommonLogic.SetDefaultUserInfo(user);
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+        }
+
+        private async Task SendWelcomeEmailAsync(string? email, string password, bool isExistingUser)
+        {
+            if (!UserInputValidator.ValidateEmail(email, out string emailError)) return;
+
+            if (isExistingUser)
+            {
+
+                var (subject, html) = EmailTemplates.BuildExistingUserEmailHtml(
+                email.Split('@')[0], email, CultureInfo.CurrentCulture.Name);
+
+                var mailRequest = new MailRequestModel
+                {
+                    ToEmail = email,
+                    Body = html,
+                    Subject = Resource.WelcomeToZafeLockEkeySubject
+                };
+                await MailHelper.SendEmailAsync(mailRequest);
+            }
+            else
+            {
+                var (subject, html) = EmailTemplates.BuildWelcomeEmailHtml(
+                email.Split('@')[0], email, password, CultureInfo.CurrentCulture.Name);
+
+                var mailRequest = new MailRequestModel
+                {
+                    ToEmail = email,
+                    Body = html,
+                    Subject = Resource.WelcomeToZafeLockEkeySubject
+                };
+                await MailHelper.SendEmailAsync(mailRequest);
+            }
+
+
+
+
         }
 
 

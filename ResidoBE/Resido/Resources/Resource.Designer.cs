@@ -448,6 +448,15 @@ namespace Resido.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Welcome to ZafeLock – Your Access Details Inside.
+        /// </summary>
+        public static string WelcomeToZafeLockEkeySubject {
+            get {
+                return ResourceManager.GetString("WelcomeToZafeLockEkeySubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Something went wrong while trying to create your Zafe account..
         /// </summary>
         public static string ZafeAccountCreationError {

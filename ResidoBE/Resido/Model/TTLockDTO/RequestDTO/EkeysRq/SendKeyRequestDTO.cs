@@ -24,6 +24,7 @@
     {
         public int LockId { get; set; }
         public string ReceiverUsername { get; set; }
+        public string? DialCode { get; set; }
         public string KeyName { get; set; }
         public long StartDate { get; set; }
         public long EndDate { get; set; }

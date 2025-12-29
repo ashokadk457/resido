@@ -287,4 +287,8 @@
     <value>Invalid access token. Please login again.</value>
     <comment>Invalid access token. Please login again.</comment>
   </data>
+  <data name="WelcomeToZafeLockEkeySubject" xml:space="preserve">
+    <value>Welcome to ZafeLock – Your Access Details Inside</value>
+    <comment>Welcome to ZafeLock – Your Access Details Inside</comment>
+  </data>
 </root>
