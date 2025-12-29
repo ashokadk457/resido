@@ -1,6 +1,6 @@
 ﻿namespace Resido.Model.TTLockDTO.ResponseDTO
 {
-    public class RegisterResponseDTO : TTLockResponseCodeDTO
+    public class RegisterResponseDTO : ResponseCodeDTO
     {
         public string Username { get; set; }
     }

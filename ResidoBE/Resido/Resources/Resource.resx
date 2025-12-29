@@ -283,4 +283,8 @@
     <value>Password already exists. Please try logging in.</value>
     <comment>Password already exists. Please try logging in.</comment>
   </data>
+  <data name="InvalidAccessToken" xml:space="preserve">
+    <value>Invalid access token. Please login again.</value>
+    <comment>Invalid access token. Please login again.</comment>
+  </data>
 </root>

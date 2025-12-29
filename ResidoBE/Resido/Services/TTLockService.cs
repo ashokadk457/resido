@@ -3,7 +3,9 @@ using Resido.Helper;
 using Resido.Model;
 using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO.RequestDTO;
+using Resido.Model.TTLockDTO.RequestDTO.EkeysRq;
 using Resido.Model.TTLockDTO.ResponseDTO;
+using Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp;
 
 namespace Resido.Services
 {
@@ -64,7 +66,7 @@ namespace Resido.Services
 
         public async Task<ResponseDTO<RegisterResponseDTO>?> RegisterUserAsync(string username, string password)
         {
-            var request = new TTLockRegisterUserRequestDTO
+            var request = new RegisterUserRequestDTO
             {
                 ClientId = _clientId,
                 ClientSecret = _clientSecret,
@@ -72,13 +74,13 @@ namespace Resido.Services
                 Password = password
             };
 
-            return await PostToTTLockAsync<TTLockRegisterUserRequestDTO, RegisterResponseDTO>(
+            return await PostToTTLockAsync<RegisterUserRequestDTO, RegisterResponseDTO>(
                 $"{BaseUrl}/v3/user/register", request);
         }
 
         public async Task<ResponseDTO<AccessTokenResponseDTO>?> GetAccessTokenAsync(string username, string password)
         {
-            var request = new TTLockAccessTokenRequestDTO
+            var request = new AccessTokenRequestDTO
             {
                 ClientId = _clientId,
                 ClientSecret = _clientSecret,
@@ -86,13 +88,13 @@ namespace Resido.Services
                 Password = password
             };
 
-            return await PostToTTLockAsync<TTLockAccessTokenRequestDTO, AccessTokenResponseDTO>(
+            return await PostToTTLockAsync<AccessTokenRequestDTO, AccessTokenResponseDTO>(
                 $"{BaseUrl}/oauth2/token", request);
         }
 
-        public async Task<ResponseDTO<TTLockApiResponseDTO>?> ResetPasswordAsync(string username, string newPassword)
+        public async Task<ResponseDTO<ApiResponseDTO>?> ResetPasswordAsync(string username, string newPassword)
         {
-            var request = new TTLockResetPasswordRequestDTO
+            var request = new ResetPasswordRequestDTO
             {
                 ClientId = _clientId,
                 ClientSecret = _clientSecret,
@@ -101,8 +103,139 @@ namespace Resido.Services
             };
 
             var response = await TTLockHttpHelper.PostObjectAsync($"{BaseUrl}/v3/user/resetPassword", request);
-            return await PostToTTLockAsync<TTLockResetPasswordRequestDTO, TTLockApiResponseDTO>(
+            return await PostToTTLockAsync<ResetPasswordRequestDTO, ApiResponseDTO>(
                $"{BaseUrl}/oauth2/token", request);
+        }
+
+        public async Task<ResponseDTO<ListKeysResponseDTO>?> ListKeysAsync(ListKeysRequestDTO ttLockList)
+        {
+            var request = new ListKeysRequestDTO
+            {
+                ClientId = _clientId,
+                ClientSecret = ttLockList.AccessToken,
+                LockAlias = ttLockList.LockAlias,
+                GroupId = ttLockList.GroupId,
+                PageNo = ttLockList.PageNo,
+                PageSize = ttLockList.PageSize,
+                Date = GetTimestamp()
+            };
+
+            return await PostToTTLockAsync<ListKeysRequestDTO, ListKeysResponseDTO>(
+                $"{BaseUrl}/v3/key/list", request);
+        }
+        public async Task<ResponseDTO<DeleteKeyResponseDTO>?> DeleteKeyAsync(string accessToken, int keyId)
+        {
+            var request = new DeleteKeyRequestDTO
+            {
+                ClientId = _clientId,
+                AccessToken = accessToken,
+                KeyId = keyId,
+                Date = GetTimestamp()
+            };
+
+            return await PostToTTLockAsync<DeleteKeyRequestDTO, DeleteKeyResponseDTO>(
+                $"{BaseUrl}/v3/key/delete", request);
+        }
+        public async Task<ResponseDTO<UnfreezeKeyResponseDTO>?> UnfreezeKeyAsync(string accessToken, int keyId)
+        {
+            var request = new UnfreezeKeyRequestDTO
+            {
+                ClientId = _clientId,
+                AccessToken = accessToken,
+                KeyId = keyId,
+                Date = GetTimestamp()
+            };
+
+            return await PostToTTLockAsync<UnfreezeKeyRequestDTO, UnfreezeKeyResponseDTO>(
+                $"{BaseUrl}/v3/key/unfreeze", request);
+        }
+
+        public async Task<ResponseDTO<UpdateKeyResponseDTO>?> UpdateKeyAsync(string accessToken, UpdateKeyRequestDTO dto)
+        {
+            var request = new TTLockUpdateKeyRequestDTO
+            {
+                ClientId = _clientId,
+                Date = GetTimestamp(),
+                AccessToken = accessToken,
+                KeyId = dto.KeyId,
+                KeyName = dto.KeyName,
+                RemoteEnable = dto.RemoteEnable
+            };
+
+            return await PostToTTLockAsync<TTLockUpdateKeyRequestDTO, UpdateKeyResponseDTO>(
+                $"{BaseUrl}/v3/key/update", request);
+        }
+
+        public async Task<ResponseDTO<ChangeKeyPeriodResponseDTO>?> ChangeKeyPeriodAsync(string accessToken, ChangeKeyPeriodRequestDTO dto)
+        {
+            var request = new TTLockChangeKeyPeriodRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                KeyId = dto.KeyId,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate
+            };
+
+            return await PostToTTLockAsync<TTLockChangeKeyPeriodRequestDTO, ChangeKeyPeriodResponseDTO>(
+                $"{BaseUrl}/v3/key/changePeriod", request);
+        }
+
+        public async Task<ResponseDTO<KeyAuthorizeResponseDTO>?> AuthorizeKeyAsync(
+            string accessToken,
+            int lockId,
+            int keyId)
+        {
+            var request = new TTLockKeyAuthorizeRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = lockId,
+                KeyId = keyId
+            };
+
+            return await PostToTTLockAsync<TTLockKeyAuthorizeRequestDTO, KeyAuthorizeResponseDTO>(
+                $"{BaseUrl}/v3/key/authorize", request);
+        }
+        public async Task<ResponseDTO<KeyUnauthorizeResponseDTO>?> UnauthorizeKeyAsync(
+    string accessToken,
+    int lockId,
+    int keyId)
+        {
+            var request = new TTLockKeyUnauthorizeRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = lockId,
+                KeyId = keyId
+            };
+
+            return await PostToTTLockAsync<TTLockKeyUnauthorizeRequestDTO, KeyUnauthorizeResponseDTO>(
+                $"{BaseUrl}/v3/key/unauthorize", request);
+        }
+        public async Task<ResponseDTO<SendKeyResponseDTO>?> SendKeyAsync(string accessToken, SendKeyRequestDTO dto)
+        {
+            var request = new TTLockSendKeyRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                ReceiverUsername = dto.ReceiverUsername,
+                KeyName = dto.KeyName,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate,
+                Remarks = dto.Remarks,
+                RemoteEnable = dto.RemoteEnable,
+                KeyRight = dto.KeyRight,
+                CreateUser = dto.CreateUser
+            };
+
+            return await PostToTTLockAsync<TTLockSendKeyRequestDTO, SendKeyResponseDTO>(
+                $"{BaseUrl}/v3/key/send", request);
         }
 
         private string GetTimestamp()

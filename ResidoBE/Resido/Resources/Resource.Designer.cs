@@ -169,6 +169,15 @@ namespace Resido.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid access token. Please login again..
+        /// </summary>
+        public static string InvalidAccessToken {
+            get {
+                return ResourceManager.GetString("InvalidAccessToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid OTP..
         /// </summary>
         public static string InvalidOtp {

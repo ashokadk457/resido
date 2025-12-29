@@ -1,7 +1,7 @@
 ﻿namespace Resido.Model.TTLockDTO.RequestDTO
 {
-    // For password reset API
-    public class TTLockResetPasswordRequestDTO : TTLockBaseRequestDTO
+    // For OAuth2 token retrieval API
+    public class AccessTokenRequestDTO : BaseRequestDTO
     {
         public string Username { get; set; }
         public string Password { get; set; }

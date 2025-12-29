@@ -1,7 +1,7 @@
 ﻿namespace Resido.Model.TTLockDTO.RequestDTO
 {
-    // For user registration API
-    public class TTLockRegisterUserRequestDTO : TTLockBaseRequestDTO
+    // For password reset API
+    public class ResetPasswordRequestDTO : BaseRequestDTO
     {
         public string Username { get; set; }
         public string Password { get; set; }

@@ -2,7 +2,7 @@
 
 namespace Resido.Model.TTLockDTO.ResponseDTO
 {
-    public class TTLockResponseCodeDTO: ITTLockErrorResponse
+    public class ResponseCodeDTO: ITTLockErrorResponse
     {
         public int Errcode { get; set; }
         public string Errmsg { get; set; }
