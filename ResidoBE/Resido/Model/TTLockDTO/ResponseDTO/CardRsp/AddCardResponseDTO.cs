@@ -1,0 +1,12 @@
+﻿namespace Resido.Model.TTLockDTO.ResponseDTO.CardRsp
+{
+    /// <summary>
+    /// TTLock API response for add card.
+    /// </summary>
+    public class AddCardResponseDTO : ITTLockErrorResponse
+    {
+        public int CardId { get; set; }
+        public int Errcode { get; set; }
+        public string Errmsg { get; set; }
+    }
+}

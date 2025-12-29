@@ -3,10 +3,14 @@ using Resido.Helper;
 using Resido.Model;
 using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO.RequestDTO;
+using Resido.Model.TTLockDTO.RequestDTO.CardRq;
 using Resido.Model.TTLockDTO.RequestDTO.EkeysRq;
+using Resido.Model.TTLockDTO.RequestDTO.LockRq;
 using Resido.Model.TTLockDTO.RequestDTO.PasscodeRq;
 using Resido.Model.TTLockDTO.ResponseDTO;
+using Resido.Model.TTLockDTO.ResponseDTO.CardRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp;
+using Resido.Model.TTLockDTO.ResponseDTO.LockRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.PasscodeRsp;
 
 namespace Resido.Services
@@ -391,6 +395,159 @@ namespace Resido.Services
 
             return await PostToTTLockAsync<TTLockChangeKeyboardPwdRequestDTO, ChangeKeyboardPwdResponseDTO>(
                 $"{BaseUrl}/v3/keyboardPwd/change", request);
+        }
+
+        public async Task<ResponseDTO<AddCardResponseDTO>?> AddCardAsync(string accessToken, AddCardRequestDTO dto, bool useReversedApi = true)
+        {
+            var request = new TTLockAddCardRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                CardNumber = dto.CardNumber,
+                CardName = dto.CardName,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate,
+                CardType = dto.CardType,
+                CyclicConfig = dto.CyclicConfig,
+                AddType = (int)dto.AddType
+            };
+
+            // Choose endpoint based on whether reversed card number API should be used
+            var endpoint = useReversedApi
+                ? $"{BaseUrl}/v3/identityCard/addForReversedCardNumber"
+                : $"{BaseUrl}/v3/identityCard/add";
+
+            return await PostToTTLockAsync<TTLockAddCardRequestDTO, AddCardResponseDTO>(endpoint, request);
+        }
+
+        public async Task<ResponseDTO<ListIdentityCardResponseDTO>?> ListIdentityCardsAsync(string accessToken, ListIdentityCardRequestDTO dto)
+        {
+            var request = new TTLockListIdentityCardRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                SearchStr = dto.SearchStr,
+                PageNo = dto.PageNo,
+                PageSize = dto.PageSize,
+                OrderBy = dto.OrderBy
+            };
+
+            return await GetFromTTLockAsync<TTLockListIdentityCardRequestDTO, ListIdentityCardResponseDTO>(
+                $"{BaseUrl}/v3/identityCard/list", request);
+        }
+
+        public async Task<ResponseDTO<DeleteCardResponseDTO>?> DeleteCardAsync(string accessToken, DeleteCardRequestDTO dto)
+        {
+            var request = new TTLockDeleteCardRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                CardId = dto.CardId,
+                DeleteType = (int)dto.DeleteType
+            };
+
+            return await PostToTTLockAsync<TTLockDeleteCardRequestDTO, DeleteCardResponseDTO>(
+                $"{BaseUrl}/v3/identityCard/delete", request);
+        }
+
+        public async Task<ResponseDTO<ChangeCardPeriodResponseDTO>?> ChangeCardPeriodAsync(string accessToken, ChangeCardPeriodRequestDTO dto)
+        {
+            var request = new TTLockChangeCardPeriodRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                CardId = dto.CardId,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate,
+                CyclicConfig = dto.CyclicConfig,
+                ChangeType = (int)dto.ChangeType
+            };
+
+            return await PostToTTLockAsync<TTLockChangeCardPeriodRequestDTO, ChangeCardPeriodResponseDTO>(
+                $"{BaseUrl}/v3/identityCard/changePeriod", request);
+        }
+
+        public async Task<ResponseDTO<ClearCardResponseDTO>?> ClearCardAsync(string accessToken, ClearCardRequestDTO dto)
+        {
+            var request = new TTLockClearCardRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId
+            };
+
+            return await PostToTTLockAsync<TTLockClearCardRequestDTO, ClearCardResponseDTO>(
+                $"{BaseUrl}/v3/identityCard/clear", request);
+        }
+        public async Task<ResponseDTO<RenameCardResponseDTO>?> RenameCardAsync(string accessToken, RenameCardRequestDTO dto)
+        {
+            var request = new TTLockRenameCardRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                CardId = dto.CardId,
+                CardName = dto.CardName
+            };
+
+            return await PostToTTLockAsync<TTLockRenameCardRequestDTO, RenameCardResponseDTO>(
+                $"{BaseUrl}/v3/identityCard/rename", request);
+        }
+
+
+        public async Task<ResponseDTO<DeleteLockResponseDTO>?> DeleteLockAsync(string accessToken, DeleteLockRequestDTO dto)
+        {
+            var request = new TTLockDeleteLockRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId
+            };
+
+            return await PostToTTLockAsync<TTLockDeleteLockRequestDTO, DeleteLockResponseDTO>(
+                $"{BaseUrl}/v3/lock/delete", request);
+        }
+        public async Task<ResponseDTO<RenameLockResponseDTO>?> RenameLockAsync(string accessToken, RenameLockRequestDTO dto)
+        {
+            var request = new TTLockRenameLockRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                LockAlias = dto.LockAlias
+            };
+
+            return await PostToTTLockAsync<TTLockRenameLockRequestDTO, RenameLockResponseDTO>(
+                $"{BaseUrl}/v3/lock/rename", request);
+        }
+
+        public async Task<ResponseDTO<InitializeLockResponseDTO>?> InitializeLockAsync(string accessToken, InitializeLockRequestDTO dto)
+        {
+            var request = new TTLockInitializeLockRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockAlias = dto.LockAlias,
+                LockData = dto.LockData,
+                GroupId = dto.GroupId,
+                NbInitSuccess = dto.NbInitSuccess
+            };
+
+            return await PostToTTLockAsync<TTLockInitializeLockRequestDTO, InitializeLockResponseDTO>(
+                $"{BaseUrl}/v3/lock/initialize", request);
         }
 
         private string GetTimestamp()
