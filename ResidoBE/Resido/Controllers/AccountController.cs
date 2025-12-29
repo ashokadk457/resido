@@ -123,7 +123,7 @@ namespace Resido.Controllers
             var input = dto.ContactOrEmail.NormalizeInput();
 
             // Find user in database
-            var (user, loginType, error) = await _commonDBLogic.GetAndValidateUserAsync(input, dto.DailCode);
+            var (user, loginType, error) = await _commonDBLogic.GetAndValidateUserAsync(input, dto.DialCode);
             if (!string.IsNullOrEmpty(error))
                 return Ok(response.SetMessage(error));
 

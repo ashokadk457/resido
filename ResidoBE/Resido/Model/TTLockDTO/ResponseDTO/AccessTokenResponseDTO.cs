@@ -2,27 +2,31 @@
 
 namespace Resido.Model.TTLockDTO.ResponseDTO
 {
-    public class AccessTokenResponseDTO: AuthDataDTO
-    {
+    using Newtonsoft.Json;
 
-        [JsonPropertyName("uid")]
+    public class AccessTokenResponseDTO : ResponseCodeDTO
+    {
+        [JsonProperty("uid")]
         public long Uid { get; set; }
-        [JsonPropertyName("access_token")]
+
+        [JsonProperty("access_token")]
         public string AccessToken { get; set; }
 
-        [JsonPropertyName("expires_in")]
+        [JsonProperty("expires_in")]
         public long ExpiresIn { get; set; }
 
-        [JsonPropertyName("scope")]
+        [JsonProperty("scope")]
         public string Scope { get; set; }
 
-        [JsonPropertyName("refresh_token")]
+        [JsonProperty("refresh_token")]
         public string RefreshToken { get; set; }
 
-    }
-    public class AuthDataDTO
-    {
-        public string? FullName { get; set; }
-    }
+        [JsonProperty("openid")]
+        public long OpenId { get; set; }
 
+        [JsonProperty("token_type")]
+        public string TokenType { get; set; }
+        public string? FullName { get; set; }
+
+    }
 }

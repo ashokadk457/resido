@@ -5,7 +5,6 @@ namespace Resido.Model.AuthDTO
 {
     public class LoginDTO: ContactOrEmailDTO
     {
-        public string? DailCode { get; set; }
         public string? Password { get; set; }
         public ResponseDTO<string> ValidateLogin()
         {

@@ -1,4 +1,5 @@
-﻿using Resido.Database;
+﻿using Newtonsoft.Json;
+using Resido.Database;
 using Resido.Helper;
 using Resido.Model;
 using Resido.Model.CommonDTO;
@@ -31,7 +32,8 @@ namespace Resido.Services
         }
         /// <summary>
         /// Builds a query string from an object's public properties.
-        /// Null values are skipped. Values are URL-encoded.
+        /// Null values are skipped. Keys are converted to camelCase.
+        /// Values are URL-encoded.
         /// </summary>
         public static string BuildQueryString(object obj)
         {
@@ -45,8 +47,19 @@ namespace Resido.Services
                 var value = prop.GetValue(obj, null);
                 if (value != null)
                 {
-                    var encodedName = Uri.EscapeDataString(prop.Name);
+                    // Prefer JsonProperty attribute if present
+                    var jsonProp = prop.GetCustomAttributes(typeof(JsonPropertyAttribute), false)
+                                       .Cast<JsonPropertyAttribute>()
+                                       .FirstOrDefault()?.PropertyName;
+
+                    var name = jsonProp ?? prop.Name;
+
+                    // Convert to camelCase
+                    var camelCaseName = char.ToLowerInvariant(name[0]) + name.Substring(1);
+
+                    var encodedName = Uri.EscapeDataString(camelCaseName);
                     var encodedValue = Uri.EscapeDataString(value.ToString()!);
+
                     queryParams.Add($"{encodedName}={encodedValue}");
                 }
             }
@@ -184,6 +197,7 @@ namespace Resido.Services
             var request = new ListKeysRequestDTO
             {
                 ClientId = _clientId,
+                AccessToken= ttLockList.AccessToken,
                 ClientSecret = ttLockList.AccessToken,
                 LockAlias = ttLockList.LockAlias,
                 GroupId = ttLockList.GroupId,

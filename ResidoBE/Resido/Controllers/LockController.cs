@@ -11,8 +11,9 @@ using Resido.Services.DAL;
 
 namespace Resido.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
+    [TokenAuthorize]
     public class LockController : BaseApiController
     {
         ResidoDbContext _context;

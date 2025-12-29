@@ -21,6 +21,7 @@ namespace Resido.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [TokenAuthorize]
     public class EkeysController : BaseApiController
     {
         ResidoDbContext _context;

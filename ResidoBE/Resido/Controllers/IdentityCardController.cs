@@ -14,6 +14,7 @@ namespace Resido.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [TokenAuthorize]
     public class IdentityCardController : BaseApiController
     {
         ResidoDbContext _context;
