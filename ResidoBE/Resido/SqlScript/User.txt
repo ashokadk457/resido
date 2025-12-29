@@ -1,0 +1,40 @@
+INSERT INTO public."Users"
+(
+    "Id",
+    "FirstName",
+    "LastName",
+    "Email",
+    "DialCode",
+    "PhoneNumber",
+    "UserStatus",
+    "UserType",
+    "IsPhoneVerified",
+    "IsEmailVerified",
+    "IsEkeysSingnUp",
+    "TTLockUsername",
+    "TTLockHashPassword",
+    "IsActive",
+    "FailedLoginAttempts",
+    "CreatedAt",
+    "UpdatedAt"
+)
+VALUES
+(
+    gen_random_uuid(),
+    'Ashok',
+    'Office',
+    'ashok.patel@adequateinfsoft.com',
+    '+91',
+    '8287528619',
+    0, -- Active
+    1, -- Admin
+    true,
+    true,
+    false,
+    'faige_ashokpatel1159',
+    'ae1be7237828a4db0dd762a9455f5495',
+    true,
+    0,
+    NOW(),
+    NOW()
+);

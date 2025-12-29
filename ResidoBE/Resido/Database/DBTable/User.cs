@@ -13,7 +13,7 @@ namespace Resido.Database.DBTable
         public string DialCode { get; set; }
         public string PhoneNumber { get; set; }
         public UserStatus UserStatus { get; set; } = UserStatus.Active;
-        public UserType UserUserTypeStatus { get; set; } = UserType.Admin;
+        public UserType UserType { get; set; } = UserType.Admin;
         public bool IsPhoneVerified { get; set; }
         public bool IsEmailVerified { get; set; }
         public bool IsEkeysSingnUp { get; set; }
