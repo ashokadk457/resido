@@ -98,6 +98,8 @@ namespace Resido.Controllers
                     IsPhoneVerified = false    // default until verification
                 };
 
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
                 return Ok(response.SetSuccess());
 
 
