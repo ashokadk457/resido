@@ -18,7 +18,7 @@
         /// <summary>
         /// Method of deletion (1 = Bluetooth, 2 = Cloud).
         /// </summary>
-        public AddType DeleteType { get; set; } = AddType.Cloud;
+        public OperationType DeleteType { get; set; } = OperationType.Cloud;
     }
 
     /// <summary>

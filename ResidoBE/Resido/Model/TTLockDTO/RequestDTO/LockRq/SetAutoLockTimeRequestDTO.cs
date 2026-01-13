@@ -19,7 +19,7 @@
         /// <summary>
         /// Method of setting auto lock time (1 = Bluetooth, 2 = Cloud).
         /// </summary>
-        public AddType Type { get; set; } = AddType.Bluetooth;
+        public OperationType Type { get; set; } = OperationType.Bluetooth;
     }
 
     /// <summary>

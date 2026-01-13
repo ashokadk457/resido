@@ -43,7 +43,7 @@ namespace Resido.Model.TTLockDTO.ResponseDTO.PasscodeRsp
         /// Method of change (1 = Bluetooth, 2 = Cloud).
         /// Only required when changing passcode itself or period.
         /// </summary>
-        public AddType? ChangeType { get; set; }
+        public OperationType? ChangeType { get; set; }
     }
 
     /// <summary>

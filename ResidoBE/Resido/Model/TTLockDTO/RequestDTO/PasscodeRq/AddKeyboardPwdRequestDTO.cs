@@ -37,7 +37,7 @@
         /// <summary>
         /// Method of adding passcode (1 = Bluetooth, 2 = Cloud).
         /// </summary>
-        public AddType AddType { get; set; } = AddType.Cloud;
+        public OperationType AddType { get; set; } = OperationType.Cloud;
     }
 
     /// <summary>

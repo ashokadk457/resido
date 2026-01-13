@@ -1,8 +1,9 @@
 ﻿namespace Resido
-{/// <summary>
+{
+    /// <summary>
  /// Defines the method of adding a custom passcode.
  /// </summary>
-    public enum AddType
+    public enum OperationType
     {
         /// <summary>
         /// Add via phone Bluetooth.

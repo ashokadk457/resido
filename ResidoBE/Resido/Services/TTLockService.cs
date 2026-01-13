@@ -6,11 +6,13 @@ using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO.RequestDTO;
 using Resido.Model.TTLockDTO.RequestDTO.CardRq;
 using Resido.Model.TTLockDTO.RequestDTO.EkeysRq;
+using Resido.Model.TTLockDTO.RequestDTO.FingerPrintRq;
 using Resido.Model.TTLockDTO.RequestDTO.LockRq;
 using Resido.Model.TTLockDTO.RequestDTO.PasscodeRq;
 using Resido.Model.TTLockDTO.ResponseDTO;
 using Resido.Model.TTLockDTO.ResponseDTO.CardRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp;
+using Resido.Model.TTLockDTO.ResponseDTO.FingerPrintRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.LockRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.PasscodeRsp;
 
@@ -577,6 +579,107 @@ namespace Resido.Services
 
             return await PostToTTLockAsync<TTLockSetAutoLockTimeRequestDTO, SetAutoLockTimeResponseDTO>(
                 $"{BaseUrl}/v3/lock/setAutoLockTime", request);
+        }
+
+        public async Task<ResponseDTO<AddFingerprintResponseDTO>?> AddFingerprintAsync(string accessToken, AddFingerprintRequestDTO dto)
+        {
+            var request = new TTLockAddFingerprintRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                FingerprintNumber = dto.FingerprintNumber,
+                FingerprintType = dto.FingerprintType,
+                FingerprintName = dto.FingerprintName,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate,
+                CyclicConfig = dto.CyclicConfig
+            };
+
+            return await PostToTTLockAsync<TTLockAddFingerprintRequestDTO, AddFingerprintResponseDTO>(
+                $"{BaseUrl}/v3/fingerprint/add", request);
+        }
+
+        public async Task<ResponseDTO<ListFingerprintResponseDTO>?> ListFingerprintsAsync(string accessToken, ListFingerprintRequestDTO dto)
+        {
+            var request = new TTLockListFingerprintRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                SearchStr = dto.SearchStr,
+                PageNo = dto.PageNo,
+                PageSize = dto.PageSize,
+                OrderBy = dto.OrderBy
+            };
+
+            return await GetFromTTLockAsync<TTLockListFingerprintRequestDTO, ListFingerprintResponseDTO>(
+                $"{BaseUrl}/v3/fingerprint/list", request);
+        }
+
+        public async Task<ResponseDTO<DeleteFingerprintResponseDTO>?> DeleteFingerprintAsync(string accessToken, DeleteFingerprintRequestDTO dto)
+        {
+            var request = new TTLockDeleteFingerprintRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                FingerprintId = dto.FingerprintId,
+                DeleteType = (int)dto.DeleteType
+            };
+
+            return await PostToTTLockAsync<TTLockDeleteFingerprintRequestDTO, DeleteFingerprintResponseDTO>(
+                $"{BaseUrl}/v3/fingerprint/delete", request);
+        }
+        public async Task<ResponseDTO<ChangeFingerprintPeriodResponseDTO>?> ChangeFingerprintPeriodAsync(string accessToken, ChangeFingerprintPeriodRequestDTO dto)
+        {
+            var request = new TTLockChangeFingerprintPeriodRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                FingerprintId = dto.FingerprintId,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate,
+                CyclicConfig = dto.CyclicConfig,
+                ChangeType = (int)dto.ChangeType
+            };
+
+            return await PostToTTLockAsync<TTLockChangeFingerprintPeriodRequestDTO, ChangeFingerprintPeriodResponseDTO>(
+                $"{BaseUrl}/v3/fingerprint/changePeriod", request);
+        }
+        public async Task<ResponseDTO<ClearFingerprintResponseDTO>?> ClearFingerprintAsync(string accessToken, ClearFingerprintRequestDTO dto)
+        {
+            var request = new TTLockClearFingerprintRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId
+            };
+
+            return await PostToTTLockAsync<TTLockClearFingerprintRequestDTO, ClearFingerprintResponseDTO>(
+                $"{BaseUrl}/v3/fingerprint/clear", request);
+        }
+
+        public async Task<ResponseDTO<RenameFingerprintResponseDTO>?> RenameFingerprintAsync(string accessToken, RenameFingerprintRequestDTO dto)
+        {
+            var request = new TTLockRenameFingerprintRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                FingerprintId = dto.FingerprintId,
+                FingerprintName = dto.FingerprintName
+            };
+
+            return await PostToTTLockAsync<TTLockRenameFingerprintRequestDTO, RenameFingerprintResponseDTO>(
+                $"{BaseUrl}/v3/fingerprint/rename", request);
         }
 
         private string GetTimestamp()
