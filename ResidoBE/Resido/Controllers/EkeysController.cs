@@ -331,9 +331,9 @@ namespace Resido.Controllers
 
 
         // POST: /api/Ekeys/DeleteEkey
-        [HttpPost]
+        [HttpDelete]
         [TokenAuthorize]
-        public async Task<ActionResult<ResponseDTO<DeleteKeyResponseDTO>>> DeleteEkey([FromBody] int keyId)
+        public async Task<ActionResult<ResponseDTO<DeleteKeyResponseDTO>>> DeleteEkey(int keyId)
         {
             var response = new ResponseDTO<DeleteKeyResponseDTO>();
             response.SetFailed();
