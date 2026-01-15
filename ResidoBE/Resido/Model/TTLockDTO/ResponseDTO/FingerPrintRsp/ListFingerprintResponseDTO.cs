@@ -22,12 +22,15 @@ namespace Resido.Model.TTLockDTO.ResponseDTO.FingerPrintRsp
     /// <summary>
     /// TTLock API response for list fingerprints.
     /// </summary>
-    public class ListFingerprintResponseDTO
+    public class ListFingerprintResponseDTO:ITTLockErrorResponse
     {
         public List<FingerprintRecordDTO> List { get; set; }
         public int PageNo { get; set; }
         public int PageSize { get; set; }
         public int Pages { get; set; }
         public int Total { get; set; }
+        // TTLock error response fields
+        public int Errcode { get; set; }
+        public string Errmsg { get; set; }
     }
 }

@@ -33,6 +33,73 @@ namespace Resido.Controllers
             _ttLockHelper = tTLockHelper;
             _serviceScopeFactory = serviceScopeFactory;
         }
+        // GET: /api/Locks/ListLocks
+        [HttpGet]
+        public async Task<ActionResult<ResponseDTO<ListLocksResponseDTO>>> ListLocks([FromQuery] ListLocksRequestDTO dto)
+        {
+            var response = new ResponseDTO<ListLocksResponseDTO>();
+            response.SetFailed();
+
+            try
+            {
+                var token = await GetAccessTokenEntityAsync();
+                if (!token.IsValidAccessToken())
+                    return Ok(response.SetMessage(Resource.InvalidAccessToken));
+
+                var result = await _ttLockHelper.ListLocksAsync(dto, token.AccessToken);
+
+                if (result.IsSuccessCode())
+                {
+                    response.Data = result.Data;
+                    response.SetSuccess();
+                }
+                else
+                {
+                    response.SetMessage(result.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                response.SetMessage(ex.Message);
+            }
+
+            return Ok(response);
+        }
+
+        // GET: /api/Locks/GetLockDetail
+        [HttpGet]
+        [TokenAuthorize]
+        public async Task<ActionResult<ResponseDTO<GetLockDetailResponseDTO>>> GetLockDetail(int lockId)
+        {
+            var response = new ResponseDTO<GetLockDetailResponseDTO>();
+            response.SetFailed();
+
+            try
+            {
+                var token = await GetAccessTokenEntityAsync();
+                if (!token.IsValidAccessToken())
+                    return Ok(response.SetMessage(Resource.InvalidAccessToken));
+
+                var result = await _ttLockHelper.GetLockDetailAsync(token.AccessToken, lockId);
+
+                if (result != null && result.Data != null && result.IsSuccessCode())
+                {
+                    response.Data = result.Data;
+                    response.SetSuccess();
+                }
+                else
+                {
+                    response.SetMessage(result?.Data?.Errmsg);
+                }
+            }
+            catch (Exception ex)
+            {
+                response.SetMessage(ex.Message);
+            }
+
+            return Ok(response);
+        }
+
 
         // POST: /api/Lock/InitializeLock
         [HttpPost]

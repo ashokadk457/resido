@@ -11,6 +11,7 @@ using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO;
 using Resido.Model.TTLockDTO.RequestDTO;
 using Resido.Model.TTLockDTO.RequestDTO.EkeysRq;
+using Resido.Model.TTLockDTO.RequestDTO.LockRq;
 using Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp;
 using Resido.Resources;
 using Resido.Services;
@@ -45,33 +46,85 @@ namespace Resido.Controllers
             _serviceScopeFactory = serviceScopeFactory;
         }
         // POST: /api/Ekeys/GetAllEkeys
+        // POST: /api/Ekeys/GetAllEkeys
         [HttpPost]
         [TokenAuthorize]
         public async Task<ActionResult<ResponseDTO<ListKeysResponseDTO>>> GetAllEkeys([FromBody] EkeysRequestDTO dto)
         {
             var response = new ResponseDTO<ListKeysResponseDTO>();
-            response.SetSuccess();
+            response.SetFailed();
 
             try
             {
                 var token = await GetAccessTokenEntityAsync();
+                if (!token.IsValidAccessToken())
+                    return Ok(response.SetMessage(Resource.InvalidAccessToken));
 
-                // 🔑 Build request DTO for TTLock
+                // 🔑 Step 1: Get lock list of the account
+                var lockListRequest = new ListLocksRequestDTO
+                {
+                    PageNo = 1,
+                    PageSize = 1000, // fetch all locks
+                    GroupId = dto.GroupId,
+                    LockAlias = dto.LockAlias
+                };
+
+                var lockListResponse = await _ttLockHelper.ListLocksAsync(lockListRequest, token.AccessToken);
+
+
+                // 🔑 Step 3: Get eKeys for the lock
                 var listRequest = new ListKeysRequestDTO
                 {
                     AccessToken = token.AccessToken,
                     PageNo = dto.PageNo,
                     PageSize = dto.PageSize,
-                    LockAlias = dto.LockAlias,   // optional, if you extend EkeysRequestDTO
-                    GroupId = dto.GroupId        // optional, if you extend EkeysRequestDTO
+                    LockAlias = dto.LockAlias,
+                    GroupId = dto.GroupId
                 };
 
-                // 🔑 Call TTLock service with dynamic pageNo and pageSize
                 var ekeyResponse = await _ttLockHelper.ListKeysAsync(listRequest);
-
-                if (ekeyResponse?.Data?.List?.Any() ?? false)
+                if (ekeyResponse.IsSuccessCode())
                 {
-                    response.Data = ekeyResponse.Data;
+                    
+                    if (ekeyResponse?.Data?.List?.Any() ?? false)
+                    {
+
+                        // If lock list is NULL → set HasGateway = false for all
+                        if (lockListResponse?.Data?.List == null)
+                        {
+                            ekeyResponse.Data.List.ForEach(k =>
+                            {
+                                if (k != null)
+                                    k.HasGateway = 0;
+                            });
+
+                        }
+                        else
+                        {
+                            // Create lookup dictionary
+                            var lockGatewayMap = lockListResponse.Data.List
+                                .Where(x => x != null)
+                                .ToDictionary(x => x.LockId, x => x.HasGateway);
+
+                            // Map values
+                            foreach (var key in ekeyResponse.Data.List)
+                            {
+                                if (key == null)
+                                    continue;
+
+                                key.HasGateway = lockGatewayMap.TryGetValue(key.LockId, out var hasGateway)
+                                    ? hasGateway
+                                    : 0;
+                            }
+
+                        }
+                        response.Data = ekeyResponse.Data;
+                    }
+                    response.SetSuccess();
+                }
+                else
+                {
+                    response.SetMessage(ekeyResponse.Message);
                 }
             }
             catch (Exception ex)
@@ -81,7 +134,38 @@ namespace Resido.Controllers
 
             return Ok(response);
         }
+        // GET: /api/Locks/ListEKeys
+        [HttpGet]
+        public async Task<ActionResult<ResponseDTO<ListEKeysResponseDTO>>> ListEKeys([FromQuery] ListEKeysRequestDTO dto)
+        {
+            var response = new ResponseDTO<ListEKeysResponseDTO>();
+            response.SetFailed();
 
+            try
+            {
+                var token = await GetAccessTokenEntityAsync();
+                if (!token.IsValidAccessToken())
+                    return Ok(response.SetMessage(Resource.InvalidAccessToken));
+
+                var result = await _ttLockHelper.ListEKeysAsync(token.AccessToken, dto);
+
+                if (result.IsSuccessCode())
+                {
+                    response.Data = result.Data;
+                    response.SetSuccess();
+                }
+                else
+                {
+                    response.SetMessage(result.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                response.SetMessage(ex.Message);
+            }
+
+            return Ok(response);
+        }
 
         // POST: /api/Ekeys/SendKey
         [HttpPost]
@@ -509,7 +593,7 @@ namespace Resido.Controllers
             try
             {
                 var token = await GetAccessTokenEntityAsync();
-               
+
                 var unauthorizeResponse = await _ttLockHelper.UnauthorizeKeyAsync(
                     token.AccessToken,
                     dto.LockId,

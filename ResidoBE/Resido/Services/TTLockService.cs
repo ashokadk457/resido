@@ -211,6 +211,25 @@ namespace Resido.Services
             return await PostToTTLockAsync<ListKeysRequestDTO, ListKeysResponseDTO>(
                 $"{BaseUrl}/v3/key/list", request);
         }
+        public async Task<ResponseDTO<ListEKeysResponseDTO>?> ListEKeysAsync(string accessToken, ListEKeysRequestDTO dto)
+        {
+            var request = new TTLockListEKeysRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                SearchStr = dto.SearchStr,
+                KeyRight = dto.KeyRight,
+                PageNo = dto.PageNo,
+                PageSize = dto.PageSize,
+                OrderBy = dto.OrderBy
+            };
+
+            return await GetFromTTLockAsync<TTLockListEKeysRequestDTO, ListEKeysResponseDTO>(
+                $"{BaseUrl}/v3/lock/listKey", request);
+        }
+
         public async Task<ResponseDTO<DeleteKeyResponseDTO>?> DeleteKeyAsync(string accessToken, int keyId)
         {
             var request = new DeleteKeyRequestDTO
@@ -579,6 +598,37 @@ namespace Resido.Services
 
             return await PostToTTLockAsync<TTLockSetAutoLockTimeRequestDTO, SetAutoLockTimeResponseDTO>(
                 $"{BaseUrl}/v3/lock/setAutoLockTime", request);
+        }
+
+        public async Task<ResponseDTO<ListLocksResponseDTO>?> ListLocksAsync(ListLocksRequestDTO dto, string accessToken)
+        {
+            var request = new TTLockListLocksRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockAlias = dto.LockAlias,
+                GroupId = dto.GroupId,
+                PageNo = dto.PageNo,
+                PageSize = dto.PageSize,
+                Type = dto.Type
+            };
+
+            return await GetFromTTLockAsync<TTLockListLocksRequestDTO, ListLocksResponseDTO>(
+                $"{BaseUrl}/v3/lock/list", request);
+        }
+        public async Task<ResponseDTO<GetLockDetailResponseDTO>?> GetLockDetailAsync(string accessToken,int lockId)
+        {
+            var request = new TTLockGetLockDetailRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = lockId
+            };
+
+            return await GetFromTTLockAsync<TTLockGetLockDetailRequestDTO, GetLockDetailResponseDTO>(
+                $"{BaseUrl}/v3/lock/detail", request);
         }
 
         public async Task<ResponseDTO<AddFingerprintResponseDTO>?> AddFingerprintAsync(string accessToken, AddFingerprintRequestDTO dto)

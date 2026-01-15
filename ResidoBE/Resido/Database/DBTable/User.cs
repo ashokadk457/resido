@@ -9,9 +9,9 @@ namespace Resido.Database.DBTable
         // Profile Information
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public string Email { get; set; }
-        public string DialCode { get; set; }
-        public string PhoneNumber { get; set; }
+        public string? Email { get; set; }
+        public string? DialCode { get; set; }
+        public string? PhoneNumber { get; set; }
         public UserStatus UserStatus { get; set; } = UserStatus.Active;
         public UserType UserType { get; set; } = UserType.Admin;
         public bool IsPhoneVerified { get; set; }
