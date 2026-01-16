@@ -205,6 +205,15 @@ namespace Resido.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid or unauthorized smart lock..
+        /// </summary>
+        public static string InvalidSmartLock {
+            get {
+                return ResourceManager.GetString("InvalidSmartLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid username or password. Please try again..
         /// </summary>
         public static string InvalidUsernameOrPassword {

@@ -52,6 +52,9 @@ namespace Resido.Controllers
                 var token = await GetAccessTokenEntityAsync();
                 var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
 
+                if (smartLock == null)
+                    return Ok(response.SetMessage(Resource.InvalidSmartLock));
+
                 if (!token.IsValidAccessToken())
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
 
@@ -129,6 +132,9 @@ namespace Resido.Controllers
                 var token = await GetAccessTokenEntityAsync();
                 if (!token.IsValidAccessToken())
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
+
+                if (smartLock == null)
+                    return Ok(response.SetMessage(Resource.InvalidSmartLock));
 
                 var result = await _ttLockHelper.DeleteCardAsync(token.AccessToken, dto);
 

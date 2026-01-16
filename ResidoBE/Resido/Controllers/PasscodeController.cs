@@ -51,6 +51,9 @@ namespace Resido.Controllers
 
                 var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
 
+                if (smartLock == null)
+                    return Ok(response.SetMessage(Resource.InvalidSmartLock));
+
                 var result = await _ttLockHelper.GetKeyboardPwdAsync(token.AccessToken, dto);
 
                 if (result.IsSuccessCode())
@@ -93,6 +96,9 @@ namespace Resido.Controllers
 
                 if (!token.IsValidAccessToken())
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
+
+                if (smartLock == null)
+                    return Ok(response.SetMessage(Resource.InvalidSmartLock));
 
                 var result = await _ttLockHelper.AddKeyboardPwdAsync(token.AccessToken, dto);
 
@@ -167,6 +173,7 @@ namespace Resido.Controllers
                 var token = await GetAccessTokenEntityAsync();
                 if (!token.IsValidAccessToken())
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
+
 
                 var result = await _ttLockHelper.DeleteKeyboardPwdAsync(token.AccessToken, dto);
 

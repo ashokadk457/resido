@@ -55,6 +55,9 @@ namespace Resido.Controllers
 
                 var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
 
+                if (smartLock == null)
+                    return Ok(response.SetMessage(Resource.InvalidSmartLock));
+
                 var result = await _ttLockHelper.AddFingerprintAsync(token.AccessToken, dto);
 
                 if (result.IsSuccessCode())
@@ -129,6 +132,9 @@ namespace Resido.Controllers
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
 
                 var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
+
+                if (smartLock == null)
+                    return Ok(response.SetMessage(Resource.InvalidSmartLock));
 
                 var result = await _ttLockHelper.DeleteFingerprintAsync(token.AccessToken, dto);
 

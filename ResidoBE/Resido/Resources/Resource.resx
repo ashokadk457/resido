@@ -291,4 +291,8 @@
     <value>Welcome to ZafeLock – Your Access Details Inside</value>
     <comment>Welcome to ZafeLock – Your Access Details Inside</comment>
   </data>
+  <data name="InvalidSmartLock" xml:space="preserve">
+    <value>Invalid or unauthorized smart lock.</value>
+    <comment>Invalid or unauthorized smart lock.</comment>
+  </data>
 </root>
