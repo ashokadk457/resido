@@ -1,4 +1,6 @@
-﻿namespace Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp
+﻿using Resido.Model.TTLockDTO.ResponseDTO.LockRsp;
+
+namespace Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp
 {
     public class ListKeysResponseDTO : ITTLockErrorResponse
     {
@@ -13,7 +15,7 @@
         public string Errmsg { get; set; }
     }
 
-    public class TTLockKeyDTO
+    public class TTLockKeyDTO:SmartLockUsageCountDTO
     {
         public int KeyId { get; set; }
         public string LockData { get; set; }
@@ -28,7 +30,7 @@
         public long StartDate { get; set; }
         public long EndDate { get; set; }
         public string Remarks { get; set; }
-        public int KeyRight { get; set; }
+        public int KeyRight { get; set; }//keyRight	Int	Is ekey authorized: 0-NO, 1-yes
         public string FeatureValue { get; set; }
         public int RemoteEnable { get; set; }
         public int PassageMode { get; set; }

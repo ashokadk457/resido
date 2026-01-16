@@ -4,6 +4,7 @@ using Resido.Database;
 using Resido.Database.DBTable;
 using Resido.Helper;
 using Resido.Model.TTLockDTO.ResponseDTO;
+using Resido.Model.TTLockDTO.ResponseDTO.LockRsp;
 using Resido.Resources;
 
 namespace Resido.Services.DAL
@@ -19,6 +20,56 @@ namespace Resido.Services.DAL
             _userService = userService;
             _serviceScopeFactory = serviceScopeFactory;
         }
+        internal async Task<Dictionary<Guid, SmartLockUsageCountDTO>> GetSmartLockUsageCountsAsync(List<Guid> smartLockIds)
+        {
+            var result = new Dictionary<Guid, SmartLockUsageCountDTO>();
+
+            // Grouped counts (single DB hit per table)
+            var pinCounts = await _context.PinCodes
+                .Where(x => smartLockIds.Contains(x.SmartLockId))
+                .GroupBy(x => x.SmartLockId)
+                .Select(g => new { SmartLockId = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(x => x.SmartLockId, x => x.Count);
+
+            var cardCounts = await _context.Cards
+                .Where(x => smartLockIds.Contains(x.SmartLockId))
+                .GroupBy(x => x.SmartLockId)
+                .Select(g => new { SmartLockId = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(x => x.SmartLockId, x => x.Count);
+
+            var fingerprintCounts = await _context.Fingerprints
+                .Where(x => smartLockIds.Contains(x.SmartLockId))
+                .GroupBy(x => x.SmartLockId)
+                .Select(g => new { SmartLockId = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(x => x.SmartLockId, x => x.Count);
+
+            var ekeyCounts = await _context.EKeys
+                .Where(x => smartLockIds.Contains(x.SmartLockId))
+                .GroupBy(x => x.SmartLockId)
+                .Select(g => new { SmartLockId = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(x => x.SmartLockId, x => x.Count);
+
+            foreach (var lockId in smartLockIds)
+            {
+                result[lockId] = new SmartLockUsageCountModel
+                {
+                    PinCodeCount = pinCounts.GetValueOrDefault(lockId),
+                    PinCodeLimitCount = 250,
+
+                    CardCount = cardCounts.GetValueOrDefault(lockId),
+                    CardLimitCount = 1000,
+
+                    FingerprintCount = fingerprintCounts.GetValueOrDefault(lockId),
+                    FingerprintLimitCount = 100,
+
+                    EkeyCount = ekeyCounts.GetValueOrDefault(lockId),
+                    EkeyLimitCount = 500
+                };
+            }
+
+            return result;
+        }
+
         public void SaveAcccesAndRefreshToken(User user, AccessTokenResponseDTO token)
         {
             var access = _context.AccessRefreshTokens.FirstOrDefault(a => a.UserId == user.Id);

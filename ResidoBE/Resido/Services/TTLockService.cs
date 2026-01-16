@@ -7,6 +7,7 @@ using Resido.Model.TTLockDTO.RequestDTO;
 using Resido.Model.TTLockDTO.RequestDTO.CardRq;
 using Resido.Model.TTLockDTO.RequestDTO.EkeysRq;
 using Resido.Model.TTLockDTO.RequestDTO.FingerPrintRq;
+using Resido.Model.TTLockDTO.RequestDTO.GatewayRq;
 using Resido.Model.TTLockDTO.RequestDTO.LockRq;
 using Resido.Model.TTLockDTO.RequestDTO.LockSettingRq;
 using Resido.Model.TTLockDTO.RequestDTO.PasscodeRq;
@@ -14,6 +15,7 @@ using Resido.Model.TTLockDTO.ResponseDTO;
 using Resido.Model.TTLockDTO.ResponseDTO.CardRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.FingerPrintRsp;
+using Resido.Model.TTLockDTO.ResponseDTO.GatewayRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.LockRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.LockSettingRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.PasscodeRsp;
@@ -764,7 +766,235 @@ namespace Resido.Services
             return await PostToTTLockAsync<TTLockUpdateLockDataRequestDTO, UpdateLockDataResponseDTO>(
                 $"{BaseUrl}/v3/lock/updateLockData", request);
         }
+        #region GateWay
+        public async Task<ResponseDTO<RemoteLockResponseDTO>?> RemoteLockAsync(string accessToken, RemoteLockRequestDTO dto)
+        {
+            var request = new TTLockRemoteLockRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId
+            };
 
+            return await PostToTTLockAsync<TTLockRemoteLockRequestDTO, RemoteLockResponseDTO>(
+                $"{BaseUrl}/v3/lock/lock", request);
+        }
+        public async Task<ResponseDTO<UnlockLockResponseDTO>?> UnlockLockAsync(string accessToken, UnlockLockRequestDTO dto)
+        {
+            var request = new TTLockUnlockLockRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId
+            };
+
+            return await PostToTTLockAsync<TTLockUnlockLockRequestDTO, UnlockLockResponseDTO>(
+                $"{BaseUrl}/v3/lock/unlock", request);
+        }
+
+        public async Task<ResponseDTO<QueryLockDateResponseDTO>?> QueryLockDateAsync(string accessToken, QueryLockDateRequestDTO dto)
+        {
+            var request = new TTLockQueryLockDateRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId
+            };
+
+            return await GetFromTTLockAsync<TTLockQueryLockDateRequestDTO, QueryLockDateResponseDTO>(
+                $"{BaseUrl}/v3/lock/queryDate", request);
+        }
+
+        public async Task<ResponseDTO<UpdateLockDateResponseDTO>?> UpdateLockDateAsync(string accessToken, UpdateLockDateRequestDTO dto)
+        {
+            var request = new TTLockUpdateLockDateRequestDTO
+            {
+                ClientId = _clientId,
+                Date = dto.Date,
+                AccessToken = accessToken,
+                LockId = dto.LockId
+            };
+
+            return await PostToTTLockAsync<TTLockUpdateLockDateRequestDTO, UpdateLockDateResponseDTO>(
+                $"{BaseUrl}/v3/lock/updateDate", request);
+        }
+        public async Task<ResponseDTO<ListGatewaysResponseDTO>?> ListGatewaysAsync(string accessToken, ListGatewaysRequestDTO dto)
+        {
+            var request = new TTLockListGatewaysRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                PageNo = dto.PageNo,
+                PageSize = dto.PageSize,
+                OrderBy = dto.OrderBy
+            };
+
+            return await GetFromTTLockAsync<TTLockListGatewaysRequestDTO, ListGatewaysResponseDTO>(
+                $"{BaseUrl}/v3/gateway/list", request);
+        }
+
+        public async Task<ResponseDTO<DeleteGatewayResponseDTO>?> DeleteGatewayAsync(string accessToken, DeleteGatewayRequestDTO dto)
+        {
+            var request = new TTLockDeleteGatewayRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                GatewayId = dto.GatewayId
+            };
+
+            return await PostToTTLockAsync<TTLockDeleteGatewayRequestDTO, DeleteGatewayResponseDTO>(
+                $"{BaseUrl}/v3/gateway/delete", request);
+        }
+
+        public async Task<ResponseDTO<RenameGatewayResponseDTO>?> RenameGatewayAsync(string accessToken, RenameGatewayRequestDTO dto)
+        {
+            var request = new TTLockRenameGatewayRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                GatewayId = dto.GatewayId,
+                GatewayName = dto.GatewayName
+            };
+
+            return await PostToTTLockAsync<TTLockRenameGatewayRequestDTO, RenameGatewayResponseDTO>(
+                $"{BaseUrl}/v3/gateway/rename", request);
+        }
+        public async Task<ResponseDTO<ListGatewayLocksResponseDTO>?> ListGatewayLocksAsync(string accessToken, int gatewayId)
+        {
+            var request = new TTLockListGatewayLocksRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                GatewayId = gatewayId
+            };
+
+            return await GetFromTTLockAsync<TTLockListGatewayLocksRequestDTO, ListGatewayLocksResponseDTO>(
+                $"{BaseUrl}/v3/gateway/listLock", request);
+        }
+
+        public async Task<ResponseDTO<ListGatewaysByLockResponseDTO>?> ListGatewaysByLockAsync(string accessToken, int lockId)
+        {
+            var request = new TTLockListGatewaysByLockRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = lockId
+            };
+
+            return await GetFromTTLockAsync<TTLockListGatewaysByLockRequestDTO, ListGatewaysByLockResponseDTO>(
+                $"{BaseUrl}/v3/gateway/listByLock", request);
+        }
+
+        public async Task<ResponseDTO<GetGatewayDetailResponseDTO>?> GetGatewayDetailAsync(string accessToken,int gatewayId)
+        {
+            var request = new TTLockGetGatewayDetailRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                GatewayId = gatewayId
+            };
+
+            return await GetFromTTLockAsync<TTLockGetGatewayDetailRequestDTO, GetGatewayDetailResponseDTO>(
+                $"{BaseUrl}/v3/gateway/detail", request);
+        }
+
+        public async Task<ResponseDTO<IsGatewayInitSuccessResponseDTO>?> IsGatewayInitSuccessAsync(string accessToken, IsGatewayInitSuccessRequestDTO dto)
+        {
+            var request = new TTLockIsGatewayInitSuccessRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                GatewayNetMac = dto.GatewayNetMac
+            };
+
+            return await PostToTTLockAsync<TTLockIsGatewayInitSuccessRequestDTO, IsGatewayInitSuccessResponseDTO>(
+                $"{BaseUrl}/v3/gateway/isInitSuccess", request);
+        }
+        public async Task<ResponseDTO<UploadGatewayDetailResponseDTO>?> UploadGatewayDetailAsync(string accessToken, UploadGatewayDetailRequestDTO dto)
+        {
+            var request = new TTLockUploadGatewayDetailRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                GatewayId = dto.GatewayId,
+                ModelNum = dto.ModelNum,
+                HardwareRevision = dto.HardwareRevision,
+                FirmwareRevision = dto.FirmwareRevision,
+                NetworkName = dto.NetworkName
+            };
+
+            return await PostToTTLockAsync<TTLockUploadGatewayDetailRequestDTO, UploadGatewayDetailResponseDTO>(
+                $"{BaseUrl}/v3/gateway/uploadDetail", request);
+        }
+
+        public async Task<ResponseDTO<GatewayUpgradeCheckResponseDTO>?> GatewayUpgradeCheckAsync(string accessToken, GatewayRequestDTO dto)
+        {
+            var request = new TTLockGatewayUpgradeCheckRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                GatewayId = dto.GatewayId
+            };
+
+            return await GetFromTTLockAsync<TTLockGatewayUpgradeCheckRequestDTO, GatewayUpgradeCheckResponseDTO>(
+                $"{BaseUrl}/v3/gateway/upgradeCheck", request);
+        }
+
+        public async Task<ResponseDTO<SetGatewayUpgradeModeResponseDTO>?> SetGatewayUpgradeModeAsync(string accessToken, GatewayRequestDTO dto)
+        {
+            var request = new TTLockSetGatewayUpgradeModeRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                GatewayId = dto.GatewayId
+            };
+
+            return await PostToTTLockAsync<TTLockSetGatewayUpgradeModeRequestDTO, SetGatewayUpgradeModeResponseDTO>(
+                $"{BaseUrl}/v3/gateway/setUpgradeMode", request);
+        }
+
+        public async Task<ResponseDTO<LockUpgradeCheckResponseDTO>?> LockUpgradeCheckAsync(string accessToken, LockUpgradeCheckRequestDTO dto)
+        {
+            var request = new TTLockUpgradeCheckRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId
+            };
+
+            return await PostToTTLockAsync<TTLockUpgradeCheckRequestDTO, LockUpgradeCheckResponseDTO>(
+                $"{BaseUrl}/v3/lock/upgradeCheck", request);
+        }
+        public async Task<ResponseDTO<LockUpgradeRecheckResponseDTO>?> LockUpgradeRecheckAsync(string accessToken, LockUpgradeRecheckRequestDTO dto)
+        {
+            var request = new TTLockUpgradeRecheckRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                LockData = dto.LockData
+            };
+
+            return await PostToTTLockAsync<TTLockUpgradeRecheckRequestDTO, LockUpgradeRecheckResponseDTO>(
+                $"{BaseUrl}/v3/lock/upgradeRecheck", request);
+        }
+
+        #endregion
         private string GetTimestamp()
         {
             return DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString();

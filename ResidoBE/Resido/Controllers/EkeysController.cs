@@ -47,7 +47,6 @@ namespace Resido.Controllers
             _serviceScopeFactory = serviceScopeFactory;
         }
         // POST: /api/Ekeys/GetAllEkeys
-        // POST: /api/Ekeys/GetAllEkeys
         [HttpPost]
         [TokenAuthorize]
         public async Task<ActionResult<ResponseDTO<ListKeysResponseDTO>>> GetAllEkeys([FromBody] EkeysRequestDTO dto)
@@ -91,6 +90,9 @@ namespace Resido.Controllers
                     {
 
                         // If lock list is NULL → set HasGateway = false for all
+
+                        
+
                         if (lockListResponse?.Data?.List == null)
                         {
                             ekeyResponse.Data.List.ForEach(k =>
@@ -102,20 +104,47 @@ namespace Resido.Controllers
                         }
                         else
                         {
+
+                            var ttLockIds = ekeyResponse.Data.List.Where(a => a.KeyRight == 1).Select(x => x.LockId).ToList();
+                            
+                            var smartLocks = await _context.SmartLocks
+                           .Where(x => ttLockIds.Contains(x.TTLockId) && x.UserId == token.UserId)
+                           .ToListAsync();
+                            
+                            var smartLockIds = smartLocks.Select(x => x.Id).ToList();
+
+                            var smartLockIdMap = smartLocks.ToDictionary(x => x.TTLockId, x => x.Id);
+
+                            var usageMap = await _commonDBLogic.GetSmartLockUsageCountsAsync(smartLockIds);
+
                             // Create lookup dictionary
                             var lockGatewayMap = lockListResponse.Data.List
                                 .Where(x => x != null)
                                 .ToDictionary(x => x.LockId, x => x.HasGateway);
-
+                           
                             // Map values
                             foreach (var key in ekeyResponse.Data.List)
                             {
-                                if (key == null)
-                                    continue;
 
                                 key.HasGateway = lockGatewayMap.TryGetValue(key.LockId, out var hasGateway)
                                     ? hasGateway
                                     : 0;
+
+                                if (smartLockIdMap.TryGetValue(key.LockId, out var smartLockId) &&
+                                    usageMap.TryGetValue(smartLockId, out var usage))
+                                {
+                                    key.PinCodeCount = usage.PinCodeCount;
+                                    key.PinCodeLimitCount = usage.PinCodeLimitCount;
+
+                                    key.CardCount = usage.CardCount;
+                                    key.CardLimitCount = usage.CardLimitCount;
+
+                                    key.FingerprintCount = usage.FingerprintCount;
+                                    key.FingerprintLimitCount = usage.FingerprintLimitCount;
+
+                                    key.EkeyCount = usage.EkeyCount;
+                                    key.EkeyLimitCount = usage.EkeyLimitCount;
+                                }
                             }
 
                         }
