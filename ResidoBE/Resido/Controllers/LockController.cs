@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Resido.Database;
+using Resido.Helper;
 using Resido.Helper.TokenAuthorize;
 using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO.RequestDTO.LockRq;
@@ -119,6 +121,33 @@ namespace Resido.Controllers
 
                 if (result.IsSuccessCode())
                 {
+                    var lockId = result.Data.LockId;
+
+                    var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == lockId);
+
+                    if (smartLock != null)
+                    {
+                        smartLock = new Database.DBTable.SmartLock();
+                        smartLock.Mac = dto.Mac;
+                        smartLock.AliasName = dto.LockAlias;
+                        smartLock.Name = dto.LockAlias;
+                        smartLock.LockData = dto.LockData;
+                        smartLock.TTLockId = lockId;
+                        smartLock.UserId = token.UserId;
+                        smartLock.UpdatedAt = DateTimeHelper.GetUtcTime();
+                    }
+                    else
+                    {
+                        smartLock = new Database.DBTable.SmartLock();
+                        smartLock.Mac = dto.Mac;
+                        smartLock.AliasName = dto.LockAlias;
+                        smartLock.Name = dto.LockAlias;
+                        smartLock.LockData = dto.LockData;
+                        smartLock.TTLockId = lockId;
+                        smartLock.UserId = token.UserId;
+                        smartLock.CreatedAt = DateTimeHelper.GetUtcTime();
+                        smartLock.UpdatedAt = DateTimeHelper.GetUtcTime();
+                    }
                     response.Data = result.Data;
                     response.SetSuccess();
                 }
@@ -153,6 +182,18 @@ namespace Resido.Controllers
 
                 if (result.IsSuccessCode())
                 {
+                    var smartLock = await _context.SmartLocks
+                        .Include(a => a.Cards)
+                        .Include(a => a.PinCodes)
+                        .Include(a => a.Fingerprints)
+                        .Include(a => a.EKeys)
+                        .Include(a => a.AccessLogs)
+                        .FirstOrDefaultAsync(a => a.TTLockId == dto.LockId);
+                    if (smartLock != null)
+                    {
+                        _context.SmartLocks.Remove(smartLock);
+                        await _context.SaveChangesAsync();
+                    }
                     response.Data = result.Data;
                     response.SetSuccess();
                 }

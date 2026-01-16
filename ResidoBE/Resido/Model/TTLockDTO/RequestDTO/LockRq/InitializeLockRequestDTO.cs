@@ -10,6 +10,7 @@
         /// </summary>
         public string? LockAlias { get; set; }
 
+        public string Mac { get; set; }
         /// <summary>
         /// Lock data (must be obtained from APP SDK callback).
         /// </summary>
