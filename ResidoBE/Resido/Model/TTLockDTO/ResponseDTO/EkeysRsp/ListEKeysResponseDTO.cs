@@ -18,6 +18,8 @@
         public string SenderUsername { get; set; }
         public string? Remarks { get; set; }
         public long Date { get; set; }
+        public bool IsExpired { get; set; }
+        public bool IsExpiringSoon { get; set; }
     }
 
     /// <summary>

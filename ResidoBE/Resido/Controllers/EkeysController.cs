@@ -91,7 +91,7 @@ namespace Resido.Controllers
 
                         // If lock list is NULL → set HasGateway = false for all
 
-                        
+
 
                         if (lockListResponse?.Data?.List == null)
                         {
@@ -106,11 +106,11 @@ namespace Resido.Controllers
                         {
 
                             var ttLockIds = ekeyResponse.Data.List.Where(a => a.KeyRight == 1).Select(x => x.LockId).ToList();
-                            
+
                             var smartLocks = await _context.SmartLocks
                            .Where(x => ttLockIds.Contains(x.TTLockId) && x.UserId == token.UserId)
                            .ToListAsync();
-                            
+
                             var smartLockIds = smartLocks.Select(x => x.Id).ToList();
 
                             var smartLockIdMap = smartLocks.ToDictionary(x => x.TTLockId, x => x.Id);
@@ -121,7 +121,7 @@ namespace Resido.Controllers
                             var lockGatewayMap = lockListResponse.Data.List
                                 .Where(x => x != null)
                                 .ToDictionary(x => x.LockId, x => x.HasGateway);
-                           
+
                             // Map values
                             foreach (var key in ekeyResponse.Data.List)
                             {
@@ -182,6 +182,16 @@ namespace Resido.Controllers
                 if (result.IsSuccessCode())
                 {
                     response.Data = result.Data;
+
+                    if (response?.Data?.List?.Any() ?? false)
+                    {
+                        foreach (var eKeyRecordDTO in response.Data.List)
+                        {
+                            var range = CommonLogic.CheckExpiry(eKeyRecordDTO.EndDate, 1);
+                            eKeyRecordDTO.IsExpired = range.IsExpired;
+                            eKeyRecordDTO.IsExpiringSoon = range.IsExpiringSoon;
+                        }
+                    }
                     response.SetSuccess();
                 }
                 else

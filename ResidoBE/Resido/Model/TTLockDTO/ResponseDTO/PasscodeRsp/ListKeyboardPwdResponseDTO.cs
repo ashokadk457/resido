@@ -15,6 +15,8 @@
         public long SendDate { get; set; }
         public int IsCustom { get; set; }
         public string SenderUsername { get; set; }
+        public bool IsExpired { get; set; }
+        public bool IsExpiringSoon { get; set; }
     }
 
     /// <summary>

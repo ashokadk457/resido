@@ -11,6 +11,23 @@ namespace Resido.BAL
             user.CreatedAt = DateTimeHelper.GetUtcTime();
             user.UpdatedAt = DateTimeHelper.GetUtcTime();
         }
+        /// <summary>
+        /// Returns whether expired or expiring soon using GetDayRange().
+        /// </summary>
+        public static (bool IsExpired, bool IsExpiringSoon) CheckExpiry(long endDate, int daysRange)
+        {
+            if (endDate <= 0)
+                return (false, false);
+
+            var range = DateTimeHelper.GetDayRange(daysRange);
+            long now = range.now;
+            long daysLater = range.daysLater;
+
+            bool expired = endDate < now;
+            bool expiringSoon = endDate >= now && endDate <= daysLater;
+
+            return (expired, expiringSoon);
+        }
         public static string GenerateUserName(User user)
         {
             string ttlockUsername;

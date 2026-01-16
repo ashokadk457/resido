@@ -17,6 +17,8 @@ namespace Resido.Model.TTLockDTO.ResponseDTO.FingerPrintRsp
         public long CreateDate { get; set; }
         public string SenderUsername { get; set; }
         public List<CyclicConfigDTO>? CyclicConfig { get; set; }
+        public bool IsExpired { get; set; }
+        public bool IsExpiringSoon { get; set; }
     }
 
     /// <summary>

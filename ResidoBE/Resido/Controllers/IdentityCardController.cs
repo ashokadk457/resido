@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Resido.BAL;
 using Resido.Database;
 using Resido.Database.DBTable;
 using Resido.Helper.TokenAuthorize;
@@ -104,6 +105,15 @@ namespace Resido.Controllers
                 if (result.IsSuccessCode())
                 {
                     response.Data = result.Data;
+                    if (response?.Data?.List?.Any() ?? false)
+                    {
+                        foreach (var eKeyRecordDTO in response.Data.List)
+                        {
+                            var range = CommonLogic.CheckExpiry(eKeyRecordDTO.EndDate, 1);
+                            eKeyRecordDTO.IsExpired = range.IsExpired;
+                            eKeyRecordDTO.IsExpiringSoon = range.IsExpiringSoon;
+                        }
+                    }
                     response.SetSuccess();
                 }
                 else

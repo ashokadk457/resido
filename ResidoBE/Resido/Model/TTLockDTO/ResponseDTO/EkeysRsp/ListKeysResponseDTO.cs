@@ -38,6 +38,7 @@ namespace Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp
         public int GroupId { get; set; }
         public string GroupName { get; set; }
         public int HasGateway { get; set; }
+     
     }
 
 }
