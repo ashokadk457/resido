@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Resido.Database;
+using Resido.Database.DBTable;
 using Resido.Helper.TokenAuthorize;
 using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO.RequestDTO.PasscodeRq;
@@ -47,10 +49,19 @@ namespace Resido.Controllers
                 if (!token.IsValidAccessToken())
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
 
+                var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
+
                 var result = await _ttLockHelper.GetKeyboardPwdAsync(token.AccessToken, dto);
 
                 if (result.IsSuccessCode())
                 {
+                    PinCode pin = new PinCode();
+
+                    pin.KeyboardPwdId = result.Data.KeyboardPwdId;
+                    pin.SmartLockId = smartLock.Id;
+                    _context.PinCodes.Add(pin);
+                    _context.SaveChanges();
+
                     response.Data = result.Data;
                     response.SetSuccess();
                 }
@@ -77,6 +88,9 @@ namespace Resido.Controllers
             try
             {
                 var token = await GetAccessTokenEntityAsync();
+
+                var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
+
                 if (!token.IsValidAccessToken())
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
 
@@ -84,6 +98,12 @@ namespace Resido.Controllers
 
                 if (result.IsSuccessCode())
                 {
+                    PinCode pin = new PinCode();
+
+                    pin.KeyboardPwdId = result.Data.KeyboardPwdId;
+                    pin.SmartLockId = smartLock.Id;
+                    _context.PinCodes.Add(pin);
+                    _context.SaveChanges();
                     response.Data = result.Data;
                     response.SetSuccess();
                 }
@@ -152,6 +172,12 @@ namespace Resido.Controllers
 
                 if (result.IsSuccessCode())
                 {
+                    var pinCode = await _context.PinCodes.FirstOrDefaultAsync(a => a.KeyboardPwdId == dto.KeyboardPwdId);
+                    if (pinCode != null)
+                    {
+                        _context.PinCodes.Remove(pinCode);
+                        _context.SaveChanges();
+                    }
                     response.Data = result.Data;
                     response.SetSuccess();
                 }

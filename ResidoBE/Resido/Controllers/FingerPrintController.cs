@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Resido.Database;
+using Resido.Database.DBTable;
 using Resido.Helper.TokenAuthorize;
 using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO.RequestDTO.FingerPrintRq;
@@ -47,13 +49,23 @@ namespace Resido.Controllers
             try
             {
                 var token = await GetAccessTokenEntityAsync();
+
                 if (!token.IsValidAccessToken())
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
+
+                var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
 
                 var result = await _ttLockHelper.AddFingerprintAsync(token.AccessToken, dto);
 
                 if (result.IsSuccessCode())
                 {
+                    Fingerprint fingerprint = new Fingerprint();
+
+                    fingerprint.FingerprintId = result.Data.FingerprintId;
+                    fingerprint.SmartLockId = smartLock.Id;
+                    _context.Fingerprints.Add(fingerprint);
+                    _context.SaveChanges();
+
                     response.Data = result.Data;
                     response.SetSuccess();
                 }
@@ -116,10 +128,18 @@ namespace Resido.Controllers
                 if (!token.IsValidAccessToken())
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
 
+                var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
+
                 var result = await _ttLockHelper.DeleteFingerprintAsync(token.AccessToken, dto);
 
                 if (result.IsSuccessCode())
                 {
+                    var fingerprint = await _context.Fingerprints.FirstOrDefaultAsync(a => a.FingerprintId == dto.FingerprintId);
+                    if (fingerprint != null)
+                    {
+                        _context.Fingerprints.Remove(fingerprint);
+                        _context.SaveChanges();
+                    }
                     response.Data = result.Data;
                     response.SetSuccess();
                 }
@@ -185,6 +205,12 @@ namespace Resido.Controllers
 
                 if (result.IsSuccessCode())
                 {
+                    var fingerprints = await _context.Fingerprints.Where(a => a.SmartLock.TTLockId == dto.LockId).ToListAsync();
+                    if (fingerprints != null)
+                    {
+                        _context.Fingerprints.RemoveRange(fingerprints);
+                        _context.SaveChanges();
+                    }
                     response.Data = result.Data;
                     response.SetSuccess();
                 }

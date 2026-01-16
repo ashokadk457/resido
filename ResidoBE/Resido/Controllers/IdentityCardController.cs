@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Resido.Database;
+using Resido.Database.DBTable;
 using Resido.Helper.TokenAuthorize;
 using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO.RequestDTO.CardRq;
@@ -45,7 +47,11 @@ namespace Resido.Controllers
 
             try
             {
+             
+
                 var token = await GetAccessTokenEntityAsync();
+                var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
+
                 if (!token.IsValidAccessToken())
                     return Ok(response.SetMessage(Resource.InvalidAccessToken));
 
@@ -53,6 +59,13 @@ namespace Resido.Controllers
 
                 if (result.IsSuccessCode())
                 {
+                    Card card = new Card();
+
+                    card.CardId = result.Data.CardId;
+                    card.SmartLockId = smartLock.Id;
+                    _context.Cards.Add(card);
+                    _context.SaveChanges();
+
                     response.Data = result.Data;
                     response.SetSuccess();
                 }
@@ -121,6 +134,12 @@ namespace Resido.Controllers
 
                 if (result.IsSuccessCode())
                 {
+                    Card? card = await _context.Cards.FirstOrDefaultAsync(a => a.CardId == dto.CardId);
+                    if (card != null)
+                    {
+                        _context.Cards.Remove(card);
+                        _context.SaveChanges();
+                    }
                     response.Data = result.Data;
                     response.SetSuccess();
                 }
@@ -189,6 +208,12 @@ namespace Resido.Controllers
 
                 if (result.IsSuccessCode())
                 {
+                    var cards = await _context.Cards.Where(a => a.SmartLock.TTLockId == dto.LockId).ToListAsync();
+                    if (cards != null)
+                    {
+                        _context.Cards.RemoveRange(cards);
+                        _context.SaveChanges();
+                    }
                     response.Data = result.Data;
                     response.SetSuccess();
                 }

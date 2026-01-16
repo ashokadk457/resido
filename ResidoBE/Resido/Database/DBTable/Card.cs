@@ -1,4 +1,6 @@
-﻿namespace Resido.Database.DBTable
+﻿using Resido.Helper;
+
+namespace Resido.Database.DBTable
 {
     public class Card
     {
@@ -11,7 +13,7 @@
 
         public Guid SmartLockId { get; set; }
         public virtual SmartLock SmartLock { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTimeHelper.GetUtcTime();
 
         public DateTime? UpdatedAt { get; set; }
     }

@@ -14,5 +14,9 @@ namespace Resido.Database
         public DbSet<Country> Countries { get; set; } = null!;
         public DbSet<SmartLock> SmartLocks { get; set; } = null!;
         public DbSet<AccessLog> AccessLogs { get; set; } = null!;
+        public DbSet<Card> Cards { get; set; } = null!;
+        public DbSet<EKey> EKeys { get; set; } = null!;
+        public DbSet<Fingerprint> Fingerprints { get; set; } = null!;
+        public DbSet<PinCode> PinCodes { get; set; } = null!;
     }
 }

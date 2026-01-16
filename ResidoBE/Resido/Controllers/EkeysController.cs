@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Resido.BAL;
 using Resido.Database;
 using Resido.Database.DBTable;
@@ -85,7 +86,7 @@ namespace Resido.Controllers
                 var ekeyResponse = await _ttLockHelper.ListKeysAsync(listRequest);
                 if (ekeyResponse.IsSuccessCode())
                 {
-                    
+
                     if (ekeyResponse?.Data?.List?.Any() ?? false)
                     {
 
@@ -179,6 +180,7 @@ namespace Resido.Controllers
             {
                 var token = await GetAccessTokenEntityAsync();
 
+                var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
                 // Normalize receiver input (email or phone) to ensure consistent lookup and validation
                 var contactOrEmail = dto.ReceiverUsername.NormalizeInput();
 
@@ -199,6 +201,15 @@ namespace Resido.Controllers
 
                     if (sendResponse.IsSuccessCode())
                     {
+                        EKey eKey = new EKey();
+
+                        eKey.EKeyId = sendResponse.Data.KeyId;
+                        eKey.SmartLockId = smartLock.Id;
+
+                        _context.EKeys.Add(eKey);
+                        _context.SaveChanges();
+
+
                         response.Data = sendResponse.Data;
 
                         // Send welcome email and SMS asynchronously without blocking the API response
@@ -267,6 +278,14 @@ namespace Resido.Controllers
                 var retryResponse = await _ttLockHelper.SendKeyAsync(token.AccessToken, dto);
                 if (retryResponse.IsSuccessCode())
                 {
+                    EKey eKey = new EKey();
+
+                    eKey.EKeyId = retryResponse.Data.KeyId;
+                    eKey.SmartLockId = smartLock.Id;
+
+                    _context.EKeys.Add(eKey);
+                    _context.SaveChanges();
+
                     // Send welcome email and SMS (new user) asynchronously
                     _ = Task.Run(async () =>
                     {
@@ -430,6 +449,14 @@ namespace Resido.Controllers
 
                 if (deleteResponse?.Data != null && deleteResponse.Data.Errcode == 0)
                 {
+
+
+                    EKey? eKey = await _context.EKeys.FirstOrDefaultAsync(a => a.EKeyId == keyId);
+                    if (eKey != null)
+                    {
+                        _context.EKeys.Remove(eKey);
+                        _context.SaveChanges();
+                    }
                     response.Data = deleteResponse.Data;
                     response.SetSuccess();
                 }
