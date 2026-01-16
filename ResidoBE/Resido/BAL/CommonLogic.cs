@@ -19,7 +19,7 @@ namespace Resido.BAL
             if (endDate <= 0)
                 return (false, false);
 
-            var range = DateTimeHelper.GetDayRange(daysRange);
+            var range = GetDayRange(daysRange);
             long now = range.now;
             long daysLater = range.daysLater;
 
@@ -27,6 +27,12 @@ namespace Resido.BAL
             bool expiringSoon = endDate >= now && endDate <= daysLater;
 
             return (expired, expiringSoon);
+        }
+        public static (long now, long daysLater) GetDayRange(int days)
+        {
+            long now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            long daysLater = now + (days * 24 * 60 * 60 * 1000);
+            return (now, daysLater);
         }
         public static string GenerateUserName(User user)
         {
