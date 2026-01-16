@@ -1,4 +1,4 @@
-﻿namespace Resido.Model.TTLockDTO.ResponseDTO.LockRsp
+﻿namespace Resido.Model.TTLockDTO.ResponseDTO.LockSettingRsp
 {
     /// <summary>
     /// TTLock API response for set auto lock time.
@@ -8,5 +8,4 @@
         public int Errcode { get; set; }
         public string Errmsg { get; set; }
     }
-
 }

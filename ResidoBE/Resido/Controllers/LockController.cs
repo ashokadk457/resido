@@ -265,41 +265,5 @@ namespace Resido.Controllers
             return Ok(response);
         }
 
-        // POST: /api/Lock/SetAutoLockTime
-        [HttpPost]
-        [TokenAuthorize]
-        public async Task<ActionResult<ResponseDTO<SetAutoLockTimeResponseDTO>>> SetAutoLockTime([FromBody] SetAutoLockTimeRequestDTO dto)
-        {
-            var response = new ResponseDTO<SetAutoLockTimeResponseDTO>();
-            response.SetFailed();
-
-            try
-            {
-                var token = await GetAccessTokenEntityAsync();
-                if (!token.IsValidAccessToken())
-                    return Ok(response.SetMessage(Resource.InvalidAccessToken));
-
-                var result = await _ttLockHelper.SetAutoLockTimeAsync(token.AccessToken, dto);
-
-                if (result.IsSuccessCode())
-                {
-                    response.Data = result.Data;
-                    response.SetSuccess();
-                }
-                else
-                {
-                    response.SetMessage(result?.Data?.Errmsg);
-                }
-            }
-            catch (Exception ex)
-            {
-                response.SetMessage(ex.Message);
-            }
-
-            return Ok(response);
-        }
-
-
-
     }
 }

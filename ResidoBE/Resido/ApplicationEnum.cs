@@ -1,5 +1,19 @@
 ﻿namespace Resido
 {
+    /// <summary>
+    /// Defines the lock setting types.
+    /// </summary>
+    public enum LockSettingType
+    {
+        PrivacyLock = 2,
+        TamperAlert = 3,
+        ResetButton = 4,
+        LockSound = 6,
+        OpenDirection = 7,
+        SoundVolume = 8,
+        WifiPowerSaving = 10,
+        DoorUnclosedAlarmTime = 11
+    }
 
     public enum AccessRecordType
     {

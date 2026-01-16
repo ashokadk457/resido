@@ -8,12 +8,14 @@ using Resido.Model.TTLockDTO.RequestDTO.CardRq;
 using Resido.Model.TTLockDTO.RequestDTO.EkeysRq;
 using Resido.Model.TTLockDTO.RequestDTO.FingerPrintRq;
 using Resido.Model.TTLockDTO.RequestDTO.LockRq;
+using Resido.Model.TTLockDTO.RequestDTO.LockSettingRq;
 using Resido.Model.TTLockDTO.RequestDTO.PasscodeRq;
 using Resido.Model.TTLockDTO.ResponseDTO;
 using Resido.Model.TTLockDTO.ResponseDTO.CardRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.EkeysRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.FingerPrintRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.LockRsp;
+using Resido.Model.TTLockDTO.ResponseDTO.LockSettingRsp;
 using Resido.Model.TTLockDTO.ResponseDTO.PasscodeRsp;
 
 namespace Resido.Services
@@ -584,21 +586,6 @@ namespace Resido.Services
             return await PostToTTLockAsync<TTLockInitializeLockRequestDTO, InitializeLockResponseDTO>(
                 $"{BaseUrl}/v3/lock/initialize", request);
         }
-        public async Task<ResponseDTO<SetAutoLockTimeResponseDTO>?> SetAutoLockTimeAsync(string accessToken, SetAutoLockTimeRequestDTO dto)
-        {
-            var request = new TTLockSetAutoLockTimeRequestDTO
-            {
-                ClientId = _clientId,
-                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
-                AccessToken = accessToken,
-                LockId = dto.LockId,
-                Seconds = dto.Seconds,
-                Type = (int)dto.Type
-            };
-
-            return await PostToTTLockAsync<TTLockSetAutoLockTimeRequestDTO, SetAutoLockTimeResponseDTO>(
-                $"{BaseUrl}/v3/lock/setAutoLockTime", request);
-        }
 
         public async Task<ResponseDTO<ListLocksResponseDTO>?> ListLocksAsync(ListLocksRequestDTO dto, string accessToken)
         {
@@ -730,6 +717,52 @@ namespace Resido.Services
 
             return await PostToTTLockAsync<TTLockRenameFingerprintRequestDTO, RenameFingerprintResponseDTO>(
                 $"{BaseUrl}/v3/fingerprint/rename", request);
+        }
+        public async Task<ResponseDTO<ModifyLockSettingsResponseDTO>?> ModifyLockSettingsAsync(string accessToken, ModifyLockSettingsRequestDTO dto)
+        {
+            var request = new TTLockModifyLockSettingsRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                Type = (int)dto.Type,
+                Value = dto.Value,
+                ChangeType = (int)dto.ChangeType
+            };
+
+            return await PostToTTLockAsync<TTLockModifyLockSettingsRequestDTO, ModifyLockSettingsResponseDTO>(
+                $"{BaseUrl}/v3/lock/updateSetting", request);
+        }
+        public async Task<ResponseDTO<SetAutoLockTimeResponseDTO>?> SetAutoLockTimeAsync(string accessToken, SetAutoLockTimeRequestDTO dto)
+        {
+            var request = new TTLockSetAutoLockTimeRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                Seconds = dto.Seconds,
+                Type = (int)dto.Type
+            };
+
+            return await PostToTTLockAsync<TTLockSetAutoLockTimeRequestDTO, SetAutoLockTimeResponseDTO>(
+                $"{BaseUrl}/v3/lock/setAutoLockTime", request);
+        }
+
+        public async Task<ResponseDTO<UpdateLockDataResponseDTO>?> UpdateLockDataAsync(string accessToken, UpdateLockDataRequestDTO dto)
+        {
+            var request = new TTLockUpdateLockDataRequestDTO
+            {
+                ClientId = _clientId,
+                Date = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
+                AccessToken = accessToken,
+                LockId = dto.LockId,
+                LockData = dto.LockData
+            };
+
+            return await PostToTTLockAsync<TTLockUpdateLockDataRequestDTO, UpdateLockDataResponseDTO>(
+                $"{BaseUrl}/v3/lock/updateLockData", request);
         }
 
         private string GetTimestamp()

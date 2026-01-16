@@ -1,4 +1,4 @@
-﻿namespace Resido.Model.TTLockDTO.RequestDTO.LockRq
+﻿namespace Resido.Model.TTLockDTO.RequestDTO.LockSettingRq
 {
     /// <summary>
     /// Client-facing request DTO (no access token).
