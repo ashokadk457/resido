@@ -1,8 +1,19 @@
 ﻿namespace Resido
 {
+
+    public enum AccessRecordType
+    {
+        Face = -5,
+        QrCode = -4,
+        KeyboardPassword = 4,
+        IcCard = 7,
+        Fingerprint = 8,
+        Remote = 55
+    }
+
     /// <summary>
- /// Defines the method of adding a custom passcode.
- /// </summary>
+    /// Defines the method of adding a custom passcode.
+    /// </summary>
     public enum OperationType
     {
         /// <summary>

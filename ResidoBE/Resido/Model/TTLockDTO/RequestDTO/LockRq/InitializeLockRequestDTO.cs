@@ -26,6 +26,9 @@
         /// Only required for NB-IoT locks.
         /// </summary>
         public int? NbInitSuccess { get; set; }
+
+        public string Category { get; set;}
+        public string Location { get; set; }
     }
 
     /// <summary>

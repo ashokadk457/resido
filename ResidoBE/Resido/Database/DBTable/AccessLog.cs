@@ -8,7 +8,6 @@ namespace Resido.Database.DBTable
         public int LockId { get; set; }
         public string? LockMac { get; set; }
         public int RecordType { get; set; }
-        public int RecordTypeFromLock { get; set; }
         public string? RecordTypeDescription { get; set; }
         public string? Username { get; set; }
         public string? KeyboardPwd { get; set; }

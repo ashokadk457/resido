@@ -17,6 +17,8 @@ namespace Resido.Database.DBTable
         public int ElectricQuantity { get; set; }
         public int GroupId { get; set; }
         public string? GroupName { get; set; }
+        public string? Category { get; set; }
+        public string? Location { get; set; }
         public bool IsNotificationOn { get; set; }
       
         public List<Card>? Cards { get; set; } = new();

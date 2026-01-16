@@ -132,6 +132,8 @@ namespace Resido.Controllers
                         smartLock.AliasName = dto.LockAlias;
                         smartLock.Name = dto.LockAlias;
                         smartLock.LockData = dto.LockData;
+                        smartLock.Category = dto.Category;
+                        smartLock.Location = dto.Location;
                         smartLock.TTLockId = lockId;
                         smartLock.UserId = token.UserId;
                         smartLock.UpdatedAt = DateTimeHelper.GetUtcTime();
@@ -145,6 +147,8 @@ namespace Resido.Controllers
                         smartLock.LockData = dto.LockData;
                         smartLock.TTLockId = lockId;
                         smartLock.UserId = token.UserId;
+                        smartLock.Category = dto.Category;
+                        smartLock.Location = dto.Location;
                         smartLock.CreatedAt = DateTimeHelper.GetUtcTime();
                         smartLock.UpdatedAt = DateTimeHelper.GetUtcTime();
                     }
