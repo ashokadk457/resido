@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Resido.Database;
@@ -11,9 +12,11 @@ using Resido.Database;
 namespace Resido.Migrations
 {
     [DbContext(typeof(ResidoDbContext))]
-    partial class ResidoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260116052612_pincode")]
+    partial class pincode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,6 +60,9 @@ namespace Resido.Migrations
 
                     b.Property<string>("RecordTypeDescription")
                         .HasColumnType("text");
+
+                    b.Property<int>("RecordTypeFromLock")
+                        .HasColumnType("integer");
 
                     b.Property<long>("ServerReceivedLocalTime")
                         .HasColumnType("bigint");
@@ -143,7 +149,7 @@ namespace Resido.Migrations
 
                     b.HasIndex("SmartLockId");
 
-                    b.ToTable("Cards");
+                    b.ToTable("Card");
                 });
 
             modelBuilder.Entity("Resido.Database.DBTable.Country", b =>
@@ -202,7 +208,7 @@ namespace Resido.Migrations
 
                     b.HasIndex("SmartLockId");
 
-                    b.ToTable("EKeys");
+                    b.ToTable("EKey");
                 });
 
             modelBuilder.Entity("Resido.Database.DBTable.Fingerprint", b =>
@@ -231,7 +237,7 @@ namespace Resido.Migrations
 
                     b.HasIndex("SmartLockId");
 
-                    b.ToTable("Fingerprints");
+                    b.ToTable("Fingerprint");
                 });
 
             modelBuilder.Entity("Resido.Database.DBTable.PinCode", b =>
@@ -260,7 +266,7 @@ namespace Resido.Migrations
 
                     b.HasIndex("SmartLockId");
 
-                    b.ToTable("PinCodes");
+                    b.ToTable("PinCode");
                 });
 
             modelBuilder.Entity("Resido.Database.DBTable.SmartLock", b =>
@@ -270,9 +276,6 @@ namespace Resido.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("AliasName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Category")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
@@ -298,9 +301,6 @@ namespace Resido.Migrations
 
                     b.Property<DateTime>("LastBatteryCheck")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Location")
-                        .HasColumnType("text");
 
                     b.Property<string>("LockData")
                         .HasColumnType("text");

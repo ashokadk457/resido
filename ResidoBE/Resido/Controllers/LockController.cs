@@ -86,7 +86,24 @@ namespace Resido.Controllers
 
                 if (result != null && result.Data != null && result.IsSuccessCode())
                 {
+                    response.Data = new GetLockDetailResponseDTO();
+                   
                     response.Data = result.Data;
+                    var smartLock =await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == lockId && a.UserId == token.Id);
+                    if (smartLock != null)
+                    {
+                        response.Data.PinCodeCount =await _context.PinCodes.CountAsync(a => a.SmartLockId == smartLock.Id);
+                        response.Data.PinCodeLimitCount = 250;
+
+                        response.Data.CardCount = await _context.Cards.CountAsync(a => a.SmartLockId == smartLock.Id);
+                        response.Data.CardLimitCount = 1000;
+
+                        response.Data.FingerprintCount = await _context.Fingerprints.CountAsync(a => a.SmartLockId == smartLock.Id);
+                        response.Data.FingerprintLimitCount = 100;
+                       
+                        response.Data.EkeyCount = await _context.EKeys.CountAsync(a => a.SmartLockId == smartLock.Id);
+                        response.Data.EkeyLimitCount = 500;
+                    }
                     response.SetSuccess();
                 }
                 else
