@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a single lock record.
     /// </summary>
-    public class LockRecordDTO
+    public class LockRecordDTO: SmartLockUsageCountDTO
     {
         public int LockId { get; set; }
         public string LockName { get; set; }

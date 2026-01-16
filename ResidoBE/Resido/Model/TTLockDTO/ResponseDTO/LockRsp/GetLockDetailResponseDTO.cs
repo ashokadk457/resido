@@ -3,7 +3,7 @@
     /// <summary>
     /// TTLock API response for lock detail.
     /// </summary>
-    public class GetLockDetailResponseDTO : ITTLockErrorResponse
+    public class GetLockDetailResponseDTO : SmartLockUsageCountDTO, ITTLockErrorResponse
     {
         public int LockId { get; set; }
         public string LockName { get; set; }
@@ -28,15 +28,26 @@
         public int PassageModeAutoUnlock { get; set; }
         public long Date { get; set; }
 
-        public int EkeyLimitCount { get; set; }
-        public int PinCodeLimitCount { get; set; }
-        public int CardLimitCount { get; set; }
-        public int FingerprintLimitCount { get; set; }
-        public int EkeyCount { get; set; }
-        public int PinCodeCount { get; set; }
-        public int CardCount { get; set; }
-        public int FingerprintCount { get; set; }
         public int Errcode { get; set; }
         public string Errmsg { get; set; }
     }
+    public abstract class SmartLockUsageCountDTO
+    {
+        public int PinCodeCount { get; set; }
+        public int PinCodeLimitCount { get; set; }
+
+        public int CardCount { get; set; }
+        public int CardLimitCount { get; set; }
+
+        public int FingerprintCount { get; set; }
+        public int FingerprintLimitCount { get; set; }
+
+        public int EkeyCount { get; set; }
+        public int EkeyLimitCount { get; set; }
+    }
+
+    public  class SmartLockUsageCountModel: SmartLockUsageCountDTO
+    {
+    }
+
 }

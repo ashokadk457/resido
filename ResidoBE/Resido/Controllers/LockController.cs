@@ -53,6 +53,39 @@ namespace Resido.Controllers
                 if (result.IsSuccessCode())
                 {
                     response.Data = result.Data;
+                    if (response.Data?.List?.Any() == true)
+                    {
+                        var ttLockIds = response.Data.List.Select(x => x.LockId).ToList();
+
+                        var smartLocks = await _context.SmartLocks
+                            .Where(x => ttLockIds.Contains(x.TTLockId) && x.UserId == token.UserId)
+                            .ToListAsync();
+
+                        var smartLockIds = smartLocks.Select(x => x.Id).ToList();
+
+                        var usageCounts = await GetSmartLockUsageCountsAsync(smartLockIds);
+
+                        foreach (var lockDto in response.Data.List)
+                        {
+                            var smartLock = smartLocks.FirstOrDefault(x => x.TTLockId == lockDto.LockId);
+                            if (smartLock == null) continue;
+
+                            if (usageCounts.TryGetValue(smartLock.Id, out var usage))
+                            {
+                                lockDto.PinCodeCount = usage.PinCodeCount;
+                                lockDto.PinCodeLimitCount = usage.PinCodeLimitCount;
+
+                                lockDto.CardCount = usage.CardCount;
+                                lockDto.CardLimitCount = usage.CardLimitCount;
+
+                                lockDto.FingerprintCount = usage.FingerprintCount;
+                                lockDto.FingerprintLimitCount = usage.FingerprintLimitCount;
+
+                                lockDto.EkeyCount = usage.EkeyCount;
+                                lockDto.EkeyLimitCount = usage.EkeyLimitCount;
+                            }
+                        }
+                    }
                     response.SetSuccess();
                 }
                 else
@@ -89,20 +122,25 @@ namespace Resido.Controllers
                     response.Data = new GetLockDetailResponseDTO();
                    
                     response.Data = result.Data;
-                    var smartLock =await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == lockId && a.UserId == token.Id);
+                    var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(x => x.TTLockId == lockId && x.UserId == token.UserId);
                     if (smartLock != null)
                     {
-                        response.Data.PinCodeCount =await _context.PinCodes.CountAsync(a => a.SmartLockId == smartLock.Id);
-                        response.Data.PinCodeLimitCount = 250;
+                        var usageCounts = await GetSmartLockUsageCountsAsync(
+                            new List<Guid> { smartLock.Id });
 
-                        response.Data.CardCount = await _context.Cards.CountAsync(a => a.SmartLockId == smartLock.Id);
-                        response.Data.CardLimitCount = 1000;
+                        var usage = usageCounts[smartLock.Id];
 
-                        response.Data.FingerprintCount = await _context.Fingerprints.CountAsync(a => a.SmartLockId == smartLock.Id);
-                        response.Data.FingerprintLimitCount = 100;
-                       
-                        response.Data.EkeyCount = await _context.EKeys.CountAsync(a => a.SmartLockId == smartLock.Id);
-                        response.Data.EkeyLimitCount = 500;
+                        response.Data.PinCodeCount = usage.PinCodeCount;
+                        response.Data.PinCodeLimitCount = usage.PinCodeLimitCount;
+
+                        response.Data.CardCount = usage.CardCount;
+                        response.Data.CardLimitCount = usage.CardLimitCount;
+
+                        response.Data.FingerprintCount = usage.FingerprintCount;
+                        response.Data.FingerprintLimitCount = usage.FingerprintLimitCount;
+
+                        response.Data.EkeyCount = usage.EkeyCount;
+                        response.Data.EkeyLimitCount = usage.EkeyLimitCount;
                     }
                     response.SetSuccess();
                 }
@@ -119,6 +157,56 @@ namespace Resido.Controllers
             return Ok(response);
         }
 
+        private async Task<Dictionary<Guid, SmartLockUsageCountDTO>> GetSmartLockUsageCountsAsync(
+    List<Guid> smartLockIds)
+        {
+            var result = new Dictionary<Guid, SmartLockUsageCountDTO>();
+
+            // Grouped counts (single DB hit per table)
+            var pinCounts = await _context.PinCodes
+                .Where(x => smartLockIds.Contains(x.SmartLockId))
+                .GroupBy(x => x.SmartLockId)
+                .Select(g => new { SmartLockId = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(x => x.SmartLockId, x => x.Count);
+
+            var cardCounts = await _context.Cards
+                .Where(x => smartLockIds.Contains(x.SmartLockId))
+                .GroupBy(x => x.SmartLockId)
+                .Select(g => new { SmartLockId = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(x => x.SmartLockId, x => x.Count);
+
+            var fingerprintCounts = await _context.Fingerprints
+                .Where(x => smartLockIds.Contains(x.SmartLockId))
+                .GroupBy(x => x.SmartLockId)
+                .Select(g => new { SmartLockId = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(x => x.SmartLockId, x => x.Count);
+
+            var ekeyCounts = await _context.EKeys
+                .Where(x => smartLockIds.Contains(x.SmartLockId))
+                .GroupBy(x => x.SmartLockId)
+                .Select(g => new { SmartLockId = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(x => x.SmartLockId, x => x.Count);
+
+            foreach (var lockId in smartLockIds)
+            {
+                result[lockId] = new SmartLockUsageCountModel
+                {
+                    PinCodeCount = pinCounts.GetValueOrDefault(lockId),
+                    PinCodeLimitCount = 250,
+
+                    CardCount = cardCounts.GetValueOrDefault(lockId),
+                    CardLimitCount = 1000,
+
+                    FingerprintCount = fingerprintCounts.GetValueOrDefault(lockId),
+                    FingerprintLimitCount = 100,
+
+                    EkeyCount = ekeyCounts.GetValueOrDefault(lockId),
+                    EkeyLimitCount = 500
+                };
+            }
+
+            return result;
+        }
 
         // POST: /api/Lock/InitializeLock
         [HttpPost]
