@@ -244,6 +244,7 @@ namespace Resido.Controllers
 
                         eKey.EKeyId = sendResponse.Data.KeyId;
                         eKey.SmartLockId = smartLock.Id;
+                        eKey.KeyName = dto.KeyName;
 
                         _context.EKeys.Add(eKey);
                         _context.SaveChanges();

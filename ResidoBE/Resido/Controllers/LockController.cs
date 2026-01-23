@@ -121,7 +121,7 @@ namespace Resido.Controllers
                 if (result != null && result.Data != null && result.IsSuccessCode())
                 {
                     response.Data = new GetLockDetailResponseDTO();
-                   
+
                     response.Data = result.Data;
                     var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(x => x.TTLockId == lockId && x.UserId == token.UserId);
                     if (smartLock != null)
@@ -158,7 +158,7 @@ namespace Resido.Controllers
             return Ok(response);
         }
 
-      
+
 
         // POST: /api/Lock/InitializeLock
         [HttpPost]
@@ -208,7 +208,9 @@ namespace Resido.Controllers
                         smartLock.Location = dto.Location;
                         smartLock.CreatedAt = DateTimeHelper.GetUtcTime();
                         smartLock.UpdatedAt = DateTimeHelper.GetUtcTime();
+                        _context.SmartLocks.Add(smartLock);
                     }
+                    await _context.SaveChangesAsync();
                     response.Data = result.Data;
                     response.SetSuccess();
                 }
