@@ -105,7 +105,7 @@ namespace Resido.Controllers
                         else
                         {
 
-                            var ttLockIds = ekeyResponse.Data.List.Where(a => a.KeyRight == 1).Select(x => x.LockId).ToList();
+                            var ttLockIds = ekeyResponse.Data.List.Where(a => a.UserType == "110301").Select(x => x.LockId).ToList();
 
                             var smartLocks = await _context.SmartLocks
                            .Where(x => ttLockIds.Contains(x.TTLockId) && x.UserId == token.UserId)
