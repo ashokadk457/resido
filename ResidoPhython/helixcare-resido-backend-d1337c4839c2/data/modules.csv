@@ -1,0 +1,21 @@
+product,code,name,description,is_active
+RESIDO,PROP,Properties,Manage properties and buildings,Y
+RESIDO,UNIT,Units,Manage rental units and availability,Y
+RESIDO,RES,Residents,Manage resident information and profiles,Y
+RESIDO,LEASE,Leases,Manage lease agreements and renewals,Y
+RESIDO,MAINT,Maintenance,Track and manage maintenance requests,Y
+RESIDO,PYMT,Payments,Process and track rent payments,Y
+RESIDO,BILL,Billing,Generate bills and invoices,Y
+RESIDO,STAFF,Staff,Manage property staff and assignments,Y
+RESIDO,BOOK,Bookings,Manage amenity and facility bookings,Y
+RESIDO,MEET,Meetings,Schedule meetings with residents,Y
+RESIDO,NOTIF,Notifications,Send notifications to residents,Y
+RESIDO,DOCS,Digital Forms,Manage digital forms and documents,Y
+RESIDO,ANALYT,Analytics,View property analytics and reports,Y
+RESIDO,DASH,Dashboard,Main dashboard and overview,Y
+RESIDO,AUDIT,Audit Logs,View system audit logs,Y
+RESIDO,USERS,User Management,Manage system users,Y
+RESIDO,ROLES,Roles Management,Manage user roles and permissions,Y
+RESIDO,SETT,System Settings,Configure system settings,Y
+RESIDO,ASSET,Assets,Manage property assets and inventory,Y
+RESIDO,LOOKUP,Lookup Data,Manage lookup and reference data,Y

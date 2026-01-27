@@ -1,0 +1,5 @@
+id,code,name,description,seeded
+8a1b2c3d-4e5f-6789-abcd-111111111111,STARTER,Starter Plan,Basic property management features for small landlords,True
+9b2c3d4e-5f67-89ab-cdef-222222222222,PROFESSIONAL,Professional Plan,Advanced features and integrations for growing businesses,True
+0c3d4e5f-6789-abcd-ef12-333333333333,ENTERPRISE,Enterprise Plan,All features with premium support for large companies,True
+1d4e5f67-89ab-cdef-1234-444444444444,CUSTOM,Custom Plan,Tailored plans for specific customer needs,True

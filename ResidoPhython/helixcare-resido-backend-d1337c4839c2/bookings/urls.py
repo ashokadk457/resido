@@ -1,0 +1,60 @@
+from django.urls import re_path
+import bookings.apiviews as views
+
+urlpatterns = [
+    re_path(
+        r"^api/v1/amenity-slots$",
+        views.AmenitySlotListCreateAPIView.as_view(),
+        name="amenity_slots_list",
+    ),
+    re_path(
+        r"^api/v1/amenity-slots/(?P<pk>[0-9a-zA-Z\-]+)$",
+        views.AmenitySlotDetailUpdate.as_view(),
+        name="amenity_slots_detail",
+    ),
+    re_path(
+        r"^api/v1/blackout-periods$",
+        views.BlackoutPeriodListCreateAPIView.as_view(),
+        name="blackout_periods_list",
+    ),
+    re_path(
+        r"^api/v1/blackout-periods/(?P<pk>[0-9a-zA-Z\-]+)$",
+        views.BlackoutPeriodDetailUpdate.as_view(),
+        name="blackout_periods_detail",
+    ),
+    re_path(
+        r"^api/v1/amenity-bookings$",
+        views.BookingListCreateAPIView.as_view(),
+        name="amenity_bookings_list",
+    ),
+    re_path(
+        r"^api/v1/amenity-bookings/(?P<pk>[0-9a-zA-Z\-]+)$",
+        views.BookingDetailUpdate.as_view(),
+        name="amenity_bookings_detail",
+    ),
+    re_path(
+        r"^api/v1/amenity-bookings/(?P<pk>[0-9a-zA-Z\-]+)/confirm$",
+        views.ConfirmBookingAPIView.as_view(),
+        name="booking_confirm",
+    ),
+    re_path(
+        r"^api/v1/amenity-bookings/(?P<pk>[0-9a-zA-Z\-]+)/reject$",
+        views.RejectBookingAPIView.as_view(),
+        name="booking_reject",
+    ),
+    re_path(
+        r"^api/v1/amenity-bookings/(?P<pk>[0-9a-zA-Z\-]+)/cancel$",
+        views.CancelBookingAPIView.as_view(),
+        name="booking_cancel",
+    ),
+    re_path(
+        r"^api/v1/amenities-and-reservations/count$",
+        views.AmenitiesAndReservationsCountAPIView.as_view(),
+        name="amenities_and_reservations_count",
+    ),
+    re_path(
+        r"^api/v1/amenity-bookings/(?P<pk>[0-9a-zA-Z\-]+)/duplicate$",
+        views.DuplicateBookingAPIView.as_view(),
+        name="booking_duplicate",
+    ),
+]

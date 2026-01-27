@@ -1,0 +1,120 @@
+---
+product: "RESIDO"
+code: "PROP"
+name: "Properties"
+description: "Manage properties and buildings"
+is_active: 1
+---
+product: "RESIDO"
+code: "UNIT"
+name: "Units"
+description: "Manage rental units and availability"
+is_active: 1
+---
+product: "RESIDO"
+code: "RES"
+name: "Residents"
+description: "Manage resident information and profiles"
+is_active: 1
+---
+product: "RESIDO"
+code: "LEASE"
+name: "Leases"
+description: "Manage lease agreements and renewals"
+is_active: 1
+---
+product: "RESIDO"
+code: "MAINT"
+name: "Maintenance"
+description: "Track and manage maintenance requests"
+is_active: 1
+---
+product: "RESIDO"
+code: "PYMT"
+name: "Payments"
+description: "Process and track rent payments"
+is_active: 1
+---
+product: "RESIDO"
+code: "BILL"
+name: "Billing"
+description: "Generate bills and invoices"
+is_active: 1
+---
+product: "RESIDO"
+code: "STAFF"
+name: "Staff"
+description: "Manage property staff and assignments"
+is_active: 1
+---
+product: "RESIDO"
+code: "BOOK"
+name: "Bookings"
+description: "Manage amenity and facility bookings"
+is_active: 1
+---
+product: "RESIDO"
+code: "MEET"
+name: "Meetings"
+description: "Schedule meetings with residents"
+is_active: 1
+---
+product: "RESIDO"
+code: "NOTIF"
+name: "Notifications"
+description: "Send notifications to residents"
+is_active: 1
+---
+product: "RESIDO"
+code: "DOCS"
+name: "Digital Forms"
+description: "Manage digital forms and documents"
+is_active: 1
+---
+product: "RESIDO"
+code: "ANALYT"
+name: "Analytics"
+description: "View property analytics and reports"
+is_active: 1
+---
+product: "RESIDO"
+code: "DASH"
+name: "Dashboard"
+description: "Main dashboard and overview"
+is_active: 1
+---
+product: "RESIDO"
+code: "AUDIT"
+name: "Audit Logs"
+description: "View system audit logs"
+is_active: 1
+---
+product: "RESIDO"
+code: "USERS"
+name: "User Management"
+description: "Manage system users"
+is_active: 1
+---
+product: "RESIDO"
+code: "ROLES"
+name: "Roles Management"
+description: "Manage user roles and permissions"
+is_active: 1
+---
+product: "RESIDO"
+code: "SETT"
+name: "System Settings"
+description: "Configure system settings"
+is_active: 1
+---
+product: "RESIDO"
+code: "ASSET"
+name: "Assets"
+description: "Manage property assets and inventory"
+is_active: 1
+---
+product: "RESIDO"
+code: "LOOKUP"
+name: "Lookup Data"
+description: "Manage lookup and reference data"
+is_active: 1

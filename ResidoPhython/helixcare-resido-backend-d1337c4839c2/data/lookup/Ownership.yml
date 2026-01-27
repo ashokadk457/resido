@@ -1,0 +1,34 @@
+name: "OWNERSHIP"
+code: "OWNER_OCCUPIED"
+value: "Owner-occupied"
+description: ""
+active: 1
+display_order: 100
+---
+name: "OWNERSHIP"
+code: "LANDLORD_OWNED"
+value: "Landlord-owned (Rental)"
+description: ""
+active: 1
+display_order: 200
+---
+name: "OWNERSHIP"
+code: "HOA_OWNED"
+value: "HOA-owned"
+description: ""
+active: 1
+display_order: 300
+---
+name: "OWNERSHIP"
+code: "BUILDER_INVENTORY"
+value: "Builder Inventory"
+description: ""
+active: 1
+display_order: 400
+---
+name: "OWNERSHIP"
+code: "GOVERNMENT_OWNED"
+value: "Government/Housing Board"
+description: ""
+active: 1
+display_order: 500

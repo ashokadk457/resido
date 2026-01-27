@@ -1,0 +1,217 @@
+---
+name: "PET_SPECIES"
+code: "DOG"
+value: "Dog"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PET_BREED"
+code: "PUG"
+value: "Pug"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PET_FEE_TYPE"
+code: "MONTHLY"
+value: "Monthly"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PET_FEE_TYPE"
+code: "YEARLY"
+value: "Yearly"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PET_FEE_TYPE"
+code: "WEEKLY"
+value: "Weekly"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PET_FEE_TYPE"
+code: "QUART"
+value: "Quarterly"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PET_TYPE"
+code: "CAT"
+value: "Cat"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PET_TYPE"
+code: "BIRD"
+value: "Bird"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PET_TYPE"
+code: "FISH"
+value: "Fish"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PET_TYPE"
+code: "REPTILE"
+value: "Reptile"
+description: ""
+active: 1
+display_order: 500
+---
+name: "PET_TYPE"
+code: "SMALL_MAMMAL"
+value: "Small Mammal"
+description: ""
+active: 1
+display_order: 600
+---
+name: "PET_TYPE"
+code: "OTHER"
+value: "Other"
+description: ""
+active: 1
+display_order: 700
+---
+name: "PET_SPECIES"
+code: "CAT"
+value: "Cat"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PET_SPECIES"
+code: "BIRD"
+value: "Bird"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PET_SPECIES"
+code: "FISH"
+value: "Fish"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PET_SPECIES"
+code: "REPTILE"
+value: "Reptile"
+description: ""
+active: 1
+display_order: 500
+---
+name: "PET_SPECIES"
+code: "SMALL_MAMMAL"
+value: "Small Mammal"
+description: ""
+active: 1
+display_order: 600
+---
+name: "PET_SPECIES"
+code: "OTHER"
+value: "Other"
+description: ""
+active: 1
+display_order: 700
+---
+name: "PET_BREED"
+code: "LABRADOR_RETRIEVER"
+value: "Labrador Retriever"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PET_BREED"
+code: "GOLDEN_RETRIEVER"
+value: "Golden Retriever"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PET_BREED"
+code: "GERMAN_SHEPHERD"
+value: "German Shepherd"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PET_BREED"
+code: "BEAGLE"
+value: "Beagle"
+description: ""
+active: 1
+display_order: 500
+---
+name: "PET_BREED"
+code: "PERSIAN_CAT"
+value: "Persian Cat"
+description: ""
+active: 1
+display_order: 600
+---
+name: "PET_BREED"
+code: "SIAMESE_CAT"
+value: "Siamese Cat"
+description: ""
+active: 1
+display_order: 700
+---
+name: "PET_BREED"
+code: "BUDGERIGAR"
+value: "Budgerigar (Parakeet)"
+description: ""
+active: 1
+display_order: 800
+---
+name: "PET_BREED"
+code: "ANGELFISH"
+value: "Angelfish"
+description: ""
+active: 1
+display_order: 900
+---
+name: "PET_BREED"
+code: "OTHER_BREED"
+value: "Other / Mixed"
+description: ""
+active: 1
+display_order: 1000
+---
+name: "PET_FEE_TYPE"
+code: "ONE_TIME"
+value: "One-time"
+description: ""
+active: 1
+display_order: 50
+---
+name: "PET_FEE_TYPE"
+code: "QUARTERLY"
+value: "Quarterly"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PET_FEE_TYPE"
+code: "REFUNDABLE_DEPOSIT"
+value: "Refundable Deposit"
+description: ""
+active: 1
+display_order: 500
+---
+name: "PET_FEE_TYPE"
+code: "PER_PET"
+value: "Per Pet"
+description: ""
+active: 1
+display_order: 600

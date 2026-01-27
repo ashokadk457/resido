@@ -1,0 +1,97 @@
+name: "FLOOR_PLAN"
+code: "STUDIO"
+value: "Studio"
+description: ""
+active: 1
+display_order: 100
+---
+name: "FLOOR_PLAN"
+code: "1B1B"
+value: "1 Bed / 1 Bath"
+description: ""
+active: 1
+display_order: 200
+---
+name: "FLOOR_PLAN"
+code: "2B1B"
+value: "2 Bed / 1 Bath"
+description: ""
+active: 1
+display_order: 300
+---
+name: "FLOOR_PLAN"
+code: "2B2B"
+value: "2 Bed / 2 Bath"
+description: ""
+active: 1
+display_order: 400
+---
+name: "FLOOR_PLAN"
+code: "3B2B"
+value: "3 Bed / 2 Bath"
+description: ""
+active: 1
+display_order: 500
+---
+name: "FLOOR_PLAN"
+code: "4B3B"
+value: "4 Bed / 3 Bath"
+description: ""
+active: 1
+display_order: 600
+---
+name: "FLOOR_PLAN"
+code: "DUPLEX"
+value: "Duplex"
+description: ""
+active: 1
+display_order: 700
+---
+name: "FLOOR_PLAN"
+code: "LOFT"
+value: "Loft"
+description: ""
+active: 1
+display_order: 800
+---
+name: "FLOOR_PLAN"
+code: "PENTHOUSE"
+value: "Penthouse"
+description: ""
+active: 1
+display_order: 900
+---
+name: "PARKING_LEVEL_TYPE"
+code: "UNDERGROUND"
+value: "Underground"
+description: "Underground parking level"
+active: 1
+display_order: 100
+---
+name: "PARKING_LEVEL_TYPE"
+code: "GROUND"
+value: "Ground Level"
+description: "Ground level parking"
+active: 1
+display_order: 200
+---
+name: "PARKING_LEVEL_TYPE"
+code: "ELEVATED"
+value: "Elevated"
+description: "Elevated/Above ground parking level"
+active: 1
+display_order: 300
+---
+name: "PARKING_LEVEL_TYPE"
+code: "ROOFTOP"
+value: "Rooftop"
+description: "Rooftop parking level"
+active: 1
+display_order: 400
+---
+name: "PARKING_LEVEL_TYPE"
+code: "BASEMENT"
+value: "Basement"
+description: "Basement parking level"
+active: 1
+display_order: 500

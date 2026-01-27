@@ -1,0 +1,8 @@
+id,name,visible_name,description,default_value,seeded,active
+a1b2c3d4-e5f6-7890-abcd-100000000001,trial_period_days,Trial Period Days,"Number of days for trial period",30,True,True
+b2c3d4e5-f678-90ab-cdef-100000000002,default_plan,Default Plan,"Default plan code for new tenants",PROFESSIONAL,True,True
+c3d4e5f6-7890-abcd-ef12-100000000003,enable_payment_processing,Enable Payment Processing,"Whether to enable online payment processing",True,True,True
+d4e5f678-090a-bcde-f123-100000000004,enable_maintenance_module,Enable Maintenance Module,"Whether to enable maintenance request tracking",True,True,True
+e5f67890-abcd-ef12-3456-100000000005,max_properties_starter,Max Properties (Starter),"Maximum number of properties allowed in Starter plan",5,True,True
+f6789012-bcde-f123-4567-100000000006,max_properties_professional,Max Properties (Professional),"Maximum number of properties allowed in Professional plan",25,True,True
+07890123-cdef-1234-5678-100000000007,max_properties_enterprise,Max Properties (Enterprise),"Maximum number of properties allowed in Enterprise plan",-1,True,True

@@ -1,0 +1,2 @@
+class EventEmailNotificationDispatcher:
+    pass

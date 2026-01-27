@@ -1,0 +1,28 @@
+---
+name: "MODE_OF_COMMUNICATION"
+code: "sms"
+value: "SMS"
+description: ""
+active: 1
+display_order: 100
+---
+name: "MODE_OF_COMMUNICATION"
+code: "email"
+value: "Email"
+description: ""
+active: 1
+display_order: 200
+---
+name: "MODE_OF_COMMUNICATION"
+code: "whatsapp"
+value: "Whatsapp"
+description: ""
+active: 1
+display_order: 300
+---
+name: "MODE_OF_COMMUNICATION"
+code: "chat"
+value: "Chat"
+description: ""
+active: 1
+display_order: 400

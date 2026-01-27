@@ -1,0 +1,176 @@
+---
+module: "USERS"
+entity: "HelixUser"
+app_name: "helixauth"
+---
+module: "USERS"
+entity: "HelixStaff"
+app_name: "staff"
+---
+module: "USERS"
+entity: "UserGroup"
+app_name: "helixauth"
+---
+module: "ROLES"
+entity: "UserRole"
+app_name: "helixauth"
+---
+module: "ROLES"
+entity: "ModulePermission"
+app_name: "helixauth"
+---
+module: "ROLES"
+entity: "Entity"
+app_name: "helixauth"
+---
+module: "ROLES"
+entity: "SubModulePermission"
+app_name: "helixauth"
+---
+module: "ROLES"
+entity: "EntityAttributePermission"
+app_name: "helixauth"
+---
+module: "PROP"
+entity: "Location"
+app_name: "locations"
+---
+module: "PROP"
+entity: "Property"
+app_name: "locations"
+---
+module: "PROP"
+entity: "Customer"
+app_name: "locations"
+---
+module: "PROP"
+entity: "Building"
+app_name: "locations"
+---
+module: "UNIT"
+entity: "Floor"
+app_name: "locations"
+---
+module: "UNIT"
+entity: "Unit"
+app_name: "locations"
+---
+module: "LOOKUP"
+entity: "Lookup"
+app_name: "lookup"
+---
+module: "LOOKUP"
+entity: "Reason"
+app_name: "data"
+---
+module: "LOOKUP"
+entity: "ReasonCategory"
+app_name: "data"
+---
+module: "RES"
+entity: "Resident"
+app_name: "residents"
+---
+module: "RES"
+entity: "EmergencyContact"
+app_name: "residents"
+---
+module: "LEASE"
+entity: "Application"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "Lease"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "LeaseLateFees"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "LeaseOtherOccupants"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "LeaseAdditionalSigners"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "LeasePetsAllowed"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "LeaseUtilityServices"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "LeasePromotionalDiscount"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "LeaseOneTimeFees"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "LeaseKeys"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "MoveRequest"
+app_name: "lease"
+---
+module: "LEASE"
+entity: "MoveInspectionLog"
+app_name: "lease"
+---
+module: "MAINT"
+entity: "ServiceProviderDocument"
+app_name: "maintenance"
+---
+module: "MAINT"
+entity: "ServiceProvider"
+app_name: "maintenance"
+---
+module: "MAINT"
+entity: "Maintenance"
+app_name: "maintenance"
+---
+module: "STAFF"
+entity: "StaffGroup"
+app_name: "staff"
+---
+module: "PYMT"
+entity: "Payment"
+app_name: "payments"
+---
+module: "BILL"
+entity: "Bill"
+app_name: "payments"
+---
+module: "BOOK"
+entity: "AmenityBooking"
+app_name: "bookings"
+---
+module: "MEET"
+entity: "Meeting"
+app_name: "meetings"
+---
+module: "NOTIF"
+entity: "NotificationMessage"
+app_name: "notifications"
+---
+module: "ASSET"
+entity: "Asset"
+app_name: "assets"
+---
+module: "AUDIT"
+entity: "Audit"
+app_name: "audit"
+---
+module: "SETT"
+entity: "Policy"
+app_name: "helixauth"
+---
+module: "SETT"
+entity: "PolicyVersion"
+app_name: "helixauth"

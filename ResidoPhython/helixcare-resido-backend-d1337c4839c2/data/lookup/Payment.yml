@@ -1,0 +1,196 @@
+---
+name: "CARD_TYPES"
+code: "VISA"
+value: "Visa"
+description: ""
+active: 1
+display_order: 100
+---
+name: "CARD_TYPES"
+code: "MASTERCARD"
+value: "MasterCard"
+description: ""
+active: 1
+display_order: 200
+---
+name: "CARD_TYPES"
+code: "AMEX"
+value: "American Express"
+description: ""
+active: 1
+display_order: 300
+---
+name: "CARD_TYPES"
+code: "DISCOVER"
+value: "Discover"
+description: ""
+active: 1
+display_order: 400
+---
+name: "CARD_TYPES"
+code: "DINERS"
+value: "Diners Club"
+description: ""
+active: 1
+display_order: 500
+---
+name: "PAYMENT_METHODS"
+code: "CREDIT_CARD"
+value: "Credit Card"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PAYMENT_METHODS"
+code: "DEBIT_CARD"
+value: "Debit Card"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PAYMENT_METHODS"
+code: "PAYPAL"
+value: "PayPal"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PAYMENT_METHODS"
+code: "BANK_TRANSFER"
+value: "Bank Transfer"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PAYMENT_METHODS"
+code: "CASH"
+value: "Cash"
+description: ""
+active: 1
+display_order: 500
+---
+name: "PAYMENT_METHODS"
+code: "GOOGLE_PAY"
+value: "Google Pay"
+description: ""
+active: 1
+display_order: 600
+---
+name: "PAYMENT_METHODS"
+code: "POS_PAYMENT"
+value: "POS Payment"
+description: ""
+active: 1
+display_order: 600
+---
+name: "PAYMENT_STATUSES"
+code: "PENDING"
+value: "Pending"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PAYMENT_STATUSES"
+code: "ON_PP"
+value: "On Payment Plan"
+description: ""
+active: 1
+display_order: 102
+---
+name: "PAYMENT_STATUSES"
+code: "DRAFT"
+value: "Draft"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PAYMENT_STATUSES"
+code: "IN_PROCESS"
+value: "In-Process"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PAYMENT_STATUSES"
+code: "PARTIALLY_COMPLETED"
+value: "Partially Completed"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PAYMENT_STATUSES"
+code: "COMPLETED"
+value: "Completed"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PAYMENT_STATUSES"
+code: "FAILED"
+value: "Failed"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PAYMENT_STATUSES"
+code: "REFUNDED"
+value: "Refunded"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PAYMENT_STATUSES"
+code: "REFUND_INITIATED"
+value: "Refund Initiated"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PAYMENT_STATUSES"
+code: "PARTIAL_REFUND_INITIATED"
+value: "Partial Refund Initiated"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PAYMENT_STATUSES"
+code: "PARTIAL_REFUND_FAILED"
+value: "Partial Refund Failed"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PAYMENT_STATUSES"
+code: "REFUND_FAILED"
+value: "Refund Failed"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PAYMENT_STATUSES"
+code: "PARTIAL_REFUNDED"
+value: "Partially Refunded"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PAYMENT_STATUSES"
+code: "CANCELLED"
+value: "Cancelled"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PAYMENT_PLAN"
+code: "FULL"
+value: "Full"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PAYMENT_PLAN"
+code: "MONTHLY"
+value: "Monthly"
+description: ""
+active: 1
+display_order: 200

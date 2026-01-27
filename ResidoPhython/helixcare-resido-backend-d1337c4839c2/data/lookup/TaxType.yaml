@@ -1,0 +1,14 @@
+---
+name: "TAX_TYPE"
+code: "PERCENT"
+value: "Percent"
+description: ""
+active: 1
+display_order: 100
+---
+name: "TAX_TYPE"
+code: "FLAT"
+value: "Fixed"
+description: ""
+active: 1
+display_order: 200

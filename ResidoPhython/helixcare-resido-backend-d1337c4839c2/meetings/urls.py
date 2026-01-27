@@ -1,0 +1,67 @@
+from django.urls import re_path
+
+from meetings.apiviews import (
+    MeetingsListCreateAPIView,
+    StartMeetingAPIView,
+    MeetingParticipantsListCreateAPIView,
+    MeetingSessionsListCreateAPIView,
+    MeetingEventsListenerAPIView,
+    MeetingMessagesListCreateAPIView,
+    MeetingTokenAPIView,
+    MeetingTokenGenerationAPIView,
+    MeetingParticipantInviteAPIView,
+    MeetingsRetrieveUpdateAPIView,
+)
+
+urlpatterns = [
+    re_path(
+        r"api/v1/meetings$",
+        MeetingsListCreateAPIView.as_view(),
+        name="list_create_meetings",
+    ),
+    re_path(
+        r"api/v1/meetings/(?P<pk>[0-9a-zA-Z\-]+)$",
+        MeetingsRetrieveUpdateAPIView.as_view(),
+        name="retrieve_update_api_meeting",
+    ),
+    re_path(
+        r"api/v1/meetings/(?P<pk>[0-9a-zA-Z\-]+)/start$",
+        StartMeetingAPIView.as_view(),
+        name="start_meeting",
+    ),
+    re_path(
+        r"api/v1/meeting-sessions$",
+        MeetingSessionsListCreateAPIView.as_view(),
+        name="meeting_sessions_list_create",
+    ),
+    re_path(
+        r"api/v1/meetings/(?P<meeting_id>[0-9a-zA-Z\-]+)/participants/(?P<participant_id>[0-9a-zA-Z\-]+)/token$",
+        MeetingTokenAPIView.as_view(),
+        name="generate_meeting_token",
+    ),
+    re_path(
+        r"api/v1/meetings/(?P<meeting_id>[0-9a-zA-Z\-]+)/participants/(?P<participant_id>[0-9a-zA-Z\-]+)/invite$",
+        MeetingParticipantInviteAPIView.as_view(),
+        name="invite_participant",
+    ),
+    re_path(
+        r"api/v1/meeting-token$",
+        MeetingTokenGenerationAPIView.as_view(),
+        name="generate_meeting_token",
+    ),
+    re_path(
+        r"api/v1/meeting-participants$",
+        MeetingParticipantsListCreateAPIView.as_view(),
+        name="list_create_meeting_participants",
+    ),
+    re_path(
+        r"api/v1/meeting-events/(?P<event_name>[0-9a-zA-Z\-_]+)$",
+        MeetingEventsListenerAPIView.as_view(),
+        name="meeting_event_listener",
+    ),
+    re_path(
+        r"api/v1/messages$",
+        MeetingMessagesListCreateAPIView.as_view(),
+        name="meeting_messages_list_create",
+    ),
+]

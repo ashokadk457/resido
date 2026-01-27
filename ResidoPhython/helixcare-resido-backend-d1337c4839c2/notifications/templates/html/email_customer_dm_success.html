@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your RESIDO Account is Ready</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 0;">
+        <!-- Header -->
+        <div style="background-color: #3B1550; padding: 30px 20px; text-align: center;">
+            <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Your Account is Ready!</h1>
+            <p style="color: #E0D4EC; margin: 10px 0 0 0; font-size: 14px;">Setup Complete</p>
+        </div>
+
+        <!-- Content -->
+        <div style="background-color: #f9f9f9; padding: 40px 30px;">
+            <p style="font-size: 16px; margin: 0 0 20px 0;">Hi {{ first_name }},</p>
+
+            <div style="background-color: #E8F5E9; border-left: 4px solid #4CAF50; padding: 20px; margin: 20px 0;">
+                <p style="margin: 0; font-size: 18px; color: #2E7D32; font-weight: bold;">
+                    🎉 Great News!
+                </p>
+                <p style="margin: 10px 0 0 0; font-size: 16px; color: #2E7D32;">
+                    Your RESIDO property management account for <strong>{{ tenant_name }}</strong> is now fully configured and ready to use.
+                </p>
+            </div>
+
+            <p style="font-size: 16px; margin: 25px 0 15px 0;">
+                Your system has been successfully set up with all the features and tools you need to efficiently manage your properties.
+            </p>
+
+            <p style="font-size: 16px; margin: 20px 0 10px 0; font-weight: bold;">
+                You can now:
+            </p>
+
+            <ul style="font-size: 16px; margin: 10px 0 25px 0; padding-left: 25px; line-height: 1.8;">
+                <li><strong>Manage Properties:</strong> Add and configure your properties and units</li>
+                <li><strong>Tenant Management:</strong> Track tenant information, leases, and applications</li>
+                <li><strong>Financial Tracking:</strong> Monitor rent payments and generate financial reports</li>
+                <li><strong>Maintenance Requests:</strong> Handle and track maintenance workflows</li>
+                <li><strong>Team Collaboration:</strong> Invite staff members and assign roles</li>
+                <li><strong>Communication:</strong> Send messages and notifications to tenants</li>
+            </ul>
+
+            <!-- Call to Action Button -->
+            <div style="text-align: center; margin: 35px 0;">
+                <a href="{{ login_url }}"
+                   style="background-color: #3B1550;
+                          color: white;
+                          padding: 15px 40px;
+                          text-decoration: none;
+                          border-radius: 5px;
+                          display: inline-block;
+                          font-size: 16px;
+                          font-weight: bold;
+                          box-shadow: 0 3px 6px rgba(59, 21, 80, 0.3);">
+                    Access Your Account
+                </a>
+            </div>
+
+            <!-- Help Section -->
+            <div style="background-color: white; padding: 25px; margin: 30px 0; border: 1px solid #e0e0e0; border-radius: 5px;">
+                <p style="margin: 0 0 15px 0; font-size: 16px; font-weight: bold; color: #3B1550;">
+                    Need Help Getting Started?
+                </p>
+                <p style="margin: 0 0 10px 0; font-size: 14px;">
+                    📚 <a href="https://resido.com/docs" style="color: #3B1550; text-decoration: none; font-weight: 500;">Browse our Documentation</a>
+                </p>
+                <p style="margin: 0 0 10px 0; font-size: 14px;">
+                    🎥 <a href="https://resido.com/tutorials" style="color: #3B1550; text-decoration: none; font-weight: 500;">Watch Video Tutorials</a>
+                </p>
+                <p style="margin: 0; font-size: 14px;">
+                    💬 <a href="mailto:support@resido.com" style="color: #3B1550; text-decoration: none; font-weight: 500;">Contact Support Team</a>
+                </p>
+            </div>
+
+            <p style="font-size: 16px; margin: 25px 0 0 0; line-height: 1.8;">
+                We're excited to have you on board and look forward to helping you streamline your property management operations!
+            </p>
+
+            <p style="font-size: 16px; margin: 25px 0 0 0;">
+                Best regards,<br>
+                <strong>The RESIDO Team</strong>
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div style="background-color: #333; color: white; padding: 25px 20px; text-align: center;">
+            <p style="margin: 0 0 10px 0; font-size: 13px;">
+                &copy; 2025 RESIDO. All rights reserved.
+            </p>
+            <p style="margin: 0; font-size: 12px; color: #999;">
+                This is an automated message. Please do not reply to this email.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

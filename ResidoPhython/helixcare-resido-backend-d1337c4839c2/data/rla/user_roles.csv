@@ -1,0 +1,8 @@
+id,code,role_name,description,is_role_active,seeded,access_level
+1a2b3c4d-5e6f-7890-abcd-100000000001,ADMIN,Administrator,Full system administrator with all permissions,Y,Y,customer
+2b3c4d5e-6f78-90ab-cdef-100000000002,PMGR,Property Manager,Manages properties and daily operations,Y,Y,customer
+3c4d5e6f-7890-abcd-ef12-100000000003,LMGR,Leasing Manager,Handles leasing and resident onboarding,Y,Y,location
+4d5e6f78-90ab-cdef-1234-100000000004,MTECH,Maintenance Technician,Handles maintenance requests and repairs,Y,Y,location
+5e6f7890-abcd-ef12-3456-100000000005,ACCT,Accountant,Manages billing and payments,Y,Y,customer
+6f789012-bcde-f123-4567-100000000006,RCOORD,Resident Coordinator,Assists residents with inquiries,Y,Y,location
+7890123c-def1-2345-6789-100000000007,VIEWER,Viewer,Read-only access for reporting,Y,Y,customer

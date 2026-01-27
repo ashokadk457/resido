@@ -1,0 +1,976 @@
+---
+module: "PROP"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "PROP"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "PROP"
+role: "Leasing Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "PROP"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "PROP"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "PROP"
+role: "Resident Coordinator"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "PROP"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "UNIT"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "UNIT"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "UNIT"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "UNIT"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "UNIT"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "UNIT"
+role: "Resident Coordinator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "UNIT"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "RES"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "RES"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "RES"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "RES"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "RES"
+role: "Accountant"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "RES"
+role: "Resident Coordinator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "RES"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "LEASE"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "LEASE"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "LEASE"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "LEASE"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "LEASE"
+role: "Accountant"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "LEASE"
+role: "Resident Coordinator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "LEASE"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "MAINT"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "MAINT"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "MAINT"
+role: "Leasing Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "MAINT"
+role: "Maintenance Technician"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "MAINT"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "MAINT"
+role: "Resident Coordinator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "MAINT"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "PYMT"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "PYMT"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "PYMT"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "PYMT"
+role: "Accountant"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "PYMT"
+role: "Resident Coordinator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "PYMT"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "BILL"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "BILL"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "BILL"
+role: "Leasing Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "BILL"
+role: "Accountant"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "BILL"
+role: "Resident Coordinator"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "BILL"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "STAFF"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "STAFF"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "STAFF"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "STAFF"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "STAFF"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "STAFF"
+role: "Resident Coordinator"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "STAFF"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "BOOK"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "BOOK"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "BOOK"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "BOOK"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "BOOK"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "BOOK"
+role: "Resident Coordinator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "BOOK"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "MEET"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "MEET"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "MEET"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "MEET"
+role: "Maintenance Technician"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "MEET"
+role: "Accountant"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "MEET"
+role: "Resident Coordinator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "MEET"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "NOTIF"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "NOTIF"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "NOTIF"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "NOTIF"
+role: "Maintenance Technician"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "NOTIF"
+role: "Accountant"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "NOTIF"
+role: "Resident Coordinator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "DOCS"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "DOCS"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "DOCS"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "DOCS"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "DOCS"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "DOCS"
+role: "Resident Coordinator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "DOCS"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "ANAL"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "ANAL"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "ANAL"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "ANAL"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "ANAL"
+role: "Accountant"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "ANAL"
+role: "Resident Coordinator"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "ANAL"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "DASH"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "DASH"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "DASH"
+role: "Leasing Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "DASH"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "DASH"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "DASH"
+role: "Resident Coordinator"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "DASH"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "AUDIT"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "AUDIT"
+role: "Property Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "AUDIT"
+role: "Leasing Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "AUDIT"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "AUDIT"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "USERS"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "USERS"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "USERS"
+role: "Leasing Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "ROLES"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "ROLES"
+role: "Property Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "SETT"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "SETT"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "SETT"
+role: "Leasing Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "ASSET"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "ASSET"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "ASSET"
+role: "Leasing Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "ASSET"
+role: "Maintenance Technician"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "ASSET"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "ASSET"
+role: "Resident Coordinator"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "ASSET"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "LOOKUP"
+role: "Administrator"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 1
+is_active: 1
+---
+module: "LOOKUP"
+role: "Property Manager"
+can_create: 1
+can_view: 1
+can_update: 1
+can_delete: 0
+is_active: 1
+---
+module: "LOOKUP"
+role: "Leasing Manager"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "LOOKUP"
+role: "Maintenance Technician"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "LOOKUP"
+role: "Accountant"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "LOOKUP"
+role: "Resident Coordinator"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1
+---
+module: "LOOKUP"
+role: "Viewer"
+can_create: 0
+can_view: 1
+can_update: 0
+can_delete: 0
+is_active: 1

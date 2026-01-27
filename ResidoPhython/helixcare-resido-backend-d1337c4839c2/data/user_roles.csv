@@ -1,0 +1,8 @@
+code,role_name,description,is_role_active,seeded,access_level
+ADMIN,Site Administrator,Full system administrator with all permissions,Y,Y,customer
+PMGR,Property Manager,Manages properties and daily operations,Y,Y,customer
+LMGR,Leasing Manager,Handles leasing and resident onboarding,Y,Y,location
+MTECH,Maintenance Technician,Handles maintenance requests and repairs,Y,Y,location
+ACCT,Accountant,Manages billing and payments,Y,Y,customer
+RCOORD,Resident Coordinator,Assists residents with inquiries,Y,Y,location
+VIEWER,Viewer,Read-only access for reporting,Y,Y,customer

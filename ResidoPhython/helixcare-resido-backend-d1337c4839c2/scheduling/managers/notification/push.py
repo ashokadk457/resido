@@ -1,0 +1,2 @@
+class EventPUSHNotificationDispatcher:
+    pass

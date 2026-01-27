@@ -1,0 +1,231 @@
+---
+name: "PAYMENT_MODES"
+code: "CASH"
+value: "Cash"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PAYMENT_MODES"
+code: "CHECK"
+value: "Personal Check"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PAYMENT_MODES"
+code: "ACH"
+value: "ACH / Direct Deposit"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PAYMENT_MODES"
+code: "CCDC"
+value: "Credit/Debit Cards"
+description: ""
+active: 1
+display_order: 500
+---
+name: "PAYMENT_MODES"
+code: "BANK"
+value: "Bank Account Transfer"
+description: ""
+active: 1
+display_order: 600
+---
+name: "PARKING_TYPE"
+code: "GARAGE"
+value: "Garage"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PARKING_TYPE"
+code: "DRIVEWAY"
+value: "Driveway"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PARKING_TYPE"
+code: "STREET"
+value: "Street"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PARKING_TYPE"
+code: "CARPORT"
+value: "Carport"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PARKING_TYPE"
+code: "SPACE"
+value: "Designated Space"
+description: ""
+active: 1
+display_order: 500
+---
+name: "PARKING_TYPE"
+code: "OTHER"
+value: "Other"
+description: ""
+active: 1
+display_order: 600
+---
+name: "UTILITY_SERVICE"
+code: "ELEC"
+value: "Electricity"
+description: ""
+active: 1
+display_order: 100
+---
+name: "UTILITY_SERVICE"
+code: "INTRNT"
+value: "Internet"
+description: ""
+active: 1
+display_order: 200
+---
+name: "UTILITY_SERVICE"
+code: "PHONE"
+value: "Phone"
+description: ""
+active: 1
+display_order: 300
+---
+name: "UTILITY_SERVICE"
+code: "CABLE"
+value: "Cable / Satelite"
+description: ""
+active: 1
+display_order: 400
+---
+name: "UTILITY_SERVICE"
+code: "GAS"
+value: "Gas"
+description: ""
+active: 1
+display_order: 500
+---
+name: "UTILITY_SERVICE"
+code: "WATER"
+value: "Water"
+description: ""
+active: 1
+display_order: 600
+---
+name: "UTILITY_SERVICE"
+code: "SEWER"
+value: "Sewer / Septic"
+description: ""
+active: 1
+display_order: 700
+---
+name: "UTILITY_SERVICE"
+code: "TRASH"
+value: "Trash"
+description: ""
+active: 1
+display_order: 800
+---
+name: "UTILITY_SERVICE"
+code: "LAWN"
+value: "Lawn Care"
+description: ""
+active: 1
+display_order: 900
+---
+name: "UTILITY_SERVICE"
+code: "SNOWRMV"
+value: "Snow Removal"
+description: ""
+active: 1
+display_order: 1000
+---
+name: "UTILITY_SERVICE"
+code: "HOAFEE"
+value: "HOA / Condo Fee"
+description: ""
+active: 1
+display_order: 1100
+---
+name: "KEY_TYPE"
+code: "PROP"
+value: "Property"
+description: ""
+active: 1
+display_order: 100
+---
+name: "KEY_TYPE"
+code: "GARGEDOOR"
+value: "Garage Door Opener"
+description: ""
+active: 1
+display_order: 200
+---
+name: "KEY_TYPE"
+code: "MAILBOX"
+value: "Mailbox"
+description: ""
+active: 1
+display_order: 300
+---
+name: "APPLICATION_REJECT_REASON"
+code: "NOT_INTERESTED"
+value: "Not Interested"
+description: ""
+active: 1
+display_order: 100
+---
+name: "APPLICATION_REJECT_REASON"
+code: "OUT_OF_BUDGET"
+value: "Out of budget"
+description: ""
+active: 1
+display_order: 200
+---
+name: "LEASE_ONE_TIME_FEES"
+code: "ADMIN_FEE"
+value: "Admin Fee"
+description: ""
+active: 1
+display_order: 100
+---
+name: "LEASE_ONE_TIME_FEES"
+code: "APP_FEE"
+value: "Application Fee"
+description: ""
+active: 1
+display_order: 100
+---
+name: "LEASE_ONE_TIME_FEES"
+code: "BG_FEE"
+value: "Background Check"
+description: ""
+active: 1
+display_order: 100
+---
+name: "LEASE_DISCOUNT"
+code: "SUMMER_OFF"
+value: "Summer Offer"
+description: ""
+active: 1
+display_order: 200
+---
+name: "LEASE_DISCOUNT"
+code: "NO_SEC_DEP"
+value: "No Security Deposit"
+description: ""
+active: 1
+display_order: 200
+---
+name: "LEASE_DISCOUNT"
+code: "2_MON_FREE"
+value: "2-Month Free Rent"
+description: ""
+active: 1
+display_order: 200

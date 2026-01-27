@@ -1,0 +1,123 @@
+---
+reason: "Specialist Consultation"
+name: "Cardiology"
+---
+reason: "Specialist Consultation"
+name: "Dermatology"
+---
+reason: "Specialist Consultation"
+name: "Endocrinology"
+---
+reason: "Specialist Consultation"
+name: "Gastroenterology"
+---
+reason: "Specialist Consultation"
+name: "Neurology"
+---
+reason: "Specialist Consultation"
+name: "Orthopedics"
+---
+reason: "Specialist Consultation"
+name: "Psychiatry"
+---
+reason: "Specialist Consultation"
+name: "Pulmonology"
+---
+reason: "Specialist Consultation"
+name: "Rheumatology"
+---
+reason: "Diagnostic Testing"
+name: "Imaging"
+---
+reason: "Diagnostic Testing"
+name: "Laboratory tests"
+---
+reason: "Diagnostic Testing"
+name: "Biopsy or pathology evaluation"
+---
+reason: "Treatment or Procedure"
+name: "Surgery"
+---
+reason: "Treatment or Procedure"
+name: "Physical therapy or rehabilitation"
+---
+reason: "Treatment or Procedure"
+name: "Radiation therapy or chemotherapy"
+---
+reason: "Treatment or Procedure"
+name: "Pain management"
+---
+reason: "Second Opinion"
+name: "Confirmation of diagnosis"
+---
+reason: "Second Opinion"
+name: "Evaluation of treatment options"
+---
+reason: "Chronic Disease Management"
+name: "Diabetes mellitus"
+---
+reason: "Chronic Disease Management"
+name: "Chronic obstructive pulmonary disease (COPD)"
+---
+reason: "Chronic Disease Management"
+name: "Heart failure"
+---
+reason: "Acute or Emergency Conditions"
+name: "Chest pain (rule out myocardial infarction)"
+---
+reason: "Acute or Emergency Conditions"
+name: "Stroke symptoms"
+---
+reason: "Acute or Emergency Conditions"
+name: "Severe infection or sepsis"
+---
+reason: "Preventive Care"
+name: "Cancer screening (e.g., colonoscopy, mammogram)"
+---
+reason: "Preventive Care"
+name: "Vaccination or immunization"
+---
+reason: "Mental Health Concerns"
+name: "Depression or suicidal ideation"
+---
+reason: "Mental Health Concerns"
+name: "Anxiety or panic attacks"
+---
+reason: "Mental Health Concerns"
+name: "Substance abuse or addiction"
+---
+reason: "Pediatric or Developmental Concerns"
+name: "Developmental delays"
+---
+reason: "Pediatric or Developmental Concerns"
+name: "Behavioral issues"
+---
+reason: "Pediatric or Developmental Concerns"
+name: "Growth abnormalities"
+---
+reason: "Women's Health"
+name: "Obstetrics (e.g., high-risk pregnancy)"
+---
+reason: "Women's Health"
+name: "Gynecology (e.g., abnormal bleeding, pelvic pain)"
+---
+reason: "Women's Health"
+name: "Fertility evaluation"
+---
+reason: "Elderly Care"
+name: "Geriatric assessment"
+---
+reason: "Elderly Care"
+name: "Memory loss or dementia evaluation"
+---
+reason: "Elderly Care"
+name: "Fall risk assessment"
+---
+reason: "Other Specific Reasons"
+name: "Allergy testing"
+---
+reason: "Other Specific Reasons"
+name: "Nutritional counseling"
+---
+reason: "Other Specific Reasons"
+name: "Wound care"

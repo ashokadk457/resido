@@ -1,0 +1,14 @@
+---
+name: "PAYMENT_PLAN_TYPE"
+code: "PERCENT"
+value: "Percent"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PAYMENT_PLAN_TYPE"
+code: "FIXED"
+value: "Fixed"
+description: ""
+active: 1
+display_order: 200

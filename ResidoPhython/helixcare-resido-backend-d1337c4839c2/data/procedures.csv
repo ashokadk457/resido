@@ -1,0 +1,1352 @@
+Procedure,Specialties
+peripheral intravenous (IV) cannulation or peripheral (IV) Insertion,207L00000X
+General Anesthesia,207L00000X
+Mask Ventilation,207L00000X
+Laryngeal Mask Airway Insertion,207L00000X
+Endotracheal Intubation,207L00000X
+Awake Fiber Optic Intubation,207L00000X
+Insertion of Left-Sided Double Lumen Tube,207L00000X
+Wire Crichothyroidotomy,207L00000X
+Radial Artery Catheterization,207L00000X
+Central Venous Catheterization (Internal Jugular),207L00000X
+Spinal Anesthesia,207L00000X
+Lumbar Epidural Placement,207L00000X
+Auditory evoked potential test,231H00000X
+Aural rehabilitation,231H00000X
+Bone-anchored (osseointegrated) hearing aid surgery,231H00000X
+Cochlear implants,231H00000X
+Computerized dynamic posturography,231H00000X
+Custom ear protector fitting,231H00000X
+Electroacoustic assessments of hearing aids,231H00000X
+Electronystagmography,231H00000X
+Hearing aid fitting,231H00000X
+Hearing conservation services,231H00000X
+Hearing implant surgery,231H00000X
+Hearing monitoring services,231H00000X
+Newborn hearing screening,231H00000X
+Rotary-chair testing,231H00000X
+Swim mold fitting,231H00000X
+Tinnitus assessment,231H00000X
+Tinnitus management,231H00000X
+Vestibular testing,231H00000X
+Videonystagmography,231H00000X
+Chronic asthma evaluations,207K00000X
+Allergy immunotherapy (allergy shots),207K00000X
+Allergy Skin Testing,207K00000X
+Blood tests,207K00000X
+Spirometry (Lung Function Test),207K00000X
+Food Challenges,207K00000X
+Drug/medication Challenge,207K00000X
+Aspirin Desensitization,207K00000X
+Patch Testing,207K00000X
+Aortic root surgery,208G00000X
+Aortic valve repair and aortic valve replacement,208G00000X
+Atrial fibrillation ablation,208G00000X
+Atrial flutter ablation,208G00000X
+Cardiac ablation,208G00000X
+Cardiac catheterization,208G00000X
+Cardiac rehabilitation,208G00000X
+Cardiac resynchronization therapy,208G00000X
+Cardiovascular disease prevention,208G00000X
+Carotid angioplasty and stenting,208G00000X
+Carotid endarterectomy,208G00000X
+Congenital heart disease surgery,208G00000X
+Coronary artery bypass surgery,208G00000X
+Extracorporeal membrane oxygenation (ECMO),208G00000X
+Heart transplant,208G00000X
+Heart valve surgery,208G00000X
+Implantable cardioverter-defibrillators (ICDs),208G00000X
+Lung transplant,208G00000X
+Lung volume reduction surgery,208G00000X
+Minimally invasive heart surgery,208G00000X
+Minimally invasive surgery,208G00000X
+Mitral valve repair and mitral valve replacement,208G00000X
+Neonatal and pediatric heart surgery,208G00000X
+Nonpharmacological arrhythmia therapy,208G00000X
+Pacemaker,208G00000X
+Percutaneous valve procedures,208G00000X
+Pulmonary thromboendarterectomy,208G00000X
+Pulmonary valve repair and replacement,208G00000X
+Robotic heart surgery,208G00000X
+Ross procedure,208G00000X
+Transcatheter aortic valve replacement (TAVR),208G00000X
+Tricuspid valve repair and tricuspid valve replacement,208G00000X
+Ventricular assist device (VAD),208G00000X
+Video-assisted thoracoscopic surgery (VATS),208G00000X
+Valvuloplasty,208G00000X
+Anorectal surgery,208C00000X
+Colectomy,208C00000X
+Coloanal anastomosis,208C00000X
+Colonoscopy,208C00000X
+Colostomy,208C00000X
+Fecal microbiota (stool) transplant,208C00000X
+Flexible sigmoidoscopy,208C00000X
+Ileal conduit management,208C00000X
+Ileoanal anastomosis (J-pouch) surgery,208C00000X
+Ileostomy,208C00000X
+Intraoperative radiation therapy (IORT),208C00000X
+Laparoscopic surgery,208C00000X
+Minimally invasive surgery,208C00000X
+Natural orifice transluminal endoscopic surgery,208C00000X
+Proctectomy,208C00000X
+Rectal prolapse surgery,208C00000X
+Robotic surgery,208C00000X
+Sacral nerve stimulation for fecal incontinence,208C00000X
+Single-incision laparoscopic surgery,208C00000X
+Transanal endoscopic microsurgery,208C00000X
+Transanal total mesorectal excision (TaTME),208C00000X
+Urostomy,208C00000X
+Virtual colonoscopy,208C00000X
+Dental Restroration,122300000X
+Dental Implant,122300000X
+Root Canal,122300000X
+Braces,122300000X
+Dentures,122300000X
+Extractions,122300000X
+Crowns,122300000X
+Dental Crowns,122300000X
+Bridges,122300000X
+Teeth Cleaning,122300000X
+Teeth Whitening,122300000X
+Tooth Extraction,122300000X
+Venner,122300000X
+Dental Bonding,122300000X
+Scaling and Root Planing,122300000X
+Dental Sealant,122300000X
+Cracked Teeth,122300000X
+Denture Repair,122300000X
+Fluoride,122300000X
+Gum Lifts,122300000X
+Oral Surgery,122300000X
+Cosmetic 122300000Xry,122300000X
+Pediatric 122300000Xry,122300000X
+Invisalign,122300000X
+Bone Grafting,122300000X
+Diode Laser,122300000X
+Periodontal,122300000X
+Allergy education,207N00000X
+Allergy skin tests,207N00000X
+Botox injections,207N00000X
+Chemical peel,207N00000X
+Conscious sedation,207N00000X
+Cosmetic surgery,207N00000X
+Dermabrasion,207N00000X
+Dermal (soft tissue) fillers,207N00000X
+Dermatologic surgery,207N00000X
+Excision,207N00000X
+Face-lift,207N00000X
+Facial fillers for wrinkles,207N00000X
+Feminizing hormone therapy,207N00000X
+Feminizing surgery,207N00000X
+Laser hair removal,207N00000X
+Laser resurfacing,207N00000X
+Laser surgery,207N00000X
+Light therapy for skin,207N00000X
+Masculinizing hormone therapy,207N00000X
+Masculinizing surgery,207N00000X
+Mohs surgery,207N00000X
+Mole removal,207N00000X
+Platelet-rich plasma injections,207N00000X
+Scar revision,207N00000X
+Sclerotherapy,207N00000X
+Skin cyst removal,207N00000X
+Tattoo removal,207N00000X
+UV light therapy,207N00000X
+Adrenalectomy,207RE0101X
+Endoscopic thyroidectomy,207RE0101X
+Insulinoma enucleation,207RE0101X
+Laparoscopic surgery,207RE0101X
+Lateral neck dissection,207RE0101X
+Lymphadenectomy,207RE0101X
+Minimally invasive parathyroidectomy (MIP),207RE0101X
+Minimally invasive surgery,207RE0101X
+Neck dissection,207RE0101X
+Pancreatectomy,207RE0101X
+Pancreatic enucleation,207RE0101X
+Parathyroidectomy,207RE0101X
+Robotic adrenalectomy,207RE0101X
+Robotic surgery,207RE0101X
+Robotic ventral hernia repair,207RE0101X
+Thyroidectomy,207RE0101X
+Adrenalectomy,207RE0101X
+Bariatric surgery,207RE0101X
+Biliopancreatic diversion with duodenal switch (BPD/DS),207RE0101X
+Brain stereotactic radiosurgery,207RE0101X
+CT scan,207RE0101X
+Facial feminization surgery,207RE0101X
+Feminizing hormone therapy,207RE0101X
+Feminizing surgery,207RE0101X
+Gastric bypass (Roux-en-Y),207RE0101X
+Gender-affirming (transgender) voice therapy and surgery,207RE0101X
+Home enteral nutrition,207RE0101X
+Lipid management,207RE0101X
+Masculinizing hormone therapy,207RE0101X
+Masculinizing surgery,207RE0101X
+Minimally invasive parathyroidectomy (MIP),207RE0101X
+MRI,207RE0101X
+Pancreas transplant,207RE0101X
+Sleeve gastrectomy,207RE0101X
+Thyroid fine needle aspiration,207RE0101X
+Thyroidectomy,207RE0101X
+Top surgery for transgender men and nonbinary people,207RE0101X
+Top surgery for transgender women and nonbinary people,207RE0101X
+Transnasal endoscopic procedures,207RE0101X
+Wound care,207RE0101X
+24-hour pH monitoring,"207RG0100X,207RI0008X"
+Ambulatory motility recordings for GI motility disorders,"207RG0100X,207RI0008X"
+Anorectal function testing,"207RG0100X,207RI0008X"
+Bariatric surgery,"207RG0100X,207RI0008X"
+Barium enema,"207RG0100X,207RI0008X"
+Biliopancreatic diversion with duodenal switch (BPD/DS),"207RG0100X,207RI0008X"
+Biofeedback,"207RG0100X,207RI0008X"
+Capsule endoscopy,"207RG0100X,207RI0008X"
+Cholecystectomy (gallbladder removal),"207RG0100X,207RI0008X"
+Clinical nutrition counseling,"207RG0100X,207RI0008X"
+Clinical nutrition evaluation,"207RG0100X,207RI0008X"
+Colectomy,"207RG0100X,207RI0008X"
+Colonoscopy,"207RG0100X,207RI0008X"
+Constipation evaluation,"207RG0100X,207RI0008X"
+CT scan,"207RG0100X,207RI0008X"
+Diagnostic endoscopy,"207RG0100X,207RI0008X"
+Endoscopic mucosal resection,"207RG0100X,207RI0008X"
+Endoscopic sleeve gastroplasty,"207RG0100X,207RI0008X"
+Endoscopic ultrasound,"207RG0100X,207RI0008X"
+Esophagectomy,"207RG0100X,207RI0008X"
+Fecal incontinence evaluation,"207RG0100X,207RI0008X"
+Fecal occult blood test,"207RG0100X,207RI0008X"
+Flexible sigmoidoscopy,"207RG0100X,207RI0008X"
+Gastric bypass (Roux-en-Y),"207RG0100X,207RI0008X"
+Hepatobiliary disease evaluation,"207RG0100X,207RI0008X"
+Hepatobiliary disease postoperative care,"207RG0100X,207RI0008X"
+HIDA scan,"207RG0100X,207RI0008X"
+Home enteral nutrition,"207RG0100X,207RI0008X"
+Ileoanal anastomosis (J-pouch) surgery,"207RG0100X,207RI0008X"
+Intestinal transit studies for GI motility disorders,"207RG0100X,207RI0008X"
+Intragastric balloon,"207RG0100X,207RI0008X"
+Liver biopsy,"207RG0100X,207RI0008X"
+Liver function tests,"207RG0100X,207RI0008X"
+Liver transplant,"207RG0100X,207RI0008X"
+Living-donor liver transplant,"207RG0100X,207RI0008X"
+Magnetic resonance elastography,"207RG0100X,207RI0008X"
+Minimally invasive anti-reflux procedures,"207RG0100X,207RI0008X"
+Minimally invasive anti-reflux surgery,"207RG0100X,207RI0008X"
+Minimally invasive surgery,"207RG0100X,207RI0008X"
+MRI,"207RG0100X,207RI0008X"
+Needle biopsy,"207RG0100X,207RI0008X"
+Photodynamic therapy,"207RG0100X,207RI0008X"
+Photodynamic therapy for advanced esophageal cancer,"207RG0100X,207RI0008X"
+Photodynamic therapy for Barrett's esophagus,"207RG0100X,207RI0008X"
+Provocative testing for noncardiac chest pain,"207RG0100X,207RI0008X"
+Radiofrequency treatment for GERD,"207RG0100X,207RI0008X"
+Radionuclide gastric studies for GI motility disorders,"207RG0100X,207RI0008X"
+Rectal prolapse surgery,"207RG0100X,207RI0008X"
+Robotic surgery,"207RG0100X,207RI0008X"
+Sleeve gastrectomy,"207RG0100X,207RI0008X"
+Splenectomy,"207RG0100X,207RI0008X"
+Stool DNA test,"207RG0100X,207RI0008X"
+Therapeutic endoscopy,"207RG0100X,207RI0008X"
+Ultrasound,"207RG0100X,207RI0008X"
+Upper endoscopy,"207RG0100X,207RI0008X"
+Video-assisted thoracoscopic surgery (VATS),"207RG0100X,207RI0008X"
+Virtual colonoscopy,"207RG0100X,207RI0008X"
+Bile duct resection,207RI0008X
+Bile duct stone removal,207RI0008X
+Biliary drainage,207RI0008X
+Biliary stenting,207RI0008X
+Cancer treatment,207RI0008X
+Chemoembolization for liver cancer,207RI0008X
+Cholecystectomy (gallbladder removal),207RI0008X
+Colectomy,207RI0008X
+Cryoablation for cancer,207RI0008X
+Cytoreductive surgery,207RI0008X
+Gastrectomy,207RI0008X
+Hepatic artery infusion pump chemotherapy,207RI0008X
+Hepatobiliary disease evaluation,207RI0008X
+Hepatobiliary disease postoperative care,207RI0008X
+Hyperthermic intraperitoneal chemotherapy (HIPEC),207RI0008X
+Irreversible electroporation,207RI0008X
+Laparoscopic surgery,207RI0008X
+Liver biopsy,207RI0008X
+Liver cyst fenestration,207RI0008X
+Liver cyst resection,207RI0008X
+Liver resection,207RI0008X
+Liver tumor ablation,207RI0008X
+Microwave ablation for cancer,207RI0008X
+Minimally invasive gastric surgery,207RI0008X
+Minimally invasive intestinal surgery,207RI0008X
+Minimally invasive liver surgery,207RI0008X
+Minimally invasive pancreas surgery,207RI0008X
+Minimally invasive surgery,207RI0008X
+Pancreatectomy,207RI0008X
+Pancreatic enucleation,207RI0008X
+Radiofrequency ablation for cancer,207RI0008X
+Small bowel resection,207RI0008X
+Soft tissue sarcoma surgery,207RI0008X
+Whipple procedure,207RI0008X
+Acoustic neuroma surgery,207T00000X
+Aneurysm surgery,207T00000X
+Arteriovenous malformation surgery,207T00000X
+Awake brain surgery,207T00000X
+Brain aneurysm surgery,207T00000X
+Brain rehabilitation,207T00000X
+Brain stereotactic radiosurgery,207T00000X
+Brain tumor surgery,207T00000X
+Carotid angioplasty and stenting,207T00000X
+Carotid endarterectomy,207T00000X
+Chiari malformation surgery,207T00000X
+Computer-assisted brain surgery,207T00000X
+Deep brain stimulation,207T00000X
+EC-IC Bypass (Extracranial-Intracranial Bypass Surgery),207T00000X
+Endoscopic procedures,207T00000X
+Endovascular treatment,207T00000X
+Epilepsy surgery,207T00000X
+Facial reanimation surgery,207T00000X
+Fetal surgery,207T00000X
+Functional electrical stimulation,207T00000X
+Hemifacial spasm surgery,207T00000X
+Hyperhidrosis surgery,207T00000X
+Intraoperative magnetic resonance imaging (iMRI),207T00000X
+Locomotor training for spinal cord injury,207T00000X
+Minimally invasive endovascular treatment,207T00000X
+Minimally invasive 207T00000X,207T00000X
+Minimally invasive surgery,207T00000X
+Neurogenic bladder and bowel management,207T00000X
+Pediatric brain tumor surgery,207T00000X
+Pediatric cervical spine surgery,207T00000X
+Pediatric 207T00000X,207T00000X
+Peripheral nerve tumor surgery,207T00000X
+Pituitary tumor surgery,207T00000X
+Robotic surgery,207T00000X
+Scoliosis surgery,207T00000X
+Seizure surgery,207T00000X
+Sexuality and fertility management after spinal cord injury,207T00000X
+Spasticity management for spinal cord injury,207T00000X
+Spinal fusion,207T00000X
+Spine procedures,207T00000X
+Stereotactic radiosurgery,207T00000X
+Transcranial endoscopic procedures,207T00000X
+Transnasal endoscopic procedures,207T00000X
+Trigeminal neuralgia surgery,207T00000X
+Vertebroplasty,207T00000X
+Abdominal hysterectomy,207V00000X
+Ablation therapy,207V00000X
+Amniotic band release surgery,207V00000X
+Anal sphincter repair,207V00000X
+Antepartum care,207V00000X
+Artificial anal sphincter implantation,207V00000X
+Assisted reproductive technology,207V00000X
+Biofeedback,207V00000X
+Birth control pills,207V00000X
+Bladder botox injection,207V00000X
+Bladder prolapse (cystocele) repair,207V00000X
+Chemotherapy,207V00000X
+Chorionic villus sampling,207V00000X
+CO-2 laser treatment,207V00000X
+Colposcopy,207V00000X
+Conization,207V00000X
+Contraceptive implant,207V00000X
+Cordocentesis,207V00000X
+C-section,207V00000X
+Cystourethroscopy,207V00000X
+Cytoreductive surgery,207V00000X
+Diagnostic hysteroscopy,207V00000X
+Diagnostic laparoscopy,207V00000X
+Egg donation,207V00000X
+Egg freezing,207V00000X
+Endometrial ablation,207V00000X
+Endometriosis surgery,207V00000X
+Enterocele repair,207V00000X
+Facial feminization surgery,207V00000X
+Female hormone replacement therapy,207V00000X
+Feminizing hormone therapy,207V00000X
+Feminizing surgery,207V00000X
+Fertility preservation,207V00000X
+Fertility sparing surgery,207V00000X
+Fetal cystoscopy,207V00000X
+Fetal endoscopic tracheal occlusion,207V00000X
+Fetal shunt placement,207V00000X
+Fetal surgery,207V00000X
+Fetal surgery for spina bifida,207V00000X
+Fetoscopic laser ablation,207V00000X
+Fetoscopy,207V00000X
+First trimester screening,207V00000X
+Gender-affirming (transgender) voice therapy and surgery,207V00000X
+Genetic amniocentesis,207V00000X
+Genetic counseling,207V00000X
+Genetic testing,207V00000X
+Gestational surrogacy,207V00000X
+Hyperthermic intraperitoneal chemotherapy (HIPEC),207V00000X
+Hysteroscopy,207V00000X
+In vitro fertilization (IVF),207V00000X
+Intraoperative magnetic resonance imaging (iMRI),207V00000X
+Intrauterine transfusion,207V00000X
+IUDs,207V00000X
+Laparoscopic radiofrequency ablation,207V00000X
+Laser therapy for vaginal atrophy,207V00000X
+Loop electrosurgical excision procedure,207V00000X
+Masculinizing hormone therapy,207V00000X
+Masculinizing surgery,207V00000X
+Midurethral sling,207V00000X
+Minimally invasive hysterectomy,207V00000X
+Minimally invasive surgery,207V00000X
+Minimally invasive surgical staging,207V00000X
+Myomectomy,207V00000X
+Oophorectomy (ovary removal surgery),207V00000X
+Ovarian remnant removal,207V00000X
+Ovarian tissue cryopreservation,207V00000X
+Ovary transplant,207V00000X
+Pap smear or Pap Test,207V00000X
+Pelvic exam,207V00000X
+Pelvic exenteration,207V00000X
+Pelvic floor physical therapy,207V00000X
+Pelvic floor reconstruction,207V00000X
+Pelvic floor re-education,207V00000X
+Percutaneous tibial nerve stimulation,207V00000X
+Pessary fitting,207V00000X
+Pessary management,207V00000X
+Physical therapy,207V00000X
+Polypectomy,207V00000X
+Post-hysterectomy vaginal prolapse repair,207V00000X
+Preimplantation genetic diagnosis,207V00000X
+Preimplantation genetic screening,207V00000X
+Prenatal drug exposure counseling,207V00000X
+Prenatal screening,207V00000X
+Radiofrequency ablation,207V00000X
+Rectocele repair,207V00000X
+Rectovaginal fistula repair,207V00000X
+Robotic hysterectomy,207V00000X
+Robotic myomectomy,207V00000X
+Robotic surgery,207V00000X
+Sacral nerve stimulation,207V00000X
+Sentinel node biopsy,207V00000X
+Sperm donation,207V00000X
+Third-party reproduction,207V00000X
+Top surgery for transgender men and nonbinary people,207V00000X
+Top surgery for transgender women and nonbinary people,207V00000X
+Trachelectomy,207V00000X
+Tubal ligation,207V00000X
+Tubal ligation reversal,207V00000X
+Urethral diverticulum surgery,207V00000X
+Urethral reconstruction,207V00000X
+Urinary bladder training,207V00000X
+Urodynamic evaluation,207V00000X
+Uterine artery embolization,207V00000X
+Uterine prolapse surgery,207V00000X
+Vaginal delivery,207V00000X
+Vaginal hysterectomy,207V00000X
+Vaginectomy,207V00000X
+Vesicovaginal fistula repair,207V00000X
+Vulvectomy,207V00000X
+Ultrasound,207V00000X
+Anophthalmic socket surgery,207W00000X
+Balloon dacryoplasty,207W00000X
+Blepharoplasty,207W00000X
+Brachytherapy,207W00000X
+Botox injections,207W00000X
+Brow lift,207W00000X
+Canthal resection,207W00000X
+Cantholysis,207W00000X
+Canthotomy,207W00000X
+Cataract surgery,207W00000X
+Contact lens fitting,207W00000X
+Cornea transplant,207W00000X
+Cosmetic surgery,207W00000X
+Custom orbital implants,207W00000X
+Descemet membrane endothelial keratoplasty (DMEK),207W00000X
+Descemet stripping endothelial keratoplasty (DSEK),207W00000X
+Decompression of dacryocele,207W00000X
+Decompression of orbit,207W00000X
+Drainage of abscess,207W00000X
+Drainage of choroidals,207W00000X
+Ectropion repair,207W00000X
+Electrolysis for misdirected lashes,207W00000X
+Enucleation,207W00000X
+Evisceration,207W00000X
+Endoscopic dacryocystorhinostomy,207W00000X
+Entropion repair,207W00000X
+Excision of tumors,207W00000X
+Exenteration,207W00000X
+Exploration of orbit,207W00000X
+Eye exam,207W00000X
+Eye Muscle,207W00000X
+Eyeglass fitting,207W00000X
+Eyelid retraction repair,207W00000X
+Eye Removal,207W00000X
+Facial fillers for wrinkles,207W00000X
+Facial reanimation surgery,207W00000X
+Fat transfer,207W00000X
+Fenestration of optic nerve sheath,207W00000X
+Filtration surgery,207W00000X
+Frontalis sling,207W00000X
+Glaucoma surgery,207W00000X
+Gold weight eyelid implant,207W00000X
+IRIS Removal,207W00000X
+Keratoplasty,207W00000X
+Lacrimal surgery,207W00000X
+Laser cataract surgery,207W00000X
+LASIK eye surgery,207W00000X
+Minimally invasive surgery,207W00000X
+Ocular imaging,207W00000X
+Ocular surface reconstruction,207W00000X
+Oculoplastic surgery,207W00000X
+Orbital decompression,207W00000X
+Orbital fracture repair,207W00000X
+Orbital surgery,207W00000X
+Photorefractive keratectomy,207W00000X
+Ptosis repair,207W00000X
+Refractive surgery,207W00000X
+Retina,207W00000X
+Scar revision,207W00000X
+Scleral lens fitting,207W00000X
+Skin cancer reconstruction,207W00000X
+Strabismus,207W00000X
+Squint surgeries,207W00000X
+Subconjunctival microstents,207W00000X
+Trabeculectomy,207W00000X
+Trauma,207W00000X
+Visual electrophysiology,207W00000X
+Alveolar bone grafting,204E00000X
+Arthrocentesis,204E00000X
+Arthroplasty,204E00000X
+Bone grafting for implants,204E00000X
+Buccal fat pad flap,204E00000X
+Cheek implants,204E00000X
+Chin surgery (genioplasty),204E00000X
+Cosmetic dental surgery,204E00000X
+Cosmetic jaw surgery,204E00000X
+Costochondral rib grafts,204E00000X
+Dental implant surgery,204E00000X
+Distraction osteogenesis,204E00000X
+Double chin removal,204E00000X
+Facial contouring surgery,204E00000X
+Facial fracture repair,204E00000X
+Facial implant surgery,204E00000X
+Fibula free flap,204E00000X
+General anesthesia,204E00000X
+Iliac crest bone grafts,204E00000X
+Impacted tooth removal,204E00000X
+Intravenous sedation,204E00000X
+Jaw surgery,204E00000X
+Laser surgery,204E00000X
+Liposuction,204E00000X
+Mandibular osteotomy,204E00000X
+Mandibular reconstruction,204E00000X
+Maxillary osteotomy,204E00000X
+Maxillary reconstruction,204E00000X
+Maxillomandibular advancement surgery,204E00000X
+Microvascular reconstruction,204E00000X
+Nonvascularized bone graft,204E00000X
+Nose reconstruction,204E00000X
+Oral biopsy,204E00000X
+Oral cancer screening,204E00000X
+Orbital augmentation,204E00000X
+Orbital reconstruction,204E00000X
+Oroantral fistula repair,204E00000X
+Oronasal fistula repair,204E00000X
+Outer ear reconstruction,204E00000X
+Parotidectomy,204E00000X
+Partial TMJ replacement,204E00000X
+Radial forearm free flap,204E00000X
+Scar revision,204E00000X
+Sublingual gland removal,204E00000X
+Submandibular gland removal,204E00000X
+Temporalis flap,204E00000X
+TMJ disk surgery,204E00000X
+Tongue reduction surgery,204E00000X
+Tooth extraction,204E00000X
+Total TMJ replacement,204E00000X
+Tracheostomy,204E00000X
+Vascularized bone grafting,204E00000X
+Vermilionectomy,204E00000X
+Wisdom tooth extraction,204E00000X
+Acetabular osteotomy,207X00000X
+ACL reconstruction,207X00000X
+Ankle arthroscopy,207X00000X
+Ankle reconstruction,207X00000X
+Ankle replacement,207X00000X
+Ankle surgery,207X00000X
+Autologous chondrocyte implantation (ACI),207X00000X
+Bankart repair,207X00000X
+Bone grafting,207X00000X
+Bone metastasis surgery,207X00000X
+Bone reconstruction,207X00000X
+Brachial plexus surgery,207X00000X
+Bunion surgery,207X00000X
+Carpal tunnel surgery,207X00000X
+Cartilage repair,207X00000X
+Cartilage restoration,207X00000X
+Cervical spine fusion,207X00000X
+Congenital hand deformity correction,207X00000X
+Disk replacement,207X00000X
+Diskectomy,207X00000X
+Distal radioulnar joint replacement,207X00000X
+Elbow arthroscopy,207X00000X
+Elbow replacement surgery,207X00000X
+External fixation,207X00000X
+Femoral osteotomy,207X00000X
+Fibula free flap,207X00000X
+Finger fusion,207X00000X
+Finger joint replacement,207X00000X
+Finger reattachment,207X00000X
+Foot reconstruction,207X00000X
+Foraminotomy,207X00000X
+Free muscle transfer,207X00000X
+Fresh osteochondral allograft reconstruction,207X00000X
+Growing rods,207X00000X
+Guided growth in children,207X00000X
+Hand reconstruction,207X00000X
+Hand surgery,207X00000X
+Hand transplant,207X00000X
+Hemipelvectomy,207X00000X
+Hemivertebra resection,207X00000X
+Hip arthroscopy,207X00000X
+Hip core decompression,207X00000X
+Hip labral repair,207X00000X
+Hip preservation surgery,207X00000X
+Hip replacement,207X00000X
+Joint replacement,207X00000X
+Joint replacement revisions,207X00000X
+Knee fusion,207X00000X
+Knee osteotomy,207X00000X
+Knee reconstruction,207X00000X
+Knee replacement,207X00000X
+Laminectomy,207X00000X
+Ligament reconstruction of fingers,207X00000X
+Ligament reconstruction of forearm,207X00000X
+Ligament reconstruction of shoulder,207X00000X
+Ligament reconstruction of wrist,207X00000X
+Limb deformity correction,207X00000X
+Limb lengthening,207X00000X
+Limb salvage surgery,207X00000X
+Medial patellofemoral ligament reconstruction,207X00000X
+Mehta casting for infantile scoliosis,207X00000X
+Meniscus repair,207X00000X
+Meniscus transplantation,207X00000X
+Microvascular surgery,207X00000X
+Minimally invasive surgery,207X00000X
+Multiligament knee reconstruction,207X00000X
+Muscle transfers,207X00000X
+Nerve decompression,207X00000X
+Nerve grafts,207X00000X
+Nerve reconstruction,207X00000X
+Nerve transfer,207X00000X
+Nonunion surgery,207X00000X
+Offset procedures,207X00000X
+Osteotomy,207X00000X
+Partial knee replacement,207X00000X
+Pediatric cervical spine surgery,207X00000X
+Pelvic tumor surgery,207X00000X
+Periacetabular osteotomy (PAO),207X00000X
+Physeal bar resection,207X00000X
+Posterior cruciate ligament (PCL) reconstruction,207X00000X
+Reverse shoulder replacement,207X00000X
+Revision of previous trauma surgery,207X00000X
+Robot-assisted partial knee resurfacing,207X00000X
+Rotationplasty,207X00000X
+Rotator cuff surgery,207X00000X
+Sacrectomy,207X00000X
+Sacroiliac joint fusions,207X00000X
+Shoulder arthroscopy,207X00000X
+Shoulder replacement surgery,207X00000X
+Soft tissue sarcoma surgery,207X00000X
+Spatial frame corrections,207X00000X
+Spinal deformity correction,207X00000X
+Spinal fusion,207X00000X
+Spine decompression,207X00000X
+Spine reconstruction,207X00000X
+Spine tumor surgery,207X00000X
+Tendon transfer,207X00000X
+Toe-to-thumb transfer,207X00000X
+Tommy John surgery,207X00000X
+Unicompartmental knee replacement,207X00000X
+Vascularized bone grafting,207X00000X
+Vascularized free fibula transfer,207X00000X
+Vertebral column resection,207X00000X
+Vertebroplasty,207X00000X
+Wrist arthroscopy,207X00000X
+Wrist fracture treatment,207X00000X
+Wrist fusion,207X00000X
+Wrist reconstruction,207X00000X
+Wrist replacement,207X00000X
+Acoustic immittance testing,"207Y00000X,207YX0007X"
+Acoustic voice assessment,"207Y00000X,207YX0007X"
+Aerodynamic voice assessment,"207Y00000X,207YX0007X"
+Airway reconstruction,"207Y00000X,207YX0007X"
+Auditory evoked potential test,"207Y00000X,207YX0007X"
+Aural rehabilitation,"207Y00000X,207YX0007X"
+Balloon sinuplasty,"207Y00000X,207YX0007X"
+Blepharoplasty,"207Y00000X,207YX0007X"
+Botox injections,"207Y00000X,207YX0007X"
+Bronchoscopy,"207Y00000X,207YX0007X"
+Brow lift,"207Y00000X,207YX0007X"
+Canalith repositioning procedure,"207Y00000X,207YX0007X"
+Chemical peel,"207Y00000X,207YX0007X"
+Cleft lip repair,"207Y00000X,207YX0007X"
+Cleft palate repair,"207Y00000X,207YX0007X"
+CO-2 laser treatment,"207Y00000X,207YX0007X"
+Cochlear implants,"207Y00000X,207YX0007X"
+Computerized dynamic posturography,"207Y00000X,207YX0007X"
+Cosmetic surgery,"207Y00000X,207YX0007X"
+Custom ear protector fitting,"207Y00000X,207YX0007X"
+Dental implant surgery,"207Y00000X,207YX0007X"
+Ear reconstruction,"207Y00000X,207YX0007X"
+Electroacoustic assessments of hearing aids,"207Y00000X,207YX0007X"
+Electromyography (EMG),"207Y00000X,207YX0007X"
+Electronystagmography,"207Y00000X,207YX0007X"
+Endoscopic sinus surgery,"207Y00000X,207YX0007X"
+Esophagoscopy,"207Y00000X,207YX0007X"
+Face-lift,"207Y00000X,207YX0007X"
+Facial fillers for wrinkles,"207Y00000X,207YX0007X"
+Facial fracture repair,"207Y00000X,207YX0007X"
+Facial nerve rehabilitation,"207Y00000X,207YX0007X"
+Facial reanimation surgery,"207Y00000X,207YX0007X"
+Facial reconstruction,"207Y00000X,207YX0007X"
+Facial rejuvenation,"207Y00000X,207YX0007X"
+Fat transfer,"207Y00000X,207YX0007X"
+Flexible endoscopic evaluation of swallowing with sensory testing (FEESST),"207Y00000X,207YX0007X"
+Hearing aid fitting,"207Y00000X,207YX0007X"
+Hearing conservation services,"207Y00000X,207YX0007X"
+Hearing implant surgery,"207Y00000X,207YX0007X"
+Hearing monitoring services,"207Y00000X,207YX0007X"
+Hearing test,"207Y00000X,207YX0007X"
+Hearing test for children,"207Y00000X,207YX0007X"
+Infant hearing screening,"207Y00000X,207YX0007X"
+KTP laser treatment,"207Y00000X,207YX0007X"
+Laryngeal reinnervation,"207Y00000X,207YX0007X"
+Laryngoscopy,"207Y00000X,207YX0007X"
+Laryngotracheal reconstruction,"207Y00000X,207YX0007X"
+Larynx and trachea transplant,"207Y00000X,207YX0007X"
+Laser resurfacing,"207Y00000X,207YX0007X"
+Lip surgery,"207Y00000X,207YX0007X"
+Mastoidectomy,"207Y00000X,207YX0007X"
+Maxillomandibular advancement surgery,"207Y00000X,207YX0007X"
+Microlaryngoscopy,"207Y00000X,207YX0007X"
+Microvascular reconstruction,"207Y00000X,207YX0007X"
+Middle ear reconstruction,"207Y00000X,207YX0007X"
+Minimally invasive surgery,"207Y00000X,207YX0007X"
+Nasal septal reconstruction,"207Y00000X,207YX0007X"
+Nasal valve repair,"207Y00000X,207YX0007X"
+Neck lift,"207Y00000X,207YX0007X"
+Newborn hearing screening,"207Y00000X,207YX0007X"
+Nose reconstruction,"207Y00000X,207YX0007X"
+Otoacoustic emissions (OAE) test,"207Y00000X,207YX0007X"
+Otological microsurgery,"207Y00000X,207YX0007X"
+Otoplasty,"207Y00000X,207YX0007X"
+Parathyroidectomy,"207Y00000X,207YX0007X"
+Parotid gland surgery,"207Y00000X,207YX0007X"
+Parotidectomy,"207Y00000X,207YX0007X"
+Pharyngeal manometry,"207Y00000X,207YX0007X"
+Professional voice evaluation,"207Y00000X,207YX0007X"
+Rhinoplasty,"207Y00000X,207YX0007X"
+Robotic surgery,"207Y00000X,207YX0007X"
+Rotary-chair testing,"207Y00000X,207YX0007X"
+Scar revision,"207Y00000X,207YX0007X"
+Septoplasty,"207Y00000X,207YX0007X"
+Singing voice evaluation,"207Y00000X,207YX0007X"
+Sinus surgery,"207Y00000X,207YX0007X"
+Skin cancer reconstruction,"207Y00000X,207YX0007X"
+Speech-language pathology evaluation,"207Y00000X,207YX0007X"
+Stapedectomy,"207Y00000X,207YX0007X"
+Stroboscopy,"207Y00000X,207YX0007X"
+Swallowing exercises,"207Y00000X,207YX0007X"
+Swim mold fitting,"207Y00000X,207YX0007X"
+Thyroid surgery,"207Y00000X,207YX0007X"
+Thyroidectomy,"207Y00000X,207YX0007X"
+Thyroplasty,"207Y00000X,207YX0007X"
+Tinnitus assessment,"207Y00000X,207YX0007X"
+Tonsillectomy,"207Y00000X,207YX0007X"
+Tracheostomy,"207Y00000X,207YX0007X"
+Transnasal esophagoscopy,"207Y00000X,207YX0007X"
+Transnasal pituitary surgery,"207Y00000X,207YX0007X"
+Transoral laser microsurgery,"207Y00000X,207YX0007X"
+Transoral robotic surgery,"207Y00000X,207YX0007X"
+Turbinate surgery,"207Y00000X,207YX0007X"
+Ultrasound-guided fine-needle aspiration,"207Y00000X,207YX0007X"
+Ultrasound-guided surgery,"207Y00000X,207YX0007X"
+Upper airway stimulation therapy (Inspire device),"207Y00000X,207YX0007X"
+Uvulopalatopharyngoplasty (UPPP),"207Y00000X,207YX0007X"
+Vestibular rehabilitation,"207Y00000X,207YX0007X"
+Vestibular testing,"207Y00000X,207YX0007X"
+Videofluoroscopic swallowing study,"207Y00000X,207YX0007X"
+Videolaryngoscopy,"207Y00000X,207YX0007X"
+Vocal cord injection,"207Y00000X,207YX0007X"
+Voice therapy,"207Y00000X,207YX0007X"
+Arm lift,208200000X
+Blepharoplasty,208200000X
+Body fat removal,208200000X
+Body lift,208200000X
+Botox injections,208200000X
+Breast augmentation,208200000X
+Breast cancer surgery,208200000X
+Breast lift,208200000X
+Breast reconstruction with flap surgery,208200000X
+Breast reconstruction with implants,208200000X
+Breast reduction surgery,208200000X
+Brow lift,208200000X
+Buttock lift,208200000X
+Cheek lift,208200000X
+Chemical peel,208200000X
+Chemotherapy for breast cancer,208200000X
+Chin surgery (genioplasty),208200000X
+Cleft lip repair,208200000X
+Cleft palate repair,208200000X
+CO-2 laser treatment,208200000X
+Collagen injection,208200000X
+Complex wound repair,208200000X
+Cosmetic dental surgery,208200000X
+Cosmetic jaw surgery,208200000X
+Cosmetic surgery,208200000X
+Craniofacial surgery,208200000X
+Dermabrasion,208200000X
+Double chin removal,208200000X
+Ear reconstruction,208200000X
+Electromyography (EMG),208200000X
+Endoscopic cosmetic surgery,208200000X
+Endovenous laser therapy,208200000X
+Face-lift,208200000X
+Facial contouring surgery,208200000X
+Facial feminization surgery,208200000X
+Facial fillers for wrinkles,208200000X
+Facial nerve rehabilitation,208200000X
+Facial reanimation surgery,208200000X
+Facial reconstruction,208200000X
+Facial rejuvenation,208200000X
+Facial scar revision,208200000X
+Fat transfer,208200000X
+Feminizing hormone therapy,208200000X
+Feminizing surgery,208200000X
+Gender affirming surgery,208200000X
+Gender-affirming (transgender) voice therapy and surgery,208200000X
+Gynecomastia surgery (male breast reduction),208200000X
+Hand surgery,208200000X
+Jaw surgery,208200000X
+Laser hair removal,208200000X
+Laser resurfacing,208200000X
+Lip surgery,208200000X
+Liposuction,208200000X
+Masculinizing hormone therapy,208200000X
+Masculinizing surgery,208200000X
+Microtia repair,208200000X
+Microvascular surgery,208200000X
+Minimally invasive surgery,208200000X
+Mohs surgery,208200000X
+Nasal valve repair,208200000X
+Neck lift,208200000X
+Non-surgical fat removal (VelaShape/UltraShape),208200000X
+Nose reconstruction,208200000X
+Orbital reconstruction,208200000X
+Otoplasty,208200000X
+Parathyroidectomy,208200000X
+Radiation therapy for breast cancer,208200000X
+Rhinoplasty,208200000X
+Robotic surgery,208200000X
+Scar revision,208200000X
+Sclerotherapy,208200000X
+Septoplasty,208200000X
+Skin cancer reconstruction,208200000X
+Spider vein removal,208200000X
+Tattoo removal,208200000X
+Thigh lift,208200000X
+Tooth alteration,208200000X
+Tooth restoration,208200000X
+Top surgery for transgender men and nonbinary people,208200000X
+Top surgery for transgender women and nonbinary people,208200000X
+Tummy tuck,208200000X
+Vascular blemish removal,208200000X
+Wrinkle treatment,208200000X
+Adrenalectomy,"2086X0206X,207RE0101X"
+Ampullectomy,"2086X0206X,207RE0101X"
+Breast cancer surgery,"2086X0206X,207RE0101X"
+Breast reconstruction with flap surgery,"2086X0206X,207RE0101X"
+Breast reconstruction with implants,"2086X0206X,207RE0101X"
+Cancer treatment,"2086X0206X,207RE0101X"
+Duodenal resection,"2086X0206X,207RE0101X"
+Hyperthermic intraperitoneal chemotherapy (HIPEC),"2086X0206X,207RE0101X"
+Laparoscopic adrenalectomy,"2086X0206X,207RE0101X"
+Laparoscopic distal pancreatectomy,"2086X0206X,207RE0101X"
+Laparoscopic partial gastrectomy,"2086X0206X,207RE0101X"
+Laparoscopic splenectomy,"2086X0206X,207RE0101X"
+Laparoscopic total gastrectomy,"2086X0206X,207RE0101X"
+Laparoscopic wedge resection of the stomach,"2086X0206X,207RE0101X"
+Liver biopsy,"2086X0206X,207RE0101X"
+Liver resection,"2086X0206X,207RE0101X"
+Lumpectomy,"2086X0206X,207RE0101X"
+Mastectomy,"2086X0206X,207RE0101X"
+Minimally invasive cancer surgery,"2086X0206X,207RE0101X"
+Minimally invasive parathyroidectomy (MIP),"2086X0206X,207RE0101X"
+Minimally invasive surgery,"2086X0206X,207RE0101X"
+Modified radical mastectomy,"2086X0206X,207RE0101X"
+Neck dissection,"2086X0206X,207RE0101X"
+Nipple-sparing mastectomy,"2086X0206X,207RE0101X"
+Oncoplastic breast-conserving surgery,"2086X0206X,207RE0101X"
+Partial thyroidectomy,"2086X0206X,207RE0101X"
+Prophylactic (preventive) surgery,"2086X0206X,207RE0101X"
+Retroperitoneal sarcoma resection,"2086X0206X,207RE0101X"
+Robotic surgery,"2086X0206X,207RE0101X"
+Sentinel node biopsy,"2086X0206X,207RE0101X"
+Skin grafts,"2086X0206X,207RE0101X"
+Skin-sparing mastectomy,"2086X0206X,207RE0101X"
+Small bowel resection,"2086X0206X,207RE0101X"
+Splenectomy,"2086X0206X,207RE0101X"
+Thyroidectomy,"2086X0206X,207RE0101X"
+TVEC (Talimogene laherparepvec) injection,"2086X0206X,207RE0101X"
+Whipple procedure,"2086X0206X,207RE0101X"
+Wide local skin excision,"2086X0206X,207RE0101X"
+Airway reconstruction,208G00000X
+Bleb resection,208G00000X
+Bronchoscopy,208G00000X
+Carinal resection,208G00000X
+Chest reconstruction,208G00000X
+Chest wall resection,208G00000X
+Collis-Belsey fundoplication,208G00000X
+Decortication,208G00000X
+Diaphragm plication,208G00000X
+Diaphragmatic hernia repair,208G00000X
+Endoscopic thoracic sympathectomy,208G00000X
+Esophageal diverticulectomy,208G00000X
+Esophagectomy,208G00000X
+Extrapleural pneumonectomy,208G00000X
+Heart transplant,208G00000X
+Heller myotomy,208G00000X
+Hiatal hernia repair,208G00000X
+Lobectomy,208G00000X
+Lung cancer screening,208G00000X
+Lung transplant,208G00000X
+Lung volume reduction surgery,208G00000X
+Mediastinoscopy,208G00000X
+Mediastinotomy,208G00000X
+Minimally invasive surgery,208G00000X
+Nissen fundoplication,208G00000X
+Nuss procedure,208G00000X
+Pectus excavatum surgery,208G00000X
+Peroral endoscopic myotomy (POEM),208G00000X
+Pneumonectomy,208G00000X
+Ravitch procedure,208G00000X
+Robotic lobectomy,208G00000X
+Robotic surgery,208G00000X
+Thoracotomy,208G00000X
+Thymectomy,208G00000X
+Tracheal resection,208G00000X
+Tracheal stenting,208G00000X
+Tracheostomy,208G00000X
+VATS lobectomy,208G00000X
+Video-assisted thoracoscopic surgery (VATS),208G00000X
+Wedge resection of the lung,208G00000X
+Bone marrow transplant,204F00000X
+Donor nephrectomy,204F00000X
+Extracorporeal membrane oxygenation (ECMO),204F00000X
+Face transplant,204F00000X
+Facial reanimation surgery,204F00000X
+Hand transplant,204F00000X
+Heart transplant,204F00000X
+Kidney transplant,204F00000X
+Liver transplant,204F00000X
+Living-donor transplant,204F00000X
+Lung transplant,204F00000X
+Minimally invasive surgery,204F00000X
+Pancreas transplant,204F00000X
+Ablation therapy,208800000X
+Adrenalectomy,208800000X
+Artificial urinary sphincter,208800000X
+Bladder augmentation,208800000X
+Bladder removal surgery (cystectomy),208800000X
+Brachytherapy,208800000X
+Chemotherapy,208800000X
+Choline C-11 PET scan,208800000X
+Circumcision (male),208800000X
+Cryoablation for cancer,208800000X
+Donor nephrectomy,208800000X
+Enterostomal therapy,208800000X
+Facial feminization surgery,208800000X
+Feminizing hormone therapy,208800000X
+Feminizing surgery,208800000X
+Gender-affirming (transgender) voice therapy and surgery,208800000X
+Genitourinary reconstruction,208800000X
+Holmium laser prostate surgery,208800000X
+Immunotherapy,208800000X
+Kidney reconstruction,208800000X
+Kidney-sparing surgery,208800000X
+Laser PVP surgery,208800000X
+Masculinizing hormone therapy,208800000X
+Masculinizing surgery,208800000X
+Minimally invasive surgery,208800000X
+Neobladder reconstruction,208800000X
+Nephrectomy (kidney removal),208800000X
+Neurogenic bladder and bowel management,208800000X
+Penile implants,208800000X
+Prostate biopsy,208800000X
+Prostate brachytherapy,208800000X
+Prostate laser surgery,208800000X
+Prostate ultrasound,208800000X
+Prostatectomy,208800000X
+Radiofrequency ablation for cancer,208800000X
+Retroperitoneal lymph node dissection for testicular cancer,208800000X
+Robotic surgery,208800000X
+Salvage therapy,208800000X
+Top surgery for transgender men and nonbinary people,208800000X
+Top surgery for transgender women and nonbinary people,208800000X
+Transurethral resection of the prostate (TURP),208800000X
+Ultrasound-guided prostate biopsy,208800000X
+Ureteral stent exchange,208800000X
+Ureteral stent placement,208800000X
+Ureteroscopy,208800000X
+Urethral bulking procedures,208800000X
+Urinary diversion surgery,208800000X
+Urinary sling procedures,208800000X
+Urodynamic evaluation,208800000X
+Varicocele correction (varicocelectomy),208800000X
+Vasectomy,208800000X
+Vasectomy reversal,208800000X
+Abdominal aorta ultrasound,2086S0129X
+Abdominal endovascular aneurysm repair (EVAR),2086S0129X
+Angioplasty,2086S0129X
+Aortic aneurysm repair,2086S0129X
+Aortocaval fistula repair,2086S0129X
+Aortoenteric fistula repair,2086S0129X
+Arterial bypass,2086S0129X
+Arterial mapping,2086S0129X
+Arterial ultrasound,2086S0129X
+Arteriovenous fistula surgery,2086S0129X
+Arteriovenous malformation surgery,2086S0129X
+Carotid angioplasty and stenting,2086S0129X
+Carotid artery reconstruction,2086S0129X
+Carotid endarterectomy,2086S0129X
+Carotid ultrasound,2086S0129X
+Celiac artery bypass,2086S0129X
+Cerebral angiogram,2086S0129X
+Cerebrospinal fluid examination,2086S0129X
+CT angiogram,2086S0129X
+Echocardiogram,2086S0129X
+Electromyography (EMG),2086S0129X
+Endovascular reconstruction,2086S0129X
+Endovenous laser therapy,2086S0129X
+Exercise ankle-brachial index,2086S0129X
+Graft surveillance,2086S0129X
+Inferior vena cava (IVC) filter placement,2086S0129X
+Inferior vena cava (IVC) filter retrieval,2086S0129X
+Inferior vena cava (IVC) stenting,2086S0129X
+Intra-operative duplex ultrasonography,2086S0129X
+Laser ablation,2086S0129X
+Lymphangiogram,2086S0129X
+Lymphovenous anastomosis,2086S0129X
+Magnetic resonance angiography,2086S0129X
+Mesenteric artery bypass,2086S0129X
+Open vascular reconstruction,2086S0129X
+Peripheral artery ultrasound,2086S0129X
+Pulse volume recordings,2086S0129X
+Radiofrequency ablation,2086S0129X
+Renal artery angioplasty,2086S0129X
+Renal artery bypass,2086S0129X
+Renal artery endarterectomy,2086S0129X
+Renal artery stenting,2086S0129X
+Renal artery ultrasound,2086S0129X
+Thoracic duct embolization,2086S0129X
+Thoracic endovascular aneurysm repair (TEVAR),2086S0129X
+Thoracic outlet decompression,2086S0129X
+Thrombectomy,2086S0129X
+Thrombolysis,2086S0129X
+Transcarotid artery revascularization (TCAR),2086S0129X
+Transcutaneous oximetry,2086S0129X
+Vascular bypass,2086S0129X
+Vascular recanalization,2086S0129X
+Vascular stenting,2086S0129X
+Vein mapping,2086S0129X
+Vein removal,2086S0129X
+Vena cava reconstruction,2086S0129X
+Venography,2086S0129X
+Venous reflux testing,2086S0129X
+Venous ultrasound,2086S0129X
+Vertebral artery reconstruction,2086S0129X
+Video-assisted thoracoscopic surgery (VATS),2086S0129X
+Vaccinations,207R00000X
+Nutritional Counseling,207R00000X
+Welness Checkups,207R00000X
+Screening of common health problems,207R00000X
+Diphtheria and tetanus,207R00000X
+Flu,207R00000X
+Hepatitis A & B,207R00000X
+HPV (human papillomavirus),207R00000X
+Pneumococcal,207R00000X
+Shingles,207R00000X
+Whooping cough (pertussis),207R00000X
+Blood pressure and cholesterol screening,207R00000X
+Colorectal Cancer Screening,207R00000X
+Hormone tests,207R00000X
+Mammogram,207R00000X
+Screenings for gynecological cancers,207R00000X
+Removal of foreign bodies from eyes and skin,207R00000X
+Abscess drainage,207R00000X
+Laceration repair,207R00000X
+Excision of skin lesions,207R00000X
+Simple fracture care,207R00000X
+Skin Biopsies,207R00000X
+Ablation therapy,207RH0000X
+Biological therapy for cancer,207RH0000X
+Blood and bone marrow stem cell donation,207RH0000X
+Blood transfusion,207RH0000X
+Bone marrow transplant,207RH0000X
+Cancer treatment,207RH0000X
+Chemotherapy,207RH0000X
+Experimental treatments,207RH0000X
+Immunotherapy,207RH0000X
+Targeted drug therapy,207RH0000X
+Virotherapy,207RH0000X
+Allergy injections,207Q00000X
+Biopsy and excision of skin lesions,207Q00000X
+Flu shots and Immunizations,207Q00000X
+Incision and drainage of abscesses,207Q00000X
+Intrauterine device (IUD) placement and removal,207Q00000X
+Joint Injections,207Q00000X
+Lab services,207Q00000X
+"Minor surgery, including vasectomy and circumcision",207Q00000X
+Vasectomy,207Q00000X
+Circumcision,207Q00000X
+Newborn and well-child care,207Q00000X
+Placement and removal of contraceptive implants,207Q00000X
+"Obstetrics, including prenatal care, delivery and postpartum care",207Q00000X
+Palliative care,207Q00000X
+Physical exams for sports,207Q00000X
+Physical exams for school,207Q00000X
+Physical exams for summer camp,207Q00000X
+Sigmoidoscopy,207Q00000X
+Treadmill testing,207Q00000X
+Breast exams,207Q00000X
+Mammography,207Q00000X
+Pap Tests ,207Q00000X
+Pelvic Exams,207Q00000X
+Colposcopy,207Q00000X
+Bone Densitometry,207Q00000X
+Wound repair ,207Q00000X
+Abscess and cyst drainage,207Q00000X
+Skin biopsy of moles,207Q00000X
+Steroid Injection of joints and trigger points ,207Q00000X
+Electrocardiogram (EKG),207Q00000X
+Pulmonary Function Test,207Q00000X
+Pap smear,207Q00000X
+IUD (intrauterine device) removal,207Q00000X
+Ingrown toenail removal,207Q00000X
+Wart removal,207Q00000X
+Foreign body removal,207Q00000X
+Osteopathic Manipulative Medicine,207Q00000X
+Cerumen Disimpaction,207Q00000X
+Antibiotic therapies,207RI0200X
+Fecal microbiota (stool) transplant,207RI0200X
+Feminizing hormone therapy,207RI0200X
+Feminizing surgery,207RI0200X
+Immunizations,207RI0200X
+Infection control,207RI0200X
+Masculinizing hormone therapy,207RI0200X
+Masculinizing surgery,207RI0200X
+Outpatient parenteral antimicrobial therapy ,207RI0200X
+Albumin-based molecular absorption therapy,207RN0300X
+Ambulatory blood pressure monitoring,207RN0300X
+Arterial pulse wave tonometry,207RN0300X
+Clinical nutrition counseling,207RN0300X
+Deceased-donor kidney transplant,207RN0300X
+Donor nephrectomy,207RN0300X
+Emergency dialysis,207RN0300X
+Hemodialysis,207RN0300X
+Hemodialysis vascular access surgery,207RN0300X
+Impedance cardiography,207RN0300X
+Kidney biopsy,207RN0300X
+Kidney transplant,207RN0300X
+Living-donor kidney transplant,207RN0300X
+Living-donor transplant,207RN0300X
+Magnetic resonance angiography,207RN0300X
+MRI,207RN0300X
+Noninvasive hemodynamic assessment,207RN0300X
+Palliative care,207RN0300X
+Pancreas transplant,207RN0300X
+Peritoneal dialysis,207RN0300X
+Post-transplant long-term care,207RN0300X
+Preemptive kidney transplant,207RN0300X
+Pre-transplant evaluation,207RN0300X
+Simultaneous pancreas-kidney transplant,207RN0300X
+Awake brain surgery,2084N0400X
+Botox injections,2084N0400X
+Brain rehabilitation,2084N0400X
+Carotid angioplasty and stenting,2084N0400X
+Carotid endarterectomy,2084N0400X
+Concussion testing and screening tools,2084N0400X
+Deep brain stimulation,2084N0400X
+Facial reanimation surgery,2084N0400X
+Functional electrical stimulation,2084N0400X
+Gender-affirming (transgender) voice therapy and surgery,2084N0400X
+Locomotor training for spinal cord injury,2084N0400X
+Neurogenic bladder and bowel management,2084N0400X
+Palliative care,2084N0400X
+Pediatric cervical spine surgery,2084N0400X
+Sexuality and fertility management after spinal cord injury,2084N0400X
+Spasticity management for spinal cord injury,2084N0400X
+Spinal cord injury rehabilitation,2084N0400X
+Spinal fusion,2084N0400X
+Stereotactic radiosurgery,2084N0400X
+Stroke prevention,2084N0400X
+3D conformal radiation,2085R0001X
+Adaptive radiation therapy (ART),2085R0001X
+Brachytherapy,2085R0001X
+Cancer treatment,2085R0001X
+Image-guided radiation therapy (IGRT),2085R0001X
+Intensity-modulated radiation therapy (IMRT),2085R0001X
+Intraoperative radiation therapy (IORT),2085R0001X
+Prostate brachytherapy,2085R0001X
+Proton therapy,2085R0001X
+Radiation therapy,2085R0001X
+Radiation therapy for breast cancer,2085R0001X
+Stereotactic body radiotherapy,2085R0001X
+Stereotactic radiosurgery,2085R0001X
+Volumetric modulated arc therapy (VMAT),2085R0001X
+Chemotherapy,207RX0202X
+Hormone therapy,207RX0202X
+Hyperthermic intraperitoneal chemotherapy,207RX0202X
+Immunotherapy ,207RX0202X
+Neoadjuvant Therapy,207RX0202X
+Pancreaticoduodenectomy (Whipple Procedure),207RX0202X
+Hematopoietic stem-cell transplantation,207RX0202X
+Breast biopsy,207RX0202X
+Cancer removal,207RX0202X
+Cryoablation ,207RX0202X
+Biopsy ,207RX0202X
+Hepatic arterial infusion,207RX0202X
+Laparoscopic surgery,207RX0202X
+Lumpectomy,207RX0202X
+Breast Reconstruction,207RX0202X
+Colectomy,207RX0202X
+Hepatic Artery Infusion Pumps,207RX0202X
+Hepatic Resection,207RX0202X
+Partial Mastectomy,207RX0202X
+Pancreaticoduodenectomy,207RX0202X
+Lesion Excision,207RX0202X
+Liver Resection,207RX0202X
+Mastectomy,207RX0202X
+Melanoma Resection,207RX0202X
+Sarcoma Excision,207RX0202X
+Sphincter Preserving,207RX0202X
+Total Mastectomy,207RX0202X
+Tumor Ablation,207RX0202X
+Tumor Removal,207RX0202X
+Tumor Resection,207RX0202X
+Endolumenal surgery,207RX0202X
+Endoscopic endonasal surgery,207RX0202X
+Single incision laparoscopic surgery,207RX0202X
+Robotic surgery,207RX0202X
+Prostatectomy: Removal of the prostate,207RX0202X
+Renal surgery (for kidney cancer): Sparing the kidney by saving the blood supply,207RX0202X
+Pyeloplasty: Correcting ureter blockage,207RX0202X
+Minimally invasive thyroid and parathyroid surgery,207RX0202X
+Minimally invasive hysterectomy,207RX0202X
+Minimally invasive gynecologic oncology surgery for treatment of cervical and endometrial cancer,207RX0202X
+Minimal-incision thyroidectomy (removal of the thyroid),207RX0202X
+Laparoscopic adrenalectomy (removal of the adrenal glands),207RX0202X
+Surgery for gastrointestinal cancer,207RX0202X
+Behavioral pain therapy,207LP2900X
+Botox injections,207LP2900X
+Celiac plexus blocks,207LP2900X
+Chemical denervation,207LP2900X
+Chronic pain management,207LP2900X
+Cooled radiofrequency ablation,207LP2900X
+Dorsal root ganglion stimulation,207LP2900X
+Drug pump implantation,207LP2900X
+Epidural steroid injections,207LP2900X
+Facial pain injections,207LP2900X
+Head pain injections,207LP2900X
+High frequency stimulation,207LP2900X
+Integrative pain management,207LP2900X
+Joint injections,207LP2900X
+Medication management,207LP2900X
+Minimally invasive lumbar decompression (MILD procedure),207LP2900X
+Nerve blocks,207LP2900X
+Occipital nerve stimulation,207LP2900X
+Pain rehabilitation,207LP2900X
+Peripheral nerve stimulation,207LP2900X
+Physical therapy,207LP2900X
+Platelet-rich plasma injections,207LP2900X
+Prolotherapy,207LP2900X
+Radiofrequency neurotomy,207LP2900X
+Regenerative medicine therapy,207LP2900X
+Scrambler therapy,207LP2900X
+Spinal injections,207LP2900X
+Stem cell injections,207LP2900X
+Sympathetic nerve blocks,207LP2900X
+Trigger point injections,207LP2900X
+Ultrasound-guided injections,207LP2900X
+Viscosupplementation,207LP2900X
+Actigraphy,207RP1001X
+Argon plasma coagulation,207RP1001X
+Balloon pulmonary angioplasty,207RP1001X
+Bronchoalveolar lavage,207RP1001X
+Bronchoscopic balloon dilation,207RP1001X
+Bronchoscopy,207RP1001X
+Cognitive behavioral therapy,207RP1001X
+CPET,207RP1001X
+Diagnostic bronchoscopy,207RP1001X
+Electromagnetic navigational bronchoscopy,207RP1001X
+Endobronchial cryotherapy,207RP1001X
+Endobronchial laser therapy,207RP1001X
+Endobronchial ultrasound biopsy,207RP1001X
+Endoscopic brachytherapy,207RP1001X
+Endoscopic lung volume reduction,207RP1001X
+Extracorporeal membrane oxygenation (ECMO),207RP1001X
+Flexible bronchoscopy,207RP1001X
+Home oxygen therapy,207RP1001X
+Home sleep apnea test,207RP1001X
+Lung cancer screening,207RP1001X
+Lung transplant,207RP1001X
+Lung volume reduction surgery,207RP1001X
+Mechanical ventilation,207RP1001X
+Multiple sleep latency test,207RP1001X
+Non-invasive ventilation,207RP1001X
+Overnight oximetry test,207RP1001X
+Oximetry,207RP1001X
+Palliative care,207RP1001X
+Polysomnography (sleep study),207RP1001X
+Positive airway pressure therapy,207RP1001X
+Pulmonary function test,207RP1001X
+Pulmonary rehabilitation,207RP1001X
+Radial endobronchial ultrasound,207RP1001X
+Right heart catheterization,207RP1001X
+Rigid bronchoscopy,207RP1001X
+Robotic bronchoscopy,207RP1001X
+Spinal cord injury rehabilitation,207RP1001X
+Stop-smoking services,207RP1001X
+Therapeutic bronchoscopy,207RP1001X
+Thoracoscopy,207RP1001X
+Transbronchial cryobiopsy,207RP1001X
+Vasodilator therapy,207RP1001X
+Video-assisted thoracoscopic surgery (VATS),207RP1001X
+Bone scan,207RR0500X
+Cortisone shots,207RR0500X
+Dual energy CT scan,207RR0500X
+Hip replacement,207RR0500X
+Joint scan,207RR0500X
+Knee replacement,207RR0500X
+MRI,207RR0500X
+Nailfold videocapillaroscopy,207RR0500X
+Synovial (joint) fluid analysis,207RR0500X
+Ultrasound,207RR0500X
+Ultrasound-guided cortisone injections,207RR0500X
+Viscosupplementation,207RR0500X
+X-ray,207RR0500X
+Actigraphy,207RS0012X
+Cognitive behavioral therapy,207RS0012X
+Home sleep apnea test,207RS0012X
+Hypoglossal nerve stimulation therapy evaluation,207RS0012X
+Non-invasive ventilation,207RS0012X
+Overnight oximetry test,207RS0012X
+Polysomnography (sleep study),207RS0012X
+Positive airway pressure therapy,207RS0012X
+ACL reconstruction,207RS0010X
+Ankle surgery,207RS0010X
+Arthroscopy,207RS0010X
+Concussion testing and screening tools,207RS0010X
+Cortisone shots,207RS0010X
+CT scan,207RS0010X
+Elbow replacement surgery,207RS0010X
+Electrocardiogram (ECG or EKG),207RS0010X
+Integrative medicine,207RS0010X
+Knee osteotomy,207RS0010X
+Knee replacement,207RS0010X
+MRI,207RS0010X
+Stress test,207RS0010X
+Ultrasound,207RS0010X
+Wrist fracture treatment,207RS0010X

@@ -1,0 +1,8 @@
+# ---
+# submodule: "umgmngacc"
+# role: "Site Administrator"
+# can_create: 1
+# can_view: 1
+# can_update: 1
+# can_delete: 1
+# is_active: 1

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PulsePay</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table
+      width="100%"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      style="
+        font-family: Arial;
+        color: #111;
+        line-height: 24px;
+        font-size: 14px;
+      "
+    >
+      <!-- [ page head =========== -->
+
+      {% if practice_location %}
+      <tr>
+        <td style="padding: 30px 20px; border-bottom: 1px solid #ddd">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="50%" align="left" style="text-align: left">
+                <!--
+                TODO : Add Hospital logo here and fix this 403 problem for below img tag src link
+                -->
+                {% comment %}
+                <img
+                  src="{{practice_location.image.file}}"
+                  alt="PulsePay"
+                  style="width: 200px; height: auto"
+                />
+                {% endcomment %}
+              </td>
+              <td width="50%" align="right" style="text-align: right">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td>
+                      <strong>
+                        {{practice_location.name}},
+                        <!--prettier-ignore-->
+                        {{practice_location.city}},
+                        <!--prettier-ignore-->
+                        {{practice_location.state}},
+                        <!--prettier-ignore-->
+                        {{practice_location.country}}
+                      </strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{{practice_location.address}}</td>
+                  </tr>
+                  <tr>
+                    {% for email in practice_location.emails %}
+                    <td>{{email}}</td>
+                    {% endfor %}
+                  </tr>
+                  <tr>
+                    {% if practice_location.work_phone %}
+                    <td>
+                      {{practice_location.work_country_code}}&nbsp;
+                      <!--prettier-ignore-->
+                      {{practice_location.work_phone}}
+                      <!--prettier-ignore-->
+                    </td>
+                    {% endif %}
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      {% endif %}
+      <!-- ] -->
+
+      <!-- [ page body =========== -->
+      <tr>
+        <td style="padding: 30px 20px">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <!-- [ user details =========== -->
+            <tr>
+              <td>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="50%">
+                      <table
+                        width="100%"
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                      >
+                        <tr>
+                          <td style="padding: 0 0 10px; font-size: 18px">
+                            <strong>
+                              {{patient.first_name}}
+                              <!--prettier-ignore-->
+                              {{patient.last_name}}
+                            </strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Patient ID: </strong> {{patient.patient_id}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>D.O.B: </strong>
+                            {{patient.dob}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Mobile: </strong>
+                            {% if patient.phone_number %}
+                            <!--prettier-ignore-->
+                            {{ patient.phone_number}}
+                            <!--prettier-ignore-->
+                            {% else %} None {% endif %}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Email: </strong>
+                            {{patient.email|default:'' }}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Address: </strong>
+                            {% if patient.address %}
+                            <!--prettier-ignore-->
+                            {{patient.address|default:'' }},
+                            <!--prettier-ignore-->
+                            {{patient.state|default:'' }},
+                            <!--prettier-ignore-->
+                            {{patient.zipcode|default:'' }}
+                            <!--prettier-ignore-->
+                            {% else %}
+                            Not Available
+                            {% endif %}
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td width="50%" align="right" style="text-align: right">
+                      <table
+                        width="100%"
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                      >
+                        <tr>
+                          <td><strong>Invoice ID:</strong> {{display_id}}</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Statement Date:</strong> {{statement_date}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Service Date:</strong>
+                            {{service_start_date}} To {{service_end_date}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="color: red">
+                            <strong>Due Date:</strong> {{due_date}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Status: </strong>
+                            <span style="font-weight: 700; color: {{color}};">
+                              {{status}}
+                            </span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- ] -->
+
+            <tr>
+              <td height="40"></td>
+            </tr>
+
+            <!-- [ services details =========== -->
+            <tr>
+              <td>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  {% for breakdownObj in breakdown %}
+                  <tr>
+                    <td style="border: 1px solid #ddd; border-radius: 8px">
+                      <table
+                        width="100%"
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                      >
+                        <tr>
+                          <td
+                            bgcolor="#ddd"
+                            style="
+                              background: #eee;
+                              text-align: left;
+                              padding: 15px 15px;
+                              border-radius: 8px 8px 0 0;
+                              font-size: 16px;
+                              font-weight: 700;
+                              border-bottom: 1px solid #ddd;
+                            "
+                          >
+                            {{breakdownObj.category_name}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <table
+                              width="100%"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                            >
+                              <tr>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Type of Service
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Start Date
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  End Date
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Qty
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Price/Unit
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Insurance Amt.
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Adjustments
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Discounts
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Write Offs
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Tax
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Fees
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Total
+                                </th>
+                                <th
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: right;
+                                    padding: 10px;
+                                  "
+                                >
+                                  Patient Amt.
+                                </th>
+                              </tr>
+
+                              {% for service in breakdownObj.services %}
+
+                              <tr>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{service.service_name}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{service.start_date|default:''}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{service.end_date|default:''}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{service.quantity}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{currency_symbol}}
+                                  <!--prettier-ignore-->
+                                  {{service.unit_price|floatformat:2|default:'0.00'}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{currency_symbol}}
+                                  <!--prettier-ignore-->
+                                  {{service.insurance_amount|floatformat:2|default:'0.00'}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{currency_symbol}}
+                                  <!--prettier-ignore-->
+                                  {{service.adjustment_amount|floatformat:2|default:'0.00'}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{currency_symbol}}
+                                  <!--prettier-ignore-->
+                                  {{breakdownObj.discount_amount|floatformat:2|default:'0.00'}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{currency_symbol}}
+                                  <!--prettier-ignore-->
+                                  {{service.write_off_amount|floatformat:2|default:'0.00'}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{currency_symbol}}
+                                  <!--prettier-ignore-->
+                                  {{service.tax|floatformat:2|default:'0.00'}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{currency_symbol}}
+                                  <!--prettier-ignore-->
+                                  {{service.other_fees|floatformat:2|default:'0.00'}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: left;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{currency_symbol}}
+                                  <!--prettier-ignore-->
+                                  {{service.total_amount|floatformat:2|default:'0.00'}}
+                                </td>
+                                <td
+                                  style="
+                                    border-bottom: 1px solid #ddd;
+                                    text-align: right;
+                                    padding: 10px;
+                                  "
+                                >
+                                  {{currency_symbol}}
+                                  <!--prettier-ignore-->
+                                  {{service.patient_amount|floatformat:2|default:'0.00'}}
+                                </td>
+                              </tr>
+                              {% endfor %}
+                              <tr>
+                                <td style="text-align: left; padding: 10px">
+                                  <strong>Total</strong>
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td style="text-align: right; padding: 10px">
+                                  <strong>
+                                    {{currency_symbol}}
+                                    <!--prettier-ignore-->
+                                    {{breakdownObj.category_total|floatformat:2|default:'0.00'}}
+                                  </strong>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="30"></td>
+                  </tr>
+
+                  {% endfor %}
+
+                  <!-- [ summary =========== -->
+                  <tr>
+                    <td>
+                      <table
+                        width="100%"
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                      >
+                        <tr>
+                          <td width="60%"></td>
+                          <td width="40%">
+                            <table
+                              width="100%"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                            >
+                              {% for summaryObj in summary %}
+
+                              <tr>
+                                <td
+                                  style="
+                                    padding: 5px;
+                                    text-align: left;
+                                    border-bottom: 1px solid #ddd;
+                                  "
+                                >
+                                  {{summaryObj.title}}
+                                </td>
+                                <td
+                                  style="
+                                    padding: 5px;
+                                    text-align: right;
+                                    border-bottom: 1px solid #ddd;
+                                    {% if summaryObj.amount < 0 %}color: red;{% endif %}
+                                  "
+                                >
+                                  <strong>
+                                    {{currency_symbol}}
+                                    <!--prettier-ignore-->
+                                    {{summaryObj.amount|floatformat:2|default:'0.00'}}
+                                  </strong>
+                                </td>
+                              </tr>
+                              {% endfor %}
+                              <tr>
+                                <td
+                                  style="
+                                    padding: 10px 5px;
+                                    text-align: left;
+                                    font-size: 18px;
+                                    border-top: 1px solid #ddd;
+                                  "
+                                >
+                                  <strong>Total</strong>
+                                </td>
+                                <td
+                                  style="
+                                    padding: 10px 5px;
+                                    text-align: right;
+                                    font-size: 18px;
+                                    border-top: 1px solid #ddd;
+                                  "
+                                >
+                                  <strong>
+                                    {{currency_symbol}}
+                                    <!--prettier-ignore-->
+                                    {{total_bill_amount|floatformat:2|default:'0.00'}}
+                                  </strong>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- ] -->
+
+                  <tr>
+                    <td height="100"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- ] -->
+          </table>
+        </td>
+      </tr>
+      <!-- ] -->
+    </table>
+  </body>
+</html>

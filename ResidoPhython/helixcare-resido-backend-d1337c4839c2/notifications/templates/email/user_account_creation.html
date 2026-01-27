@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ email_subject }}</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4;">
+    <div style="max-width: 600px; margin: 0 auto; background-color: white;">
+        {% if logo_url %}
+        <div style="padding: 20px; text-align: center;">
+            <img src="{{ logo_url }}" alt="Resido Logo" width="120" style="display:block; margin:0 auto 20px;">
+        </div>
+        {% endif %}
+        <div style="background-color: #3B1550; color: white; padding: 30px; text-align: center;">
+            <h1 style="margin: 0;">Welcome to Resido!</h1>
+        </div>
+        <div style="padding: 30px;">
+            <p>Hello {{ user_first_name }},</p>
+
+            <p>Your Resido account has been successfully created. Please use the One-Time Password (OTP) below to verify your account:</p>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <div style="display: inline-block; padding: 20px 40px; background-color: #f8f8f8; border: 2px dashed #3B1550; border-radius: 8px;">
+                    <p style="font-size: 32px; font-weight: bold; color: #3B1550; margin: 0; letter-spacing: 8px;">{{ otp }}</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: #666; font-size: 14px;">Enter this code to complete your account setup</p>
+
+            <p><strong>Note:</strong> This OTP is valid for the next 5 minutes.</p>
+
+            <div style="background-color: #f8f8f8; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <h3 style="margin-top: 0; color: #3B1550;">What's Next?</h3>
+                <ul style="line-height: 1.8; color: #666;">
+                    <li>Verify your account using the OTP above</li>
+                    <li>Complete your profile information</li>
+                    <li>Start exploring Resido features</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background-color: #FFF; padding: 2rem 2rem; border-top: 1px solid #ddd; text-align: center;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <h3 style="font-size: 18px; margin: 0;">Need Help?</h3>
+                        <p style="margin: 0; font-size: 16px;">Please send any feedback or queries to</p>
+                        <p style="margin: 0; font-size: 16px;">
+                            <a href="mailto:support@resido.com" style="font-weight: 600; color: #3B1550;">support@resido.com</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 20px;"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="padding: 20px; text-align: center; color: #666;">
+            <p style="margin: 0; font-size: 14px;">© All Rights Reserved 2025 Resido, Inc</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Property Created</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 0;">
+        <!-- Header -->
+        <div style="background-color: #3B1550; padding: 30px 20px; text-align: center;">
+            <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">New Property Created</h1>
+            <p style="color: #E0D4EC; margin: 10px 0 0 0; font-size: 14px;">RESIDO Property Management</p>
+        </div>
+
+        <!-- Content -->
+        <div style="background-color: #f9f9f9; padding: 40px 30px;">
+            <p style="font-size: 16px; margin: 0 0 20px 0;">Hello,</p>
+
+            <p style="font-size: 16px; margin: 0 0 20px 0;">
+                A new property has been created in the RESIDO system. Please find the details below.
+            </p>
+
+            <!-- Property Details Box -->
+            <div style="background-color: white; padding: 25px; margin: 30px 0; border-left: 4px solid #3B1550; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <p style="margin: 0 0 12px 0; font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; font-weight: bold;">Property Details</p>
+                <p style="margin: 8px 0; font-size: 16px;">
+                    <strong style="display: inline-block; width: 140px; color: #666;">Property Name:</strong>
+                    <span style="color: #3B1550; font-weight: 500;">{{ property_name }}</span>
+                </p>
+                <p style="margin: 8px 0; font-size: 16px;">
+                    <strong style="display: inline-block; width: 140px; color: #666;">Display ID:</strong>
+                    <span style="color: #3B1550; font-weight: 500;">{{ display_id }}</span>
+                </p>
+                <p style="margin: 8px 0; font-size: 16px;">
+                    <strong style="display: inline-block; width: 140px; color: #666;">Customer:</strong>
+                    <span style="color: #3B1550; font-weight: 500;">{{ customer_name }}</span>
+                </p>
+                {% if contact_first_name or contact_last_name %}
+                <p style="margin: 8px 0; font-size: 16px;">
+                    <strong style="display: inline-block; width: 140px; color: #666;">Contact Name:</strong>
+                    <span style="color: #3B1550; font-weight: 500;">{{ contact_first_name }} {{ contact_last_name }}</span>
+                </p>
+                {% endif %}
+                {% if contact_email %}
+                <p style="margin: 8px 0; font-size: 16px;">
+                    <strong style="display: inline-block; width: 140px; color: #666;">Contact Email:</strong>
+                    <span style="color: #3B1550; font-weight: 500;">{{ contact_email }}</span>
+                </p>
+                {% endif %}
+                {% if contact_phone %}
+                <p style="margin: 8px 0; font-size: 16px;">
+                    <strong style="display: inline-block; width: 140px; color: #666;">Contact Phone:</strong>
+                    <span style="color: #3B1550; font-weight: 500;">{{ contact_phone }}</span>
+                </p>
+                {% endif %}
+            </div>
+
+            <!-- Created By Info -->
+            <div style="background-color: #f0f0f0; padding: 15px; margin: 20px 0; border-radius: 5px;">
+                <p style="margin: 0; font-size: 14px; color: #666;">
+                    <strong>Created by:</strong> {{ created_by }}<br>
+                    <strong>Created on:</strong> {{ created_on }}
+                </p>
+            </div>
+
+            <p style="font-size: 16px; margin: 25px 0 0 0;">
+                If you have any questions, please contact your system administrator.
+            </p>
+
+            <p style="font-size: 16px; margin: 25px 0 0 0;">
+                Best regards,<br>
+                <strong>The RESIDO Team</strong>
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div style="background-color: #333; color: white; padding: 25px 20px; text-align: center;">
+            <p style="margin: 0 0 10px 0; font-size: 13px;">
+                &copy; 2025 RESIDO. All rights reserved.
+            </p>
+            <p style="margin: 0; font-size: 12px; color: #999;">
+                This is an automated message. Please do not reply to this email.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

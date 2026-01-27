@@ -1,0 +1,49 @@
+{{- if .Values.dataMigJob.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "charts.fullname" . }}-data-mig-{{ randAlphaNum 3 | lower }}
+  labels:
+    {{- include "charts.labels" . | nindent 4 }}
+spec:
+  template:
+    spec:
+      containers:
+      - name: data-migration
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        envFrom:
+          - configMapRef:
+              name: {{ include "charts.fullname" . }}
+        command:
+          - "sh"
+          - "-c"
+          - |
+            until curl -f http://{{ include "charts.fullname" . }}:{{ .Values.service.port }}/api/v1/versions; do
+              echo "Waiting for web service to be ready..."
+              sleep 3
+            done
+            echo "Web service is ready, starting migration..."
+            python3 manage.py all_tenants_command --no-public migrate_data
+        resources:
+          {{- toYaml .Values.dataMigJob.resources | nindent 12 }}
+        volumeMounts:
+          {{- range .Values.secrets }}
+          - name: {{ .name }}
+            mountPath: {{ .mountPath }}
+            readOnly: true
+          {{- end }}
+      restartPolicy: Never
+      volumes:
+        {{- range .Values.secrets }}
+        - name: {{ .name }}
+          secret:
+            secretName: {{ include "charts.fullname" $ }}-{{ .name }}
+            items:
+              {{- range .items }}
+              - key: {{ .key }}
+                path: {{ .path }}
+              {{- end }}
+        {{- end }}
+  backoffLimit: 4
+  ttlSecondsAfterFinished: 600
+{{- end }}

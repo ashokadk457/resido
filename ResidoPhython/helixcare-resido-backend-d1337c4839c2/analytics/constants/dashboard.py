@@ -1,0 +1,22 @@
+SIGNED_STATUSES = ("SIGNED", "ACTIVE", "EXECUTED")
+PENDING_STATUSES = ("PENDING", "UNDER_REVIEW", "AWAITING_SIGNATURE", "DRAFT")
+
+IN_PROGRESS_STATUSES = (
+    "IN_PROGRESS",
+    "IN PROGRESS",
+    "INPROGRESS",
+    "ASSIGNED",
+    "WORKING",
+)
+RESOLVED_STATUSES = ("RESOLVED", "CLOSED", "DONE", "COMPLETED")
+
+PERIOD_ALIASES = {
+    "today": 1,
+    "last_7_days": 7,
+    "last_15_days": 15,
+    "last_month": 30,
+    "last_year": 365,
+}
+
+
+DEFAULT_WINDOW_DAYS = 7

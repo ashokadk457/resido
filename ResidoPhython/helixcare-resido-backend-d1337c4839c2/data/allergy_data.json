@@ -1,0 +1,1347 @@
+[
+    {
+        "code": "Mite",
+        "display_name": "Mite",
+        "allergy_type": "AERO_MITE"
+    },
+    {
+        "code": "Hardy Kiwi",
+        "display_name": "Hardy Kiwi",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Kiwi",
+        "display_name": "Kiwi",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Climber (plant)",
+        "display_name": "Climber (plant)",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Yellow fever mosquito",
+        "display_name": "Yellow fever mosquito",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Asian tiger mosquito",
+        "display_name": "Asian tiger mosquito",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Bent grass",
+        "display_name": "Bent grass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Alder",
+        "display_name": "Alder",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Fungus",
+        "display_name": "Fungus",
+        "allergy_type": "AERO_FUNGI"
+    },
+    {
+        "code": "Common Amaranth",
+        "display_name": "Common Amaranth",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Short ragweed",
+        "display_name": "Short ragweed",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Western ragweed",
+        "display_name": "Western ragweed",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Giant ragweed",
+        "display_name": "Giant ragweed",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "Octopus",
+        "display_name": "Octopus",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Cashew",
+        "display_name": "Cashew",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Pineapple",
+        "display_name": "Pineapple",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Parasitic fish worm",
+        "display_name": "Parasitic fish worm",
+        "allergy_type": "WORM_PARASITE"
+    },
+    {
+        "code": "Sweet vernal grass",
+        "display_name": "Sweet vernal grass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Indian honeybee",
+        "display_name": "Indian honeybee",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Giant honeybee",
+        "display_name": "Giant honeybee",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Honeybee",
+        "display_name": "Honeybee",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Celery",
+        "display_name": "Celery",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Peanut",
+        "display_name": "Peanut",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "European pigeon tick",
+        "display_name": "European pigeon tick",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Mugwort",
+        "display_name": "Mugwort",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Parasitic roundworm",
+        "display_name": "Parasitic roundworm",
+        "allergy_type": "WORM_PARASITE"
+    },
+    {
+        "code": "Bacteria",
+        "display_name": "Bacteria",
+        "allergy_type": "BACTERIA_AIRWAY"
+    },
+    {
+        "code": "Crustacean",
+        "display_name": "Crustacean",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "summer cypress",
+        "display_name": "summer cypress",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Japanese turban shell",
+        "display_name": "Japanese turban shell",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Brazil nut",
+        "display_name": "Brazil nut",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "European white birch",
+        "display_name": "European white birch",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Japanese white birch",
+        "display_name": "Japanese white birch",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Birch",
+        "display_name": "Birch",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "German cockroach",
+        "display_name": "German cockroach",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "Bumblebee",
+        "display_name": "Bumblebee",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Silkworm",
+        "display_name": "Silkworm",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "Yak",
+        "display_name": "Yak",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Bovine",
+        "display_name": "Bovine",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Mustard",
+        "display_name": "Mustard",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Rape",
+        "display_name": "Rape",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Wild cabbage",
+        "display_name": "Wild cabbage",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Turnip",
+        "display_name": "Turnip",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Yeast",
+        "display_name": "Yeast",
+        "allergy_type": "CONTACT"
+    },
+    {
+        "code": "Dog",
+        "display_name": "Dog",
+        "allergy_type": "AERO_ANIMAL"
+    },
+    {
+        "code": "Hemp",
+        "display_name": "Hemp",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "Bell pepper",
+        "display_name": "Bell pepper",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Papaya",
+        "display_name": "Papaya",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Hornbeam",
+        "display_name": "Hornbeam",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Pecan",
+        "display_name": "Pecan",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Fishtail Palm",
+        "display_name": "Fishtail Palm",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "European chestnut",
+        "display_name": "European chestnut",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Madagascar periwinkle",
+        "display_name": "Madagascar periwinkle",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Domestic guinea pig",
+        "display_name": "Domestic guinea pig",
+        "allergy_type": "AERO_ANIMAL"
+    },
+    {
+        "code": "Japanese cypress",
+        "display_name": "Japanese cypress",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Crab",
+        "display_name": "Crab",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Pigweed",
+        "display_name": "Pigweed",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Snow Crab",
+        "display_name": "Snow Crab",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Midge",
+        "display_name": "Midge",
+        "allergy_type": "AERO_INSECT"
+    },
+    {
+        "code": "Lemon",
+        "display_name": "Lemon",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Navel orange",
+        "display_name": "Navel orange",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Atlantic herring",
+        "display_name": "Atlantic herring",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Coffee",
+        "display_name": "Coffee",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Shaggy mane",
+        "display_name": "Shaggy mane",
+        "allergy_type": "FOOD_FUNGI"
+    },
+    {
+        "code": "European hazelnut",
+        "display_name": "European hazelnut",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "Shrimp",
+        "display_name": "Shrimp",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "American  oyster",
+        "display_name": "American  oyster",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Eastern oyster",
+        "display_name": "Eastern oyster",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Saffron crocus",
+        "display_name": "Saffron crocus",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Japanese cedar",
+        "display_name": "Japanese cedar",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Muskmelon",
+        "display_name": "Muskmelon",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Netted muskmelon",
+        "display_name": "Netted muskmelon",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Farmyyard midge",
+        "display_name": "Farmyyard midge",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Arizona Cypress",
+        "display_name": "Arizona Cypress",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Mediterranean Cypress",
+        "display_name": "Mediterranean Cypress",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Bermuda grass",
+        "display_name": "Bermuda grass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Carp",
+        "display_name": "Carp",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Orchard grass",
+        "display_name": "Orchard grass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Carrot",
+        "display_name": "Carrot",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "House dust mite",
+        "display_name": "House dust mite",
+        "allergy_type": "AERO_MITE"
+    },
+    {
+        "code": "Yellow jacket",
+        "display_name": "Yellow jacket",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Whiteface hornet",
+        "display_name": "Whiteface hornet",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Horse",
+        "display_name": "Horse",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Horsehair crab",
+        "display_name": "Horsehair crab",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Chinese mitten crab",
+        "display_name": "Chinese mitten crab",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "North Pacific Krill",
+        "display_name": "North Pacific Krill",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Krill",
+        "display_name": "Krill",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Crimson seabream",
+        "display_name": "Crimson seabream",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Buckwheat",
+        "display_name": "Buckwheat",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "European Beech",
+        "display_name": "European Beech",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Brown shrimp",
+        "display_name": "Brown shrimp",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Cat",
+        "display_name": "Cat",
+        "allergy_type": "AERO_ANIMAL"
+    },
+    {
+        "code": "Chinese white shrimp",
+        "display_name": "Chinese white shrimp",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Banana Prawn",
+        "display_name": "Banana Prawn",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "biting midges",
+        "display_name": "biting midges",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Strawberry",
+        "display_name": "Strawberry",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "European ash",
+        "display_name": "European ash",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Mollusc",
+        "display_name": "Mollusc",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Baltic cod",
+        "display_name": "Baltic cod",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Atlantic cod",
+        "display_name": "Atlantic cod",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "chicken",
+        "display_name": "chicken",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Tsetse fly",
+        "display_name": "Tsetse fly",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Soybean",
+        "display_name": "Soybean",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Storage mite",
+        "display_name": "Storage mite",
+        "allergy_type": "AERO_MITE"
+    },
+    {
+        "code": "Disk abalone",
+        "display_name": "Disk abalone",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Abalone",
+        "display_name": "Abalone",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Sunflower",
+        "display_name": "Sunflower",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Brown garden snail",
+        "display_name": "Brown garden snail",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Para rubber tree",
+        "display_name": "Para rubber tree",
+        "allergy_type": "CONTACT"
+    },
+    {
+        "code": "Velvet grass",
+        "display_name": "Velvet grass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "American lobster",
+        "display_name": "American lobster",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Barley",
+        "display_name": "Barley",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Japanese hop",
+        "display_name": "Japanese hop",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Black walnut",
+        "display_name": "Black walnut",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "English walnut",
+        "display_name": "English walnut",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Mountain cedar",
+        "display_name": "Mountain cedar",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "Juniper",
+        "display_name": "Juniper",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Cedar",
+        "display_name": "Cedar",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Red cedar",
+        "display_name": "Red cedar",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Garden lettuce",
+        "display_name": "Garden lettuce",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Asian Seabass",
+        "display_name": "Asian Seabass",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Lentil",
+        "display_name": "Lentil",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Flat fish",
+        "display_name": "Flat fish",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Silverfish",
+        "display_name": "Silverfish",
+        "allergy_type": "AERO_INSECT"
+    },
+    {
+        "code": "Privet",
+        "display_name": "Privet",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Trumpet lily",
+        "display_name": "Trumpet lily",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "booklice",
+        "display_name": "booklice",
+        "allergy_type": "AERO_INSECT"
+    },
+    {
+        "code": "Lychee nut",
+        "display_name": "Lychee nut",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Whiteleg Shrimp",
+        "display_name": "Whiteleg Shrimp",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Perennial ryegrass",
+        "display_name": "Perennial ryegrass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "white lupine",
+        "display_name": "white lupine",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "blue lupin",
+        "display_name": "blue lupin",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "wolfberry",
+        "display_name": "wolfberry",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Giant River Prawn",
+        "display_name": "Giant River Prawn",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Patagonian Grenadier",
+        "display_name": "Patagonian Grenadier",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Blue hake",
+        "display_name": "Blue hake",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Apple",
+        "display_name": "Apple",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Cassava",
+        "display_name": "Cassava",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Sapodilla plum",
+        "display_name": "Sapodilla plum",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Kuruma Shrimp",
+        "display_name": "Kuruma Shrimp",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "King Prawn",
+        "display_name": "King Prawn",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Annual mercury grass",
+        "display_name": "Annual mercury grass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "southern hake",
+        "display_name": "southern hake",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Silver hake",
+        "display_name": "Silver hake",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Shallow-water cape hake",
+        "display_name": "Shallow-water cape hake",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Southern Pacific hake",
+        "display_name": "Southern Pacific hake",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "European hake",
+        "display_name": "European hake",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Deep-water cape hake",
+        "display_name": "Deep-water cape hake",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Benguela hake",
+        "display_name": "Benguela hake",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "North Pacific hake",
+        "display_name": "North Pacific hake",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Golden hamster",
+        "display_name": "Golden hamster",
+        "allergy_type": "AERO_ANIMAL"
+    },
+    {
+        "code": "Greasyback shrimp",
+        "display_name": "Greasyback shrimp",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Noble scallop",
+        "display_name": "Noble scallop",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "White Mulberry",
+        "display_name": "White Mulberry",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Mulberry",
+        "display_name": "Mulberry",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Black mulberry",
+        "display_name": "Black mulberry",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Mouse",
+        "display_name": "Mouse",
+        "allergy_type": "AERO_ANIMAL"
+    },
+    {
+        "code": "Banana",
+        "display_name": "Banana",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Giant Bull Ant",
+        "display_name": "Giant Bull Ant",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Jumper ant",
+        "display_name": "Jumper ant",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Wrinkled Neptune",
+        "display_name": "Wrinkled Neptune",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Tobacco",
+        "display_name": "Tobacco",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Olive tree",
+        "display_name": "Olive tree",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "red squid",
+        "display_name": "red squid",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Parasitic nematode",
+        "display_name": "Parasitic nematode",
+        "allergy_type": "WORM_PARASITE"
+    },
+    {
+        "code": "chum salmon",
+        "display_name": "chum salmon",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "rainbow trout",
+        "display_name": "rainbow trout",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "mantis shrimp",
+        "display_name": "mantis shrimp",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Mozambique tilapia",
+        "display_name": "Mozambique tilapia",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "European rabbit",
+        "display_name": "European rabbit",
+        "allergy_type": "AERO_ANIMAL"
+    },
+    {
+        "code": "Rice",
+        "display_name": "Rice",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "European hop hornbeam",
+        "display_name": "European hop hornbeam",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Asian needle ant",
+        "display_name": "Asian needle ant",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "caribean shrimp",
+        "display_name": "caribean shrimp",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Lobster",
+        "display_name": "Lobster",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Kamchatka crab",
+        "display_name": "Kamchatka crab",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Weed",
+        "display_name": "Weed",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Bahia grass",
+        "display_name": "Bahia grass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Black tiger shrimp",
+        "display_name": "Black tiger shrimp",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "American cockroach",
+        "display_name": "American cockroach",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "Smokybrown cockroach",
+        "display_name": "Smokybrown cockroach",
+        "allergy_type": "AERO_INSECT"
+    },
+    {
+        "code": "Asian green mussell",
+        "display_name": "Asian green mussell",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Avocado",
+        "display_name": "Avocado",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Parsley",
+        "display_name": "Parsley",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "Canary grass",
+        "display_name": "Canary grass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Kidney bean",
+        "display_name": "Kidney bean",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Common timothy",
+        "display_name": "Common timothy",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Siberian hamster",
+        "display_name": "Siberian hamster",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Date palm",
+        "display_name": "Date palm",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Pine",
+        "display_name": "Pine",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "pistachio",
+        "display_name": "pistachio",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Pea",
+        "display_name": "Pea",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Narrow-leaved plantain",
+        "display_name": "Narrow-leaved plantain",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "oriental plane",
+        "display_name": "oriental plane",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "London plane tree",
+        "display_name": "London plane tree",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "Indian meal moth",
+        "display_name": "Indian meal moth",
+        "allergy_type": "AERO_INSECT"
+    },
+    {
+        "code": "Kentucky bluegrass",
+        "display_name": "Kentucky bluegrass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Paper wasp",
+        "display_name": "Paper wasp",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "wasp",
+        "display_name": "wasp",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Danube crayfish",
+        "display_name": "Danube crayfish",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "black poplar",
+        "display_name": "black poplar",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "blue swimmer crab",
+        "display_name": "blue swimmer crab",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "red swamp crayfish",
+        "display_name": "red swamp crayfish",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "mesquite",
+        "display_name": "mesquite",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Arthropod",
+        "display_name": "Arthropod",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Apricot",
+        "display_name": "Apricot",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Cherry",
+        "display_name": "Cherry",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Plum",
+        "display_name": "Plum",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Almond",
+        "display_name": "Almond",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Plant hybrid",
+        "display_name": "Plant hybrid",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Peach",
+        "display_name": "Peach",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Pomegranate",
+        "display_name": "Pomegranate",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Pear",
+        "display_name": "Pear",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Oak",
+        "display_name": "Oak",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "holly oak",
+        "display_name": "holly oak",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Frog",
+        "display_name": "Frog",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Rat",
+        "display_name": "Rat",
+        "allergy_type": "AERO_ANIMAL"
+    },
+    {
+        "code": "Castor bean",
+        "display_name": "Castor bean",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "raspberry",
+        "display_name": "raspberry",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Salmon",
+        "display_name": "Salmon",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Thistle",
+        "display_name": "Thistle",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Brook trout",
+        "display_name": "Brook trout",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Scabies mite",
+        "display_name": "Scabies mite",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "South American pilchard",
+        "display_name": "South American pilchard",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Clam",
+        "display_name": "Clam",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Tall fescue",
+        "display_name": "Tall fescue",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Schistosoma",
+        "display_name": "Schistosoma",
+        "allergy_type": "PROTOZOAN"
+    },
+    {
+        "code": "Mushroom",
+        "display_name": "Mushroom",
+        "allergy_type": "AERO_FUNGI"
+    },
+    {
+        "code": "Chub mackerel",
+        "display_name": "Chub mackerel",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Atlantic mackerel",
+        "display_name": "Atlantic mackerel",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "green mud crab",
+        "display_name": "green mud crab",
+        "allergy_type": "UNASSIGNED"
+    },
+    {
+        "code": "giant mud crab",
+        "display_name": "giant mud crab",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "ocean perch (red fish)",
+        "display_name": "ocean perch (red fish)",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Rye",
+        "display_name": "Rye",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "cuttlefish",
+        "display_name": "cuttlefish",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "bigfin reef squid",
+        "display_name": "bigfin reef squid",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Sesame",
+        "display_name": "Sesame",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "black fly",
+        "display_name": "black fly",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "White mustard",
+        "display_name": "White mustard",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Chinese razor clam",
+        "display_name": "Chinese razor clam",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Tomato",
+        "display_name": "Tomato",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Eggplant",
+        "display_name": "Eggplant",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Potato",
+        "display_name": "Potato",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Gould's razor shell",
+        "display_name": "Gould's razor shell",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Tropical Fire Ant",
+        "display_name": "Tropical Fire Ant",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Red fire ant",
+        "display_name": "Red fire ant",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Black fire ant",
+        "display_name": "Black fire ant",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Brazilian fire ant",
+        "display_name": "Brazilian fire ant",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Johnson grass",
+        "display_name": "Johnson grass",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Pig",
+        "display_name": "Pig",
+        "allergy_type": "AERO_ANIMAL"
+    },
+    {
+        "code": "Lilac",
+        "display_name": "Lilac",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Horse Fly",
+        "display_name": "Horse Fly",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Yellow mealworm",
+        "display_name": "Yellow mealworm",
+        "allergy_type": "FOOD_INSECT"
+    },
+    {
+        "code": "Pine moth",
+        "display_name": "Pine moth",
+        "allergy_type": "CONTACT"
+    },
+    {
+        "code": "Alaska pollock",
+        "display_name": "Alaska pollock",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Yellowfin tuna",
+        "display_name": "Yellowfin tuna",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Japanese flying squid",
+        "display_name": "Japanese flying squid",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Japanese horse mackerel",
+        "display_name": "Japanese horse mackerel",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Western conenose",
+        "display_name": "Western conenose",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Wheat",
+        "display_name": "Wheat",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Dust mite",
+        "display_name": "Dust mite",
+        "allergy_type": "AERO_MITE"
+    },
+    {
+        "code": "Lesser banded hornet",
+        "display_name": "Lesser banded hornet",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "European hornet",
+        "display_name": "European hornet",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "Hornet",
+        "display_name": "Hornet",
+        "allergy_type": "VENOM_OR_SALIVARY"
+    },
+    {
+        "code": "mung bean",
+        "display_name": "mung bean",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Grape",
+        "display_name": "Grape",
+        "allergy_type": "FOOD_PLANT"
+    },
+    {
+        "code": "Swordfish",
+        "display_name": "Swordfish",
+        "allergy_type": "FOOD_ANIMAL"
+    },
+    {
+        "code": "Corn",
+        "display_name": "Corn",
+        "allergy_type": "AERO_PLANT"
+    },
+    {
+        "code": "Chinese-date",
+        "display_name": "Chinese-date",
+        "allergy_type": "FOOD_PLANT"
+    }
+]

@@ -1,0 +1,56 @@
+---
+name: "POLICY_TYPE"
+code: "RENT_PAYMENT"
+value: "Rent Payment"
+description: "Policy for rent payment terms and conditions"
+active: 1
+display_order: 100
+---
+name: "POLICY_TYPE"
+code: "MAINTENANCE"
+value: "Maintenance"
+description: "Policy for maintenance and repair procedures"
+active: 1
+display_order: 200
+---
+name: "POLICY_TYPE"
+code: "PARKING"
+value: "Parking"
+description: "Policy for parking regulations and usage"
+active: 1
+display_order: 300
+---
+name: "POLICY_TYPE"
+code: "PET_POLICY"
+value: "Pet Policy"
+description: "Policy for pet ownership and restrictions"
+active: 1
+display_order: 400
+---
+name: "POLICY_TYPE"
+code: "EARLY_TERMINATION"
+value: "Early Termination"
+description: "Policy for early lease termination procedures"
+active: 1
+display_order: 500
+---
+name: "POLICY_STATUS"
+code: "DRAFT"
+value: "Draft"
+description: "Policy is in draft status and not yet published"
+active: 1
+display_order: 100
+---
+name: "POLICY_STATUS"
+code: "ACTIVE"
+value: "Active"
+description: "Policy is active and published"
+active: 1
+display_order: 200
+---
+name: "POLICY_STATUS"
+code: "INACTIVE"
+value: "Inactive"
+description: "Policy is inactive and archived"
+active: 1
+display_order: 300

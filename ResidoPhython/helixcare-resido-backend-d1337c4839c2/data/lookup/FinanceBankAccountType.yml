@@ -1,0 +1,14 @@
+---
+name: "FINANCE_BANK_ACCOUNT_TYPE"
+code: "CHECKING"
+value: "Checking"
+description: ""
+active: 1
+display_order: 100
+---
+name: "FINANCE_BANK_ACCOUNT_TYPE"
+code: "SAVINGS"
+value: "Savings"
+description: ""
+active: 1
+display_order: 200

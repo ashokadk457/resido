@@ -1,0 +1,124 @@
+---
+preference: "Provider-Initiated"
+code: "PRV-001"
+description: "Specialist not available within the network"
+---
+preference: "Provider-Initiated"
+code: "PRV-002"
+description: "Required expertise or technology not available internally"
+---
+preference: "Provider-Initiated"
+code: "PRV-003"
+description: "Patient requires a second opinion from an external specialist"
+---
+preference: "Provider-Initiated"
+code: "PRV-004"
+description: "Urgent or emergent care needed, and internal resources are unavailable"
+---
+preference: "Provider-Initiated"
+code: "PRV-005"
+description: "Patient condition is complex and requires multidisciplinary care"
+---
+preference: "Provider-Initiated"
+code: "PRV-006"
+description: "Internal wait times for consultation or procedure are too long"
+---
+preference: "Provider-Initiated"
+code: "PRV-007"
+description: "Patient requires a specific procedure or treatment not offered internally "
+---
+preference: "Provider-Initiated"
+code: "PRV-008"
+description: "Continuity of care with an external provider already established"
+---
+preference: "Provider-Initiated"
+code: "PRV-009"
+description: "Insurance or payer requires external referral"
+---
+preference: "Provider-Initiated"
+code: "PRV-010"
+description: "Patient's condition worsened, requiring higher level of care"
+---
+preference: "Patient-Initiated"
+code: "PAT-001"
+description: "Patient prefers a specific external provider or specialist"
+---
+preference: "Patient-Initiated"
+code: "PAT-002"
+description: "Patient has a prior relationship with the external provider"
+---
+preference: "Patient-Initiated"
+code: "PAT-003"
+description: "Patient's insurance plan favors external providers"
+---
+preference: "Patient-Initiated"
+code: "PAT-004"
+description: "Patient requested a second opinion outside the network"
+---
+preference: "Patient-Initiated"
+code: "PAT-005"
+description: "Patient prefers a provider closer to home or work"
+---
+preference: "Patient-Initiated"
+code: "PAT-006"
+description: "Patient dissatisfied with current care or provider"
+---
+preference: "Patient-Initiated"
+code: "PAT-007"
+description: "Patient requires culturally or linguistically appropriate care"
+---
+preference: "Patient-Initiated"
+code: "PAT-008"
+description: "Patient seeks alternative or complementary medicine"
+---
+preference: "Patient-Initiated"
+code: "PAT-009"
+description: "Patient's family or caregiver recommended an external provider"
+---
+preference: "Patient-Initiated"
+code: "PAT-010"
+description: "Patient prefers a provider with shorter wait times"
+---
+preference: "System-Initiated"
+code: "SYS-001"
+description: "Network provider capacity exceeded"
+---
+preference: "System-Initiated"
+code: "SYS-002"
+description: "Contractual agreement with external provider for specific services"
+---
+preference: "System-Initiated"
+code: "SYS-003"
+description: "Internal system outage or resource limitation"
+---
+preference: "System-Initiated"
+code: "SYS-004"
+description: "Referral mandated by insurance or payer network"
+---
+preference: "System-Initiated"
+code: "SYS-005"
+description: "Patient's condition requires a higher level of care than available"
+---
+preference: "System-Initiated"
+code: "SYS-006"
+description: "External provider is part of a preferred network or partnership"
+---
+preference: "Administrative-Initiated"
+code: "ADM-001"
+description: "Patient's insurance does not cover internal providers"
+---
+preference: "Administrative-Initiated"
+code: "ADM-002"
+description: "Patient requested transfer of care to an external provider"
+---
+preference: "Administrative-Initiated"
+code: "ADM-003"
+description: "Internal provider unavailable due to scheduling conflicts"
+---
+preference: "Administrative-Initiated"
+code: "ADM-004"
+description: "Patient relocated and requires care closer to new location"
+---
+preference: "Administrative-Initiated"
+code: "ADM-005"
+description: "Internal provider unable to accommodate patient's language or cultural needs"

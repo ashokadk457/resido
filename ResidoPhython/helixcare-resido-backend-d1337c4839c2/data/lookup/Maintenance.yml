@@ -1,0 +1,294 @@
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "PLUMBING"
+value: "Plumbing"
+description: "Issues with pipes, leaks, faucets, drains, toilets, or water pressure problems."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "ELECTRICAL"
+value: "Electrical"
+description: "Problems with outlets, switches, wiring, lights, circuit breakers, or power loss."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "HVAC"
+value: "HVAC / Air Conditioning"
+description: "Heating, ventilation, or air conditioning not working or performing poorly."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "APP_REP"
+value: "Appliance Repair"
+description: "Issues with landlord-provided appliances (e.g., stove, fridge, dishwasher)."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "PEST"
+value: "Pest Control"
+description: "Infestations or sightings of insects, rodents, or other pests."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "HEATER"
+value: "Water Heater"
+description: "No hot water, water heater leakage, or malfunction."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "SECURITY"
+value: "Locks & Security"
+description: "Broken locks, lost keys, or security concerns (doors/windows not locking)."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "ROOFING"
+value: "Roofing / Ceiling Leak"
+description: "Roof damage or active water leaks from ceiling."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "MOLD"
+value: "Mold / Mildew"
+description: "Presence or suspicion of mold or mildew due to moisture."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "PAINTING"
+value: "Painting / Wall Damage"
+description: "Wall cracks, chipping paint, or holes in the wall."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "FLOORING"
+value: "Flooring / Carpet"
+description: "Damaged flooring, loose tiles, or stained/worn carpets."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "GLASS"
+value: "Windows / Glass"
+description: "Broken glass, stuck windows, or drafts around window frames."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "HINGES"
+value: "Doors / Hinges"
+description: "Door not closing properly, broken hinges, or squeaky doors."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "LIGH_FIX"
+value: "Light Fixtures"
+description: "Flickering lights, broken fixtures, or ceiling fan issues."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "SMOKE_DETECT"
+value: "Smoke / CO Detectors"
+description: "Broken or missing smoke and carbon monoxide detectors."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "GARAGE"
+value: "Garage / Parking"
+description: "Garage door malfunction, remote issues, or assigned parking complaints."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "INTERNET"
+value: "Internet / Cable"
+description: "Issues with landlord-provided internet or cable service (if included)."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "STRUCT_REP"
+value: "Structural Repairs"
+description: "Cracks in foundation, sagging ceiling, or unsafe building elements."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "COMMON_AREA"
+value: "Common Area Issues"
+description: "Shared spaces like hallways, elevators, laundry, or mailboxes not functioning."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "LANDSCAPING"
+value: "Landscaping / Lawn"
+description: "Overgrown grass, tree limbs, or garden maintenance requests."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "TRASH"
+value: "Trash / Recycling"
+description: "Missed pickups, overflowing bins, or broken waste receptacles."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "NOISE"
+value: "Noise Complaint"
+description: "Excessive noise from neighbors or surrounding areas."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "MOVE_OUT_REP"
+value: "Planned Move-Out Repairs"
+description: "Request to address issues before planned tenant move-out inspection."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_TYPE"
+code: "MISC"
+value: "Other / Miscellaneous"
+description: "Any maintenance issue not covered by the above categories."
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_PRIORITY"
+code: "HIGH"
+value: "High"
+description: ""
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_PRIORITY"
+code: "MED"
+value: "Medium"
+description: ""
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_PRIORITY"
+code: "LOW"
+value: "Low"
+description: ""
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_SERVICE_PRIORITY"
+code: "EMERG"
+value: "Emergency"
+description: ""
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_RECURRING_FREQUENCY"
+code: "ONCE"
+value: "One Time"
+description: "Not a recurring issue"
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_RECURRING_FREQUENCY"
+code: "WEEKLY"
+value: "Every Week"
+description: "Weekly recurring maintenance"
+active: 1
+display_order: 200
+---
+name: "MAINTENANCE_RECURRING_FREQUENCY"
+code: "BIWEEKLY"
+value: "Every Two Weeks"
+description: "Bi-weekly recurring maintenance"
+active: 1
+display_order: 300
+---
+name: "MAINTENANCE_RECURRING_FREQUENCY"
+code: "MONTHLY"
+value: "Every Month"
+description: "Monthly recurring maintenance"
+active: 1
+display_order: 400
+---
+name: "MAINTENANCE_RECURRING_FREQUENCY"
+code: "QUARTERLY"
+value: "Every Three Months"
+description: "Quarterly recurring maintenance"
+active: 1
+display_order: 500
+---
+name: "MAINTENANCE_RECURRING_FREQUENCY"
+code: "SEMI_ANNUAL"
+value: "Every Six Months"
+description: "Semi-annual recurring maintenance"
+active: 1
+display_order: 600
+---
+name: "MAINTENANCE_RECURRING_FREQUENCY"
+code: "ANNUAL"
+value: "Every Year"
+description: "Annual recurring maintenance"
+active: 1
+display_order: 700
+---
+name: "MAINTENANCE_REJECT_REASON"
+code: "OUT_OF_BUDGET"
+value: "Out of Budget"
+description: "Cannot be completed due to budget constraints"
+active: 1
+display_order: 100
+---
+name: "MAINTENANCE_REJECT_REASON"
+code: "NOT_APPLICABLE"
+value: "Not Applicable"
+description: "Issue is not applicable or not a maintenance concern"
+active: 1
+display_order: 200
+---
+name: "MAINTENANCE_REJECT_REASON"
+code: "DUPLICATE"
+value: "Duplicate Request"
+description: "Duplicate of an existing maintenance request"
+active: 1
+display_order: 300
+---
+name: "MAINTENANCE_REJECT_REASON"
+code: "RESOLVED"
+value: "Already Resolved"
+description: "Issue has already been resolved"
+active: 1
+display_order: 400
+---
+name: "MAINTENANCE_REJECT_REASON"
+code: "TENANT_RESPONSIBILITY"
+value: "Tenant Responsibility"
+description: "Maintenance is tenant's responsibility"
+active: 1
+display_order: 500
+---
+name: "MAINTENANCE_REJECT_REASON"
+code: "URGENT_MATTER"
+value: "Urgent Matter"
+description: "Issue is too urgent to handle through standard process"
+active: 1
+display_order: 600
+---
+name: "MAINTENANCE_REJECT_REASON"
+code: "CANNOT_ACCESS"
+value: "Cannot Access Property"
+description: "Unable to access the property for maintenance"
+active: 1
+display_order: 700

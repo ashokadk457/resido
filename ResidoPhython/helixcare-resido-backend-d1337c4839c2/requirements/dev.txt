@@ -1,0 +1,9 @@
+# Dependencies for development
+-r common.txt
+
+Faker==9.5.2
+pre-commit==3.6.0
+ruff==0.1.14
+black==24.3.0
+dj-inmemorystorage==2.1.0
+django-debug-toolbar==4.3.0

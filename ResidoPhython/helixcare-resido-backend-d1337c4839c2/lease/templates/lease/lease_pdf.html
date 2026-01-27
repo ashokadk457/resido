@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rental Agreement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @page {
+            size: letter;
+            margin: 0.5in;
+
+            @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+                font-size: 9px;
+                color: #666;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.3;
+            color: #333;
+        }
+
+        .header {
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+            background-color: #fff;
+            margin: 0;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .logo img {
+            height: 30px;
+            max-width: 150px;
+            object-fit: contain;
+        }
+
+        .disclaimer {
+            background-color: #fffacd;
+            padding: 8px 20px;
+            font-size: 9px;
+            line-height: 1.4;
+            color: #666;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .content {
+            padding: 15px 20px;
+        }
+
+        .page-break {
+            page-break-after: always;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            margin: 12px 0 10px 0;
+            page-break-inside: avoid;
+        }
+
+        .subsection-title {
+            font-size: 11px;
+            font-weight: bold;
+            margin: 10px 0 6px 0;
+            page-break-inside: avoid;
+        }
+
+        .parties-box {
+            text-align: center;
+            margin: 12px 0;
+            padding: 12px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            page-break-inside: avoid;
+        }
+
+        .party-row {
+            margin: 0;
+            font-size: 10px;
+        }
+
+        .party-name {
+            font-weight: bold;
+            font-size: 11px;
+            margin: 0;
+            display: inline;
+        }
+
+        .party-role {
+            font-size: 10px;
+            color: #666;
+            display: inline;
+        }
+
+        .and-text {
+            margin: 0 4px;
+            font-size: 11px;
+            font-weight: normal;
+            display: inline;
+        }
+
+        .date-line {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 11px;
+        }
+
+        .summary-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            margin: 12px 0 10px 0;
+            page-break-inside: avoid;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+            font-size: 11px;
+            page-break-inside: avoid;
+        }
+
+        thead {
+            background-color: #e8e8e8;
+            display: table-header-group;
+        }
+
+        th {
+            background-color: #e8e8e8;
+            border: 1px solid #999;
+            padding: 6px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            font-size: 10px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        .summary-table {
+            width: 100%;
+            margin: 8px 0;
+            border-collapse: collapse;
+            page-break-inside: avoid;
+        }
+
+        .summary-table tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .summary-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .summary-table td {
+            border: none;
+            padding: 6px 4px;
+            font-size: 10px;
+        }
+
+        .summary-table td:first-child {
+            font-weight: bold;
+            width: 40%;
+            padding-right: 15px;
+        }
+
+        .summary-table td:last-child {
+            width: 60%;
+            text-align: left;
+        }
+
+        .summary-note {
+            text-align: center;
+            font-size: 9px;
+            color: #666;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .signature-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            page-break-inside: avoid;
+        }
+
+        .signature-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 11px;
+            margin-bottom: 12px;
+        }
+
+        .signature-block {
+            margin-bottom: 12px;
+            padding: 0;
+            page-break-inside: avoid;
+        }
+
+        .signature-header {
+            font-weight: bold;
+            font-size: 10px;
+            margin-bottom: 4px;
+            margin-top: 8px;
+        }
+
+        .signature-row {
+            padding: 0;
+            border: none;
+            font-size: 10px;
+            margin-bottom: 0;
+        }
+
+        .sig-item {
+            display: inline-block;
+            width: 28%;
+            font-size: 10px;
+            padding: 0;
+            margin: 0;
+            margin-right: 2%;
+            vertical-align: top;
+        }
+
+        .sig-item:last-child {
+            margin-right: 0;
+        }
+
+        .sig-item strong {
+            font-weight: bold;
+            margin-right: 3px;
+        }
+
+        .footer {
+            padding: 8px 20px;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            font-size: 8px;
+            color: #666;
+            background-color: #fafafa;
+            position: relative;
+            clear: both;
+            page-break-inside: avoid;
+        }
+
+        .footer-text {
+            display: inline;
+        }
+
+        .footer-page {
+            display: none;  /* Hidden - weasyprint handles page numbering via @page rule */
+        }
+
+        .info-box {
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        .info-label {
+            font-weight: bold;
+            font-size: 11px;
+            margin-bottom: 3px;
+        }
+
+        .info-value {
+            font-size: 11px;
+            margin-bottom: 8px;
+        }
+
+        .label-value-table {
+            width: 100%;
+            margin: 10px 0;
+            border-collapse: collapse;
+        }
+
+        .label-value-table tr {
+            border: none;
+        }
+
+        .label-value-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 11px;
+        }
+
+        .label-value-table td:first-child {
+            font-weight: bold;
+            width: 40%;
+            background-color: #f5f5f5;
+        }
+
+        .label-value-table td:last-child {
+            width: 60%;
+        }
+
+        .two-column-row {
+            width: 100%;
+            margin: 8px 0;
+            display: table;
+        }
+
+        .two-col-label {
+            display: table-cell;
+            width: 48%;
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-weight: bold;
+            background-color: #f5f5f5;
+            font-size: 11px;
+        }
+
+        .two-col-value {
+            display: table-cell;
+            width: 48%;
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 11px;
+        }
+
+        .four-col-table {
+            width: 100%;
+            margin: 10px 0;
+            border-collapse: collapse;
+        }
+
+        .four-col-table tr {
+            border: none;
+        }
+
+        .four-col-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 11px;
+            width: 25%;
+        }
+
+        .four-col-table td:nth-child(1),
+        .four-col-table td:nth-child(3) {
+            font-weight: bold;
+            background-color: #f5f5f5;
+        }
+
+        .content-text {
+            font-size: 10px;
+            line-height: 1.4;
+            margin: 6px 0;
+            color: #333;
+            page-break-inside: avoid;
+        }
+
+        .bullet-list {
+            margin-left: 15px;
+            font-size: 10px;
+            line-height: 1.4;
+            color: #333;
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE 1: Cover -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="disclaimer">
+        Disclaimer: This Rental agreement is not guaranteed, either expressly or implied, by Resido, Inc. as to their effectiveness or completeness. Resido does not provide legal advice. RESIDO INC. AND ITS SERVICES, DOCUMENTS, WEBINAR AND PRODUCTS ARE NOT A SUBSTITUTE FOR THE ADVICE OF AN ATTORNEY. This clause is intended to remind all applicable local, state and federal laws and regulations.
+    </div>
+
+    <div class="content">
+        <div class="section-title">Rental Agreement Between</div>
+
+        <div class="parties-box">
+            <div class="party-row">
+                <span class="party-name">{{ landlord_name }}</span>
+                <span class="party-role">(The Landlord)</span>
+                <span class="and-text">- AND -</span>
+                <span class="party-name">{{ tenant_name }}</span>
+                <span class="party-role">(The Renter)</span>
+            </div>
+        </div>
+
+        <div class="date-line">Date: <strong>{{ lease_start_date|date:"d/m/Y" }}</strong></div>
+
+        <div class="summary-title">Summary of Key Information</div>
+
+        <table class="summary-table">
+            <tr>
+                <td>Property Address</td>
+                <td>{{ property_address }}</td>
+            </tr>
+            <tr>
+                <td>Lease Start Date</td>
+                <td>{{ lease_start_date|date:"d/m/Y" }}</td>
+            </tr>
+            <tr>
+                <td>Lease End Dates</td>
+                <td>{{ lease_end_date|date:"d/m/Y" }}</td>
+            </tr>
+            <tr>
+                <td>Total Monthly Rent</td>
+                <td>${{ rent_total|floatformat:2 }}</td>
+            </tr>
+            <tr>
+                <td>Monthly Rent Amount</td>
+                <td>${{ rent_amount|floatformat:2 }}</td>
+            </tr>
+            <tr>
+                <td>Monthly Pet Rent</td>
+                <td>$0.00</td>
+            </tr>
+            <tr>
+                <td>Pro-Rated Rent Amount</td>
+                <td>{% if prorated_rent_amount %}${{ prorated_rent_amount|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Total Deposits</td>
+                <td>${{ total_deposits|floatformat:2 }}</td>
+            </tr>
+            <tr>
+                <td>Security Deposit</td>
+                <td>${{ security_amount|floatformat:2 }}</td>
+            </tr>
+            <tr>
+                <td>Pet Deposit</td>
+                <td>${{ pet_deposit_amount|floatformat:2 }}</td>
+            </tr>
+            <tr>
+                <td>Other Deposit</td>
+                <td>$0.00</td>
+            </tr>
+            <tr>
+                <td>Move-in Fee Amount</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>Late Fee Amount</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>Promotional Discount</td>
+                <td>N/A</td>
+            </tr>
+        </table>
+
+        <div class="summary-note">
+            The above summary table is provided as a reference. The agreement will control if there is a conflict.
+        </div>
+
+        <div class="signature-section">
+            <div class="signature-title">Witness the Signatures of the parties to this agreement:-</div>
+
+            <div class="signature-block">
+                <div class="signature-header">Renter(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ tenant_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> {{ tenant_name }}</div>
+                    <div class="sig-item"><strong>Date:</strong> {{ lease_start_date|date:"d/m/Y" }}</div>
+                </div>
+            </div>
+
+            <div class="signature-block">
+                <div class="signature-header">Landlord(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ landlord_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> {{ landlord_name }}</div>
+                    <div class="sig-item"><strong>Date:</strong> {{ lease_start_date|date:"d/m/Y" }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">{{ page_number }} of {{ total_pages }}</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 2: General Information -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">1. General Information</div>
+
+        <div class="subsection-title">1.1 Date</div>
+        <div class="content-text">The Date of this Agreement is <strong>{{ lease_start_date|date:"d/m/Y" }}</strong></div>
+
+        <div class="subsection-title">1.2 Renter(s)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Renter Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ tenant_name }}</td>
+                    <td>{{ tenant_email }}</td>
+                    <td>{{ tenant_phone }}</td>
+                    <td>{{ property_address }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="subsection-title">1.3 Landlord(s)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Landlord Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ landlord_name }}</td>
+                    <td>{{ landlord_email }}</td>
+                    <td>{{ landlord_phone }}</td>
+                    <td>{{ landlord_address }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="subsection-title">1.4 The Rental property</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Property Name</th>
+                    <th>Property Address</th>
+                    <th>Building</th>
+                    <th>Unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ property_name }}</td>
+                    <td>{{ property_address }}</td>
+                    <td>{{ building_name }}</td>
+                    <td>{{ unit_number }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="signature-section">
+            <div class="signature-title">Witness the Signatures of the parties to this agreement:-</div>
+
+            <div class="signature-block">
+                <div class="signature-header">Renter(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ tenant_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> {{ tenant_name }}</div>
+                    <div class="sig-item"><strong>Date:</strong> {{ lease_start_date|date:"d/m/Y" }}</div>
+                </div>
+            </div>
+
+            <div class="signature-block">
+                <div class="signature-header">Landlord(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ landlord_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> {{ landlord_name }}</div>
+                    <div class="sig-item"><strong>Date:</strong> {{ lease_start_date|date:"d/m/Y" }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">Page 2 of {{ total_pages }}</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 3: Lease Details -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">2. Lease Details</div>
+
+        <div class="subsection-title">1.5 Lease Term</div>
+        <table class="label-value-table">
+            <tr>
+                <td>Lease Start Date</td>
+                <td>{{ lease_start_date|date:"d/m/Y" }}</td>
+            </tr>
+            <tr>
+                <td>Lease End Date</td>
+                <td>{{ lease_end_date|date:"d/m/Y" }}</td>
+            </tr>
+            <tr>
+                <td>Lease Type</td>
+                <td>Fixed-Term</td>
+            </tr>
+        </table>
+
+        <div class="subsection-title">1.6 Rent</div>
+        <table class="label-value-table">
+            <tr>
+                <td>Monthly Base Rent</td>
+                <td>${{ rent_amount|floatformat:2 }}</td>
+            </tr>
+            <tr>
+                <td>Additional Monthly Rent</td>
+                <td>$0.00</td>
+            </tr>
+            <tr>
+                <td>Total Monthly Rent</td>
+                <td>${{ rent_total|floatformat:2 }}</td>
+            </tr>
+        </table>
+
+        <div class="subsection-title">1.7 Prorated Rent</div>
+        <table class="label-value-table">
+            <tr>
+                <td>Rent Amount</td>
+                <td>${{ prorated_rent_amount|floatformat:2 }}</td>
+            </tr>
+        </table>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">Page 3 of {{ total_pages }}</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 4: Deposits & Fees -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="content">
+        <div class="subsection-title">1.8 Deposit(s)</div>
+        <table>
+            <tr>
+                <td><strong>Security Deposit</strong></td>
+                <td><strong>Security Deposit Refundable</strong></td>
+            </tr>
+            <tr>
+                <td>${{ security_amount|floatformat:2 }}</td>
+                <td>{% if security_refundable %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </table>
+
+        <div class="subsection-title">1.9 Pet Deposit(s)</div>
+        <table>
+            <tr>
+                <td><strong>Pet Deposit</strong></td>
+                <td><strong>Pet Deposit Refundable</strong></td>
+            </tr>
+            <tr>
+                <td>${{ pet_deposit_amount|floatformat:2 }}</td>
+                <td>{% if pet_deposit_refundable %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </table>
+
+        <div class="subsection-title">2.0 Pet(s) Fees</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pet</th>
+                    <th>Fees</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dog</td>
+                    <td>$50.00</td>
+                </tr>
+                <tr>
+                    <td>Cat</td>
+                    <td>$50.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="subsection-title">2.1 One Time Fees</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fee Name</th>
+                    <th>Fee Amount</th>
+                    <th>Pet Deposit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>One Time charges</td>
+                    <td>${{ one_time_fees_amount|floatformat:2 }}</td>
+                    <td>$0.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="subsection-title">2.2 Promotional Discount</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Discount</th>
+                    <th>Discount Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>N/A</td>
+                    <td>$0.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="subsection-title">2.3 Payment Accepted</div>
+        <table class="label-value-table">
+            <tr>
+                <td>Payment Methods</td>
+                <td>{{ payment_methods }}</td>
+            </tr>
+        </table>
+
+        <div class="signature-section">
+            <div class="signature-title">Witness the Signatures of the parties to this agreement:-</div>
+
+            <div class="signature-block">
+                <div class="signature-header">Renter(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ tenant_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> {{ tenant_name }}</div>
+                    <div class="sig-item"><strong>Date:</strong> {{ lease_start_date|date:"d/m/Y" }}</div>
+                </div>
+            </div>
+
+            <div class="signature-block">
+                <div class="signature-header">Landlord(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ landlord_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> {{ landlord_name }}</div>
+                    <div class="sig-item"><strong>Date:</strong> {{ lease_start_date|date:"d/m/Y" }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">Page 4 of {{ total_pages }}</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 5: Renters & Occupants -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">3. Renters & Occupants</div>
+
+        <div class="subsection-title">2.4 Renter(s)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Renter Name</th>
+                    <th>Age</th>
+                    <th>Relationship</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ tenant_name }}</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="subsection-title">2.5 Additional Occupant(s)</div>
+        {% if additional_occupants %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Occupant Name</th>
+                    <th>Age</th>
+                    <th>Relationship</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for occupant in additional_occupants %}
+                <tr>
+                    <td>{{ occupant.name }}</td>
+                    <td>{{ occupant.age }}</td>
+                    <td>{{ occupant.relationship }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="content-text">No additional occupants listed.</div>
+        {% endif %}
+
+        <div class="signature-section">
+            <div class="signature-title">Witness the Signatures of the parties to this agreement:-</div>
+
+            <div class="signature-block">
+                <div class="signature-header">Renter(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ tenant_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> {{ tenant_name }}</div>
+                    <div class="sig-item"><strong>Date:</strong> {{ lease_start_date|date:"d/m/Y" }}</div>
+                </div>
+            </div>
+
+            <div class="signature-block">
+                <div class="signature-header">Landlord(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ landlord_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> {{ landlord_name }}</div>
+                    <div class="sig-item"><strong>Date:</strong> {{ lease_start_date|date:"d/m/Y" }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">Page 5 of {{ total_pages }}</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 6: Pets, Smoking & Other -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">4. Pets, Smoking & Other</div>
+
+        <div class="subsection-title">2.6 Pet(s)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pet Type</th>
+                    <th>Breed</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dog</td>
+                    <td>Labrador</td>
+                    <td>2 Years</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="subsection-title">2.7 Emotional Support Animal (ESA)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Task</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dog</td>
+                    <td>Encourages physical activity (e.g., walks)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="subsection-title">2.8 Smoking</div>
+        <table class="four-col-table">
+            <tr>
+                <td>Smoking Allowed</td>
+                <td>{% if smoking_allowed %}Yes{% else %}No{% endif %}</td>
+                <td>Options</td>
+                <td>Outdoor Only</td>
+            </tr>
+        </table>
+
+        <div class="subsection-title">2.9 Parking</div>
+        <table class="four-col-table">
+            <tr>
+                <td>Parking Available</td>
+                <td>{% if parking_available %}Yes{% else %}No{% endif %}</td>
+                <td>Type of Parking</td>
+                <td>{{ parking_types }}</td>
+            </tr>
+        </table>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">Page 6 of {{ total_pages }}</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 7: Utilities & Services -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">5. Utilities & Services</div>
+
+        <div class="subsection-title">3.0 Utilities & Other Services</div>
+        {% if utilities %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Utilities & Services</th>
+                    <th>Responsibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for utility in utilities %}
+                <tr>
+                    <td>{{ utility.service }}</td>
+                    <td>{{ utility.responsible }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="content-text">No utilities information available.</div>
+        {% endif %}
+
+        <div class="subsection-title">3.1 Keys</div>
+        <table>
+            <tr>
+                <td><strong>Key Type</strong></td>
+                <td><strong>No. of Copies</strong></td>
+            </tr>
+            <tr>
+                <td>Property</td>
+                <td>02</td>
+            </tr>
+        </table>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">Page 7 of {{ total_pages }}</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 8: Special Provisions -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">6. Special Provisions</div>
+
+        <div class="subsection-title">3.2 Early Termination</div>
+        <table class="label-value-table">
+            <tr>
+                <td>Early Termination Allow</td>
+                <td>{% if early_termination_allowed %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </table>
+
+        <div class="subsection-title">3.3 Early Termination Policy</div>
+
+        <div class="content-text">
+            <strong>Notice Requirement:</strong> The Renter may terminate this Rental Agreement before the expiration of the lease term by providing the Landlord with a written notice of at least 30 days prior to the intended move-out date.
+        </div>
+
+        <div class="content-text">
+            <strong>Early Termination Fee:</strong> In the event of early termination, the Renter agrees to pay an early termination fee equivalent to one month's rent, due on or before the final move-out date.
+        </div>
+
+        <div class="content-text">
+            <strong>Conditions for Waiver:</strong> The Landlord may, at their discretion, waive the early termination fee in cases of:
+        </div>
+
+        <div class="bullet-list">
+            • Job relocation (with proof from employer)<br>
+            • Military deployment (with official orders)<br>
+            • Health-related issues (with medical documentation)
+        </div>
+
+        <div class="content-text">
+            <strong>Security Deposit:</strong> The Renter's security deposit will be returned in accordance with the terms outlined in the lease, subject to deductions for unpaid rent, damages, or outstanding charges.
+        </div>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">Page 8 of {{ total_pages }}</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 9: Additional Terms -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">6.1 Additional Terms</div>
+
+        <div class="content-text">
+            <strong>Tenant Responsibilities:</strong> The Tenant agrees to maintain the rental property in good condition and comply with all lease terms and local regulations.
+        </div>
+
+        <div class="content-text">
+            <strong>Maintenance and Repairs:</strong> The Landlord is responsible for major structural repairs. The Tenant is responsible for minor repairs and maintenance as defined in the lease agreement.
+        </div>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">Page 9 of {{ total_pages }}</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 10: Final Signatures -->
+    <div class="header">
+        <div class="logo"><img src="{{ logo_url }}" alt="Resido Logo"></div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">7. Signatures</div>
+
+        <div class="content-text" style="text-align: center;">
+            This Renter understands that execution of this agreement entails an important legal decision. Renter is advised to seek independent legal counsel regarding this agreement. Renter represents that they have read this agreement, understand it, agree to it, and have been given a copy. Electronic signatures are acceptable and binding.
+        </div>
+
+        <div class="signature-section">
+            <div class="signature-title">Witness the Signatures of the parties to this agreement:-</div>
+
+            <div class="signature-block">
+                <div class="signature-header">Renter(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ tenant_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> _____________</div>
+                    <div class="sig-item"><strong>Date:</strong> _____________</div>
+                </div>
+            </div>
+
+            {% if additional_occupants %}
+            <div class="signature-block">
+                <div class="signature-header">Additional Occupants</div>
+                {% for occupant in additional_occupants %}
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ occupant.name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> _____________</div>
+                    <div class="sig-item"><strong>Date:</strong> _____________</div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="signature-block">
+                <div class="signature-header">Landlord(s)</div>
+                <div class="signature-row">
+                    <div class="sig-item"><strong>Name:</strong> {{ landlord_name }}</div>
+                    <div class="sig-item"><strong>Sign:</strong> _____________</div>
+                    <div class="sig-item"><strong>Date:</strong> _____________</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-text">DRAFT Rental Agreement for review only. NOT LEGALLY BINDING. COPYRIGHT 2025 Resido.</div>
+            <div class="footer-page">Page 11 of {{ total_pages }}</div>
+        </div>
+    </div>
+</body>
+</html>

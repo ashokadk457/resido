@@ -1,0 +1,78 @@
+image: python:3.10
+
+#definitions:
+#  services:
+#    postgres:
+#      image: postgis/postgis:12-3.3
+#      environment:
+#        POSTGRES_DB: helixtest
+#        POSTGRES_USER: postgres
+#        POSTGRES_PASSWORD: postgres
+#    redis:
+#      image: redis:7
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Linting
+          caches:
+            - pip
+          script:
+            - echo "Installing ruff for Linting..."
+            - pip install ruff
+            - ruff check .
+      - step:
+          name: Formatting
+          caches:
+            - pip
+          script:
+            - echo "Installing black for Formatting..."
+            - pip install black
+            - black --check -S .
+  pull-requests:
+    "**":
+      - step:
+          name: Linting
+          caches:
+            - pip
+          script:
+            - echo "Installing ruff for Linting..."
+            - pip install ruff
+            - ruff check .
+      - step:
+          name: Formatting
+          caches:
+            - pip
+          script:
+            - echo "Installing black for Formatting..."
+            - pip install black
+            - black --check -S .
+#      - step:
+#          name: Testing
+#          services:
+#            - postgres
+#            - redis
+#          caches:
+#            - pip
+#          script:
+#            - apt-get update && apt-get install -y postgresql-client gdal-bin libgdal-dev netcat-openbsd
+#            - export CPLUS_INCLUDE_PATH=/usr/include/gdal
+#            - export C_INCLUDE_PATH=/usr/include/gdal
+#            - echo "Waiting for PostgreSQL..."
+#            - until pg_isready -h localhost -p 5432 -U postgres; do sleep 1; done
+#            - export PGPASSWORD=postgres
+#            - psql -h localhost -p 5432 -U postgres -d helixtest -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+#            - echo "Waiting for Redis..."
+#            - until nc -z localhost 6379; do sleep 1; done
+#            - pip install -r requirements/dev.txt
+#            - python3 manage.py test
+#          environment:
+#            DJANGO_SECRET_KEY: test-key-not-good
+#            POSTGRES_HOST: localhost
+#            POSTGRES_PORT: 5432
+#            REDIS_HOST: localhost
+#            REDIS_PORT: 6379
+#            REDIS_URL: "redis://localhost:6379/0"
+#            DATABASE_URL: "postgres://postgres:postgres@localhost:5432/helixtest"
+#            ENVIRONMENT: TEST

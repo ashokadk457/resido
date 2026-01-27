@@ -1,0 +1,92 @@
+---
+#SEXUAL_ORIENTATION
+name: "SEXUAL_ORIENTATION"
+code: "AS"
+value: "Asexual"
+description: "Person has an Asexual orientation."
+active: 1
+display_order: 100
+---
+name: "SEXUAL_ORIENTATION"
+code: "BI"
+value: "Bisexual"
+description: "Person has a Bisexual orientation."
+active: 1
+display_order: 200
+---
+name: "SEXUAL_ORIENTATION"
+code: "GA"
+value: "Gay"
+description: "Person has a Gay sexual orientation."
+active: 1
+display_order: 300
+---
+name: "SEXUAL_ORIENTATION"
+code: "LE"
+value: "Lesbian"
+description: "Person has a Lesbian sexual orientation."
+active: 1
+display_order: 400
+---
+name: "SEXUAL_ORIENTATION"
+code: "QU"
+value: "Queer"
+description: "Person has a Queer sexual orientation."
+active: 1
+display_order: 500
+---
+name: "SEXUAL_ORIENTATION"
+code: "QS"
+value: "Questioning"
+description: "Person has a sexual orientation of Questioning."
+active: 1
+display_order: 600
+---
+name: "SEXUAL_ORIENTATION"
+code: "ST"
+value: "Straight"
+description: "Person has a Straight sexual orientation."
+active: 1
+display_order: 700
+---
+name: "SEXUAL_ORIENTATION"
+code: "SE"
+value: "Something Else"
+description: "Person has sexual orientation of Something Else."
+active: 1
+display_order: 800
+---
+name: "SEXUAL_ORIENTATION"
+code: "MU"
+value: "Multiple Sexual Orientations"
+description: "Person has Multiple sexual orientations."
+active: 1
+display_order: 900
+---
+name: "SEXUAL_ORIENTATION"
+code: "DC"
+value: "Decline to Answer"
+description: "Person has declined to answer about their sexual orientataion."
+active: 1
+display_order: 1000
+---
+name: "SEXUAL_ORIENTATION"
+code: "NI"
+value: "No Information"
+description: "There is no information about the Persons sexual orientation"
+active: 1
+display_order: 1100
+---
+name: "SEXUAL_ORIENTATION"
+code: "UN"
+value: "Unknown"
+description: "Persons sexual orientation is unknown."
+active: 1
+display_order: 1200
+---
+name: "SEXUAL_ORIENTATION"
+code: "OT"
+value: "Other"
+description: "Persons sexual orientation is Other."
+active: 1
+display_order: 1300

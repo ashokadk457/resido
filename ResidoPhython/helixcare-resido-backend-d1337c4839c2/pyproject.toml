@@ -1,0 +1,2 @@
+[tool.ruff]
+exclude = ["audit/apps.py"]

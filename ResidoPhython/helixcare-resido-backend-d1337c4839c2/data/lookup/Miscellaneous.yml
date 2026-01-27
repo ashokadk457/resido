@@ -1,0 +1,2793 @@
+---
+name: "USER_ACTIVATION_STATUS"
+code: "PENDING"
+value: "Pending"
+description: ""
+active: 1
+display_order: 100
+---
+name: "USER_ACTIVATION_STATUS"
+code: "APPROVED"
+value: "Approved"
+description: ""
+active: 1
+display_order: 200
+---
+name: "USER_ACTIVATION_STATUS"
+code: "REJECTED"
+value: "Rejected"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PATIENT_ACQUIRING_CHANNEL"
+code: "WEB"
+value: "Web"
+description: ""
+active: 1
+display_order: 100
+---
+name: "GENDER_TYPE"
+code: "TGF"
+value: "Transgender female"
+description: "the patient identifies as transgender male-to-female"
+active: 0
+display_order: 100
+---
+name: "GENDER_TYPE"
+code: "TGM"
+value: "Transgender male"
+description: "the patient identifies as transgender female-to-male"
+active: 0
+display_order: 200
+---
+name: "GENDER_TYPE"
+code: "NB"
+value: "Non-binary"
+description: "the patient identifies with neither/both female and male"
+active: 0
+display_order: 300
+---
+name: "GENDER_TYPE"
+code: "M"
+value: "Male"
+description: "the patient identifies as male"
+active: 1
+display_order: 100
+---
+name: "GENDER_TYPE"
+code: "F"
+value: "Female"
+description: "the patient identifies as female"
+active: 1
+display_order: 200
+---
+name: "GENDER_TYPE"
+code: "O"
+value: "Other"
+description: "ther gender identity"
+active: 1
+display_order: 600
+---
+name: "GENDER_TYPE"
+code: "ND"
+value: "Does not wish to disclose"
+description: "the patient does not wish to disclose his gender identity"
+active: 0
+display_order: 700
+---
+name: "GENDER_TYPE"
+code: "A"
+value: "Ambiguous"
+description: "A rare condition in which an infant's external genitals don't appear to be clearly either male or female"
+active: 0
+display_order: 800
+---
+name: "SALUTATION_CODE"
+code: "MR"
+value: "Mr."
+description: ""
+active: 1
+display_order: 100
+---
+name: "SALUTATION_CODE"
+code: "MS"
+value: "Ms."
+description: ""
+active: 1
+display_order: 200
+---
+name: "SALUTATION_CODE"
+code: "MRS"
+value: "Mrs."
+description: ""
+active: 1
+display_order: 300
+---
+name: "SALUTATION_CODE"
+code: "MSTR"
+value: "Mstr"
+description: ""
+active: 1
+display_order: 400
+---
+name: "SALUTATION_CODE"
+code: "DR"
+value: "Dr."
+description: ""
+active: 1
+display_order: 500
+---
+name: "COMMUNICATION_MODE"
+code: "EMAIL"
+value: "E-mail"
+description: ""
+active: 1
+display_order: 100
+---
+name: "COMMUNICATION_MODE"
+code: "SMS"
+value: "Sms"
+description: ""
+active: 1
+display_order: 200
+---
+name: "COMMUNICATION_MODE"
+code: "CALL"
+value: "Call"
+description: ""
+active: 1
+display_order: 300
+---
+name: "COMMUNICATION_MODE"
+code: "PUSH"
+value: "Push"
+description: ""
+active: 1
+display_order: 400
+---
+name: "LANGUAGE"
+code: "EN"
+value: "English"
+description: ""
+active: 1
+display_order: 100
+---
+name: "LANGUAGE"
+code: "ES"
+value: "Spanish"
+description: ""
+active: 1
+display_order: 200
+---
+name: "EVENT_TYPE"
+code: "4"
+value: "Verification code"
+description: ""
+active: 1
+display_order: 400
+---
+name: "DURATION_UNIT"
+code: "s"
+value: "Second"
+description: ""
+active: 1
+display_order: 100
+---
+name: "DURATION_UNIT"
+code: "min"
+value: "Minute"
+description: ""
+active: 1
+display_order: 200
+---
+name: "DURATION_UNIT"
+code: "h"
+value: "Hour"
+description: ""
+active: 1
+display_order: 300
+---
+name: "DURATION_UNIT"
+code: "d"
+value: "Day"
+description: ""
+active: 1
+display_order: 400
+---
+name: "DURATION_UNIT"
+code: "wk"
+value: "Week"
+description: ""
+active: 1
+display_order: 500
+---
+name: "DURATION_UNIT"
+code: "mo"
+value: "Month"
+description: ""
+active: 1
+display_order: 600
+---
+name: "WEEK_DAY"
+code: "mon"
+value: "Monday"
+description: ""
+active: 1
+display_order: 100
+---
+name: "WEEK_DAY"
+code: "tue"
+value: "Tuesday"
+description: ""
+active: 1
+display_order: 200
+---
+name: "WEEK_DAY"
+code: "wed"
+value: "Wednesday"
+description: ""
+active: 1
+display_order: 300
+---
+name: "WEEK_DAY"
+code: "thu"
+value: "Thursday"
+description: ""
+active: 1
+display_order: 400
+---
+name: "WEEK_DAY"
+code: "fri"
+value: "Friday"
+description: ""
+active: 1
+display_order: 500
+---
+name: "WEEK_DAY"
+code: "sat"
+value: "Saturday"
+description: ""
+active: 1
+display_order: 600
+---
+name: "WEEK_DAY"
+code: "sun"
+value: "Sunday"
+description: ""
+active: 1
+display_order: 700
+---
+name: "EVENT_TIMING"
+code: "HS"
+value: "HS"
+description: "event occurs [offset] before the hour of sleep (or trying to)"
+active: 1
+display_order: 100
+---
+name: "EVENT_TIMING"
+code: "WAKE"
+value: "WAKE"
+description: "event occurs [offset] after waking"
+active: 1
+display_order: 200
+---
+name: "EVENT_TIMING"
+code: "C"
+value: "C"
+description: "event occurs at a meal (from the Latin cibus)"
+active: 1
+display_order: 300
+---
+name: "EVENT_TIMING"
+code: "CM"
+value: "CM"
+description: "event occurs at breakfast (from the Latin cibus matutinus)"
+active: 1
+display_order: 400
+---
+name: "EVENT_TIMING"
+code: "CD"
+value: "CD"
+description: "event occurs at lunch (from the Latin cibus diurnus)"
+active: 1
+display_order: 500
+---
+name: "EVENT_TIMING"
+code: "CV"
+value: "CV"
+description: "event occurs at dinner (from the Latin ante cibus vespertinus)"
+active: 1
+display_order: 600
+---
+name: "EVENT_TIMING"
+code: "AC"
+value: "AC"
+description: "event occurs before a meal (from the Latin ante cibus)"
+active: 1
+display_order: 700
+---
+name: "EVENT_TIMING"
+code: "ACM"
+value: "ACM"
+description: "event occurs before breakfast (from the Latin ante cibus matutinus)"
+active: 1
+display_order: 800
+---
+name: "EVENT_TIMING"
+code: "ACD"
+value: "ACD"
+description: "event occurs before lunch (from the Latin ante cibus diurnus)"
+active: 1
+display_order: 900
+---
+name: "EVENT_TIMING"
+code: "ACV"
+value: "ACV"
+description: "event occurs before dinner (from the Latin ante cibus vespertinus)"
+active: 1
+display_order: 1000
+---
+name: "EVENT_TIMING"
+code: "PC"
+value: "PC"
+description: "event occurs after a meal (from the Latin post cibus)"
+active: 1
+display_order: 1100
+---
+name: "EVENT_TIMING"
+code: "PCM"
+value: "PCM"
+description: "event occurs after breakfast (from the Latin post cibus matutinus)"
+active: 1
+display_order: 1200
+---
+name: "EVENT_TIMING"
+code: "PCD"
+value: "PCD"
+description: "event occurs after lunch (from the Latin post cibus diurnus)"
+active: 1
+display_order: 1300
+---
+name: "EVENT_TIMING"
+code: "PCV"
+value: "PCV"
+description: "event occurs after dinner (from the Latin post cibus vespertinus)"
+active: 1
+display_order: 1400
+---
+name: "TEMPLATE_CATEGORY"
+code: "REGISTRATION"
+value: "Registration"
+description: ""
+active: 1
+display_order: 100
+---
+name: "TEMPLATE_CATEGORY"
+code: "SURVEY"
+value: "Survey"
+description: ""
+active: 1
+display_order: 200
+---
+name: "TEMPLATE_CATEGORY"
+code: "VITALS"
+value: "Vitals"
+description: ""
+active: 1
+display_order: 300
+---
+name: "MARITAL_STATUS"
+code: "Married"
+value: "Married"
+description: ""
+active: 1
+display_order: 100
+---
+name: "MARITAL_STATUS"
+code: "Unmarried"
+value: "Unmarried"
+description: ""
+active: 1
+display_order: 200
+---
+name: "MARITAL_STATUS"
+code: "NoDisclose"
+value: "Prefer not to disclose"
+description: ""
+active: 1
+display_order: 300
+---
+name: "SUFFIX"
+code: "Jr"
+value: "Jr"
+description: ""
+active: 1
+display_order: 100
+---
+name: "SUFFIX"
+code: "Sr"
+value: "Sr"
+description: ""
+active: 1
+display_order: 200
+---
+name: "SUFFIX"
+code: "I"
+value: "I"
+description: ""
+active: 1
+display_order: 300
+---
+name: "SUFFIX"
+code: "II"
+value: "II"
+description: ""
+active: 1
+display_order: 400
+---
+name: "SUFFIX"
+code: "III"
+value: "III"
+description: ""
+active: 1
+display_order: 500
+---
+name: "SUFFIX"
+code: "IV"
+value: "IV"
+description: ""
+active: 1
+display_order: 600
+---
+name: "SUFFIX"
+code: "V"
+value: "V"
+description: ""
+active: 1
+display_order: 700
+---
+name: "SUFFIX"
+code: "VI"
+value: "VI"
+description: ""
+active: 1
+display_order: 800
+---
+name: "SUFFIX"
+code: "VII"
+value: "VII"
+description: ""
+active: 1
+display_order: 900
+---
+name: "SUFFIX"
+code: "VIII"
+value: "VIII"
+description: ""
+active: 1
+display_order: 1000
+---
+name: "SUFFIX"
+code: "IX"
+value: "IX"
+description: ""
+active: 1
+display_order: 1100
+---
+name: "SUFFIX"
+code: "X"
+value: "X"
+description: ""
+active: 1
+display_order: 1200
+---
+name: "PREFIX"
+code: "Ms"
+value: "Ms"
+description: ""
+active: 1
+display_order: 100
+---
+name: "PREFIX"
+code: "Miss"
+value: "Miss"
+description: ""
+active: 1
+display_order: 200
+---
+name: "PREFIX"
+code: "Mrs"
+value: "Mrs"
+description: ""
+active: 1
+display_order: 300
+---
+name: "PREFIX"
+code: "Mr"
+value: "Mr"
+description: ""
+active: 1
+display_order: 400
+---
+name: "PREFIX"
+code: "Master"
+value: "Master"
+description: ""
+active: 1
+display_order: 500
+---
+name: "PREFIX"
+code: "Fr"
+value: "Father"
+description: ""
+active: 1
+display_order: 600
+---
+name: "PREFIX"
+code: "Rev"
+value: "Reverend"
+description: ""
+active: 1
+display_order: 700
+---
+name: "PREFIX"
+code: "Dr"
+value: "Doctor"
+description: ""
+active: 1
+display_order: 800
+---
+name: "PREFIX"
+code: "Atty"
+value: "Attorney"
+description: ""
+active: 1
+display_order: 900
+---
+name: "PREFIX"
+code: "Hon"
+value: "Honorable"
+description: ""
+active: 1
+display_order: 1000
+---
+name: "PREFIX"
+code: "Prof"
+value: "Professor"
+description: ""
+active: 1
+display_order: 1100
+---
+name: "PREFIX"
+code: "Pres"
+value: "President"
+description: ""
+active: 1
+display_order: 1200
+---
+name: "PREFIX"
+code: "VP"
+value: "Vice President"
+description: ""
+active: 1
+display_order: 1300
+---
+name: "PREFIX"
+code: "Gov"
+value: "Governor"
+description: ""
+active: 1
+display_order: 1400
+---
+name: "PREFIX"
+code: "Ofc"
+value: "Officer"
+description: ""
+active: 1
+display_order: 1500
+---
+name: "COUNTRY"
+code: "AD"
+value: "ANDORRA"
+description: ""
+active: 1
+display_order: 100
+---
+name: "COUNTRY"
+code: "AE"
+value: "UNITED ARAB EMIRATES"
+description: ""
+active: 1
+display_order: 200
+---
+name: "COUNTRY"
+code: "AF"
+value: "AFGHANISTAN"
+description: ""
+active: 1
+display_order: 300
+---
+name: "COUNTRY"
+code: "AG"
+value: "ANTIGUA AND BARBUDA"
+description: ""
+active: 1
+display_order: 400
+---
+name: "COUNTRY"
+code: "AI"
+value: "ANGUILLA"
+description: ""
+active: 1
+display_order: 500
+---
+name: "COUNTRY"
+code: "AL"
+value: "ALBANIA"
+description: ""
+active: 1
+display_order: 600
+---
+name: "COUNTRY"
+code: "AM"
+value: "ARMENIA"
+description: ""
+active: 1
+display_order: 700
+---
+name: "COUNTRY"
+code: "AN"
+value: "NETHERLANDS ANTILLES"
+description: ""
+active: 1
+display_order: 800
+---
+name: "COUNTRY"
+code: "AO"
+value: "ANGOLA"
+description: ""
+active: 1
+display_order: 900
+---
+name: "COUNTRY"
+code: "AQ"
+value: "ANTARCTICA"
+description: ""
+active: 1
+display_order: 1000
+---
+name: "COUNTRY"
+code: "AR"
+value: "ARGENTINA"
+description: ""
+active: 1
+display_order: 1100
+---
+name: "COUNTRY"
+code: "AT"
+value: "AUSTRIA"
+description: ""
+active: 1
+display_order: 1200
+---
+name: "COUNTRY"
+code: "AU"
+value: "AUSTRALIA"
+description: ""
+active: 1
+display_order: 1300
+---
+name: "COUNTRY"
+code: "AW"
+value: "ARUBA"
+description: ""
+active: 1
+display_order: 1400
+---
+name: "COUNTRY"
+code: "AX"
+value: "ALAND ISLANDS"
+description: ""
+active: 1
+display_order: 1500
+---
+name: "COUNTRY"
+code: "AZ"
+value: "AZERBAIJAN"
+description: ""
+active: 1
+display_order: 1600
+---
+name: "COUNTRY"
+code: "BA"
+value: "BOSNIA AND HERZEGOVINA"
+description: ""
+active: 1
+display_order: 1700
+---
+name: "COUNTRY"
+code: "BB"
+value: "BARBADOS"
+description: ""
+active: 1
+display_order: 1800
+---
+name: "COUNTRY"
+code: "BD"
+value: "BANGLADESH"
+description: ""
+active: 1
+display_order: 1900
+---
+name: "COUNTRY"
+code: "BE"
+value: "BELGIUM"
+description: ""
+active: 1
+display_order: 2000
+---
+name: "COUNTRY"
+code: "BF"
+value: "BURKINA FASO"
+description: ""
+active: 1
+display_order: 2100
+---
+name: "COUNTRY"
+code: "BG"
+value: "BULGARIA"
+description: ""
+active: 1
+display_order: 2200
+---
+name: "COUNTRY"
+code: "BH"
+value: "BAHRAIN"
+description: ""
+active: 1
+display_order: 2300
+---
+name: "COUNTRY"
+code: "BI"
+value: "BURUNDI"
+description: ""
+active: 1
+display_order: 2400
+---
+name: "COUNTRY"
+code: "BJ"
+value: "BENIN"
+description: ""
+active: 1
+display_order: 2500
+---
+name: "COUNTRY"
+code: "BM"
+value: "BERMUDA"
+description: ""
+active: 1
+display_order: 2600
+---
+name: "COUNTRY"
+code: "BN"
+value: "BRUNEI DARUSSALAM"
+description: ""
+active: 1
+display_order: 2700
+---
+name: "COUNTRY"
+code: "BO"
+value: "BOLIVIA"
+description: ""
+active: 1
+display_order: 2800
+---
+name: "COUNTRY"
+code: "BR"
+value: "BRAZIL"
+description: ""
+active: 1
+display_order: 2900
+---
+name: "COUNTRY"
+code: "BS"
+value: "BAHAMAS"
+description: ""
+active: 1
+display_order: 3000
+---
+name: "COUNTRY"
+code: "BT"
+value: "BHUTAN"
+description: ""
+active: 1
+display_order: 3100
+---
+name: "COUNTRY"
+code: "BV"
+value: "BOUVET ISLAND"
+description: ""
+active: 1
+display_order: 3200
+---
+name: "COUNTRY"
+code: "BW"
+value: "BOTSWANA"
+description: ""
+active: 1
+display_order: 3300
+---
+name: "COUNTRY"
+code: "BY"
+value: "BELARUS"
+description: ""
+active: 1
+display_order: 3400
+---
+name: "COUNTRY"
+code: "BZ"
+value: "BELIZE"
+description: ""
+active: 1
+display_order: 3500
+---
+name: "COUNTRY"
+code: "CA"
+value: "CANADA"
+description: ""
+active: 1
+display_order: 3600
+---
+name: "COUNTRY"
+code: "CC"
+value: "COCOS (KEELING) ISLANDS"
+description: ""
+active: 1
+display_order: 3700
+---
+name: "COUNTRY"
+code: "CD"
+value: "CONGO, THE DEMOCRATIC REPUBLIC OF THE"
+description: ""
+active: 1
+display_order: 3800
+---
+name: "COUNTRY"
+code: "CF"
+value: "CENTRAL AFRICAN REPUBLIC"
+description: ""
+active: 1
+display_order: 3900
+---
+name: "COUNTRY"
+code: "CG"
+value: "CONGO"
+description: ""
+active: 1
+display_order: 4000
+---
+name: "COUNTRY"
+code: "CH"
+value: "SWITZERLAND"
+description: ""
+active: 1
+display_order: 4100
+---
+name: "COUNTRY"
+code: "CI"
+value: "COTE D'IVOIRE"
+description: ""
+active: 1
+display_order: 4200
+---
+name: "COUNTRY"
+code: "CK"
+value: "COOK ISLANDS"
+description: ""
+active: 1
+display_order: 4300
+---
+name: "COUNTRY"
+code: "CL"
+value: "CHILE"
+description: ""
+active: 1
+display_order: 4400
+---
+name: "COUNTRY"
+code: "CM"
+value: "CAMEROON"
+description: ""
+active: 1
+display_order: 4500
+---
+name: "COUNTRY"
+code: "CN"
+value: "CHINA"
+description: ""
+active: 1
+display_order: 4600
+---
+name: "COUNTRY"
+code: "CO"
+value: "COLOMBIA"
+description: ""
+active: 1
+display_order: 4700
+---
+name: "COUNTRY"
+code: "CR"
+value: "COSTA RICA"
+description: ""
+active: 1
+display_order: 4800
+---
+name: "COUNTRY"
+code: "CS"
+value: "SERBIA AND MONTENEGRO"
+description: ""
+active: 1
+display_order: 4900
+---
+name: "COUNTRY"
+code: "CU"
+value: "CUBA"
+description: ""
+active: 1
+display_order: 5000
+---
+name: "COUNTRY"
+code: "CV"
+value: "CAPE VERDE"
+description: ""
+active: 1
+display_order: 5100
+---
+name: "COUNTRY"
+code: "CX"
+value: "CHRISTMAS ISLAND"
+description: ""
+active: 1
+display_order: 5200
+---
+name: "COUNTRY"
+code: "CY"
+value: "CYPRUS"
+description: ""
+active: 1
+display_order: 5300
+---
+name: "COUNTRY"
+code: "CZ"
+value: "CZECH REPUBLIC"
+description: ""
+active: 1
+display_order: 5400
+---
+name: "COUNTRY"
+code: "DE"
+value: "GERMANY"
+description: ""
+active: 1
+display_order: 5500
+---
+name: "COUNTRY"
+code: "DJ"
+value: "DJIBOUTI"
+description: ""
+active: 1
+display_order: 5600
+---
+name: "COUNTRY"
+code: "DK"
+value: "DENMARK"
+description: ""
+active: 1
+display_order: 5700
+---
+name: "COUNTRY"
+code: "DM"
+value: "DOMINICA"
+description: ""
+active: 1
+display_order: 5800
+---
+name: "COUNTRY"
+code: "DO"
+value: "DOMINICAN REPUBLIC"
+description: ""
+active: 1
+display_order: 5900
+---
+name: "COUNTRY"
+code: "DZ"
+value: "ALGERIA"
+description: ""
+active: 1
+display_order: 6000
+---
+name: "COUNTRY"
+code: "EC"
+value: "ECUADOR"
+description: ""
+active: 1
+display_order: 6100
+---
+name: "COUNTRY"
+code: "EE"
+value: "ESTONIA"
+description: ""
+active: 1
+display_order: 6200
+---
+name: "COUNTRY"
+code: "EG"
+value: "EGYPT"
+description: ""
+active: 1
+display_order: 6300
+---
+name: "COUNTRY"
+code: "EH"
+value: "WESTERN SAHARA"
+description: ""
+active: 1
+display_order: 6400
+---
+name: "COUNTRY"
+code: "ER"
+value: "ERITREA"
+description: ""
+active: 1
+display_order: 6500
+---
+name: "COUNTRY"
+code: "ES"
+value: "SPAIN"
+description: ""
+active: 1
+display_order: 6600
+---
+name: "COUNTRY"
+code: "ET"
+value: "ETHIOPIA"
+description: ""
+active: 1
+display_order: 6700
+---
+name: "COUNTRY"
+code: "FI"
+value: "FINLAND"
+description: ""
+active: 1
+display_order: 6800
+---
+name: "COUNTRY"
+code: "FJ"
+value: "FIJI"
+description: ""
+active: 1
+display_order: 6900
+---
+name: "COUNTRY"
+code: "FK"
+value: "FALKLAND ISLANDS (MALVINAS)"
+description: ""
+active: 1
+display_order: 7000
+---
+name: "COUNTRY"
+code: "FO"
+value: "FAROE ISLANDS"
+description: ""
+active: 1
+display_order: 7100
+---
+name: "COUNTRY"
+code: "FR"
+value: "FRANCE"
+description: ""
+active: 1
+display_order: 7200
+---
+name: "COUNTRY"
+code: "GA"
+value: "GABON"
+description: ""
+active: 1
+display_order: 7300
+---
+name: "COUNTRY"
+code: "GB"
+value: "Great Britain (UK)"
+description: ""
+active: 1
+display_order: 7400
+---
+name: "COUNTRY"
+code: "GD"
+value: "GRENADA"
+description: ""
+active: 1
+display_order: 7500
+---
+name: "COUNTRY"
+code: "GE"
+value: "GEORGIA"
+description: ""
+active: 1
+display_order: 7600
+---
+name: "COUNTRY"
+code: "GF"
+value: "FRENCH GUIANA"
+description: ""
+active: 1
+display_order: 7700
+---
+name: "COUNTRY"
+code: "GG"
+value: "GUERNSEY"
+description: ""
+active: 1
+display_order: 7800
+---
+name: "COUNTRY"
+code: "GH"
+value: "GHANA"
+description: ""
+active: 1
+display_order: 7900
+---
+name: "COUNTRY"
+code: "GI"
+value: "GIBRALTAR"
+description: ""
+active: 1
+display_order: 8000
+---
+name: "COUNTRY"
+code: "GL"
+value: "GREENLAND"
+description: ""
+active: 1
+display_order: 8100
+---
+name: "COUNTRY"
+code: "GM"
+value: "GAMBIA"
+description: ""
+active: 1
+display_order: 8200
+---
+name: "COUNTRY"
+code: "GN"
+value: "GUINEA"
+description: ""
+active: 1
+display_order: 8300
+---
+name: "COUNTRY"
+code: "GP"
+value: "GUADELOUPE"
+description: ""
+active: 1
+display_order: 8400
+---
+name: "COUNTRY"
+code: "GQ"
+value: "EQUATORIAL GUINEA"
+description: ""
+active: 1
+display_order: 8500
+---
+name: "COUNTRY"
+code: "GR"
+value: "GREECE"
+description: ""
+active: 1
+display_order: 8600
+---
+name: "COUNTRY"
+code: "GS"
+value: "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS"
+description: ""
+active: 1
+display_order: 8700
+---
+name: "COUNTRY"
+code: "GT"
+value: "GUATEMALA"
+description: ""
+active: 1
+display_order: 8800
+---
+name: "COUNTRY"
+code: "GW"
+value: "GUINEA-BISSAU"
+description: ""
+active: 1
+display_order: 8900
+---
+name: "COUNTRY"
+code: "GY"
+value: "GUYANA"
+description: ""
+active: 1
+display_order: 9000
+---
+name: "COUNTRY"
+code: "HK"
+value: "HONG KONG"
+description: ""
+active: 1
+display_order: 9100
+---
+name: "COUNTRY"
+code: "HM"
+value: "HEARD ISLAND AND MCDONALD ISLANDS"
+description: ""
+active: 1
+display_order: 9200
+---
+name: "COUNTRY"
+code: "HN"
+value: "HONDURAS"
+description: ""
+active: 1
+display_order: 9300
+---
+name: "COUNTRY"
+code: "HR"
+value: "CROATIA"
+description: ""
+active: 1
+display_order: 9400
+---
+name: "COUNTRY"
+code: "HT"
+value: "HAITI"
+description: ""
+active: 1
+display_order: 9500
+---
+name: "COUNTRY"
+code: "HU"
+value: "HUNGARY"
+description: ""
+active: 1
+display_order: 9600
+---
+name: "COUNTRY"
+code: "ID"
+value: "INDONESIA"
+description: ""
+active: 1
+display_order: 9700
+---
+name: "COUNTRY"
+code: "IE"
+value: "IRELAND"
+description: ""
+active: 1
+display_order: 9800
+---
+name: "COUNTRY"
+code: "IL"
+value: "ISRAEL"
+description: ""
+active: 1
+display_order: 9900
+---
+name: "COUNTRY"
+code: "IM"
+value: "ISLE OF MAN"
+description: ""
+active: 1
+display_order: 10000
+---
+name: "COUNTRY"
+code: "IN"
+value: "INDIA"
+description: ""
+active: 1
+display_order: 10100
+---
+name: "COUNTRY"
+code: "IO"
+value: "BRITISH INDIAN OCEAN TERRITORY"
+description: ""
+active: 1
+display_order: 10200
+---
+name: "COUNTRY"
+code: "IQ"
+value: "IRAQ"
+description: ""
+active: 1
+display_order: 10300
+---
+name: "COUNTRY"
+code: "IR"
+value: "IRAN, ISLAMIC REPUBLIC OF"
+description: ""
+active: 1
+display_order: 10400
+---
+name: "COUNTRY"
+code: "IS"
+value: "ICELAND"
+description: ""
+active: 1
+display_order: 10500
+---
+name: "COUNTRY"
+code: "IT"
+value: "ITALY"
+description: ""
+active: 1
+display_order: 10600
+---
+name: "COUNTRY"
+code: "JE"
+value: "JERSEY"
+description: ""
+active: 1
+display_order: 10700
+---
+name: "COUNTRY"
+code: "JM"
+value: "JAMAICA"
+description: ""
+active: 1
+display_order: 10800
+---
+name: "COUNTRY"
+code: "JO"
+value: "JORDAN"
+description: ""
+active: 1
+display_order: 10900
+---
+name: "COUNTRY"
+code: "JP"
+value: "JAPAN"
+description: ""
+active: 1
+display_order: 11000
+---
+name: "COUNTRY"
+code: "KE"
+value: "KENYA"
+description: ""
+active: 1
+display_order: 11100
+---
+name: "COUNTRY"
+code: "KG"
+value: "KYRGYZSTAN"
+description: ""
+active: 1
+display_order: 11200
+---
+name: "COUNTRY"
+code: "KH"
+value: "CAMBODIA"
+description: ""
+active: 1
+display_order: 11300
+---
+name: "COUNTRY"
+code: "KI"
+value: "KIRIBATI"
+description: ""
+active: 1
+display_order: 11400
+---
+name: "COUNTRY"
+code: "KM"
+value: "COMOROS"
+description: ""
+active: 1
+display_order: 11500
+---
+name: "COUNTRY"
+code: "KN"
+value: "SAINT KITTS AND NEVIS"
+description: ""
+active: 1
+display_order: 11600
+---
+name: "COUNTRY"
+code: "KP"
+value: "KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF"
+description: ""
+active: 1
+display_order: 11700
+---
+name: "COUNTRY"
+code: "KR"
+value: "KOREA, REPUBLIC OF"
+description: ""
+active: 1
+display_order: 11800
+---
+name: "COUNTRY"
+code: "KW"
+value: "KUWAIT"
+description: ""
+active: 1
+display_order: 11900
+---
+name: "COUNTRY"
+code: "KY"
+value: "CAYMAN ISLANDS"
+description: ""
+active: 1
+display_order: 12000
+---
+name: "COUNTRY"
+code: "KZ"
+value: "KAZAKHSTAN"
+description: ""
+active: 1
+display_order: 12100
+---
+name: "COUNTRY"
+code: "LA"
+value: "LAO PEOPLE'S DEMOCRATIC REPUBLIC"
+description: ""
+active: 1
+display_order: 12200
+---
+name: "COUNTRY"
+code: "LB"
+value: "LEBANON"
+description: ""
+active: 1
+display_order: 12300
+---
+name: "COUNTRY"
+code: "LC"
+value: "SAINT LUCIA"
+description: ""
+active: 1
+display_order: 12400
+---
+name: "COUNTRY"
+code: "LI"
+value: "LIECHTENSTEIN"
+description: ""
+active: 1
+display_order: 12500
+---
+name: "COUNTRY"
+code: "LK"
+value: "SRI LANKA"
+description: ""
+active: 1
+display_order: 12600
+---
+name: "COUNTRY"
+code: "LR"
+value: "LIBERIA"
+description: ""
+active: 1
+display_order: 12700
+---
+name: "COUNTRY"
+code: "LS"
+value: "LESOTHO"
+description: ""
+active: 1
+display_order: 12800
+---
+name: "COUNTRY"
+code: "LT"
+value: "LITHUANIA"
+description: ""
+active: 1
+display_order: 12900
+---
+name: "COUNTRY"
+code: "LU"
+value: "LUXEMBOURG"
+description: ""
+active: 1
+display_order: 13000
+---
+name: "COUNTRY"
+code: "LV"
+value: "LATVIA"
+description: ""
+active: 1
+display_order: 13100
+---
+name: "COUNTRY"
+code: "LY"
+value: "LIBYAN ARAB JAMAHIRIYA"
+description: ""
+active: 1
+display_order: 13200
+---
+name: "COUNTRY"
+code: "MA"
+value: "MOROCCO"
+description: ""
+active: 1
+display_order: 13300
+---
+name: "COUNTRY"
+code: "MC"
+value: "MONACO"
+description: ""
+active: 1
+display_order: 13400
+---
+name: "COUNTRY"
+code: "MD"
+value: "MOLDOVA, REPUBLIC OF"
+description: ""
+active: 1
+display_order: 13500
+---
+name: "COUNTRY"
+code: "MG"
+value: "MADAGASCAR"
+description: ""
+active: 1
+display_order: 13600
+---
+name: "COUNTRY"
+code: "MK"
+value: "MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF"
+description: ""
+active: 1
+display_order: 13700
+---
+name: "COUNTRY"
+code: "ML"
+value: "MALI"
+description: ""
+active: 1
+display_order: 13800
+---
+name: "COUNTRY"
+code: "MM"
+value: "MYANMAR"
+description: ""
+active: 1
+display_order: 13900
+---
+name: "COUNTRY"
+code: "MN"
+value: "MONGOLIA"
+description: ""
+active: 1
+display_order: 14000
+---
+name: "COUNTRY"
+code: "MO"
+value: "MACAO"
+description: ""
+active: 1
+display_order: 14100
+---
+name: "COUNTRY"
+code: "MQ"
+value: "MARTINIQUE"
+description: ""
+active: 1
+display_order: 14200
+---
+name: "COUNTRY"
+code: "MR"
+value: "MAURITANIA"
+description: ""
+active: 1
+display_order: 14300
+---
+name: "COUNTRY"
+code: "MS"
+value: "MONTSERRAT"
+description: ""
+active: 1
+display_order: 14400
+---
+name: "COUNTRY"
+code: "MT"
+value: "MALTA"
+description: ""
+active: 1
+display_order: 14500
+---
+name: "COUNTRY"
+code: "MU"
+value: "MAURITIUS"
+description: ""
+active: 1
+display_order: 14600
+---
+name: "COUNTRY"
+code: "MV"
+value: "MALDIVES"
+description: ""
+active: 1
+display_order: 14700
+---
+name: "COUNTRY"
+code: "MW"
+value: "MALAWI"
+description: ""
+active: 1
+display_order: 14800
+---
+name: "COUNTRY"
+code: "MX"
+value: "MEXICO"
+description: ""
+active: 1
+display_order: 14900
+---
+name: "COUNTRY"
+code: "MY"
+value: "MALAYSIA"
+description: ""
+active: 1
+display_order: 15000
+---
+name: "COUNTRY"
+code: "MZ"
+value: "MOZAMBIQUE"
+description: ""
+active: 1
+display_order: 15100
+---
+name: "COUNTRY"
+code: "NA"
+value: "NAMIBIA"
+description: ""
+active: 1
+display_order: 15200
+---
+name: "COUNTRY"
+code: "NC"
+value: "NEW CALEDONIA"
+description: ""
+active: 1
+display_order: 15300
+---
+name: "COUNTRY"
+code: "NE"
+value: "NIGER"
+description: ""
+active: 1
+display_order: 15400
+---
+name: "COUNTRY"
+code: "NF"
+value: "NORFOLK ISLAND"
+description: ""
+active: 1
+display_order: 15500
+---
+name: "COUNTRY"
+code: "NG"
+value: "NIGERIA"
+description: ""
+active: 1
+display_order: 15600
+---
+name: "COUNTRY"
+code: "NI"
+value: "NICARAGUA"
+description: ""
+active: 1
+display_order: 15700
+---
+name: "COUNTRY"
+code: "NL"
+value: "NETHERLANDS"
+description: ""
+active: 1
+display_order: 15800
+---
+name: "COUNTRY"
+code: "NO"
+value: "NORWAY"
+description: ""
+active: 1
+display_order: 15900
+---
+name: "COUNTRY"
+code: "NP"
+value: "NEPAL"
+description: ""
+active: 1
+display_order: 16000
+---
+name: "COUNTRY"
+code: "NR"
+value: "NAURU"
+description: ""
+active: 1
+display_order: 16100
+---
+name: "COUNTRY"
+code: "NU"
+value: "NIUE"
+description: ""
+active: 1
+display_order: 16200
+---
+name: "COUNTRY"
+code: "NZ"
+value: "NEW ZEALAND"
+description: ""
+active: 1
+display_order: 16300
+---
+name: "COUNTRY"
+code: "OM"
+value: "OMAN"
+description: ""
+active: 1
+display_order: 16400
+---
+name: "COUNTRY"
+code: "PA"
+value: "PANAMA"
+description: ""
+active: 1
+display_order: 16500
+---
+name: "COUNTRY"
+code: "PE"
+value: "PERU"
+description: ""
+active: 1
+display_order: 16600
+---
+name: "COUNTRY"
+code: "PF"
+value: "FRENCH POLYNESIA"
+description: ""
+active: 1
+display_order: 16700
+---
+name: "COUNTRY"
+code: "PG"
+value: "PAPUA NEW GUINEA"
+description: ""
+active: 1
+display_order: 16800
+---
+name: "COUNTRY"
+code: "PH"
+value: "PHILIPPINES"
+description: ""
+active: 1
+display_order: 16900
+---
+name: "COUNTRY"
+code: "PK"
+value: "PAKISTAN"
+description: ""
+active: 1
+display_order: 17000
+---
+name: "COUNTRY"
+code: "PL"
+value: "POLAND"
+description: ""
+active: 1
+display_order: 17100
+---
+name: "COUNTRY"
+code: "PM"
+value: "SAINT PIERRE AND MIQUELON"
+description: ""
+active: 1
+display_order: 17200
+---
+name: "COUNTRY"
+code: "PN"
+value: "PITCAIRN"
+description: ""
+active: 1
+display_order: 17300
+---
+name: "COUNTRY"
+code: "PS"
+value: "PALESTINIAN TERRITORY, OCCUPIED"
+description: ""
+active: 1
+display_order: 17400
+---
+name: "COUNTRY"
+code: "PT"
+value: "PORTUGAL"
+description: ""
+active: 1
+display_order: 17500
+---
+name: "COUNTRY"
+code: "PY"
+value: "PARAGUAY"
+description: ""
+active: 1
+display_order: 17600
+---
+name: "COUNTRY"
+code: "QA"
+value: "QATAR"
+description: ""
+active: 1
+display_order: 17700
+---
+name: "COUNTRY"
+code: "RE"
+value: "REUNION"
+description: ""
+active: 1
+display_order: 17800
+---
+name: "COUNTRY"
+code: "RO"
+value: "ROMANIA"
+description: ""
+active: 1
+display_order: 17900
+---
+name: "COUNTRY"
+code: "RU"
+value: "RUSSIAN FEDERATION"
+description: ""
+active: 1
+display_order: 18000
+---
+name: "COUNTRY"
+code: "RW"
+value: "RWANDA"
+description: ""
+active: 1
+display_order: 18100
+---
+name: "COUNTRY"
+code: "SA"
+value: "SAUDI ARABIA"
+description: ""
+active: 1
+display_order: 18200
+---
+name: "COUNTRY"
+code: "SB"
+value: "SOLOMON ISLANDS"
+description: ""
+active: 1
+display_order: 18300
+---
+name: "COUNTRY"
+code: "SC"
+value: "SEYCHELLES"
+description: ""
+active: 1
+display_order: 18400
+---
+name: "COUNTRY"
+code: "SD"
+value: "SUDAN"
+description: ""
+active: 1
+display_order: 18500
+---
+name: "COUNTRY"
+code: "SE"
+value: "SWEDEN"
+description: ""
+active: 1
+display_order: 18600
+---
+name: "COUNTRY"
+code: "SG"
+value: "SINGAPORE"
+description: ""
+active: 1
+display_order: 18700
+---
+name: "COUNTRY"
+code: "SH"
+value: "SAINT HELENA"
+description: ""
+active: 1
+display_order: 18800
+---
+name: "COUNTRY"
+code: "SI"
+value: "SLOVENIA"
+description: ""
+active: 1
+display_order: 18900
+---
+name: "COUNTRY"
+code: "SJ"
+value: "SVALBARD AND JAN MAYEN"
+description: ""
+active: 1
+display_order: 19000
+---
+name: "COUNTRY"
+code: "SK"
+value: "SLOVAKIA"
+description: ""
+active: 1
+display_order: 19100
+---
+name: "COUNTRY"
+code: "SL"
+value: "SIERRA LEONE"
+description: ""
+active: 1
+display_order: 19200
+---
+name: "COUNTRY"
+code: "SM"
+value: "SAN MARINO"
+description: ""
+active: 1
+display_order: 19300
+---
+name: "COUNTRY"
+code: "SN"
+value: "SENEGAL"
+description: ""
+active: 1
+display_order: 19400
+---
+name: "COUNTRY"
+code: "SO"
+value: "SOMALIA"
+description: ""
+active: 1
+display_order: 19500
+---
+name: "COUNTRY"
+code: "SR"
+value: "SURINAME"
+description: ""
+active: 1
+display_order: 19600
+---
+name: "COUNTRY"
+code: "ST"
+value: "SAO TOME AND PRINCIPE"
+description: ""
+active: 1
+display_order: 19700
+---
+name: "COUNTRY"
+code: "SV"
+value: "EL SALVADOR"
+description: ""
+active: 1
+display_order: 19800
+---
+name: "COUNTRY"
+code: "SY"
+value: "SYRIAN ARAB REPUBLIC"
+description: ""
+active: 1
+display_order: 19900
+---
+name: "COUNTRY"
+code: "SZ"
+value: "SWAZILAND"
+description: ""
+active: 1
+display_order: 20000
+---
+name: "COUNTRY"
+code: "TC"
+value: "TURKS AND CAICOS ISLANDS"
+description: ""
+active: 1
+display_order: 20100
+---
+name: "COUNTRY"
+code: "TD"
+value: "CHAD"
+description: ""
+active: 1
+display_order: 20200
+---
+name: "COUNTRY"
+code: "TF"
+value: "FRENCH SOUTHERN TERRITORIES"
+description: ""
+active: 1
+display_order: 20300
+---
+name: "COUNTRY"
+code: "TG"
+value: "TOGO"
+description: ""
+active: 1
+display_order: 20400
+---
+name: "COUNTRY"
+code: "TH"
+value: "THAILAND"
+description: ""
+active: 1
+display_order: 20500
+---
+name: "COUNTRY"
+code: "TJ"
+value: "TAJIKISTAN"
+description: ""
+active: 1
+display_order: 20600
+---
+name: "COUNTRY"
+code: "TK"
+value: "TOKELAU"
+description: ""
+active: 1
+display_order: 20700
+---
+name: "COUNTRY"
+code: "TL"
+value: "TIMOR-LESTE"
+description: ""
+active: 1
+display_order: 20800
+---
+name: "COUNTRY"
+code: "TM"
+value: "TURKMENISTAN"
+description: ""
+active: 1
+display_order: 20900
+---
+name: "COUNTRY"
+code: "TN"
+value: "TUNISIA"
+description: ""
+active: 1
+display_order: 21000
+---
+name: "COUNTRY"
+code: "TO"
+value: "TONGA"
+description: ""
+active: 1
+display_order: 21100
+---
+name: "COUNTRY"
+code: "TR"
+value: "TURKEY"
+description: ""
+active: 1
+display_order: 21200
+---
+name: "COUNTRY"
+code: "TT"
+value: "TRINIDAD AND TOBAGO"
+description: ""
+active: 1
+display_order: 21300
+---
+name: "COUNTRY"
+code: "TV"
+value: "TUVALU"
+description: ""
+active: 1
+display_order: 21400
+---
+name: "COUNTRY"
+code: "TW"
+value: "TAIWAN"
+description: ""
+active: 1
+display_order: 21500
+---
+name: "COUNTRY"
+code: "TZ"
+value: "TANZANIA, UNITED REPUBLIC OF"
+description: ""
+active: 1
+display_order: 21600
+---
+name: "COUNTRY"
+code: "UA"
+value: "UKRAINE"
+description: ""
+active: 1
+display_order: 21700
+---
+name: "COUNTRY"
+code: "UG"
+value: "UGANDA"
+description: ""
+active: 1
+display_order: 21800
+---
+name: "COUNTRY"
+code: "UM"
+value: "UNITED STATES MINOR OUTLYING ISLANDS"
+description: ""
+active: 1
+display_order: 21900
+---
+name: "COUNTRY"
+code: "US"
+value: "UNITED STATES"
+description: ""
+active: 1
+display_order: 22000
+---
+name: "COUNTRY"
+code: "UY"
+value: "URUGUAY"
+description: ""
+active: 1
+display_order: 22100
+---
+name: "COUNTRY"
+code: "UZ"
+value: "UZBEKISTAN"
+description: ""
+active: 1
+display_order: 22200
+---
+name: "COUNTRY"
+code: "VA"
+value: "HOLY SEE (VATICAN CITY STATE)"
+description: ""
+active: 1
+display_order: 22300
+---
+name: "COUNTRY"
+code: "VC"
+value: "SAINT VINCENT AND THE GRENADINES"
+description: ""
+active: 1
+display_order: 22400
+---
+name: "COUNTRY"
+code: "VE"
+value: "VENEZUELA"
+description: ""
+active: 1
+display_order: 22500
+---
+name: "COUNTRY"
+code: "VG"
+value: "VIRGIN ISLANDS, BRITISH"
+description: ""
+active: 1
+display_order: 22600
+---
+name: "COUNTRY"
+code: "VN"
+value: "VIET NAM"
+description: ""
+active: 1
+display_order: 22700
+---
+name: "COUNTRY"
+code: "VU"
+value: "VANUATU"
+description: ""
+active: 1
+display_order: 22800
+---
+name: "COUNTRY"
+code: "WF"
+value: "WALLIS AND FUTUNA"
+description: ""
+active: 1
+display_order: 22900
+---
+name: "COUNTRY"
+code: "WS"
+value: "SAMOA"
+description: ""
+active: 1
+display_order: 23000
+---
+name: "COUNTRY"
+code: "XK"
+value: "KOSOVO"
+description: ""
+active: 1
+display_order: 23100
+---
+name: "COUNTRY"
+code: "YE"
+value: "YEMEN"
+description: ""
+active: 1
+display_order: 23200
+---
+name: "COUNTRY"
+code: "YT"
+value: "MAYOTTE"
+description: ""
+active: 1
+display_order: 23300
+---
+name: "COUNTRY"
+code: "ZA"
+value: "SOUTH AFRICA"
+description: ""
+active: 1
+display_order: 23400
+---
+name: "COUNTRY"
+code: "ZM"
+value: "ZAMBIA"
+description: ""
+active: 1
+display_order: 23500
+---
+name: "COUNTRY"
+code: "ZW"
+value: "ZIMBABWE"
+description: ""
+active: 1
+display_order: 23600
+---
+name: "MARKETING_REMINDERS"
+code: "MAREM_01"
+value: "Email"
+description: ""
+active: 1
+display_order: 100
+---
+name: "MARKETING_REMINDERS"
+code: "MAREM_02"
+value: "Voice"
+description: ""
+active: 1
+display_order: 200
+---
+name: "MARKETING_REMINDERS"
+code: "MAREM_03"
+value: "SMS"
+description: ""
+active: 1
+display_order: 300
+---
+name: "MARKETING_REMINDERS"
+code: "MAREM_04"
+value: "Portal"
+description: ""
+active: 1
+display_order: 400
+---
+name: "MARKETING_REMINDERS"
+code: "MAREM_05"
+value: "Mobile"
+description: ""
+active: 1
+display_order: 500
+---
+name: "MARKETING_REMINDERS"
+code: "MAREM_06"
+value: "Push"
+description: ""
+active: 1
+display_order: 600
+---
+name: "MARKETING_REMINDERS"
+code: "MAREM_07"
+value: "All"
+description: ""
+active: 1
+display_order: 700
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "SPO"
+value: "Spouse"
+description: ""
+active: 1
+display_order: 200
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "DOM"
+value: "Life partner"
+description: ""
+active: 1
+display_order: 300
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "CHD"
+value: "Child"
+description: ""
+active: 1
+display_order: 400
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "GCH"
+value: "Grandchild"
+description: ""
+active: 1
+display_order: 500
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "NCH"
+value: "Natural child"
+description: ""
+active: 1
+display_order: 600
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "SCH"
+value: "Stepchild"
+description: ""
+active: 1
+display_order: 700
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "FCH"
+value: "Foster child"
+description: ""
+active: 1
+display_order: 800
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "DEP"
+value: "Handicapped dependent"
+description: ""
+active: 1
+display_order: 900
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "WRD"
+value: "Ward of court"
+description: ""
+active: 1
+display_order: 1000
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "PAR"
+value: "Parent"
+description: ""
+active: 1
+display_order: 1100
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "MTH"
+value: "Mother"
+description: ""
+active: 1
+display_order: 1200
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "FTH"
+value: "Father"
+description: ""
+active: 1
+display_order: 1300
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "CGV"
+value: "Care giver"
+description: ""
+active: 1
+display_order: 1400
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "GRD"
+value: "Guardian"
+description: ""
+active: 1
+display_order: 1500
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "GRP"
+value: "Grandparent"
+description: ""
+active: 1
+display_order: 1600
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "EXF"
+value: "Extended family"
+description: ""
+active: 1
+display_order: 1700
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "SIB"
+value: "Sibling"
+description: ""
+active: 1
+display_order: 1800
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "BRO"
+value: "Brother"
+description: ""
+active: 1
+display_order: 1900
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "SIS"
+value: "Sister"
+description: ""
+active: 1
+display_order: 2000
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "FND"
+value: "Friend"
+description: ""
+active: 1
+display_order: 2100
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "OAD"
+value: "Other adult"
+description: ""
+active: 1
+display_order: 2200
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "EME"
+value: "Employee"
+description: ""
+active: 1
+display_order: 2300
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "EMR"
+value: "Employer"
+description: ""
+active: 1
+display_order: 2400
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "ASC"
+value: "Associate"
+description: ""
+active: 1
+display_order: 2500
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "EMC"
+value: "Emergency contact"
+description: ""
+active: 1
+display_order: 2600
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "OWN"
+value: "Owner"
+description: ""
+active: 1
+display_order: 2700
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "TRA"
+value: "Trainer"
+description: ""
+active: 1
+display_order: 2800
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "MGR"
+value: "Manager"
+description: ""
+active: 1
+display_order: 2900
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "NON"
+value: "None"
+description: ""
+active: 1
+display_order: 3000
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "UNK"
+value: "Unknown"
+description: ""
+active: 1
+display_order: 3100
+---
+name: "OCCUPANTS_RELATIONSHIP"
+code: "OTH"
+value: "Other"
+description: ""
+active: 1
+display_order: 3200
+---
+name: "DOCUMENT_TYPE"
+code: "REPORT"
+value: "Report"
+description: "Report"
+active: 1
+display_order: 100
+---
+name: "DOCUMENT_TYPE"
+code: "FORM"
+value: "Form"
+description: "Form"
+active: 1
+display_order: 200
+---
+name: "DOCUMENT_TYPE"
+code: "NOTE"
+value: "Notes"
+description: "Notes"
+active: 1
+display_order: 300
+---
+name: "DOCUMENT_TYPE"
+code: "INFO"
+value: "Information"
+description: "Information"
+active: 1
+display_order: 400
+---
+name: "IDENTITY_LIST"
+code: "BIRTH_CERTIFICATE"
+value: "Birth Certificate"
+description: "Birth certificate is a common legal document that proves age, citizenship, and identity"
+active: 1
+display_order: 100
+---
+name: "IDENTITY_LIST"
+code: "SSN"
+value: "Social Security card"
+description: "Social Security card is issued by the Social Security Administration, this card is often applied for shortly after a child is born"
+active: 1
+display_order: 200
+---
+name: "IDENTITY_LIST"
+code: "DRIVER_LICENSE"
+value: "Driver's License"
+description: "State-issued driver's license or ID card is a common form of identification"
+active: 1
+display_order: 300
+---
+name: "IDENTITY_LIST"
+code: "PASSPORT"
+value: "Passport"
+description: "Passport is issued by the Department of State, this travel document is a strong form of proof of citizenship and identity"
+active: 1
+display_order: 400
+---
+name: "IDENTITY_LIST"
+code: "GREEN_CARD"
+value: "Permanent Resident Card"
+description: "Permanent resident card, also known as a Green card, this document proves permanent resident status in the United States"
+active: 1
+display_order: 500
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "SEL"
+value: "Self"
+description: ""
+active: 1
+display_order: 100
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "SPO"
+value: "Spouse"
+description: ""
+active: 1
+display_order: 200
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "DOM"
+value: "Life partner"
+description: ""
+active: 1
+display_order: 300
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "CHD"
+value: "Child"
+description: ""
+active: 1
+display_order: 400
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "GCH"
+value: "Grandchild"
+description: ""
+active: 1
+display_order: 500
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "NCH"
+value: "Natural child"
+description: ""
+active: 1
+display_order: 600
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "SCH"
+value: "Stepchild"
+description: ""
+active: 1
+display_order: 700
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "FCH"
+value: "Foster child"
+description: ""
+active: 1
+display_order: 800
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "DEP"
+value: "Handicapped dependent"
+description: ""
+active: 1
+display_order: 900
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "WRD"
+value: "Ward of court"
+description: ""
+active: 1
+display_order: 1000
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "PAR"
+value: "Parent"
+description: ""
+active: 1
+display_order: 1100
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "MTH"
+value: "Mother"
+description: ""
+active: 1
+display_order: 1200
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "FTH"
+value: "Father"
+description: ""
+active: 1
+display_order: 1300
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "CGV"
+value: "Care giver"
+description: ""
+active: 1
+display_order: 1400
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "GRD"
+value: "Guardian"
+description: ""
+active: 1
+display_order: 1500
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "GRP"
+value: "Grandparent"
+description: ""
+active: 1
+display_order: 1600
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "EXF"
+value: "Extended family"
+description: ""
+active: 1
+display_order: 1700
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "SIB"
+value: "Sibling"
+description: ""
+active: 1
+display_order: 1800
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "BRO"
+value: "Brother"
+description: ""
+active: 1
+display_order: 1900
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "SIS"
+value: "Sister"
+description: ""
+active: 1
+display_order: 2000
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "FND"
+value: "Friend"
+description: ""
+active: 1
+display_order: 2100
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "OAD"
+value: "Other adult"
+description: ""
+active: 1
+display_order: 2200
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "EME"
+value: "Employee"
+description: ""
+active: 1
+display_order: 2300
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "EMR"
+value: "Employer"
+description: ""
+active: 1
+display_order: 2400
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "ASC"
+value: "Associate"
+description: ""
+active: 1
+display_order: 2500
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "EMC"
+value: "Emergency contact"
+description: ""
+active: 1
+display_order: 2600
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "OWN"
+value: "Owner"
+description: ""
+active: 1
+display_order: 2700
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "TRA"
+value: "Trainer"
+description: ""
+active: 1
+display_order: 2800
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "MGR"
+value: "Manager"
+description: ""
+active: 1
+display_order: 2900
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "NON"
+value: "None"
+description: ""
+active: 1
+display_order: 3000
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "UNK"
+value: "Unknown"
+description: ""
+active: 1
+display_order: 3100
+---
+name: "RESIDENT_RELATIONSHIP"
+code: "OTH"
+value: "Other"
+description: ""
+active: 1
+display_order: 3200

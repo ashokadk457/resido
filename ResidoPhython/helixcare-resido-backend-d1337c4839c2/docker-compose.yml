@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  web:
+    restart: unless-stopped
+    build: .
+    container_name: residobackend
+    image: residobackend-web
+    environment:
+      CELERY_BROKER_URL: "redis://redis:6379/0"
+      CELERY_RESULT_BACKEND: "redis://redis:6379/0"
+    volumes:
+      - .:/resido_dev
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://0.0.0.0:8000/api/v1/versions" ]
+      interval: 1m
+      retries: 10
+      timeout: 5s
+  data-migration:
+    restart: on-failure
+    build: .
+    container_name: resido-dm
+    image: residobackend-dm
+    entrypoint: ["sh", "-c", "python3 manage.py all_tenants_command --no-public migrate_data"]
+    depends_on:
+      web:
+        condition: service_healthy
+  celery:
+    restart: unless-stopped
+    build: .
+    image: residobackend-celery
+    entrypoint: /resido_dev/worker-entrypoint.sh
+    environment:
+      CELERY_BROKER_URL: "redis://redis:6379/0"
+      CELERY_RESULT_BACKEND: "redis://redis:6379/0"
+    depends_on:
+      - web
+      - redis
+  celery-beat:
+    restart: unless-stopped
+    image: residobackend-celery-beat
+    entrypoint: /resido_dev/beat-entrypoint.sh
+    build: .
+    environment:
+      CELERY_BROKER_URL: "redis://redis:6379/0"
+      CELERY_RESULT_BACKEND: "redis://redis:6379/0"
+    depends_on:
+      - web
+      - redis
+      - celery
+  redis:
+    restart: unless-stopped
+    image: redis:7.0.5-alpine
+    expose:
+      - 6379

@@ -1,0 +1,1 @@
+[{"name":"transactions_recon","task":"payments.tasks.recon.transactions_recon","interval":null,"crontab":"0 4 * * *","solar":null,"clocked":null,"args":[],"kwargs":{"process_type":"TRANSACTIONS_RECONCILIATION"},"one_off":false,"enabled":true}]
