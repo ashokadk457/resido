@@ -65,6 +65,7 @@ namespace Resido.Controllers
                 {
                     Fingerprint fingerprint = new Fingerprint();
 
+                    fingerprint.FingerName = dto.FingerprintName;
                     fingerprint.FingerprintId = result.Data.FingerprintId;
                     fingerprint.SmartLockId = smartLock.Id;
                     _context.Fingerprints.Add(fingerprint);

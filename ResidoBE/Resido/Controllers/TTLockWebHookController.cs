@@ -352,10 +352,10 @@ SmartLock? smartLock)
                                 Success = record.Success,
                                 SmartLockId = smartLock.Id,
                                 BatteryPercentage = record.ElectricQuantity,
-                                LockEventLocalTime = record.LockDate,
-                                ServerReceivedLocalTime = record.ServerDate,
-                                LockEventUtcTime = DateTimeOffset.FromUnixTimeMilliseconds(record.LockDate).UtcDateTime,
-                                ServerReceivedUtcTime = DateTimeOffset.FromUnixTimeMilliseconds(record.ServerDate).UtcDateTime,
+                                LockEventLocalTime = record.OperateDate,
+                                ServerReceivedLocalTime = record.OperateDate,
+                                LockEventUtcTime = DateTimeOffset.FromUnixTimeMilliseconds(record.OperateDate).UtcDateTime,
+                                ServerReceivedUtcTime = DateTimeOffset.FromUnixTimeMilliseconds(record.OperateDate).UtcDateTime,
                                 CreatedAt = DateTimeHelper.GetUtcTime()
                             };
 

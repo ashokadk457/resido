@@ -65,6 +65,7 @@ namespace Resido.Controllers
                 {
                     Card card = new Card();
 
+                    card.CardNumber = dto.CardNumber;
                     card.CardId = result.Data.CardId;
                     card.SmartLockId = smartLock.Id;
                     _context.Cards.Add(card);

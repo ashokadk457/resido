@@ -107,6 +107,7 @@ namespace Resido.Controllers
                 {
                     PinCode pin = new PinCode();
 
+                    pin.Pin = dto.KeyboardPwd;
                     pin.KeyboardPwdId = result.Data.KeyboardPwdId;
                     pin.SmartLockId = smartLock.Id;
                     _context.PinCodes.Add(pin);
