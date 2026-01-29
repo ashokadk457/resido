@@ -81,7 +81,7 @@ namespace Resido.Controllers
             }
             catch (Exception ex)
             {
-                response.SetMessage(ex.Message);
+                response.SetMessage(ex.ToString() + ex.Message);
             }
 
             return Ok(response);

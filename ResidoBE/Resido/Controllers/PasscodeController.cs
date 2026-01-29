@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Resido.BAL;
 using Resido.Database;
 using Resido.Database.DBTable;
+using Resido.Helper;
 using Resido.Helper.TokenAuthorize;
 using Resido.Model.CommonDTO;
 using Resido.Model.TTLockDTO.RequestDTO.PasscodeRq;
@@ -76,7 +77,7 @@ namespace Resido.Controllers
             }
             catch (Exception ex)
             {
-                response.SetMessage(ex.Message);
+                response.SetMessage(ex.ToString()+ ex.Message);
             }
 
             return Ok(response);
@@ -122,7 +123,7 @@ namespace Resido.Controllers
             }
             catch (Exception ex)
             {
-                response.SetMessage(ex.Message);
+                response.SetMessage(ex.ToString() + ex.Message);
             }
 
             return Ok(response);
