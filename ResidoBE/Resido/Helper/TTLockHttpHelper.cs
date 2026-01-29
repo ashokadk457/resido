@@ -11,24 +11,43 @@ namespace Resido.Helper
         /// </summary>
         public static FormUrlEncodedContent BuildCamelCaseFormData<TRequest>(TRequest request)
         {
-            var dict = request.GetType()
-                              .GetProperties()
-                              .ToDictionary(
-                                  p =>
-                                  {
-                                      var jsonProp = p.GetCustomAttributes(typeof(JsonPropertyAttribute), false)
-                                                      .Cast<JsonPropertyAttribute>()
-                                                      .FirstOrDefault()?.PropertyName;
+            var dict = new Dictionary<string, string>();
 
-                                      var name = jsonProp ?? p.Name;
-                                      return char.ToLowerInvariant(name[0]) + name.Substring(1);
-                                  },
-                                  p => p.GetValue(request)?.ToString() ?? string.Empty
-                              );
+            foreach (var prop in request.GetType().GetProperties())
+            {
+                var value = prop.GetValue(request);
+                if (value == null) continue;
+
+                var jsonProp = prop.GetCustomAttributes(typeof(JsonPropertyAttribute), false)
+                                   .Cast<JsonPropertyAttribute>()
+                                   .FirstOrDefault();
+
+                var name = jsonProp?.PropertyName ?? prop.Name;
+                var key = char.ToLowerInvariant(name[0]) + name.Substring(1);
+
+                string stringValue;
+
+                // ✅ If primitive or string → ToString
+                if (value is string ||
+                    value.GetType().IsPrimitive ||
+                    value is decimal ||
+                    value is long ||
+                    value is int ||
+                    value is bool)
+                {
+                    stringValue = value.ToString();
+                }
+                // ✅ If complex object or array → JSON stringify
+                else
+                {
+                    stringValue = JsonConvert.SerializeObject(value);
+                }
+
+                dict[key] = stringValue;
+            }
 
             return new FormUrlEncodedContent(dict);
         }
-
         public static async Task<HttpResponseMessage> PostObjectWithResponseAsync<TRequest>(string url, TRequest request)
         {
             var formData = BuildCamelCaseFormData(request);

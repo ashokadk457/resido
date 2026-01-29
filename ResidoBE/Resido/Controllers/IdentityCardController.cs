@@ -41,7 +41,7 @@ namespace Resido.Controllers
         // POST: /api/IdentityCard/AddCard
         [HttpPost]
         [TokenAuthorize]
-        public async Task<ActionResult<ResponseDTO<AddCardResponseDTO>>> AddCard([FromBody] AddCardRequestDTO dto, [FromQuery] bool useReversedApi = true)
+        public async Task<ActionResult<ResponseDTO<AddCardResponseDTO>>> AddCard([FromBody] AddCardRequestDTO dto, [FromQuery] bool useReversedApi = false)
         {
             var response = new ResponseDTO<AddCardResponseDTO>();
             response.SetFailed();
