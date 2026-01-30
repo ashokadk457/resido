@@ -320,6 +320,7 @@ namespace Resido.Controllers
                 {
                     EKey eKey = new EKey();
 
+                    eKey.KeyName = dto.KeyName;
                     eKey.EKeyId = retryResponse.Data.KeyId;
                     eKey.SmartLockId = smartLock.Id;
 
