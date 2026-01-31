@@ -1,29 +1,24 @@
 from app.repositories.keys_repository import KeyRepository
-from app.utils.pagination_utils import get_offset_limit
 from app.validators.key_query_validator import (
     validate_pagination,
     validate_sorting,
 )
+from app.utils.pagination_utils import get_offset_limit
 from app.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
 
 class KeyService:
-    """
-    Service layer :
-    """
 
-    # GET KEYS
     @staticmethod
-    def get_keys(page, page_size, order_by, direction):
-        logger.info(
-            "get_keys called page=%s page_size=%s order_by=%s direction=%s",
-            page, page_size, order_by, direction
-        )
+    def get_keys(req):
+        logger.info("get_keys called")
 
-        page, page_size = validate_pagination(page, page_size)
-        sort_field = validate_sorting(order_by, direction)
+        req.normalize()
+
+        page, page_size = validate_pagination(req.page, req.page_size)
+        sort_field = validate_sorting(req.order_by, req.direction)
 
         offset, limit = get_offset_limit(page, page_size)
 
@@ -35,70 +30,52 @@ class KeyService:
 
         total = KeyRepository.count_all()
 
-        meta = {
+        return keys, {
             "page": page,
             "page_size": page_size,
             "total": total,
-            "order_by": order_by or "created_at",
-            "direction": direction or "desc",
+            "order_by": req.order_by or "created_at",
+            "direction": req.direction,
         }
 
-        return keys, meta
-
-    # LIST KEYS
     @staticmethod
-    def list_ekeys(
-        smart_lock_id=None,
-        ekey_id=None,
-        key_name=None,
-        page=None,
-        page_size=None,
-        order_by=None,
-        direction=None,
-    ):
-        logger.info(
-            "list_keys called smart_lock_id=%s ekey_id=%s key_name=%s",
-            smart_lock_id, ekey_id, key_name
-        )
+    def list_ekeys(req):
+        logger.info("list_ekeys called")
 
-        page, page_size = validate_pagination(page, page_size)
-        sort_field = validate_sorting(order_by, direction)
+        req.normalize()
+
+        page, page_size = validate_pagination(req.page, req.page_size)
+        sort_field = validate_sorting(req.order_by, req.direction)
 
         offset, limit = get_offset_limit(page, page_size)
 
         keys = KeyRepository.list_keys(
-            smart_lock_id=smart_lock_id,
-            ekey_id=ekey_id,
-            key_name=key_name,
+            smart_lock_id=req.smart_lock_id,
+            ekey_id=req.ekey_id,
+            key_name=req.key_name,
             order_by=sort_field,
             offset=offset,
             limit=limit,
         )
 
         total = KeyRepository.count_keys(
-            smart_lock_id=smart_lock_id,
-            ekey_id=ekey_id,
-            key_name=key_name,
+            smart_lock_id=req.smart_lock_id,
+            ekey_id=req.ekey_id,
+            key_name=req.key_name,
         )
 
-        meta = {
+        return keys, {
             "page": page,
             "page_size": page_size,
             "total": total,
-            "order_by": order_by or "created_at",
-            "direction": direction or "desc",
+            "order_by": req.order_by or "created_at",
+            "direction": req.direction,
         }
 
-        return keys, meta
-
-    # CREATE KEY
     @staticmethod
     def create_key(data):
-        logger.info("create_key called")
         return KeyRepository.create_key(data)
 
-    # DELETE KEY
     @staticmethod
     def delete_key(key_id):
-        logger.info("delete_key called key_id=%s", key_id)
         return KeyRepository.delete_key(key_id)

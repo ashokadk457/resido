@@ -11,6 +11,9 @@ SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret")
 DEBUG = os.getenv("DEBUG", "true").lower() == "true"
 ALLOWED_HOSTS = []
 ROOT_URLCONF = 'config.urls'
+TTLOCK_CLIENT_ID = "5eb489f4b1f645d8ab7c95f7fe3e043c"
+TTLOCK_CLIENT_SECRET = "91e0f8fbec6a8be1ba14cb6c793635a2"
+
 
 INSTALLED_APPS = [
    'django.contrib.contenttypes',
