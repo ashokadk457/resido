@@ -6,5 +6,4 @@ urlpatterns = [
      path('Ekeys/createKey', create_key, name='create-key'),
      path('Ekeys/deleteEKey/<uuid:key_id>', delete_key, name='delete-key'),
      path("Ekeys/listEKeys", list_ekeys, name="list-ekeys"),
-     path("Ekeys/listEKeys", list_ekeys, name="list-ekeys"),
 ]
