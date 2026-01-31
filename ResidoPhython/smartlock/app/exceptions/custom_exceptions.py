@@ -1,0 +1,1 @@
+class BusinessException(Exception): pass
