@@ -1,20 +1,79 @@
 from rest_framework.authentication import BaseAuthentication
 from rest_framework.exceptions import AuthenticationFailed
 from django.contrib.auth.models import AnonymousUser
-from django.conf import settings
+from django.utils.translation import gettext_lazy as _
+from app.repositories.access_refresh_tokens_repository import AccessRefreshTokensRepository
+from app.repositories.users_repository import UsersRepository
+from app.utils.logger import get_logger
+
+logger = get_logger(__name__)
+
 
 class BearerTokenAuthentication(BaseAuthentication):
+    """Authenticate requests using a Bearer access token from the Authorization header.
+
+    - Accepts header in format: "Authorization: Bearer <token>"
+    - Returns (User, AccessRefreshToken) on success
+    - Returns None if no Authorization header (so other auth classes or anonymous access can proceed)
+    - Raises AuthenticationFailed for malformed / invalid / expired tokens
+    """
+
+    keyword = "Bearer"
+
     def authenticate(self, request):
-        auth_header = request.META.get('HTTP_AUTHORIZATION')
-        print(f"Authorization Header: {auth_header}")
+        # Prefer DRF's case-insensitive header access
+        auth_header = None
+        try:
+            # request.headers is provided by DRF and is case-insensitive
+            auth_header = request.headers.get("Authorization")
+        except Exception:
+            auth_header = request.META.get("HTTP_AUTHORIZATION")
+
+        logger.debug("Authorization header: %s", auth_header)
 
         if not auth_header:
-            raise AuthenticationFailed('Missing Authorization header')
+            # No header -> do not attempt authentication
+            return None
 
-        prefix, token = auth_header.split()
+        parts = auth_header.split()
+        if len(parts) != 2:
+            raise AuthenticationFailed(_("Invalid Authorization header. Expected 'Bearer <token>'"))
 
-        print(f"Prefix: {prefix}, Token: {token}")
-        if prefix.lower() != 'bearer':
-            raise AuthenticationFailed('Invalid token type')
+        prefix, token = parts
+        if prefix.lower() != self.keyword.lower():
+            # Not a Bearer token -> do not attempt authentication
+            return None
 
-        return (AnonymousUser(), token)
+        if not token:
+            raise AuthenticationFailed(_("Invalid token"))
+
+        # Lookup token in DB
+        token_obj = AccessRefreshTokensRepository.find_by_access_token(token)
+        if token_obj is None:
+            logger.warning("Authentication failed: token not found")
+            raise AuthenticationFailed(_("Invalid or unknown token"))
+
+        # Check expiry
+        if AccessRefreshTokensRepository.is_expired(token_obj):
+            logger.info("Authentication failed: token expired for user_id=%s", token_obj.user_id)
+            # Optionally purge token from DB
+            # try:
+            #      AccessRefreshTokensRepository.delete_token(token_obj.id)
+            # except Exception:
+            #     logger.exception("Failed to delete expired token %s", token_obj.id)
+            # raise AuthenticationFailed(_("Token has expired"))
+            raise AuthenticationFailed(_("Token has expired"))
+
+        # Resolve user
+        user = UsersRepository.get_by_id(token_obj.user_id)
+        if not user:
+            logger.warning("Authentication failed: user not found for token user_id=%s", token_obj.user_id)
+            raise AuthenticationFailed(_("User not found"))
+
+        # Success: DRF will set request.user and request.auth to these values
+        logger.debug("Authentication successful for user_id=%s", token_obj.user_id)
+        return (user, token_obj)
+
+    def authenticate_header(self, request):
+        return self.keyword
+

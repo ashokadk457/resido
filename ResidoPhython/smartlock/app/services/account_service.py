@@ -30,6 +30,8 @@ class AccountService:
         payload_serializer.is_valid(raise_exception=True)
         payload = payload_serializer.validated_data
 
+        logger.info(payload);
+
         response = requests.post(
             "https://euapi.ttlock.com/oauth2/token",
             data=payload,
@@ -53,8 +55,7 @@ class AccountService:
             "refreshToken": data.get("refresh_token"),
             "uid": data.get("uid"),
             "expiresIn": data.get("expires_in"),
-            "scope": data.get("scope"),
-            "expiresIn": data.get("expires_in"),
+            "scope": data.get("scope")
         }
 
     @staticmethod
