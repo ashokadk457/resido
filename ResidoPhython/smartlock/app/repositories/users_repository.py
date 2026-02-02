@@ -153,7 +153,7 @@ class UsersRepository:
     def find_by_email(email):
         logger.debug("find_by_email email=%s", email)
         try:
-            return User.objects.get(email__iexact=email)
+            return User.objects.get(email__exact=email)
         except User.DoesNotExist:
             return None
 
