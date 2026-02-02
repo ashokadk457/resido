@@ -60,7 +60,7 @@ class AccountService:
             contact = validated_data.get("contactOrEmail")
             # Resolve user: prefer email from response, else use contact
             user = None
-            if data.get("email"):
+            if contact:
                 user = UsersRepository.find_by_email(contact)
 
             if not user:

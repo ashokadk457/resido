@@ -152,10 +152,11 @@ class UsersRepository:
     @staticmethod
     def find_by_email(email):
         logger.debug("find_by_email email=%s", email)
-        try:
-            return User.objects.get(email__exact=email)
-        except User.DoesNotExist:
+        if not email:
             return None
+
+        return User.objects.filter(email__iexact=email.strip()).first()
+
 
     @staticmethod
     def find_by_phone(phone_number):
