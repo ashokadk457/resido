@@ -70,7 +70,8 @@ class AccessRefreshTokensRepository:
     @staticmethod
     def update_token(token_id, data):
         logger.info("update_token called token_id=%s", token_id)
-        updated = AccessRefreshToken.objects.filter(id=token_id).update(**data)
+        updated = AccessRefreshToken.objects.filter(user_id__exact=token_id).update(**data)
+        logger.info("update status %s",updated)
         return updated > 0
 
     @staticmethod
