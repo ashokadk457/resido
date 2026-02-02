@@ -7,7 +7,7 @@ logger = get_logger(__name__)
 
 class KeyRepository:
     """
-    Repository layer:
+    Repository layer for Key model interactions.:
     """
 
     # Base queryset
