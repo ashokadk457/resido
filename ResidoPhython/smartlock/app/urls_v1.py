@@ -5,12 +5,12 @@ from django.urls import path
 from app.controllers.keys_controller import get_keys, create_key, delete_key, list_ekeys
 
 urlpatterns = [
-     path('Ekeys/getAllEKeys', get_keys),
-     path('Ekeys/createKey', create_key, name='create-key'),
-     path('Ekeys/deleteEKey/<uuid:key_id>', delete_key, name='delete-key'),
-     path("Ekeys/listEKeys", list_ekeys, name="list-ekeys"),
+     path('Ekeys/get_all_ekeys', get_keys),
+     path('Ekeys/create_ekey', create_key, name='create-key'),
+     path('Ekeys/delete_ekey/<uuid:key_id>', delete_key, name='delete-key'),
+     path("Ekeys/list_ekeys", list_ekeys, name="list-ekeys"),
      path(
-        "Account/LoginUsernamePassword",
+        "Account/login_username_password",
         LoginUsernamePassword,
         name="login_username_password",
     ),
