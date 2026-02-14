@@ -1,12 +1,20 @@
-import uuid
 from django.db import models
+import uuid
 
-class User(models.Model):
-    id = models.UUIDField(
-        primary_key=True,
-        db_column='Id'
-    )
+class GenericModel(models.Model):
+    """
+    Base model for all other models to inherit from.
+    Provides common fields and functionality.
+    """
 
+    id = models.UUIDField( db_column='Id',primary_key=True, default=uuid.uuid4, editable=False)
+    created_at = models.DateTimeField( db_column='CreatedAt',auto_now_add=True)
+    updated_at = models.DateTimeField( db_column='UpdatedAt',auto_now=True)
+
+    class Meta:
+        abstract = True
+
+class User(GenericModel):
     first_name = models.TextField(
         db_column='FirstName',
         null=True,
@@ -117,14 +125,6 @@ class User(models.Model):
         blank=True
     )
 
-    created_at = models.DateTimeField(
-        db_column='CreatedAt'
-    )
-
-    updated_at = models.DateTimeField(
-        db_column='UpdatedAt'
-    )
-
     is_ekeys_signed_up = models.BooleanField(
         db_column='IsEkeysSingnUp',
         default=False
@@ -140,7 +140,57 @@ class User(models.Model):
         null=True,
         blank=True
     )
+    
+    def __str__(self):
+       return f"{self.__class__} - {self.id} - {self.created_on}"
 
     class Meta:
         managed = False
         db_table = 'Users'
+        
+
+class AccessRefreshToken(GenericModel):
+    
+    user_id = models.UUIDField(
+        db_column='UserId'
+    )
+
+    access_token = models.TextField(
+        db_column='AccessToken',
+        null=True,
+        blank=True
+    )
+
+    uid = models.BigIntegerField(
+        db_column='Uid',
+        null=True,
+        blank=True
+    )
+
+    expires_in = models.BigIntegerField(
+        db_column='ExpiresIn',
+        null=True,
+        blank=True
+    )
+
+    scope = models.TextField(
+        db_column='Scope',
+        null=True,
+        blank=True
+    )
+
+    refresh_token = models.TextField(
+        db_column='RefreshToken',
+        null=True,
+        blank=True
+    )
+
+    issued_at_utc = models.DateTimeField(
+        db_column='IssuedAtUtc',
+        null=True,
+        blank=True
+    )
+
+    class Meta:
+        managed = False
+        db_table = 'AccessRefreshTokens'

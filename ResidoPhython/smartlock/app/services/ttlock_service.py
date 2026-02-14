@@ -4,10 +4,10 @@ import uuid
 from django.conf import settings
 from django.utils import timezone
 
+from app import models
 from app.serializers.ttlock_payload_serializer import TTLockPayloadSerializer
 from app.utils.logger import get_logger
-from app.repositories.users_repository import UsersRepository
-from app.repositories.access_refresh_tokens_repository import AccessRefreshTokensRepository
+
 
 logger = get_logger(__name__)
 
@@ -76,15 +76,20 @@ class TTLockService:
             # Resolve user: prefer email from response, else use contact
             user = None
             if contact:
-                user = UsersRepository.find_by_email(contact)
+                user = models.User.objects.filter(email=contact).first()
 
             if not user:
                 logger.info("User not found contact=%s", contact)
             else:
-                UsersRepository.update_user(user.id, {
-                    "ttlock_hash_password": encrypted_password,
-                    "last_login": now,
-                })
+                # UsersRepository.update_user(user.id, {
+                #     "ttlock_hash_password": encrypted_password,
+                #     "last_login": now,
+                # })
+                models.User.objects.filter(id=user.id).update(
+                    ttlock_hash_password=encrypted_password,
+                    last_login=now
+                )
+                
                 logger.info("Updated user id=%s", user.id)
 
             token_data = {
@@ -93,7 +98,8 @@ class TTLockService:
                 "expires_in": data.get("expires_in"),
                 "scope": data.get("scope")
             }
-            AccessRefreshTokensRepository.update_token(user.id, token_data);
+            # AccessRefreshTokensRepository.update_token(user.id, token_data);
+            models.AccessRefreshToken.objects.filter(user_id=user.id).update(**token_data)
             logger.info("AccessRefreshTokens Saved access token for user_id=%s", user.id)
         except Exception:
             logger.exception("Failed to persist login or token for contact=%s", validated_data.get("contactOrEmail"))

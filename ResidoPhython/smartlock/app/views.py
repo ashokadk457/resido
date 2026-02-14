@@ -14,12 +14,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from drf_spectacular.utils import extend_schema
 from app.common.mixins import StandardListCreateAPIMixin
-from app.controllers.keys_controller import (
-    EKeyListController,
-    EKeyCreateController,
-    EKeyDetailController,
-    EKeySearchController,
-)
+
 from app.serializers.login_request_serializer import LoginRequestSerializer
 from app.serializers.login_response_serializer import LoginResponseSerializer
 from app.services.account_service import AccountService
@@ -28,6 +23,17 @@ from app.utils.logger import get_logger
 logger = get_logger(__name__)
 # Account Views - imported from controllers
 
+# @extend_schema(
+#         tags=["Account"],
+#         summary="Login via TTLock username/password",
+#         description="Authenticate user using TTLock credentials and get access token",
+#         request=LoginRequestSerializer,
+#         responses={
+#             200: LoginResponseSerializer,
+#             401: LoginResponseSerializer,
+#             400: {"type": "object", "properties": {"detail": {"type": "string"}}},
+#         },
+#     )
 class LoginView(StandardListCreateAPIMixin):
     """
     Controller for account-related operations.
@@ -37,17 +43,7 @@ class LoginView(StandardListCreateAPIMixin):
     permission_classes = [AllowAny]
     authentication_classes = []
 
-    @extend_schema(
-        tags=["Account"],
-        summary="Login via TTLock username/password",
-        description="Authenticate user using TTLock credentials and get access token",
-        request=LoginRequestSerializer,
-        responses={
-            200: LoginResponseSerializer,
-            401: LoginResponseSerializer,
-            400: {"type": "object", "properties": {"detail": {"type": "string"}}},
-        },
-    )
+    
     def post(self, request):
         """
         Handle login request with TTLock credentials.
@@ -76,18 +72,7 @@ class LoginView(StandardListCreateAPIMixin):
 
         return Response(response_serializer.data, status=status_code)
 
-
-# EKey Views - imported from controllers
-EKeyListView = EKeyListController
-EKeyCreateView = EKeyCreateController
-EKeyDetailView = EKeyDetailController
-EKeySearchView = EKeySearchController
-
 __all__ = [
-    "LoginView",
-    "EKeyListView",
-    "EKeyCreateView",
-    "EKeyDetailView",
-    "EKeySearchView",
+    "LoginView"
 ]
 
