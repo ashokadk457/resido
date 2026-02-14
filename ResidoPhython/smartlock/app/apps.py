@@ -1,8 +1,18 @@
 from django.apps import AppConfig
 
-class AppConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'app'
+
+class SmartLockAppConfig(AppConfig):
+    """
+    Smart Lock application configuration.
+    Manages authentication, keys, and account management.
+    """
+
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "app"
+    verbose_name = "Smart Lock API"
 
     def ready(self):
-        import app.auth.schema
+        """
+        App initialization
+        """
+        import app.auth.schema  # noqa: F401
