@@ -32,5 +32,5 @@ urlpatterns = [
     ),
 
     # API v1 endpoints
-    path("api/v1/", include("app.api.urls", namespace="v1")),
+    path("api/v1/", include("app.urls", namespace="v1")),
 ]

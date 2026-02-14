@@ -188,7 +188,7 @@ TTLOCK = {
     ),
     "CLIENT_SECRET": os.getenv(
         "TTLOCK_CLIENT_SECRET",
-        "
+        ""
     ),
     "OAUTH_ENDPOINT": TTLOCK_BASE_URL + "/oauth2/token",
     "USER_INFO_ENDPOINT": TTLOCK_BASE_URL + "/v3/user/info",

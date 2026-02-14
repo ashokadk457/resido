@@ -1,22 +1,34 @@
 """
-Account Controller Module - Handles authentication and account operations
+API Views Module - View layer that imports from controllers
+
+This module serves as the API layer that imports controller classes
+and re-exports them for URL routing. It acts as the bridge between
+URLs and the modular controllers.
+
+Architecture:
+URLs → Views (imports) → Controllers (APIView classes) → Services → Repositories
 """
 
-from rest_framework.views import APIView
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import AllowAny
 from drf_spectacular.utils import extend_schema
-
-from app.services.account_service import AccountService
+from app.common.mixins import StandardListCreateAPIMixin
+from app.controllers.keys_controller import (
+    EKeyListController,
+    EKeyCreateController,
+    EKeyDetailController,
+    EKeySearchController,
+)
 from app.serializers.login_request_serializer import LoginRequestSerializer
 from app.serializers.login_response_serializer import LoginResponseSerializer
+from app.services.account_service import AccountService
 from app.utils.logger import get_logger
 
 logger = get_logger(__name__)
+# Account Views - imported from controllers
 
-
-class AccountController(APIView):
+class LoginView(StandardListCreateAPIMixin):
     """
     Controller for account-related operations.
     Handles user authentication and account management.
@@ -63,3 +75,19 @@ class AccountController(APIView):
         )
 
         return Response(response_serializer.data, status=status_code)
+
+
+# EKey Views - imported from controllers
+EKeyListView = EKeyListController
+EKeyCreateView = EKeyCreateController
+EKeyDetailView = EKeyDetailController
+EKeySearchView = EKeySearchController
+
+__all__ = [
+    "LoginView",
+    "EKeyListView",
+    "EKeyCreateView",
+    "EKeyDetailView",
+    "EKeySearchView",
+]
+

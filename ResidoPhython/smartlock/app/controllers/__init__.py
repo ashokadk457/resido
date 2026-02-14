@@ -10,7 +10,6 @@ Controller Structure:
 - Controllers delegate business logic to services
 """
 
-from app.controllers.account_controller import AccountController
 from app.controllers.keys_controller import (
     EKeyListController,
     EKeyCreateController,
@@ -19,7 +18,6 @@ from app.controllers.keys_controller import (
 )
 
 __all__ = [
-    "AccountController",
     "EKeyListController",
     "EKeyCreateController",
     "EKeyDetailController",

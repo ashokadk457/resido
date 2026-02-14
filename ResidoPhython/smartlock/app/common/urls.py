@@ -1,0 +1,97 @@
+from django.urls import re_path
+
+import common.apiviews
+from common.subscription_views import PlanListAPIView, ProductSubsSettingListAPIView
+from customer_backend.apiviews.tenant_launch import (
+    TenantLaunchRequestCreateView,
+    TenantLaunchRequestRetieveView,
+)
+
+urlpatterns = (
+    re_path(
+        r"^api/v1/tenant-launch$",
+        TenantLaunchRequestCreateView.as_view(),
+        name="create_tenant_launch_request",
+    ),
+    re_path(
+        r"^api/v1/tenant-launch/(?P<pk>[0-9a-zA-Z\-]+)$",
+        TenantLaunchRequestRetieveView.as_view(),
+        name="get_tenant_launch_request",
+    ),
+    re_path(
+        r"^api/v1/tenants$",
+        common.apiviews.HealthCareCustomerList.as_view(),
+        name="tenants_list",
+    ),
+    re_path(
+        r"^api/v1/current-tenant$",
+        common.apiviews.HealthCareCustomerDetail.as_view(),
+        name="tenants_list",
+    ),
+    # Subscription endpoints (consumed by GENIUS for customer onboarding)
+    re_path(
+        r"^api/v1/plans$",
+        PlanListAPIView.as_view(),
+        name="list_plans",
+    ),
+    re_path(
+        r"^api/v1/subs-settings$",
+        ProductSubsSettingListAPIView.as_view(),
+        name="list_product_subs_settings",
+    ),
+    re_path(
+        r"^api/v1/address$",
+        common.apiviews.AddressSearch.as_view(),
+        name="address_search",
+    ),
+    re_path(
+        r"api/v1/versions$",
+        common.apiviews.ServiceInfoView.as_view(),
+        name="service_info",
+    ),
+    re_path(
+        r"^api/v1/search-residousers-providers$",
+        common.apiviews.SearchPatientsAndProvidersAPIView.as_view(),
+        name="provider_patient_search_list",
+    ),
+    re_path(
+        r"api/v1/countries$",
+        common.apiviews.CountryListCreateAPIView.as_view(),
+        name="countries_list",
+    ),
+    re_path(
+        r"api/v1/countries/(?P<pk>[0-9a-zA-Z\-]+)$",
+        common.apiviews.CountryRetrieveUpdateAPIView.as_view(),
+        name="country_info",
+    ),
+    re_path(
+        r"api/v1/states$",
+        common.apiviews.StateListCreateAPIView.as_view(),
+        name="states_list",
+    ),
+    re_path(
+        r"api/v1/states/(?P<pk>[0-9a-zA-Z\-]+)$",
+        common.apiviews.StateRetrieveUpdateAPIView.as_view(),
+        name="state_info",
+    ),
+    re_path(
+        r"api/v1/pet-species$",
+        common.apiviews.PetSpeciesListCreateAPIView.as_view(),
+        name="pet_species_list",
+    ),
+    re_path(
+        r"api/v1/pet-species/(?P<pk>[0-9a-zA-Z\-]+)$",
+        common.apiviews.PetSpeciesRetrieveUpdateAPIView.as_view(),
+        name="pet_species_info",
+    ),
+    re_path(
+        r"api/v1/pet-breeds$",
+        common.apiviews.PetBreedListCreateAPIView.as_view(),
+        name="pet_breeds_list",
+    ),
+    re_path(
+        r"api/v1/pet-breeds/(?P<pk>[0-9a-zA-Z\-]+)$",
+        common.apiviews.PetBreedRetrieveUpdateAPIView.as_view(),
+        name="pet_breed_info",
+    ),
+)
