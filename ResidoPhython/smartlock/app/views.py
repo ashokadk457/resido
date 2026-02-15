@@ -17,7 +17,7 @@ from app.common.mixins import StandardListCreateAPIMixin
 
 from app.serializers import LoginRequestSerializer, LoginResponseSerializer
 from app.services.account_service import AccountService
-from app.utils.logger import get_logger
+from app.utils import Utils
 from django.db.models import QuerySet
 from django.contrib.auth import get_user_model
 from app.auth.authentication import BearerTokenAuthentication
@@ -26,7 +26,7 @@ from drf_spectacular.utils import extend_schema, extend_schema_view
 
 
 
-logger = get_logger(__name__)
+logger = Utils.get_logger(__name__)
 # Account Views - imported from controllers
 
 
@@ -74,7 +74,7 @@ class LoginView(StandardListCreateAPIMixin):
         Returns:
             Response with access token or error message
         """
-        logger.info("POST /api/v1/account/login")
+        logger.info("Login View -  POST /api/v1/account/login")
 
         serializer = LoginRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)

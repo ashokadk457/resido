@@ -6,10 +6,10 @@ from django.utils import timezone
 
 from app import models
 from app.serializers import TTLockPayloadSerializer
-from app.utils.logger import get_logger
+from app.utils import Utils
 
 
-logger = get_logger(__name__)
+logger = Utils.get_logger(__name__)
 
 
 class TTLockService:

@@ -8,19 +8,21 @@ single module implementation.
 from rest_framework import serializers
 from .models import Key
 
-class KeySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Key
-        fields = "__all__"
+class BaseSerializer(serializers.Serializer):
+    """
+    Base serializer that other serializers can inherit from.
+    Provides common functionality and configuration.
+    """
+    pass
 
 
-class LoginRequestSerializer(serializers.Serializer):
+class LoginRequestSerializer(BaseSerializer):
     dialCode = serializers.CharField(required=False, allow_blank=True, default=None)
     contactOrEmail = serializers.CharField(required=True)
     password = serializers.CharField(required=True, write_only=True)
 
 
-class LoginResponseSerializer(serializers.Serializer):
+class LoginResponseSerializer(BaseSerializer):
     success = serializers.BooleanField()
     message = serializers.CharField()
     accessToken = serializers.CharField(required=False, allow_null=True)
@@ -30,7 +32,7 @@ class LoginResponseSerializer(serializers.Serializer):
     scope = serializers.CharField(required=False, allow_null=True)
 
 
-class TTLockPayloadSerializer(serializers.Serializer):
+class TTLockPayloadSerializer(BaseSerializer):
     client_id = serializers.CharField()
     client_secret = serializers.CharField()
     username = serializers.CharField()
@@ -40,7 +42,6 @@ class TTLockPayloadSerializer(serializers.Serializer):
 
 
 __all__ = [
-    "KeySerializer",
     "LoginRequestSerializer",
     "LoginResponseSerializer",
     "TTLockPayloadSerializer",

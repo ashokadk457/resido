@@ -92,10 +92,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "app.auth.permissions.HasBearerToken",
     ],
-    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    "DEFAULT_PAGINATION_CLASS": "app.utils.pagination.CustomPagination",
-    "PAGE_SIZE": 50,
-    "EXCEPTION_HANDLER": "app.exceptions.custom_exception_handler.custom_exception_handler",
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema"
 }
 
 # DRF Spectacular (Swagger/OpenAPI) configuration

@@ -10,13 +10,18 @@ class GenericModel(models.Model):
     """
 
     id = models.UUIDField( db_column='Id',primary_key=True, default=uuid.uuid4, editable=False)
+
+    class Meta:
+        abstract = True
+
+class AuditModel(models.Model):
     created_at = models.DateTimeField( db_column='CreatedAt',auto_now_add=True)
     updated_at = models.DateTimeField( db_column='UpdatedAt',auto_now=True)
 
     class Meta:
         abstract = True
 
-class User(GenericModel):
+class User(GenericModel,AuditModel):
     first_name = models.TextField(
         db_column='FirstName',
         null=True,
@@ -151,9 +156,7 @@ class User(GenericModel):
         db_table = 'Users'
         
 
-class AccessRefreshToken(models.Model):
-    
-    id = models.UUIDField( db_column='Id',primary_key=True, default=uuid.uuid4, editable=False)
+class AccessRefreshToken(GenericModel):
     user_id = models.UUIDField(
         db_column='UserId'
     )
@@ -205,11 +208,7 @@ class AccessRefreshToken(models.Model):
         managed = False
         db_table = 'AccessRefreshTokens'
 
-class Key(models.Model):
-    id = models.UUIDField(
-        primary_key=True,
-        db_column='Id'
-    )
+class Key(GenericModel):
 
     ekey_id = models.IntegerField(
         db_column='EKeyId'

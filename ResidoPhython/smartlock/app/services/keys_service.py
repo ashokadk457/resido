@@ -4,9 +4,9 @@ from app.validators.key_query_validator import (
     validate_sorting,
 )
 from app.utils.pagination_utils import get_offset_limit
-from app.utils.logger import get_logger
+from app.utils import get_logger
 
-logger = get_logger(__name__)
+logger = Utils.get_logger(__name__)
 
 
 class KeyService:

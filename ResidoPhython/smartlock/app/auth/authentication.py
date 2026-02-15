@@ -3,10 +3,10 @@ from rest_framework.exceptions import AuthenticationFailed
 from django.contrib.auth.models import AnonymousUser
 from django.utils.translation import gettext_lazy as _
 from app import models
-from app.utils.logger import get_logger
+from app.utils import Utils
 
-logger = get_logger(__name__)
 
+logger = Utils.get_logger(__name__)
 
 class BearerTokenAuthentication(BaseAuthentication):
     """Authenticate requests using a Bearer access token from the Authorization header.
