@@ -5,7 +5,7 @@ from django.conf import settings
 from django.utils import timezone
 
 from app import models
-from app.serializers.ttlock_payload_serializer import TTLockPayloadSerializer
+from app.serializers import TTLockPayloadSerializer
 from app.utils.logger import get_logger
 
 
@@ -92,15 +92,15 @@ class TTLockService:
                 
                 logger.info("Updated user id=%s", user.id)
 
-            token_data = {
-                "access_token": data.get("access_token"),
-                "refresh_token": data.get("refresh_token"),
-                "expires_in": data.get("expires_in"),
-                "scope": data.get("scope")
-            }
-            # AccessRefreshTokensRepository.update_token(user.id, token_data);
-            models.AccessRefreshToken.objects.filter(user_id=user.id).update(**token_data)
-            logger.info("AccessRefreshTokens Saved access token for user_id=%s", user.id)
+                token_data = {
+                    "access_token": data.get("access_token"),
+                    "refresh_token": data.get("refresh_token"),
+                    "expires_in": data.get("expires_in"),
+                    "scope": data.get("scope")
+                }
+                # AccessRefreshTokensRepository.update_token(user.id, token_data);
+                models.AccessRefreshToken.objects.filter(user_id=user.id).update(**token_data)
+                logger.info("AccessRefreshTokens Saved access token for user_id=%s", user.id)
         except Exception:
             logger.exception("Failed to persist login or token for contact=%s", validated_data.get("contactOrEmail"))
 

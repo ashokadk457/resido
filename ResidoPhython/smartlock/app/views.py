@@ -15,13 +15,21 @@ from rest_framework import status
 from drf_spectacular.utils import extend_schema
 from app.common.mixins import StandardListCreateAPIMixin
 
-from app.serializers.login_request_serializer import LoginRequestSerializer
-from app.serializers.login_response_serializer import LoginResponseSerializer
+from app.serializers import LoginRequestSerializer, LoginResponseSerializer
 from app.services.account_service import AccountService
 from app.utils.logger import get_logger
+from django.db.models import QuerySet
+from django.contrib.auth import get_user_model
+from app.auth.authentication import BearerTokenAuthentication
+from drf_spectacular.utils import extend_schema, extend_schema_view
+
+
+
 
 logger = get_logger(__name__)
 # Account Views - imported from controllers
+
+
 
 # @extend_schema(
 #         tags=["Account"],
@@ -34,6 +42,19 @@ logger = get_logger(__name__)
 #             400: {"type": "object", "properties": {"detail": {"type": "string"}}},
 #         },
 #     )
+@extend_schema_view(
+    get=extend_schema(exclude=True)  # 👈 hides GET
+)
+@extend_schema(
+    tags=["Account"],
+    description="Login via TTLock username/password",
+    auth=None,
+    request=LoginRequestSerializer,
+    responses={
+        200: LoginResponseSerializer,
+        401: LoginResponseSerializer,
+    },
+)
 class LoginView(StandardListCreateAPIMixin):
     """
     Controller for account-related operations.
@@ -41,9 +62,8 @@ class LoginView(StandardListCreateAPIMixin):
     """
 
     permission_classes = [AllowAny]
-    authentication_classes = []
-
-    
+    authentication_classes = [BearerTokenAuthentication]
+   
     def post(self, request):
         """
         Handle login request with TTLock credentials.

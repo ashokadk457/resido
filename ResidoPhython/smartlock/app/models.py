@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+from datetime import timedelta
 import uuid
 
 class GenericModel(models.Model):
@@ -149,8 +151,9 @@ class User(GenericModel):
         db_table = 'Users'
         
 
-class AccessRefreshToken(GenericModel):
+class AccessRefreshToken(models.Model):
     
+    id = models.UUIDField( db_column='Id',primary_key=True, default=uuid.uuid4, editable=False)
     user_id = models.UUIDField(
         db_column='UserId'
     )
@@ -191,6 +194,35 @@ class AccessRefreshToken(GenericModel):
         blank=True
     )
 
+    def is_expired(self):
+        if not self.issued_at_utc or not self.expires_in:
+            return False
+
+        expiry = self.issued_at_utc + timedelta(seconds=int(self.expires_in))
+        return timezone.now() >= expiry
+
     class Meta:
         managed = False
         db_table = 'AccessRefreshTokens'
+
+class Key(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        db_column='Id'
+    )
+
+    ekey_id = models.IntegerField(
+        db_column='EKeyId'
+    )
+
+    key_name = models.TextField(
+        db_column='KeyName'
+    )
+
+    smart_lock_id = models.UUIDField(
+        db_column='SmartLockId'
+    )
+
+    class Meta:
+        managed = False 
+        db_table = 'EKeys'

@@ -15,4 +15,4 @@ class SmartLockAppConfig(AppConfig):
         """
         App initialization
         """
-        import app.auth.schema  # noqa: F401
+        import app.auth.schema 

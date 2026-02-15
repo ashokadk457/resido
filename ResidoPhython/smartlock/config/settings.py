@@ -104,22 +104,12 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Smart Lock API for managing digital keys",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
-    "SWAGGER_UI_SETTINGS": {
-        "deepLinking": True,
-        "persistAuthorizationData": True,
-        "displayOperationId": True,
-    },
+
+    # 👇 THIS IS REQUIRED
     "SECURITY": [{"BearerAuth": []}],
-    "COMPONENTS": {
-        "securitySchemes": {
-            "BearerAuth": {
-                "type": "http",
-                "scheme": "bearer",
-                "description": "Bearer token authentication",
-            }
-        }
-    },
 }
+
+
 
 TEMPLATES = [
     {
