@@ -4,6 +4,7 @@ from rest_framework import status
 from drf_spectacular.utils import extend_schema
 from app.common.mixins import StandardListCreateAPIMixin
 
+from app.common.response import StandardAPIResponse
 from app.serializers import LoginRequestSerializer, LoginResponseSerializer
 from app.services.account_service import AccountService
 from app.utils import Logger
@@ -48,13 +49,7 @@ class LoginView(StandardListCreateAPIMixin):
         response_serializer = LoginResponseSerializer(data=result)
         response_serializer.is_valid(raise_exception=True)
 
-        status_code = (
-            status.HTTP_200_OK
-            if result.get("success")
-            else status.HTTP_401_UNAUTHORIZED
-        )
-
-        return Response(response_serializer.data, status=status_code)
+        return StandardAPIResponse(data=response_serializer.data, status=status.HTTP_200_OK)
 
 __all__ = [
     "LoginView"
