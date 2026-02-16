@@ -6,21 +6,16 @@ from django.utils import timezone
 
 from app import models
 from app.serializers import TTLockPayloadSerializer
-from app.utils import Utils
+from app.utils import Logger
 
 
-logger = Utils.get_logger(__name__)
+logger = Logger.get_logger(__name__)
 
 
 class TTLockService:
-    """Service to interact with TTLock authentication endpoints and persist tokens/users."""
 
     @staticmethod
     def login(validated_data: dict) -> dict:
-        """Exchange username/password for access token and persist user + token.
-
-        Returns a dictionary with keys similar to the previous `AccountService.login_with_ttlock` response.
-        """
         logger.info("Calling TTLock login API")
 
         encrypted_password = TTLockService.generate_md5(
@@ -81,10 +76,6 @@ class TTLockService:
             if not user:
                 logger.info("User not found contact=%s", contact)
             else:
-                # UsersRepository.update_user(user.id, {
-                #     "ttlock_hash_password": encrypted_password,
-                #     "last_login": now,
-                # })
                 models.User.objects.filter(id=user.id).update(
                     ttlock_hash_password=encrypted_password,
                     last_login=now
@@ -98,7 +89,6 @@ class TTLockService:
                     "expires_in": data.get("expires_in"),
                     "scope": data.get("scope")
                 }
-                # AccessRefreshTokensRepository.update_token(user.id, token_data);
                 models.AccessRefreshToken.objects.filter(user_id=user.id).update(**token_data)
                 logger.info("AccessRefreshTokens Saved access token for user_id=%s", user.id)
         except Exception:

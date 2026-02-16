@@ -1,14 +1,3 @@
-"""
-API Views Module - View layer that imports from controllers
-
-This module serves as the API layer that imports controller classes
-and re-exports them for URL routing. It acts as the bridge between
-URLs and the modular controllers.
-
-Architecture:
-URLs → Views (imports) → Controllers (APIView classes) → Services → Repositories
-"""
-
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
@@ -17,33 +6,17 @@ from app.common.mixins import StandardListCreateAPIMixin
 
 from app.serializers import LoginRequestSerializer, LoginResponseSerializer
 from app.services.account_service import AccountService
-from app.utils import Utils
+from app.utils import Logger
 from django.db.models import QuerySet
 from django.contrib.auth import get_user_model
 from app.auth.authentication import BearerTokenAuthentication
 from drf_spectacular.utils import extend_schema, extend_schema_view
 
 
+logger = Logger.get_logger(__name__)
 
-
-logger = Utils.get_logger(__name__)
-# Account Views - imported from controllers
-
-
-
-# @extend_schema(
-#         tags=["Account"],
-#         summary="Login via TTLock username/password",
-#         description="Authenticate user using TTLock credentials and get access token",
-#         request=LoginRequestSerializer,
-#         responses={
-#             200: LoginResponseSerializer,
-#             401: LoginResponseSerializer,
-#             400: {"type": "object", "properties": {"detail": {"type": "string"}}},
-#         },
-#     )
 @extend_schema_view(
-    get=extend_schema(exclude=True)  # 👈 hides GET
+    get=extend_schema(exclude=True)
 )
 @extend_schema(
     tags=["Account"],
@@ -65,15 +38,6 @@ class LoginView(StandardListCreateAPIMixin):
     authentication_classes = [BearerTokenAuthentication]
    
     def post(self, request):
-        """
-        Handle login request with TTLock credentials.
-        
-        Args:
-            request: HTTP request with username and password
-            
-        Returns:
-            Response with access token or error message
-        """
         logger.info("Login View -  POST /api/v1/account/login")
 
         serializer = LoginRequestSerializer(data=request.data)

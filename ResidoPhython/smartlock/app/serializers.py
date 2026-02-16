@@ -1,10 +1,3 @@
-"""Consolidated serializers for smartlock.app
-
-Moved up from the `app/serializers/` package into a module at
-`app/serializers.py` so `import app.serializers` resolves to this
-single module implementation.
-"""
-
 from rest_framework import serializers
 from .models import Key
 

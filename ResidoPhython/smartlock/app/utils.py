@@ -1,7 +1,7 @@
 import logging
 
 
-class Utils:
+class Logger:
     
     @staticmethod
     def get_logger(name: str):
@@ -22,6 +22,8 @@ class Utils:
         logger.propagate = False
 
         return logger
+
+class Pagination:
     
     @staticmethod
     def pagination_offset_limit(page: int, page_size: int):
