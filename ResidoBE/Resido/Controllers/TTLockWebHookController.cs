@@ -248,23 +248,19 @@ SmartLock? smartLock)
                                 var history = new AccessLog
                                 {
                                     LockId = formData.LockId,
-                                    LockMac = formData.LockMac,
-                                    RecordType = record.RecordType,
+                                    LockMac = string.Empty,
+                                    RecordTypeFromLock = record.RecordType,
                                     RecordTypeDescription =
-                                    RecordTypeDescriptions.TryGetValue(record.RecordType, out var desc)
-                                        ? desc : "Unknown",
-                                    Username = record.Username,
-                                    KeyboardPwd = record.KeyboardPwd,
-                                    Success = record.Success,
-                                    SmartLockId= smartLock.Id,
-                                    BatteryPercentage = record.ElectricQuantity,
-                                    LockEventLocalTime = record.LockDate,
-                                    ServerReceivedLocalTime = record.ServerDate,
-                                    LockEventUtcTime = DateTimeOffset.FromUnixTimeMilliseconds(record.LockDate).UtcDateTime,
-                                    ServerReceivedUtcTime = DateTimeOffset.FromUnixTimeMilliseconds(record.ServerDate).UtcDateTime,
+                                appRecordTypeDescriptions.TryGetValue(record.RecordType, out var desc)
+                                    ? desc : "Unknown",
+                                    Uid = record.Uid,
+                                    Password = record.Password,
+                                    NewPassword = record.NewPassword,
+                                    LockDate = DateTimeOffset.FromUnixTimeMilliseconds(record.OperateDate).UtcDateTime,
+                                    ElectricQuantity = record.ElectricQuantity,
+                                    ServerDate = DateTimeOffset.FromUnixTimeMilliseconds(record.OperateDate).UtcDateTime,
                                     CreatedAt = DateTimeHelper.GetUtcTime()
                                 };
-
 
                                 scopedDb.AccessLogs.Add(history);
 
@@ -343,22 +339,18 @@ SmartLock? smartLock)
                             {
                                 LockId = formData.LockId,
                                 LockMac = string.Empty,
-                                RecordType = record.RecordType,
+                                RecordTypeFromLock = record.RecordType,
                                 RecordTypeDescription =
-                                    appRecordTypeDescriptions.TryGetValue(record.RecordType, out var desc)
-                                        ? desc : "Unknown",
-                                Username = record.Username,
-                                KeyboardPwd = record.KeyboardPwd,
-                                Success = record.Success,
-                                SmartLockId = smartLock.Id,
-                                BatteryPercentage = record.ElectricQuantity,
-                                LockEventLocalTime = record.LockDate,
-                                ServerReceivedLocalTime = record.ServerDate,
-                                LockEventUtcTime = DateTimeOffset.FromUnixTimeMilliseconds(record.LockDate).UtcDateTime,
-                                ServerReceivedUtcTime = DateTimeOffset.FromUnixTimeMilliseconds(record.ServerDate).UtcDateTime,
+                                appRecordTypeDescriptions.TryGetValue(record.RecordType, out var desc)
+                                    ? desc : "Unknown",
+                                Uid = record.Uid,
+                                Password = record.Password,
+                                NewPassword = record.NewPassword,
+                                LockDate = DateTimeOffset.FromUnixTimeMilliseconds(record.OperateDate).UtcDateTime,
+                                ElectricQuantity = record.ElectricQuantity,
+                                ServerDate = DateTimeOffset.FromUnixTimeMilliseconds(record.OperateDate).UtcDateTime,
                                 CreatedAt = DateTimeHelper.GetUtcTime()
                             };
-
 
                             scopedDb.AccessLogs.Add(history);
 

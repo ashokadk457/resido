@@ -72,7 +72,7 @@ namespace Resido.Services.DAL
 
         public void SaveAcccesAndRefreshToken(User user, AccessTokenResponseDTO token)
         {
-            var access = _context.AccessRefreshTokens.FirstOrDefault(a => a.UserId == user.Id);
+            var access = _context.AccessRefreshTokens.FirstOrDefault(a => a.UserId == user.Id && a.AccessToken== token.AccessToken);
             if (access == null)
             {
                 user.AccessRefreshToken ??= new List<AccessRefreshToken>();
@@ -81,7 +81,6 @@ namespace Resido.Services.DAL
                     UserId = user.Id,
                 });
             }
-
         }
         public async Task<(User?, LoginOtpDeliveryMethod, string?)> GetAndValidateUserAsync(string input, string? dialCode, bool checkDial = true)
         {

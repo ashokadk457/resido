@@ -4,29 +4,35 @@ namespace Resido.Model.TTLockDTO.Webhook
 {
     public class TTLockRecordDto
     {
-        [JsonPropertyName("lockId")]
-        public int LockId { get; set; }
+        [JsonPropertyName("accessoryElectricQuantity")]
+        public int? AccessoryElectricQuantity { get; set; }
 
-        [JsonPropertyName("recordType")]
-        public int RecordType { get; set; }
-
-        [JsonPropertyName("success")]
-        public int Success { get; set; }
-
-        [JsonPropertyName("username")]
-        public string? Username { get; set; }
-
-        [JsonPropertyName("keyboardPwd")]
-        public string? KeyboardPwd { get; set; }
-
-        [JsonPropertyName("lockDate")]
-        public long LockDate { get; set; }
+        [JsonPropertyName("deleteDate")]
+        public long? DeleteDate { get; set; }
 
         [JsonPropertyName("electricQuantity")]
         public int ElectricQuantity { get; set; }
 
-        [JsonPropertyName("serverDate")]
-        public long ServerDate { get; set; }
+        [JsonPropertyName("keyId")]
+        public int? KeyId { get; set; }
+
+        [JsonPropertyName("operateDate")]
+        public long OperateDate { get; set; }
+
+        [JsonPropertyName("recordId")]
+        public long? RecordId { get; set; }
+
+        [JsonPropertyName("recordType")]
+        public int RecordType { get; set; }
+
+        [JsonPropertyName("uid")]
+        public int? Uid { get; set; }
+
+        [JsonPropertyName("password")]
+        public string? Password { get; set; }
+
+        [JsonPropertyName("newPassword")]
+        public string? NewPassword { get; set; }
     }
     public class TTLockWebhookDto
     {

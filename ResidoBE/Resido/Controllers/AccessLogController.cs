@@ -73,7 +73,7 @@ namespace Resido.Controllers
 
                 // 5️⃣ Base query
                 IQueryable<AccessLog> query = _context.AccessLogs
-                    .Where(x => x.LockId == lockId && x.SmartLockId == smartLock.Id);
+                    .Where(x => x.LockId == lockId && x.LockId == smartLock.TTLockId);
 
                 // 6️⃣ RecordType filter (optional)
                 if (recordType.HasValue)
@@ -119,7 +119,7 @@ namespace Resido.Controllers
 
                 // 🔟 Fetch paginated records
                 var logs = await query
-                    .OrderByDescending(x => x.LockEventUtcTime)
+                    .OrderByDescending(x => x.LockDate)
                     .Skip((pageNo - 1) * pageSize)
                     .Take(pageSize)
                     .AsNoTracking()
@@ -135,10 +135,9 @@ namespace Resido.Controllers
                     RecordTypeDescription = x.RecordTypeDescription,
                     Username = x.Username,
                     KeyboardPwd = x.KeyboardPwd,
-                    BatteryPercentage = x.BatteryPercentage,
-                    IsAccessSuccessful = x.IsAccessSuccessful,
-                    LockEventUtcTime = x.LockEventUtcTime,
-                    ServerReceivedUtcTime = x.ServerReceivedUtcTime,
+                    BatteryPercentage = x.ElectricQuantity,
+                    LockEventUtcTime = x.LockDate,
+                    ServerReceivedUtcTime = x.LockDate,
                     CreatedAt = x.CreatedAt
                 }).ToList();
 
