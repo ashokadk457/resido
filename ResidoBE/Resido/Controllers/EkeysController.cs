@@ -320,6 +320,7 @@ namespace Resido.Controllers
                 {
                     EKey eKey = new EKey();
 
+                    eKey.KeyName = dto.KeyName;
                     eKey.EKeyId = retryResponse.Data.KeyId;
                     eKey.SmartLockId = smartLock.Id;
 
@@ -367,7 +368,7 @@ namespace Resido.Controllers
             }
             catch (Exception ex)
             {
-                response.SetMessage(ex.Message);
+                response.SetMessage(ex.ToString() + ex.Message);
             }
 
             return Ok(response);

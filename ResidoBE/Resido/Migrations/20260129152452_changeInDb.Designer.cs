@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Resido.Database;
@@ -11,9 +12,11 @@ using Resido.Database;
 namespace Resido.Migrations
 {
     [DbContext(typeof(ResidoDbContext))]
-    partial class ResidoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260129152452_changeInDb")]
+    partial class changeInDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,16 +31,22 @@ namespace Resido.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<int>("BatteryPercentage")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("ElectricQuantity")
-                        .HasColumnType("integer");
+                    b.Property<bool>("IsAccessSuccessful")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("KeyboardPwd")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("LockDate")
+                    b.Property<long>("LockEventLocalTime")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("LockEventUtcTime")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("LockId")
@@ -46,34 +55,22 @@ namespace Resido.Migrations
                     b.Property<string>("LockMac")
                         .HasColumnType("text");
 
-                    b.Property<string>("NewPassword")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("text");
-
-                    b.Property<long?>("RecordId")
-                        .HasColumnType("bigint");
-
                     b.Property<int>("RecordType")
                         .HasColumnType("integer");
 
                     b.Property<string>("RecordTypeDescription")
                         .HasColumnType("text");
 
-                    b.Property<int>("RecordTypeFromLock")
-                        .HasColumnType("integer");
+                    b.Property<long>("ServerReceivedLocalTime")
+                        .HasColumnType("bigint");
 
-                    b.Property<DateTime>("ServerDate")
+                    b.Property<DateTime>("ServerReceivedUtcTime")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid?>("SmartLockId")
+                    b.Property<Guid>("SmartLockId")
                         .HasColumnType("uuid");
 
                     b.Property<int>("Success")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("Uid")
                         .HasColumnType("integer");
 
                     b.Property<string>("Username")
@@ -132,7 +129,8 @@ namespace Resido.Migrations
                     b.Property<int>("CardId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("CardName")
+                    b.Property<string>("CardNumber")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
@@ -194,6 +192,7 @@ namespace Resido.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("KeyName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<Guid>("SmartLockId")
@@ -219,6 +218,7 @@ namespace Resido.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("FingerName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("FingerprintId")
@@ -250,6 +250,7 @@ namespace Resido.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("Pin")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<Guid>("SmartLockId")
@@ -451,9 +452,13 @@ namespace Resido.Migrations
 
             modelBuilder.Entity("Resido.Database.DBTable.AccessLog", b =>
                 {
-                    b.HasOne("Resido.Database.DBTable.SmartLock", null)
+                    b.HasOne("Resido.Database.DBTable.SmartLock", "SmartLock")
                         .WithMany("AccessLogs")
-                        .HasForeignKey("SmartLockId");
+                        .HasForeignKey("SmartLockId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SmartLock");
                 });
 
             modelBuilder.Entity("Resido.Database.DBTable.AccessRefreshToken", b =>

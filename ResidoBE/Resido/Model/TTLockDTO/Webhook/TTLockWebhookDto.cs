@@ -10,6 +10,9 @@ namespace Resido.Model.TTLockDTO.Webhook
         [JsonPropertyName("deleteDate")]
         public long? DeleteDate { get; set; }
 
+        [JsonPropertyName("operateDate")]
+        public long OperateDate { get; set; }
+
         [JsonPropertyName("electricQuantity")]
         public int ElectricQuantity { get; set; }
 
