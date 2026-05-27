@@ -19,9 +19,6 @@ namespace Resido.Model.TTLockDTO.Webhook
         [JsonPropertyName("keyId")]
         public int? KeyId { get; set; }
 
-        [JsonPropertyName("operateDate")]
-        public long OperateDate { get; set; }
-
         [JsonPropertyName("recordId")]
         public long? RecordId { get; set; }
 
