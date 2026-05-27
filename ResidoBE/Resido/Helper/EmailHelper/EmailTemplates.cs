@@ -20,15 +20,36 @@ namespace Resido.Helper.EmailHelper
 
             return langKey switch
             {
-                "da-dk" => BuildExistingUserDanish(name, user),
-                "nb" or "nb-no" => BuildExistingUserNorwegian(name, user),
                 _ => BuildExistingUserEnglish(name, user)
             };
         }
 
+
+
+        /// <summary>
+        /// Builds the subject and HTML body for the ZafeLock welcome email in English or Danish.
+        /// </summary>
+        public static (string Subject, string HtmlBody) BuildWelcomeEmailHtml(
+            string recipientName,
+            string username,
+            string password,
+            string language = "en")
+        {
+            // Encode dynamic content for safety in HTML
+            string name = WebUtility.HtmlEncode(recipientName ?? "");
+            string user = WebUtility.HtmlEncode(username ?? "");
+            string pass = WebUtility.HtmlEncode(password ?? "");
+            string lang = (language ?? "en").Trim().ToLowerInvariant();
+
+            var langKey = (lang ?? "en").Trim().ToLowerInvariant();
+            return langKey switch
+            {
+                _ => BuildEnglish(name, user, pass)
+            };
+        }
         private static (string Subject, string HtmlBody) BuildExistingUserEnglish(string name, string user)
         {
-            string subject = "You’ve received a new E-Key in ZafeLock";
+            string subject = "You’ve received a new E-Key in Resido";
 
             string html =
             $@"<!doctype html>
@@ -49,7 +70,7 @@ namespace Resido.Helper.EmailHelper
           <p style=""margin:16px 0;"">Dear {name},</p>
 
           <p style=""margin:16px 0;"">
-            You have received a new E-Key in ZafeLock for access. Please log in using your existing account.
+            You have received a new E-Key in Resido for access. Please log in using your existing account.
           </p>
 
           <div style=""margin:20px 0;padding:16px;border:1px solid #e6e8eb;border-radius:10px;background:#fafbfc;"">
@@ -63,7 +84,7 @@ namespace Resido.Helper.EmailHelper
           </div>
 
           <p style=""margin:16px 0;"">
-            Download the ZafeLock app to access your E-Key:
+            Download the Resido app to access your E-Key:
           </p>
 
           <p>
@@ -75,370 +96,91 @@ namespace Resido.Helper.EmailHelper
             If you didn’t expect this, please contact our support team.
           </p>
 
-          <p style=""margin:24px 0 0 0;"">Best regards,<br>ZafeLock Team</p>
+          <p style=""margin:24px 0 0 0;"">Best regards,<br>Resido Team</p>
         </div>
       </div>
 
       <p style=""text-align:center;color:#8a8f98;font-size:12px;margin:12px 0 0 0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;"">
-        © {DateTime.UtcNow:yyyy} ZafeLock
+        © {DateTime.UtcNow:yyyy} Resido
       </p>
     </div>
   </body>
 </html>";
 
             return (subject, html);
-        }
-
-        private static (string Subject, string HtmlBody) BuildExistingUserDanish(string name, string user)
-        {
-            string subject = "Du har modtaget en ny E-nøgle i ZafeLock";
-
-            string html =
-            $@"<!doctype html>
-<html lang=""da"">
-  <head>
-    <meta charset=""utf-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
-    <title>{subject}</title>
-  </head>
-  <body style=""margin:0;padding:0;background:#f6f7f9;"">
-    <div style=""max-width:640px;margin:24px auto;padding:0 16px;"">
-      <div style=""background:#ffffff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#222;"">
-        <div style=""padding:24px 24px 8px 24px;"">
-          <h1 style=""margin:0;font-size:20px;font-weight:600;"">Du har modtaget en ny E-nøgle</h1>
-        </div>
-
-        <div style=""padding:0 24px 24px 24px;font-size:14px;line-height:1.6;"">
-          <p style=""margin:16px 0;"">Kære {name},</p>
-
-          <p style=""margin:16px 0;"">
-            Du har modtaget en ny E-nøgle i ZafeLock til adgang. Log venligst ind med din eksisterende konto.
-          </p>
-
-          <div style=""margin:20px 0;padding:16px;border:1px solid #e6e8eb;border-radius:10px;background:#fafbfc;"">
-            <div style=""font-weight:600;margin-bottom:8px;"">Kontooplysninger</div>
-            <table role=""presentation"" cellpadding=""0"" cellspacing=""0"" style=""border-collapse:collapse;width:100%;font-size:14px;"">
-              <tr>
-                <td style=""padding:4px 0;width:120px;color:#555;"">Brugernavn:</td>
-                <td style=""padding:4px 0;font-weight:600;"">{user}</td>
-              </tr>
-            </table>
-          </div>
-
-          <p style=""margin:16px 0;"">
-            Download Zafe-appen for at få adgang til din E-nøgle:
-          </p>
-
-          <p>
-            <a href=""https://apps.apple.com/in/app/zafe-connect/id6748814428"" style=""color:#007aff;text-decoration:none;margin-right:12px;"">App Store</a> |
-            <a href=""https://play.google.com/store/apps/details?id=com.plento.zafelock"" style=""color:#34a853;text-decoration:none;margin-left:12px;"">Google Play</a>
-          </p>
-
-          <p style=""margin:16px 0;"">
-            Hvis du ikke forventede dette, bedes du kontakte vores supportteam.
-          </p>
-
-          <p style=""margin:24px 0 0 0;"">Med venlig hilsen,<br>ZafeLock-teamet</p>
-        </div>
-      </div>
-
-      <p style=""text-align:center;color:#8a8f98;font-size:12px;margin:12px 0 0 0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;"">
-        © {DateTime.UtcNow:yyyy} ZafeLock
-      </p>
-    </div>
-  </body>
-</html>";
-
-            return (subject, html);
-        }
-
-        private static (string Subject, string HtmlBody) BuildExistingUserNorwegian(string name, string user)
-        {
-            string subject = "Du har mottatt en ny E-nøkkel i ZafeLock";
-
-            string html =
-        $@"<!doctype html>
-<html lang=""nb"">
-  <head>
-    <meta charset=""utf-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
-    <title>{subject}</title>
-  </head>
-  <body style=""margin:0;padding:0;background:#f6f7f9;"">
-    <div style=""max-width:640px;margin:24px auto;padding:0 16px;"">
-      <div style=""background:#ffffff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#222;"">
-        <div style=""padding:24px 24px 8px 24px;"">
-          <h1 style=""margin:0;font-size:20px;font-weight:600;"">Du har mottatt en ny E-nøkkel</h1>
-        </div>
-
-        <div style=""padding:0 24px 24px 24px;font-size:14px;line-height:1.6;"">
-          <p style=""margin:16px 0;"">Hei {name},</p>
-
-          <p style=""margin:16px 0;"">
-            Du har mottatt en ny E-nøkkel i ZafeLock. Logg inn med din eksisterende konto.
-          </p>
-
-          <div style=""margin:20px 0;padding:16px;border:1px solid #e6e8eb;border-radius:10px;background:#fafbfc;"">
-            <div style=""font-weight:600;margin-bottom:8px;"">Kontoopplysninger</div>
-            <table role=""presentation"" cellpadding=""0"" cellspacing=""0"" style=""border-collapse:collapse;width:100%;font-size:14px;"">
-              <tr>
-                <td style=""padding:4px 0;width:120px;color:#555;"">Brukernavn:</td>
-                <td style=""padding:4px 0;font-weight:600;"">{user}</td>
-              </tr>
-            </table>
-          </div>
-
-          <p style=""margin:16px 0;"">
-            Last ned Zafe-appen for å få tilgang til din E-nøkkel:
-          </p>
-
-          <p>
-            <a href=""https://apps.apple.com/in/app/zafe-connect/id6748814428"" style=""color:#007aff;text-decoration:none;margin-right:12px;"">App Store</a> |
-            <a href=""https://play.google.com/store/apps/details?id=com.plento.zafelock"" style=""color:#34a853;text-decoration:none;margin-left:12px;"">Google Play</a>
-          </p>
-
-          <p style=""margin:16px 0;"">
-            Hvis du ikke forventet dette, vennligst kontakt vårt supportteam.
-          </p>
-
-          <p style=""margin:24px 0 0 0;"">Med vennlig hilsen,<br>ZafeLock-teamet</p>
-        </div>
-      </div>
-
-      <p style=""text-align:center;color:#8a8f98;font-size:12px;margin:12px 0 0 0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;"">
-        © {DateTime.UtcNow:yyyy} ZafeLock
-      </p>
-    </div>
-  </body>
-</html>";
-
-            return (subject, html);
-        }
-
-        /// <summary>
-        /// Builds the subject and HTML body for the ZafeLock welcome email in English or Danish.
-        /// </summary>
-        public static (string Subject, string HtmlBody) BuildWelcomeEmailHtml(
-            string recipientName,
-            string username,
-            string password,
-            string language = "en")
-        {
-            // Encode dynamic content for safety in HTML
-            string name = WebUtility.HtmlEncode(recipientName ?? "");
-            string user = WebUtility.HtmlEncode(username ?? "");
-            string pass = WebUtility.HtmlEncode(password ?? "");
-            string lang = (language ?? "en").Trim().ToLowerInvariant();
-
-            var langKey = (lang ?? "en").Trim().ToLowerInvariant();
-            return langKey switch
-            {
-                "da-dk" => BuildDanish(name, user, pass),
-                "nb" or "nb-no" => BuildNorwegian(name, user, pass),
-                _ => BuildEnglish(name, user, pass)
-            };
         }
 
         private static (string Subject, string HtmlBody) BuildEnglish(string name, string user, string pass)
         {
-            string subject = "Welcome to ZafeLock – Your account is ready";
+            string subject = "Welcome to Resido – Your account is ready";
 
             string html =
                     $@"<!doctype html>
-                <html lang=""en"">
-                  <head>
-                    <meta charset=""utf-8"">
-                    <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
-                    <title>{subject}</title>
-                  </head>
-                  <body style=""margin:0;padding:0;background:#f6f7f9;"">
-                    <div style=""max-width:640px;margin:24px auto;padding:0 16px;"">
-                      <div style=""background:#ffffff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#222;"">
-                        <div style=""padding:24px 24px 8px 24px;"">
-                          <h1 style=""margin:0;font-size:20px;font-weight:600;"">Welcome to ZafeLock</h1>
-                        </div>
+        <html lang=""en"">
+          <head>
+            <meta charset=""utf-8"">
+            <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
+            <title>{subject}</title>
+          </head>
+          <body style=""margin:0;padding:0;background:#f6f7f9;"">
+            <div style=""max-width:640px;margin:24px auto;padding:0 16px;"">
+              <div style=""background:#ffffff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#222;"">
+                <div style=""padding:24px 24px 8px 24px;"">
+                  <h1 style=""margin:0;font-size:20px;font-weight:600;"">Welcome to Resido</h1>
+                </div>
 
-                        <div style=""padding:0 24px 24px 24px;font-size:14px;line-height:1.6;"">
-                          <p style=""margin:16px 0;"">Dear {name},</p>
+                <div style=""padding:0 24px 24px 24px;font-size:14px;line-height:1.6;"">
+                  <p style=""margin:16px 0;"">Dear {name},</p>
 
-                          <p style=""margin:16px 0;"">
-                            Your Zafe account has been created, and we've sent you an eKey for access.
-                          </p>
+                  <p style=""margin:16px 0;"">
+                    Your Resido account has been created, and we've sent you an eKey for access.
+                  </p>
 
-                          <div style=""margin:20px 0;padding:16px;border:1px solid #e6e8eb;border-radius:10px;background:#fafbfc;"">
-                            <div style=""font-weight:600;margin-bottom:8px;"">Login Credentials</div>
-                            <table role=""presentation"" cellpadding=""0"" cellspacing=""0"" style=""border-collapse:collapse;width:100%;font-size:14px;"">
-                              <tr>
-                                <td style=""padding:4px 0;width:120px;color:#555;"">Username:</td>
-                                <td style=""padding:4px 0;font-weight:600;"">{user}</td>
-                              </tr>
-                              <tr>
-                                <td style=""padding:4px 0;width:120px;color:#555;"">Password:</td>
-                                <td style=""padding:4px 0;font-weight:600;"">{pass}</td>
-                              </tr>
-                            </table>
-                          </div>
+                  <div style=""margin:20px 0;padding:16px;border:1px solid #e6e8eb;border-radius:10px;background:#fafbfc;"">
+                    <div style=""font-weight:600;margin-bottom:8px;"">Login Credentials</div>
+                    <table role=""presentation"" cellpadding=""0"" cellspacing=""0"" style=""border-collapse:collapse;width:100%;font-size:14px;"">
+                      <tr>
+                        <td style=""padding:4px 0;width:120px;color:#555;"">Username:</td>
+                        <td style=""padding:4px 0;font-weight:600;"">{user}</td>
+                      </tr>
+                      <tr>
+                        <td style=""padding:4px 0;width:120px;color:#555;"">Password:</td>
+                        <td style=""padding:4px 0;font-weight:600;"">{pass}</td>
+                      </tr>
+                    </table>
+                  </div>
 
-                          <p style=""margin:16px 0;"">Keep these details safe.</p>
-                          <p style=""margin:16px 0;"">
-                            You can manage your account and access settings via the Zafe platform.
-                          </p>
+                  <p style=""margin:16px 0;"">Keep these details safe.</p>
+                  <p style=""margin:16px 0;"">
+                    You can manage your account and access settings via the Resido platform.
+                  </p>
 
-                          <p style=""margin:16px 0;"">
-                            Download the Zafe app to access your account:
-                          </p>
+                  <p style=""margin:16px 0;"">
+                    Download the Resido app to access your account:
+                  </p>
 
-                          <p>
-                            <a href=""https://apps.apple.com/in/app/zafe-connect/id6748814428"" style=""color:#007aff;text-decoration:none;margin-right:12px;"">Download on App Store</a> |
-                            <a href=""https://play.google.com/store/apps/details?id=com.plento.zafelock"" style=""color:#34a853;text-decoration:none;margin-left:12px;"">Get it on Google Play</a>
-                          </p>
+                  <p>
+                    <a href=""https://apps.apple.com/in/app/zafe-connect/id6748814428"" style=""color:#007aff;text-decoration:none;margin-right:12px;"">Download on App Store</a> |
+                    <a href=""https://play.google.com/store/apps/details?id=com.plento.zafelock"" style=""color:#34a853;text-decoration:none;margin-left:12px;"">Get it on Google Play</a>
+                  </p>
 
-                          <p style=""margin:16px 0;"">
-                            If you did not request this or need help, please contact our support team.
-                          </p>
+                  <p style=""margin:16px 0;"">
+                    If you did not request this or need help, please contact our support team.
+                  </p>
 
-                          <p style=""margin:24px 0 0 0;"">Best regards,<br>ZafeLock Team</p>
-                        </div>
-                      </div>
+                  <p style=""margin:24px 0 0 0;"">Best regards,<br>Resido Team</p>
+                </div>
+              </div>
 
-                      <p style=""text-align:center;color:#8a8f98;font-size:12px;margin:12px 0 0 0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;"">
-                        © {DateTime.UtcNow:yyyy} ZafeLock
-                      </p>
-                    </div>
-                  </body>
-                </html>";
-            return (subject, html);
-        }
-
-        private static (string Subject, string HtmlBody) BuildDanish(string name, string user, string pass)
-        {
-            string subject = "Velkommen til ZafeLock – Din konto er klar";
-
-            string html =
-    $@"<!doctype html>
-<html lang=""da"">
-  <head>
-    <meta charset=""utf-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
-    <title>{subject}</title>
-  </head>
-  <body style=""margin:0;padding:0;background:#f6f7f9;"">
-    <div style=""max-width:640px;margin:24px auto;padding:0 16px;"">
-      <div style=""background:#ffffff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#222;"">
-        <div style=""padding:24px 24px 8px 24px;"">
-          <h1 style=""margin:0;font-size:20px;font-weight:600;"">Velkommen til ZafeLock</h1>
-        </div>
-
-        <div style=""padding:0 24px 24px 24px;font-size:14px;line-height:1.6;"">
-          <p style=""margin:16px 0;"">Kære {name},</p>
-
-          <p style=""margin:16px 0;"">
-            Din Zafe-konto er oprettet, og vi har sendt dig en eKey til adgang.
-          </p>
-
-          <div style=""margin:20px 0;padding:16px;border:1px solid #e6e8eb;border-radius:10px;background:#fafbfc;"">
-            <div style=""font-weight:600;margin-bottom:8px;"">Loginoplysninger</div>
-            <table role=""presentation"" cellpadding=""0"" cellspacing=""0"" style=""border-collapse:collapse;width:100%;font-size:14px;"">
-              <tr>
-                <td style=""padding:4px 0;width:120px;color:#555;"">Brugernavn:</td>
-                <td style=""padding:4px 0;font-weight:600;"">{user}</td>
-              </tr>
-              <tr>
-                <td style=""padding:4px 0;width:120px;color:#555;"">Adgangskode:</td>
-                <td style=""padding:4px 0;font-weight:600;"">{pass}</td>
-              </tr>
-            </table>
-          </div>
-
-          <p style=""margin:16px 0;"">Opbevar disse oplysninger sikkert.</p>
-          <p style=""margin:16px 0;"">
-            Du kan administrere din konto og adgangsindstillinger via Zafe-platformen.
-          </p>
-
-          <p style=""margin:16px 0;"">
-            Download Zafe-appen for at få adgang til din konto:
-          </p>
-
-          <p>
-            <a href=""https://apps.apple.com/in/app/zafe-connect/id6748814428"" style=""color:#007aff;text-decoration:none;margin-right:12px;"">Hent i App Store</a> |
-            <a href=""https://play.google.com/store/apps/details?id=com.plento.zafelock"" style=""color:#34a853;text-decoration:none;margin-left:12px;"">Hent på Google Play</a>
-          </p>
-
-          <p style=""margin:16px 0;"">
-            Hvis du ikke har anmodet om dette eller har brug for hjælp, bedes du kontakte vores supportteam.
-          </p>
-
-          <p style=""margin:24px 0 0 0;"">Med venlig hilsen,<br>ZafeLock-teamet</p>
-        </div>
-      </div>
-
-      <p style=""text-align:center;color:#8a8f98;font-size:12px;margin:12px 0 0 0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;"">
-        © {DateTime.UtcNow:yyyy} ZafeLock
-      </p>
-    </div>
-  </body>
-</html>";
+              <p style=""text-align:center;color:#8a8f98;font-size:12px;margin:12px 0 0 0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;"">
+                © {DateTime.UtcNow:yyyy} Resido
+              </p>
+            </div>
+          </body>
+        </html>";
 
             return (subject, html);
         }
-        private static (string Subject, string HtmlBody) BuildNorwegian(string customerName, string email, string temporaryPassword)
-        {
-            string subject = "Velkommen til ZafeConnect – Din konto er klar";
-
-            string html =
-        $@"<!doctype html>
-<html lang=""nb"">
-  <head>
-    <meta charset=""utf-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
-    <title>{subject}</title>
-  </head>
-  <body style=""margin:0;padding:0;background:#f6f7f9;"">
-    <div style=""max-width:640px;margin:24px auto;padding:0 16px;"">
-      <div style=""background:#ffffff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#222;"">
-        <div style=""padding:24px 24px 8px 24px;"">
-          <h1 style=""margin:0;font-size:20px;font-weight:600;"">Velkommen til ZafeConnect</h1>
-        </div>
-
-        <div style=""padding:0 24px 24px 24px;font-size:14px;line-height:1.6;"">
-          <p style=""margin:16px 0;"">Hei {customerName},</p>
-
-          <p style=""margin:16px 0;"">
-            Vi har gitt deg adgang med e-post: <strong>{email}</strong>.
-          </p>
-
-          <div style=""margin:20px 0;padding:16px;border:1px solid #e6e8eb;border-radius:10px;background:#fafbfc;"">
-            <div style=""font-weight:600;margin-bottom:8px;"">Dine påloggingsopplysninger</div>
-            <table role=""presentation"" cellpadding=""0"" cellspacing=""0"" style=""border-collapse:collapse;width:100%;font-size:14px;"">
-              <tr>
-                <td style=""padding:4px 0;width:120px;color:#555;"">E-post:</td>
-                <td style=""padding:4px 0;font-weight:600;"">{email}</td>
-              </tr>
-              <tr>
-                <td style=""padding:4px 0;width:120px;color:#555;"">Midlertidig passord:</td>
-                <td style=""padding:4px 0;font-weight:600;"">{temporaryPassword}</td>
-              </tr>
-            </table>
-          </div>
-
-          <p style=""margin:16px 0;"">
-            Last ned appen Zafe Connect i App Store eller Google Play, klikk på 'Glemt passord' for å tilbakestille passordet. Alternativt kan du endre passordet etter at du har logget inn.
-          </p>
-
-          <p style=""margin:24px 0 0 0;"">Med vennlig hilsen,<br>ZafeConnect-teamet</p>
-        </div>
-      </div>
-
-      <p style=""text-align:center;color:#8a8f98;font-size:12px;margin:12px 0 0 0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;"">
-        © {DateTime.UtcNow:yyyy} ZafeConnect
-      </p>
-    </div>
-  </body>
-</html>";
-
-            return (subject, html);
-        }
-
 
         public static string GetCustomerAccessEmail(string customerName, string email, string temporaryPassword, string language = "en")
         {
