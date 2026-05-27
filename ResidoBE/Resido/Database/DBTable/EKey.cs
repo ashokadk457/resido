@@ -9,7 +9,7 @@ namespace Resido.Database.DBTable
         // Corresponding int ID from lock system
         public int EKeyId { get; set; }
 
-        public string KeyName { get; set; }
+        public string? KeyName { get; set; }
 
         public Guid SmartLockId { get; set; }
         public virtual SmartLock SmartLock { get; set; }

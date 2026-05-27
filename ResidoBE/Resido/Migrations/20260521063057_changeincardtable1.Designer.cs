@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Resido.Database;
@@ -11,9 +12,11 @@ using Resido.Database;
 namespace Resido.Migrations
 {
     [DbContext(typeof(ResidoDbContext))]
-    partial class ResidoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260521063057_changeincardtable1")]
+    partial class changeincardtable1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

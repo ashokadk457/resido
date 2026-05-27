@@ -49,7 +49,6 @@ namespace Resido.Controllers
             try
             {
              
-
                 var token = await GetAccessTokenEntityAsync();
                 var smartLock = await _context.SmartLocks.FirstOrDefaultAsync(a => a.TTLockId == dto.LockId && a.UserId == token.UserId);
 
@@ -65,6 +64,7 @@ namespace Resido.Controllers
                 {
                     Card card = new Card();
 
+                    card.CardName = dto.CardName;
                     card.CardId = result.Data.CardId;
                     card.SmartLockId = smartLock.Id;
                     _context.Cards.Add(card);

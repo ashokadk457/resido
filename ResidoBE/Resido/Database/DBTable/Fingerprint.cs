@@ -9,7 +9,7 @@ namespace Resido.Database.DBTable
         // Corresponding int fingerprint ID from device
         public int FingerprintId { get; set; }
 
-        public string FingerName { get; set; }
+        public string? FingerName { get; set; }
 
         public Guid SmartLockId { get; set; }
         public virtual SmartLock SmartLock { get; set; }
