@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Resido.BAL;
@@ -185,11 +187,48 @@ namespace Resido.Controllers
 
                     if (response?.Data?.List?.Any() ?? false)
                     {
+                        // Get all usernames from sender + receiver
+                        var userNames = response.Data.List
+                            .SelectMany(x => new[] { x.SenderUsername, x.Username })
+                            .Where(x => !string.IsNullOrWhiteSpace(x))
+                            .Distinct()
+                            .ToList();
+
+                        // Filter users from _content.Users
+                        var users = _context.Users
+                            .Where(x => userNames.Contains(x.TTLockUsername))
+                            .ToList();
+
+                        // Create dictionary => Username => Email or Phone
+                        var userDict = users.ToDictionary(
+                            x => x.TTLockUsername,
+                            x => !string.IsNullOrWhiteSpace(x.Email)
+                                    ? x.Email
+                                    : $"{x.DialCode}{x.PhoneNumber}" 
+                        );
+
+                        // Update records
                         foreach (var eKeyRecordDTO in response.Data.List)
                         {
+                            // Expiry logic
                             var range = CommonLogic.CheckExpiry(eKeyRecordDTO.EndDate, 1);
+
                             eKeyRecordDTO.IsExpired = range.IsExpired;
                             eKeyRecordDTO.IsExpiringSoon = range.IsExpiringSoon;
+
+                            // Replace SenderUsername
+                            if (!string.IsNullOrWhiteSpace(eKeyRecordDTO.SenderUsername) &&
+                                userDict.TryGetValue(eKeyRecordDTO.SenderUsername, out var senderValue))
+                            {
+                                eKeyRecordDTO.SenderUsername = senderValue;
+                            }
+
+                            // Replace Username
+                            if (!string.IsNullOrWhiteSpace(eKeyRecordDTO.Username) &&
+                                userDict.TryGetValue(eKeyRecordDTO.Username, out var receiverValue))
+                            {
+                                eKeyRecordDTO.Username = receiverValue;
+                            }
                         }
                     }
                     response.SetSuccess();
